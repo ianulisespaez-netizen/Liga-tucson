@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equipos - Liga Tucson</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f6fa;
+            color: #172033;
+        }
+        header {
+            background-color: #082b52;
+            color: white;
+            padding: 25px 20px;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 30px;
+        }
+        header p {
+            color: #8ed8ff;
+            margin-top: 6px;
+        }
+        nav {
+            background-color: #0b3d73;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 18px;
+            font-weight: bold;
+        }
+        nav a:hover {
+            background-color: #159bd7;
+        }
+        .container {
+            width: 92%;
+            max-width: 1000px;
+            margin: 30px auto;
+        }
+        h2 {
+            color: #082b52;
+            margin-bottom: 20px;
+            border-left: 5px solid #159bd7;
+            padding-left: 10px;
+        }
+        .teams {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+        .team {
+            background-color: white;
+            padding: 25px 15px;
+            text-align: center;
+            border-radius: 12px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+            transition: transform 0.2s;
+        }
+        .team:hover {
+            transform: translateY(-4px);
+        }
+        .shield {
+            font-size: 45px;
+            margin-bottom: 12px;
+        }
+        .team h3 {
+            color: #082b52;
+            margin-bottom: 8px;
+        }
+        .team p {
+            color: #64748b;
+            font-size: 14px;
+        }
+        .button {
+            display: inline-block;
+            margin-top: 15px;
+            background-color: #159bd7;
+            color: white;
+            text-decoration: none;
+            padding: 9px 15px;
+            border-radius: 7px;
+            font-weight: bold;
+        }
+        footer {
+            background-color: #082b52;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 40px;
+        }
+        footer span {
+            color: #8ed8ff;
+        }
+        @media (max-width: 700px) {
+            .teams {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 450px) {
+            .teams {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>⚽ LIGA TUCSON</h1>
+        <p>Equipos del fútbol tucumano</p>
+    </header>
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="equipos.html">Equipos</a>
+        <a href="#">Posiciones</a>
+        <a href="#">Partidos</a>
+        <a href="#">Noticias</a>
+    </nav>
+    <main class="container">
+        <h2>Equipos</h2>
+        <div class="teams">
+            <div class="team">
+                <div class="shield">⚽</div>
+                <h3>Atlético Tucumán</h3>
+                <p>San Miguel de Tucumán</p>
+                <a class="button" href="#">Ver equipo</a>
+            </div>
+            <div class="team">
+                <div class="shield">⚽</div>
+                <h3>San Martín</h3>
+                <p>San Miguel de Tucumán</p>
+                <a class="button" href="#">Ver equipo</a>
+            </div>
+            <div class="team">
+                <div class="shield">⚽</div>
+                <h3>Central Norte</h3>
+                <p>San Miguel de Tucumán</p>
+                <a class="button" href="#">Ver equipo</a>
+            </div>
+            <div class="team">
+                <div class="shield">⚽</div>
+                <h3>Sportivo Guzmán</h3>
+                <p>Tucumán</p>
+                <a class="button" href="#">Ver equipo</a>
+            </div>
+            <div class="team">
+                <div class="shield">⚽</div>
+                <h3>Amalia</h3>
+                <p>Tucumán</p>
+                <a class="button" href="#">Ver equipo</a>
+            </div>
+            <div class="team">
+                <div class="shield">⚽</div>
+                <h3>Unión</h3>
+                <p>Tucumán</p>
+                <a class="button" href="#">Ver equipo</a>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>⚽ <span>Liga Tucson</span> — Fútbol Tucumano</p>
+    </footer>
+</body>
+</html>
