@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Posiciones - Liga Tucson</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f6fa;
+    color: #172033;
+}
+
+header {
+    background-color: #082b52;
+    color: white;
+    text-align: center;
+    padding: 25px 20px;
+}
+
+header h1 {
+    font-size: 30px;
+}
+
+header p {
+    color: #8ed8ff;
+    margin-top: 6px;
+}
+
+nav {
+    background-color: #0b3d73;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 14px 18px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    background-color: #159bd7;
+}
+
+.container {
+    width: 92%;
+    max-width: 1100px;
+    margin: 30px auto;
+}
+
+.section {
+    background-color: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+}
+
+.section h2 {
+    color: #082b52;
+    border-left: 5px solid #159bd7;
+    padding-left: 10px;
+    margin-bottom: 20px;
+}
+
+.table-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 650px;
+}
+
+th {
+    background-color: #0b3d73;
+    color: white;
+    padding: 12px 8px;
+}
+
+td {
+    padding: 12px 8px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+td:nth-child(2) {
+    text-align: left;
+    font-weight: bold;
+}
+
+tr:hover {
+    background-color: #f2f6fa;
+}
+
+.position {
+    font-weight: bold;
+    color: #082b52;
+}
+
+footer {
+    background-color: #082b52;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 40px;
+}
+
+footer span {
+    color: #8ed8ff;
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+    <h1>⚽ LIGA TUCSON</h1>
+
+    <p>
+        Todo el fútbol tucumano en un solo lugar
+    </p>
+
+</header>
+
+
+<nav>
+
+    <a href="index.html">Inicio</a>
+
+    <a href="equipos.html">Equipos</a>
+
+    <a href="posiciones.html">Posiciones</a>
+
+    <a href="#">Partidos</a>
+
+    <a href="#">Noticias</a>
+
+</nav>
+
+
+<main class="container">
+
+    <section class="section">
+
+        <h2>🏆 Tabla de posiciones</h2>
+
+        <div class="table-container">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>Pos.</th>
+                        <th>Equipo</th>
+                        <th>PTS</th>
+                        <th>PJ</th>
+                        <th>PG</th>
+                        <th>PE</th>
+                        <th>PP</th>
+                        <th>GF</th>
+                        <th>GC</th>
+                        <th>DG</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td class="position">1</td>
+                        <td>Atlético Tucumán</td>
+                        <td>23</td>
+                        <td>10</td>
+                        <td>7</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>20</td>
+                        <td>8</td>
+                        <td>+12</td>
+                    </tr>
+
+                    <tr>
+                        <td class="position">2</td>
+                        <td>San Martín</td>
+                        <td>20</td>
+                        <td>10</td>
+                        <td>6</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>17</td>
+                        <td>9</td>
+                        <td>+8</td>
+                    </tr>
+
+                    <tr>
+                        <td class="position">3</td>
+                        <td>Central Norte</td>
+                        <td>17</td>
+                        <td>10</td>
+                        <td>5</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>15</td>
+                        <td>11</td>
+                        <td>+4</td>
+                    </tr>
+
+                    <tr>
+                        <td class="position">4</td>
+                        <td>Sportivo Guzmán</td>
+                        <td>14</td>
+                        <td>10</td>
+                        <td>4</td>
+                        <td>2</td>
+                        <td>4</td>
+                        <td>13</td>
+                        <td>14</td>
+                        <td>-1</td>
+                    </tr>
+
+                    <tr>
+                        <td class="position">5</td>
+                        <td>Amalia</td>
+                        <td>11</td>
+                        <td>10</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>5</td>
+                        <td>11</td>
+                        <td>16</td>
+                        <td>-5</td>
+                    </tr>
+
+                    <tr>
+                        <td class="position">6</td>
+                        <td>Unión</td>
+                        <td>8</td>
+                        <td>10</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>6</td>
+                        <td>8</td>
+                        <td>16</td>
+                        <td>-8</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <p>
+        ⚽ <span>Liga Tucson</span> — Fútbol Tucumano
+    </p>
+
+</footer>
+
+</body>
+</html>
