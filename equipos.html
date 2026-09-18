@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Equipos - Liga Tucson</title>
+    <title>Equipo - Liga Tucson</title>
     <style>
         * {
             box-sizing: border-box;
@@ -18,8 +18,8 @@
         header {
             background-color: #082b52;
             color: white;
-            padding: 25px 20px;
             text-align: center;
+            padding: 25px 20px;
         }
         header h1 {
             font-size: 30px;
@@ -45,51 +45,82 @@
         }
         .container {
             width: 92%;
-            max-width: 1000px;
+            max-width: 900px;
             margin: 30px auto;
         }
-        h2 {
-            color: #082b52;
-            margin-bottom: 20px;
-            border-left: 5px solid #159bd7;
-            padding-left: 10px;
-        }
-        .teams {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 18px;
-        }
-        .team {
+        .team-header {
             background-color: white;
-            padding: 25px 15px;
             text-align: center;
+            padding: 30px 20px;
             border-radius: 12px;
             box-shadow: 0 3px 12px rgba(0,0,0,0.08);
-            transition: transform 0.2s;
-        }
-        .team:hover {
-            transform: translateY(-4px);
+            margin-bottom: 25px;
         }
         .shield {
-            font-size: 45px;
-            margin-bottom: 12px;
+            font-size: 70px;
+            margin-bottom: 10px;
         }
-        .team h3 {
+        .team-header h2 {
             color: #082b52;
-            margin-bottom: 8px;
+            font-size: 28px;
         }
-        .team p {
+        .team-header p {
             color: #64748b;
-            font-size: 14px;
+            margin-top: 8px;
         }
-        .button {
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            margin-top: 25px;
+        }
+        .stat {
+            background-color: #f2f6fa;
+            padding: 15px 5px;
+            border-radius: 8px;
+        }
+        .stat strong {
+            display: block;
+            color: #082b52;
+            font-size: 22px;
+        }
+        .stat span {
+            font-size: 12px;
+            color: #64748b;
+        }
+        .section {
+            background-color: white;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+        }
+        .section h3 {
+            color: #082b52;
+            border-left: 5px solid #159bd7;
+            padding-left: 10px;
+            margin-bottom: 15px;
+        }
+        .match {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 5px;
+            border-bottom: 1px solid #ddd;
+        }
+        .match:last-child {
+            border-bottom: none;
+        }
+        .score {
+            font-weight: bold;
+            color: #082b52;
+            font-size: 18px;
+        }
+        .back {
             display: inline-block;
-            margin-top: 15px;
-            background-color: #159bd7;
-            color: white;
+            margin-bottom: 20px;
+            color: #0b3d73;
             text-decoration: none;
-            padding: 9px 15px;
-            border-radius: 7px;
             font-weight: bold;
         }
         footer {
@@ -102,14 +133,12 @@
         footer span {
             color: #8ed8ff;
         }
-        @media (max-width: 700px) {
-            .teams {
+        @media (max-width: 600px) {
+            .stats {
                 grid-template-columns: repeat(2, 1fr);
             }
-        }
-        @media (max-width: 450px) {
-            .teams {
-                grid-template-columns: 1fr;
+            .match {
+                font-size: 14px;
             }
         }
     </style>
@@ -117,7 +146,7 @@
 <body>
     <header>
         <h1>⚽ LIGA TUCSON</h1>
-        <p>Equipos del fútbol tucumano</p>
+        <p>Todo el fútbol tucumano en un solo lugar</p>
     </header>
     <nav>
         <a href="index.html">Inicio</a>
@@ -127,48 +156,102 @@
         <a href="#">Noticias</a>
     </nav>
     <main class="container">
-        <h2>Equipos</h2>
-        <div class="teams">
-            <div class="team">
-                <div class="shield">⚽</div>
-                <h3>Atlético Tucumán</h3>
-                <p>San Miguel de Tucumán</p>
-                <a class="button" href="#">Ver equipo</a>
+        <a class="back" href="equipos.html">← Volver a equipos</a>
+        <section class="team-header">
+            <div class="shield">⚽</div>
+            <h2 id="nombre-equipo">Equipo</h2>
+            <p id="localidad">Tucumán</p>
+            <div class="stats">
+                <div class="stat">
+                    <strong>10</strong>
+                    <span>Partidos</span>
+                </div>
+                <div class="stat">
+                    <strong>7</strong>
+                    <span>Ganados</span>
+                </div>
+                <div class="stat">
+                    <strong>2</strong>
+                    <span>Empatados</span>
+                </div>
+                <div class="stat">
+                    <strong>23</strong>
+                    <span>Puntos</span>
+                </div>
             </div>
-            <div class="team">
-                <div class="shield">⚽</div>
-                <h3>San Martín</h3>
-                <p>San Miguel de Tucumán</p>
-                <a class="button" href="#">Ver equipo</a>
+        </section>
+        <section class="section">
+            <h3>Últimos partidos</h3>
+            <div class="match">
+                <span>Atlético Tucumán</span>
+                <span class="score">2 - 0</span>
+                <span>San Martín</span>
             </div>
-            <div class="team">
-                <div class="shield">⚽</div>
-                <h3>Central Norte</h3>
-                <p>San Miguel de Tucumán</p>
-                <a class="button" href="#">Ver equipo</a>
+            <div class="match">
+                <span>Unión</span>
+                <span class="score">1 - 1</span>
+                <span>Atlético Tucumán</span>
             </div>
-            <div class="team">
-                <div class="shield">⚽</div>
-                <h3>Sportivo Guzmán</h3>
-                <p>Tucumán</p>
-                <a class="button" href="#">Ver equipo</a>
+            <div class="match">
+                <span>Atlético Tucumán</span>
+                <span class="score">3 - 1</span>
+                <span>Central Norte</span>
             </div>
-            <div class="team">
-                <div class="shield">⚽</div>
-                <h3>Amalia</h3>
-                <p>Tucumán</p>
-                <a class="button" href="#">Ver equipo</a>
+        </section>
+        <section class="section">
+            <h3>Próximos partidos</h3>
+            <div class="match">
+                <span>Atlético Tucumán</span>
+                <span>vs</span>
+                <span>Sportivo Guzmán</span>
             </div>
-            <div class="team">
-                <div class="shield">⚽</div>
-                <h3>Unión</h3>
-                <p>Tucumán</p>
-                <a class="button" href="#">Ver equipo</a>
+            <div class="match">
+                <span>Amalia</span>
+                <span>vs</span>
+                <span>Atlético Tucumán</span>
             </div>
-        </div>
+        </section>
     </main>
     <footer>
         <p>⚽ <span>Liga Tucson</span> — Fútbol Tucumano</p>
     </footer>
+    <script>
+        const parametros = new URLSearchParams(window.location.search);
+        const equipo = parametros.get("equipo");
+        const equipos = {
+            atletico: {
+                nombre: "Atlético Tucumán",
+                localidad: "San Miguel de Tucumán"
+            },
+            sanmartin: {
+                nombre: "San Martín",
+                localidad: "San Miguel de Tucumán"
+            },
+            central: {
+                nombre: "Central Norte",
+                localidad: "San Miguel de Tucumán"
+            },
+            sportivo: {
+                nombre: "Sportivo Guzmán",
+                localidad: "Tucumán"
+            },
+            amalia: {
+                nombre: "Amalia",
+                localidad: "Tucumán"
+            },
+            union: {
+                nombre: "Unión",
+                localidad: "Tucumán"
+            }
+        };
+        if (equipo && equipos[equipo]) {
+            document.getElementById("nombre-equipo").textContent =
+                equipos[equipo].nombre;
+            document.getElementById("localidad").textContent =
+                equipos[equipo].localidad;
+            document.title =
+                equipos[equipo].nombre + " - Liga Tucson";
+        }
+    </script>
 </body>
 </html>
