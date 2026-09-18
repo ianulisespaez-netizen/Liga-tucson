@@ -1,232 +1,443 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Liga Tucson</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f2f6fa;
-            color: #172033;
-        }
-        header {
-            background-color: #082b52;
-            color: white;
-            padding: 25px 20px;
-            text-align: center;
-        }
-        header h1 {
-            font-size: 32px;
-            margin-bottom: 6px;
-        }
-        header p {
-            color: #8ed8ff;
-            font-size: 15px;
-        }
-        nav {
-            background-color: #0b3d73;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            padding: 15px 18px;
-            font-weight: bold;
-            font-size: 14px;
-        }
-        nav a:hover {
-            background-color: #159bd7;
-        }
-        .container {
-            width: 92%;
-            max-width: 1000px;
-            margin: 25px auto;
-        }
-        .welcome {
-            background-color: white;
-            padding: 25px;
-            border-radius: 12px;
-            margin-bottom: 25px;
-            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
-        }
-        .welcome h2 {
-            color: #082b52;
-            margin-bottom: 10px;
-        }
-        .section {
-            background-color: white;
-            padding: 20px;
-            border-radius: 12px;
-            margin-bottom: 25px;
-            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
-        }
-        .section h2 {
-            color: #082b52;
-            margin-bottom: 15px;
-            border-left: 5px solid #159bd7;
-            padding-left: 10px;
-        }
-        .match {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 5px;
-            border-bottom: 1px solid #ddd;
-        }
-        .match:last-child {
-            border-bottom: none;
-        }
-        .score {
-            font-weight: bold;
-            font-size: 20px;
-            color: #082b52;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        th {
-            background-color: #082b52;
-            color: white;
-            padding: 12px 8px;
-        }
-        td {
-            padding: 12px 8px;
-            border-bottom: 1px solid #ddd;
-            text-align: center;
-        }
-        td:nth-child(2) {
-            text-align: left;
-            font-weight: bold;
-        }
-        tr:hover {
-            background-color: #eef8ff;
-        }
-        footer {
-            background-color: #082b52;
-            color: white;
-            text-align: center;
-            padding: 25px;
-            margin-top: 40px;
-        }
-        footer span {
-            color: #8ed8ff;
-        }
-        @media (max-width: 600px) {
-            header h1 {
-                font-size: 27px;
-            }
-            nav a {
-                padding: 12px 10px;
-                font-size: 12px;
-            }
-            .match {
-                font-size: 14px;
-            }
-            table {
-                font-size: 13px;
-            }
-            th, td {
-                padding: 9px 5px;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Liga Tucson</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f6fa;
+    color: #172033;
+}
+
+/* ENCABEZADO */
+
+header {
+    background-color: #082b52;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+header h1 {
+    font-size: 32px;
+}
+
+header p {
+    color: #8ed8ff;
+    margin-top: 8px;
+}
+
+/* MENU */
+
+nav {
+    background-color: #0b3d73;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 15px 20px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    background-color: #159bd7;
+}
+
+/* CONTENEDOR */
+
+.container {
+    width: 92%;
+    max-width: 1100px;
+    margin: 30px auto;
+}
+
+/* BIENVENIDA */
+
+.welcome {
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.welcome h2 {
+    color: #082b52;
+    margin-bottom: 10px;
+}
+
+.welcome p {
+    color: #64748b;
+}
+
+/* SECCIONES */
+
+.section {
+    background-color: white;
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+}
+
+.section h2 {
+    color: #082b52;
+    border-left: 5px solid #159bd7;
+    padding-left: 10px;
+    margin-bottom: 20px;
+}
+
+/* RESULTADOS Y PARTIDOS */
+
+.match {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5px;
+    border-bottom: 1px solid #ddd;
+}
+
+.match:last-child {
+    border-bottom: none;
+}
+
+.score {
+    font-weight: bold;
+    font-size: 18px;
+    color: #082b52;
+}
+
+/* TABLA */
+
+.table-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background-color: #0b3d73;
+    color: white;
+    padding: 12px;
+}
+
+td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+td:first-child {
+    text-align: left;
+    font-weight: bold;
+}
+
+/* FOOTER */
+
+footer {
+    background-color: #082b52;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 40px;
+}
+
+footer span {
+    color: #8ed8ff;
+}
+
+/* CELULAR */
+
+@media (max-width: 600px) {
+
+    header h1 {
+        font-size: 28px;
+    }
+
+    nav a {
+        padding: 12px 10px;
+        font-size: 14px;
+    }
+
+    .match {
+        font-size: 14px;
+    }
+
+    .score {
+        font-size: 16px;
+    }
+
+    .section {
+        padding: 18px;
+    }
+
+}
+</style>
+
 </head>
+
 <body>
-    <header>
-        <h1>⚽ LIGA TUCSON</h1>
-        <p>Todo el fútbol tucumano en un solo lugar</p>
-    </header>
-    <nav>
-        <a href="#">Inicio</a>
-        <a href="#">Posiciones</a>
-        <a href="#">Partidos</a>
-        <a href="#">Equipos</a>
-        <a href="#">Noticias</a>
-    </nav>
-    <main class="container">
-        <section class="welcome">
-            <h2>Bienvenidos a Liga Tucson</h2>
-            <p>
-                Toda la información del fútbol tucumano:
-                resultados, posiciones, partidos y mucho más.
-            </p>
-        </section>
-        <section class="section">
-            <h2>Últimos resultados</h2>
-            <div class="match">
-                <span>Atlético Tucumán</span>
-                <span class="score">2 - 0</span>
-                <span>San Martín</span>
-            </div>
-            <div class="match">
-                <span>Central Norte</span>
-                <span class="score">1 - 1</span>
-                <span>Unión</span>
-            </div>
-            <div class="match">
-                <span>Sportivo Guzmán</span>
-                <span class="score">3 - 2</span>
-                <span>Amalia</span>
-            </div>
-        </section>
-        <section class="section">
-            <h2>Próximos partidos</h2>
-            <div class="match">
-                <span>Atlético Tucumán</span>
-                <span>vs</span>
-                <span>Central Norte</span>
-            </div>
-            <div class="match">
-                <span>San Martín</span>
-                <span>vs</span>
-                <span>Sportivo Guzmán</span>
-            </div>
-        </section>
-        <section class="section">
-            <h2>Tabla de posiciones</h2>
+
+<header>
+
+    <h1>⚽ LIGA TUCSON</h1>
+
+    <p>
+        Todo el fútbol tucumano en un solo lugar
+    </p>
+
+</header>
+
+
+<nav>
+
+    <a href="index.html">Inicio</a>
+
+    <a href="equipos.html">Equipos</a>
+
+    <a href="#">Posiciones</a>
+
+    <a href="#">Partidos</a>
+
+    <a href="#">Noticias</a>
+
+</nav>
+
+
+<main class="container">
+
+
+    <!-- BIENVENIDA -->
+
+    <section class="welcome">
+
+        <h2>Bienvenido a Liga Tucson</h2>
+
+        <p>
+            Resultados, posiciones, partidos y toda la información
+            del fútbol tucumano.
+        </p>
+
+    </section>
+
+
+    <!-- ÚLTIMOS RESULTADOS -->
+
+    <section class="section">
+
+        <h2>⚽ Últimos resultados</h2>
+
+        <div class="match">
+
+            <span>Atlético Tucumán</span>
+
+            <span class="score">2 - 0</span>
+
+            <span>San Martín</span>
+
+        </div>
+
+
+        <div class="match">
+
+            <span>Unión</span>
+
+            <span class="score">1 - 1</span>
+
+            <span>Central Norte</span>
+
+        </div>
+
+
+        <div class="match">
+
+            <span>Amalia</span>
+
+            <span class="score">3 - 1</span>
+
+            <span>Sportivo Guzmán</span>
+
+        </div>
+
+    </section>
+
+
+    <!-- PRÓXIMOS PARTIDOS -->
+
+    <section class="section">
+
+        <h2>📅 Próximos partidos</h2>
+
+        <div class="match">
+
+            <span>Atlético Tucumán</span>
+
+            <span>vs</span>
+
+            <span>Sportivo Guzmán</span>
+
+        </div>
+
+
+        <div class="match">
+
+            <span>Amalia</span>
+
+            <span>vs</span>
+
+            <span>San Martín</span>
+
+        </div>
+
+
+        <div class="match">
+
+            <span>Central Norte</span>
+
+            <span>vs</span>
+
+            <span>Unión</span>
+
+        </div>
+
+    </section>
+
+
+    <!-- TABLA DE POSICIONES -->
+
+    <section class="section">
+
+        <h2>🏆 Tabla de posiciones</h2>
+
+        <div class="table-container">
+
             <table>
-                <tr>
-                    <th>Pos</th>
-                    <th>Equipo</th>
-                    <th>PJ</th>
-                    <th>DG</th>
-                    <th>PTS</th>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Atlético Tucumán</td>
-                    <td>10</td>
-                    <td>+11</td>
-                    <td>23</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>San Martín</td>
-                    <td>10</td>
-                    <td>+8</td>
-                    <td>20</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>Central Norte</td>
-                    <td>10</td>
-                    <td>+5</td>
-                    <td>18</td>
-                </tr>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Equipo</th>
+                        <th>PTS</th>
+                        <th>PJ</th>
+                        <th>PG</th>
+                        <th>PE</th>
+                        <th>PP</th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody>
+
+                    <tr>
+
+                        <td>Atlético Tucumán</td>
+                        <td>23</td>
+                        <td>10</td>
+                        <td>7</td>
+                        <td>2</td>
+                        <td>1</td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>San Martín</td>
+                        <td>20</td>
+                        <td>10</td>
+                        <td>6</td>
+                        <td>2</td>
+                        <td>2</td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>Central Norte</td>
+                        <td>17</td>
+                        <td>10</td>
+                        <td>5</td>
+                        <td>2</td>
+                        <td>3</td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>Sportivo Guzmán</td>
+                        <td>14</td>
+                        <td>10</td>
+                        <td>4</td>
+                        <td>2</td>
+                        <td>4</td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>Amalia</td>
+                        <td>11</td>
+                        <td>10</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>5</td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>Unión</td>
+                        <td>8</td>
+                        <td>10</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>6</td>
+
+                    </tr>
+
+                </tbody>
+
             </table>
-        </section>
-    </main>
-    <footer>
-        <p>⚽ <span>Liga Tucson</span> — Fútbol Tucumano</p>
-    </footer>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <p>
+        ⚽ <span>Liga Tucson</span> — Fútbol Tucumano
+    </p>
+
+</footer>
+
 </body>
 </html>
