@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Partidos - Liga Tucson</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f6fa;
+    color: #172033;
+}
+
+header {
+    background-color: #082b52;
+    color: white;
+    text-align: center;
+    padding: 25px 20px;
+}
+
+header h1 {
+    font-size: 30px;
+}
+
+header p {
+    color: #8ed8ff;
+    margin-top: 6px;
+}
+
+nav {
+    background-color: #0b3d73;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 14px 18px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    background-color: #159bd7;
+}
+
+.container {
+    width: 92%;
+    max-width: 900px;
+    margin: 30px auto;
+}
+
+.section {
+    background-color: white;
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+}
+
+.section h2 {
+    color: #082b52;
+    border-left: 5px solid #159bd7;
+    padding-left: 10px;
+    margin-bottom: 20px;
+}
+
+.match {
+    padding: 20px 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.match:last-child {
+    border-bottom: none;
+}
+
+.date {
+    color: #64748b;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.teams {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+}
+
+.vs {
+    color: #159bd7;
+    font-size: 18px;
+}
+
+.score {
+    color: #082b52;
+    font-size: 20px;
+}
+
+.stadium {
+    color: #64748b;
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+footer {
+    background-color: #082b52;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 40px;
+}
+
+footer span {
+    color: #8ed8ff;
+}
+
+@media (max-width: 600px) {
+
+    .teams {
+        font-size: 14px;
+    }
+
+    .section {
+        padding: 18px;
+    }
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+    <h1>⚽ LIGA TUCSON</h1>
+
+    <p>Todo el fútbol tucumano en un solo lugar</p>
+
+</header>
+
+
+<nav>
+
+    <a href="index.html">Inicio</a>
+
+    <a href="equipos.html">Equipos</a>
+
+    <a href="posiciones.html">Posiciones</a>
+
+    <a href="partidos.html">Partidos</a>
+
+    <a href="#">Noticias</a>
+
+</nav>
+
+
+<main class="container">
+
+
+    <section class="section">
+
+        <h2>📅 Próximos partidos</h2>
+
+
+        <div class="match">
+
+            <div class="date">
+                Fecha 11 · Domingo
+            </div>
+
+            <div class="teams">
+
+                <span>Atlético Tucumán</span>
+
+                <span class="vs">VS</span>
+
+                <span>Sportivo Guzmán</span>
+
+            </div>
+
+            <div class="stadium">
+                🏟️ Estadio a confirmar · 16:00 hs
+            </div>
+
+        </div>
+
+
+        <div class="match">
+
+            <div class="date">
+                Fecha 11 · Domingo
+            </div>
+
+            <div class="teams">
+
+                <span>Amalia</span>
+
+                <span class="vs">VS</span>
+
+                <span>San Martín</span>
+
+            </div>
+
+            <div class="stadium">
+                🏟️ Estadio a confirmar · 17:00 hs
+            </div>
+
+        </div>
+
+
+        <div class="match">
+
+            <div class="date">
+                Fecha 11 · Domingo
+            </div>
+
+            <div class="teams">
+
+                <span>Central Norte</span>
+
+                <span class="vs">VS</span>
+
+                <span>Unión</span>
+
+            </div>
+
+            <div class="stadium">
+                🏟️ Estadio a confirmar · 16:30 hs
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="section">
+
+        <h2>⚽ Últimos resultados</h2>
+
+
+        <div class="match">
+
+            <div class="date">
+                Fecha 10
+            </div>
+
+            <div class="teams">
+
+                <span>Atlético Tucumán</span>
+
+                <span class="score">2 - 0</span>
+
+                <span>San Martín</span>
+
+            </div>
+
+        </div>
+
+
+        <div class="match">
+
+            <div class="date">
+                Fecha 10
+            </div>
+
+            <div class="teams">
+
+                <span>Unión</span>
+
+                <span class="score">1 - 1</span>
+
+                <span>Central Norte</span>
+
+            </div>
+
+        </div>
+
+
+        <div class="match">
+
+            <div class="date">
+                Fecha 10
+            </div>
+
+            <div class="teams">
+
+                <span>Amalia</span>
+
+                <span class="score">3 - 1</span>
+
+                <span>Sportivo Guzmán</span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <p>
+        ⚽ <span>Liga Tucson</span> — Fútbol Tucumano
+    </p>
+
+</footer>
+
+</body>
+</html>
