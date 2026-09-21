@@ -1,330 +1,407 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Equipo - Liga Tucson</title>
+    <title>Equipo - Liga Tucson</title>
 
-<style>
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+    <style>
+        * {
+            box-sizing: border-box;
+        }
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f2f6fa;
-    color: #172033;
-}
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+            color: #172f55;
+        }
 
-header {
-    background-color: #082b52;
-    color: white;
-    text-align: center;
-    padding: 25px 20px;
-}
+        header {
+            background: linear-gradient(135deg, #173d6b, #4d86bd);
+            color: white;
+            text-align: center;
+            padding: 25px 15px;
+        }
 
-header h1 {
-    font-size: 30px;
-}
+        header h1 {
+            margin: 0;
+            font-size: 30px;
+        }
 
-header p {
-    color: #8ed8ff;
-    margin-top: 6px;
-}
+        .contenedor {
+            max-width: 900px;
+            margin: auto;
+            padding: 25px 18px;
+        }
 
-nav {
-    background-color: #0b3d73;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
+        .volver {
+            display: inline-block;
+            color: #173d6b;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 25px;
+        }
 
-nav a {
-    color: white;
-    text-decoration: none;
-    padding: 14px 18px;
-    font-weight: bold;
-}
+        .tarjeta {
+            background: white;
+            border-radius: 22px;
+            padding: 35px 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+        }
 
-nav a:hover {
-    background-color: #159bd7;
-}
+        .equipo-header {
+            text-align: center;
+        }
 
-.container {
-    width: 92%;
-    max-width: 900px;
-    margin: 30px auto;
-}
+        .pelota {
+            font-size: 75px;
+            margin-bottom: 10px;
+        }
 
-.back {
-    display: inline-block;
-    margin-bottom: 20px;
-    color: #0b3d73;
-    text-decoration: none;
-    font-weight: bold;
-}
+        .equipo-header h2 {
+            font-size: 42px;
+            margin: 10px 0;
+        }
 
-.team-header {
-    background-color: white;
-    text-align: center;
-    padding: 30px 20px;
-    border-radius: 12px;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
-    margin-bottom: 25px;
-}
+        .zona {
+            font-size: 22px;
+            color: #687891;
+            margin-bottom: 30px;
+        }
 
-.shield {
-    font-size: 70px;
-    margin-bottom: 10px;
-}
+        .estadisticas {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
 
-.team-header h2 {
-    color: #082b52;
-    font-size: 28px;
-}
+        .estadistica {
+            background: #f1f5f9;
+            border-radius: 15px;
+            padding: 25px 10px;
+            text-align: center;
+        }
 
-.team-header p {
-    color: #64748b;
-    margin-top: 8px;
-}
+        .numero {
+            font-size: 40px;
+            font-weight: bold;
+            color: #173d6b;
+        }
 
-.stats {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 12px;
-    margin-top: 25px;
-}
+        .texto {
+            font-size: 19px;
+            color: #687891;
+            margin-top: 5px;
+        }
 
-.stat {
-    background-color: #f2f6fa;
-    padding: 15px 5px;
-    border-radius: 8px;
-}
+        .titulo-seccion {
+            border-left: 8px solid #4ca0d8;
+            padding-left: 15px;
+            font-size: 30px;
+            margin-bottom: 25px;
+        }
 
-.stat strong {
-    display: block;
-    color: #082b52;
-    font-size: 22px;
-}
+        .partido {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+            gap: 15px;
+            padding: 20px 5px;
+            border-bottom: 2px solid #e0e4e8;
+            font-size: 19px;
+        }
 
-.stat span {
-    font-size: 12px;
-    color: #64748b;
-}
+        .partido:last-child {
+            border-bottom: none;
+        }
 
-.section {
-    background-color: white;
-    padding: 20px;
-    border-radius: 12px;
-    margin-bottom: 25px;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
-}
+        .local {
+            text-align: left;
+        }
 
-.section h3 {
-    color: #082b52;
-    border-left: 5px solid #159bd7;
-    padding-left: 10px;
-    margin-bottom: 15px;
-}
+        .visitante {
+            text-align: right;
+        }
 
-.match {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 14px 5px;
-    border-bottom: 1px solid #ddd;
-}
+        .resultado {
+            font-size: 24px;
+            font-weight: bold;
+            white-space: nowrap;
+        }
 
-.match:last-child {
-    border-bottom: none;
-}
+        .proximo {
+            color: #4ca0d8;
+        }
 
-.score {
-    font-weight: bold;
-    color: #082b52;
-    font-size: 18px;
-}
+        .error {
+            text-align: center;
+            font-size: 22px;
+            padding: 40px 10px;
+        }
 
-footer {
-    background-color: #082b52;
-    color: white;
-    text-align: center;
-    padding: 25px;
-    margin-top: 40px;
-}
+        @media (max-width: 600px) {
 
-footer span {
-    color: #8ed8ff;
-}
+            .equipo-header h2 {
+                font-size: 32px;
+            }
 
-@media (max-width: 600px) {
-    .stats {
-        grid-template-columns: repeat(2, 1fr);
-    }
+            .estadisticas {
+                gap: 12px;
+            }
 
-    .match {
-        font-size: 14px;
-    }
-}
-</style>
+            .numero {
+                font-size: 32px;
+            }
+
+            .texto {
+                font-size: 16px;
+            }
+
+            .partido {
+                font-size: 15px;
+                gap: 8px;
+            }
+
+            .resultado {
+                font-size: 20px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
 <header>
     <h1>⚽ LIGA TUCSON</h1>
-    <p>Todo el fútbol tucumano en un solo lugar</p>
 </header>
 
-<nav>
-    <a href="index.html">Inicio</a>
-    <a href="equipos.html">Equipos</a>
-    <a href="#">Posiciones</a>
-    <a href="#">Partidos</a>
-    <a href="#">Noticias</a>
-</nav>
+<div class="contenedor">
 
-<main class="container">
+    <a href="equipos.html" class="volver">← Volver a equipos</a>
 
-    <a class="back" href="equipos.html">← Volver a equipos</a>
+    <div id="contenido">
+        Cargando equipo...
+    </div>
 
-    <section class="team-header">
+</div>
 
-        <div class="shield">⚽</div>
-
-        <h2 id="nombre-equipo">Equipo</h2>
-
-        <p id="localidad">Tucumán</p>
-
-        <div class="stats">
-
-            <div class="stat">
-                <strong>10</strong>
-                <span>Partidos</span>
-            </div>
-
-            <div class="stat">
-                <strong>7</strong>
-                <span>Ganados</span>
-            </div>
-
-            <div class="stat">
-                <strong>2</strong>
-                <span>Empatados</span>
-            </div>
-
-            <div class="stat">
-                <strong>23</strong>
-                <span>Puntos</span>
-            </div>
-
-        </div>
-
-    </section>
-
-    <section class="section">
-
-        <h3>Últimos partidos</h3>
-
-        <div class="match">
-            <span>Atlético Tucumán</span>
-            <span class="score">2 - 0</span>
-            <span>San Martín</span>
-        </div>
-
-        <div class="match">
-            <span>Unión</span>
-            <span class="score">1 - 1</span>
-            <span>Atlético Tucumán</span>
-        </div>
-
-        <div class="match">
-            <span>Atlético Tucumán</span>
-            <span class="score">3 - 1</span>
-            <span>Central Norte</span>
-        </div>
-
-    </section>
-
-    <section class="section">
-
-        <h3>Próximos partidos</h3>
-
-        <div class="match">
-            <span>Atlético Tucumán</span>
-            <span>vs</span>
-            <span>Sportivo Guzmán</span>
-        </div>
-
-        <div class="match">
-            <span>Amalia</span>
-            <span>vs</span>
-            <span>Atlético Tucumán</span>
-        </div>
-
-    </section>
-
-</main>
-
-<footer>
-    <p>⚽ <span>Liga Tucson</span> — Fútbol Tucumano</p>
-</footer>
+<script src="datos.js"></script>
 
 <script>
 
-const parametros = new URLSearchParams(window.location.search);
+    // Obtener el nombre del equipo desde la URL
+    const parametros = new URLSearchParams(window.location.search);
+    const nombreEquipo = parametros.get("equipo");
+    const zonaURL = parametros.get("zona");
 
-const equipo = parametros.get("equipo");
+    const contenido = document.getElementById("contenido");
 
-const equipos = {
+    // Si no llegó ningún equipo
+    if (!nombreEquipo) {
 
-    atletico: {
-        nombre: "Atlético Tucumán",
-        localidad: "San Miguel de Tucumán"
-    },
+        contenido.innerHTML = `
+            <div class="tarjeta error">
+                No se encontró el equipo.
+            </div>
+        `;
 
-    sanmartin: {
-        nombre: "San Martín",
-        localidad: "San Miguel de Tucumán"
-    },
+    } else {
 
-    central: {
-        nombre: "Central Norte",
-        localidad: "San Miguel de Tucumán"
-    },
+        // Obtener todos los equipos
+        const todosLosEquipos = obtenerTodosLosEquipos();
 
-    sportivo: {
-        nombre: "Sportivo Guzmán",
-        localidad: "Tucumán"
-    },
+        // Buscar el equipo por su nombre real
+        const equipoEncontrado = todosLosEquipos.find(e =>
+            e.equipo.toLowerCase() === nombreEquipo.toLowerCase()
+        );
 
-    amalia: {
-        nombre: "Amalia",
-        localidad: "Tucumán"
-    },
+        if (!equipoEncontrado) {
 
-    union: {
-        nombre: "Unión",
-        localidad: "Tucumán"
+            contenido.innerHTML = `
+                <div class="tarjeta error">
+                    <h2>Equipo no encontrado</h2>
+                    <p>Buscamos: <strong>${nombreEquipo}</strong></p>
+                    <a href="equipos.html">Volver a equipos</a>
+                </div>
+            `;
+
+        } else {
+
+            // Buscar la zona
+            let zonaEncontrada = zonaURL;
+
+            if (!zonaEncontrada) {
+
+                for (const zona in datosLiga.zonas) {
+
+                    const encontrado = datosLiga.zonas[zona].find(e =>
+                        e.equipo.toLowerCase() === nombreEquipo.toLowerCase()
+                    );
+
+                    if (encontrado) {
+                        zonaEncontrada = zona;
+                        break;
+                    }
+                }
+            }
+
+            // Estadísticas
+            const partidos = equipoEncontrado.PJ || 0;
+            const ganados = equipoEncontrado.PG || 0;
+            const empatados = equipoEncontrado.PE || 0;
+            const perdidos = equipoEncontrado.PP || 0;
+            const golesFavor = equipoEncontrado.GF || 0;
+            const golesContra = equipoEncontrado.GC || 0;
+            const diferencia = equipoEncontrado.DG || 0;
+
+            const puntos = (ganados * 3) + empatados;
+
+            // Buscar partidos del equipo
+            const partidosEquipo = datosLiga.partidos.filter(p => {
+
+                const local = p.local || "";
+                const visitante = p.visitante || "";
+
+                return (
+                    local.toLowerCase() === equipoEncontrado.equipo.toLowerCase() ||
+                    visitante.toLowerCase() === equipoEncontrado.equipo.toLowerCase()
+                );
+            });
+
+            // Separar resultados y próximos
+            const resultados = partidosEquipo.filter(p =>
+                p.golesLocal !== undefined &&
+                p.golesVisitante !== undefined
+            );
+
+            const proximos = partidosEquipo.filter(p =>
+                p.golesLocal === undefined ||
+                p.golesVisitante === undefined
+            );
+
+            contenido.innerHTML = `
+
+                <div class="tarjeta">
+
+                    <div class="equipo-header">
+
+                        <div class="pelota">⚽</div>
+
+                        <h2>${equipoEncontrado.equipo}</h2>
+
+                        <div class="zona">
+                            Zona ${zonaEncontrada || ""}
+                        </div>
+
+                    </div>
+
+                    <div class="estadisticas">
+
+                        <div class="estadistica">
+                            <div class="numero">${partidos}</div>
+                            <div class="texto">Partidos</div>
+                        </div>
+
+                        <div class="estadistica">
+                            <div class="numero">${ganados}</div>
+                            <div class="texto">Ganados</div>
+                        </div>
+
+                        <div class="estadistica">
+                            <div class="numero">${empatados}</div>
+                            <div class="texto">Empatados</div>
+                        </div>
+
+                        <div class="estadistica">
+                            <div class="numero">${puntos}</div>
+                            <div class="texto">Puntos</div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="tarjeta">
+
+                    <h2 class="titulo-seccion">
+                        Últimos partidos
+                    </h2>
+
+                    <div id="resultados">
+
+                        ${
+                            resultados.length === 0
+                            ? "<p>No hay resultados cargados todavía.</p>"
+                            : resultados.map(p => `
+
+                                <div class="partido">
+
+                                    <div class="local">
+                                        ${p.local}
+                                    </div>
+
+                                    <div class="resultado">
+                                        ${p.golesLocal} - ${p.golesVisitante}
+                                    </div>
+
+                                    <div class="visitante">
+                                        ${p.visitante}
+                                    </div>
+
+                                </div>
+
+                            `).join("")
+                        }
+
+                    </div>
+
+                </div>
+
+
+                <div class="tarjeta">
+
+                    <h2 class="titulo-seccion">
+                        Próximos partidos
+                    </h2>
+
+                    <div id="proximos">
+
+                        ${
+                            proximos.length === 0
+                            ? "<p>No hay próximos partidos cargados todavía.</p>"
+                            : proximos.map(p => `
+
+                                <div class="partido">
+
+                                    <div class="local">
+                                        ${p.local}
+                                    </div>
+
+                                    <div class="resultado proximo">
+                                        VS
+                                    </div>
+
+                                    <div class="visitante">
+                                        ${p.visitante}
+                                    </div>
+
+                                </div>
+
+                            `).join("")
+                        }
+
+                    </div>
+
+                </div>
+
+            `;
+        }
     }
-
-};
-
-if (equipo && equipos[equipo]) {
-
-    document.getElementById("nombre-equipo").textContent =
-        equipos[equipo].nombre;
-
-    document.getElementById("localidad").textContent =
-        equipos[equipo].localidad;
-
-    document.title =
-        equipos[equipo].nombre + " - Liga Tucson";
-
-}
 
 </script>
 
