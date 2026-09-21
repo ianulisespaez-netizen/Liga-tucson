@@ -19,504 +19,372 @@
 
 
         body {
-
             margin: 0;
-
             font-family: Arial, sans-serif;
-
             background: #f1f5f9;
-
             color: #172f55;
-
         }
 
 
-        /* =========================
-           HEADER
-        ========================= */
-
         header {
-
-            background:
-                linear-gradient(
-                    135deg,
-                    #173d6b,
-                    #4d86bd
-                );
+            background: linear-gradient(
+                135deg,
+                #173d6b,
+                #4d86bd
+            );
 
             color: white;
-
             text-align: center;
-
             padding: 35px 15px;
-
         }
 
 
         header h1 {
-
             margin: 0;
-
             font-size: 38px;
-
         }
 
 
         header p {
-
             margin: 8px 0 0;
-
             font-size: 17px;
-
-            opacity: 0.9;
-
         }
 
-
-        /* =========================
-           CONTENEDOR
-        ========================= */
 
         .contenedor {
-
             max-width: 1100px;
-
             margin: auto;
-
             padding: 25px 18px;
-
         }
 
 
-        /* =========================
+        /* ==========================
            NAVEGACIÓN
-        ========================= */
+        ========================== */
 
         .navegacion {
-
             display: grid;
-
-            grid-template-columns:
-                repeat(3, 1fr);
-
+            grid-template-columns: repeat(3, 1fr);
             gap: 12px;
-
             margin-bottom: 25px;
-
         }
 
 
         .nav-boton {
-
             background: white;
-
             color: #173d6b;
-
             text-decoration: none;
-
             text-align: center;
-
             padding: 16px 10px;
-
             border-radius: 15px;
-
             font-weight: bold;
 
             box-shadow:
-                0 5px 15px
-                rgba(0,0,0,0.06);
-
+                0 5px 15px rgba(0,0,0,0.06);
         }
 
 
         .nav-boton:hover {
-
             background: #173d6b;
-
             color: white;
-
         }
 
 
-        /* =========================
+        /* ==========================
            BUSCADOR
-        ========================= */
+        ========================== */
 
         .buscador {
-
             background: white;
-
             border-radius: 20px;
-
             padding: 25px;
-
-            margin-bottom: 25px;
+            margin-bottom: 30px;
 
             box-shadow:
-                0 6px 20px
-                rgba(0,0,0,0.07);
-
+                0 6px 20px rgba(0,0,0,0.07);
         }
 
 
         .buscador h2 {
-
             margin-top: 0;
-
         }
 
 
         .buscador input {
-
             width: 100%;
-
             padding: 15px;
 
             border: 1px solid #d4dce7;
-
             border-radius: 12px;
 
             font-size: 16px;
-
             outline: none;
-
         }
 
 
-        .resultados-busqueda {
-
-            margin-top: 15px;
-
+        .buscador input:focus {
+            border-color: #4ca0d8;
         }
 
 
         .resultado-equipo {
-
             display: flex;
-
             justify-content: space-between;
-
             align-items: center;
 
             background: #f1f5f9;
 
-            padding: 13px;
+            padding: 14px;
+            margin-top: 8px;
 
-            border-radius: 10px;
-
-            margin-bottom: 8px;
-
-            gap: 10px;
-
+            border-radius: 12px;
         }
 
 
         .resultado-equipo a {
-
             color: #173d6b;
-
-            font-weight: bold;
-
             text-decoration: none;
-
+            font-weight: bold;
         }
 
 
         .resultado-equipo span {
-
             color: #687891;
-
             font-size: 14px;
-
         }
 
 
-        /* =========================
+        /* ==========================
            TITULOS
-        ========================= */
+        ========================== */
 
         .titulo-seccion {
-
             font-size: 27px;
-
             margin: 30px 0 15px;
-
         }
 
 
-        /* =========================
+        /* ==========================
            ZONAS
-        ========================= */
+        ========================== */
 
         .zonas {
-
             display: grid;
-
-            grid-template-columns:
-                repeat(2, 1fr);
-
+            grid-template-columns: repeat(2, 1fr);
             gap: 18px;
-
         }
 
 
         .zona {
+            display: block;
 
             background: white;
+            color: #172f55;
+
+            text-decoration: none;
 
             border-radius: 20px;
-
             padding: 22px;
 
             box-shadow:
-                0 6px 20px
-                rgba(0,0,0,0.07);
+                0 6px 20px rgba(0,0,0,0.07);
 
+            transition: transform 0.15s;
+        }
+
+
+        .zona:hover {
+            transform: translateY(-2px);
         }
 
 
         .zona h3 {
-
             margin-top: 0;
 
             border-left:
                 6px solid #4ca0d8;
 
             padding-left: 10px;
-
         }
 
 
         .lider {
-
             display: flex;
-
             justify-content: space-between;
-
             align-items: center;
 
             background: #f1f5f9;
 
             padding: 15px;
-
             border-radius: 12px;
-
         }
 
 
         .lider strong {
-
             font-size: 18px;
-
         }
 
 
         .puntos {
-
             font-size: 22px;
-
             font-weight: bold;
-
             color: #173d6b;
-
         }
 
 
-        /* =========================
+        .ver-zona {
+            margin-top: 12px;
+            color: #4d86bd;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+
+        /* ==========================
            PARTIDOS
-        ========================= */
+        ========================== */
 
         .partido {
-
             background: white;
-
             border-radius: 18px;
 
             padding: 18px;
-
             margin-bottom: 12px;
 
             box-shadow:
-                0 5px 15px
-                rgba(0,0,0,0.05);
-
+                0 5px 15px rgba(0,0,0,0.05);
         }
 
 
         .partido-fecha {
-
             color: #687891;
-
             font-size: 13px;
-
             margin-bottom: 10px;
-
             font-weight: bold;
-
         }
 
 
         .partido-equipos {
-
             display: flex;
-
             align-items: center;
-
             justify-content: space-between;
-
             gap: 10px;
-
         }
 
 
         .partido-equipo {
-
             width: 40%;
-
             font-weight: bold;
-
         }
 
 
         .local {
-
             text-align: right;
-
         }
 
 
         .visitante {
-
             text-align: left;
+        }
 
+
+        .partido-equipo a {
+            color: #173d6b;
+            text-decoration: none;
         }
 
 
         .resultado {
-
             font-size: 20px;
-
             font-weight: bold;
-
             color: #173d6b;
-
             text-align: center;
 
             min-width: 70px;
-
         }
 
 
         .estado {
-
             text-align: center;
-
             margin-top: 8px;
 
             font-size: 12px;
-
             font-weight: bold;
-
         }
 
 
         .finalizado {
-
             color: #16803c;
-
         }
 
 
         .proximo {
-
             color: #2878b8;
-
         }
 
 
         .ver-mas {
-
             display: block;
-
             text-align: center;
 
             margin-top: 15px;
 
             color: #173d6b;
-
             text-decoration: none;
-
             font-weight: bold;
-
         }
 
 
-        /* =========================
+        /* ==========================
            FOOTER
-        ========================= */
+        ========================== */
 
         footer {
-
             margin-top: 35px;
 
             background: #173d6b;
-
             color: white;
 
             text-align: center;
 
             padding: 25px 15px;
-
         }
 
 
         footer p {
-
             margin: 5px;
-
         }
 
 
-        /* =========================
+        /* ==========================
            CELULAR
-        ========================= */
+        ========================== */
 
         @media (max-width: 700px) {
 
             header h1 {
-
                 font-size: 31px;
-
             }
 
 
             .navegacion {
-
                 grid-template-columns: 1fr;
-
             }
 
 
             .zonas {
-
                 grid-template-columns: 1fr;
-
             }
 
 
             .partido-equipo {
-
                 font-size: 14px;
-
             }
 
 
             .resultado {
-
                 font-size: 18px;
-
                 min-width: 55px;
-
             }
 
         }
@@ -528,10 +396,6 @@
 
 <body>
 
-
-<!-- =========================
-     HEADER
-========================= -->
 
 <header>
 
@@ -549,9 +413,9 @@
 <div class="contenedor">
 
 
-    <!-- =========================
+    <!-- ==========================
          NAVEGACIÓN
-    ========================= -->
+    ========================== -->
 
     <div class="navegacion">
 
@@ -581,9 +445,9 @@
     </div>
 
 
-    <!-- =========================
+    <!-- ==========================
          BUSCADOR
-    ========================= -->
+    ========================== -->
 
     <div class="buscador">
 
@@ -594,21 +458,20 @@
         <input
             type="text"
             id="buscadorEquipo"
-            placeholder="Ejemplo: Talleres"
+            placeholder="Escribí el nombre del equipo..."
             autocomplete="off"
         >
 
         <div
             id="resultadosBusqueda"
-            class="resultados-busqueda"
         ></div>
 
     </div>
 
 
-    <!-- =========================
+    <!-- ==========================
          LÍDERES
-    ========================= -->
+    ========================== -->
 
     <h2 class="titulo-seccion">
 
@@ -622,14 +485,14 @@
         class="zonas"
     >
 
-        Cargando...
+        Cargando zonas...
 
     </div>
 
 
-    <!-- =========================
-         ÚLTIMOS RESULTADOS
-    ========================= -->
+    <!-- ==========================
+         RESULTADOS
+    ========================== -->
 
     <h2 class="titulo-seccion">
 
@@ -645,9 +508,9 @@
     </div>
 
 
-    <!-- =========================
-         PRÓXIMOS PARTIDOS
-    ========================= -->
+    <!-- ==========================
+         PRÓXIMOS
+    ========================== -->
 
     <h2 class="titulo-seccion">
 
@@ -666,10 +529,6 @@
 </div>
 
 
-<!-- =========================
-     FOOTER
-========================= -->
-
 <footer>
 
     <p>
@@ -683,9 +542,9 @@
 </footer>
 
 
-<!-- =========================
-     DATOS
-========================= -->
+<!-- ==========================
+     CARGAR DATOS
+========================== -->
 
 <script src="datos.js"></script>
 
@@ -693,27 +552,15 @@
 <script>
 
 
-    // =========================================
+    // ==========================================
     // ELEMENTOS
-    // =========================================
-
-    const lideres =
-        document.getElementById("lideres");
-
-    const ultimosResultados =
-        document.getElementById(
-            "ultimosResultados"
-        );
-
-    const proximosPartidos =
-        document.getElementById(
-            "proximosPartidos"
-        );
+    // ==========================================
 
     const buscador =
         document.getElementById(
             "buscadorEquipo"
         );
+
 
     const resultadosBusqueda =
         document.getElementById(
@@ -721,17 +568,81 @@
         );
 
 
-    // =========================================
+    const lideres =
+        document.getElementById(
+            "lideres"
+        );
+
+
+    const ultimosResultados =
+        document.getElementById(
+            "ultimosResultados"
+        );
+
+
+    const proximosPartidos =
+        document.getElementById(
+            "proximosPartidos"
+        );
+
+
+    // ==========================================
+    // ZONAS
+    // ==========================================
+
+    const zonas =
+        ["A", "B", "C", "D", "E", "F"];
+
+
+    // ==========================================
     // OBTENER TODOS LOS EQUIPOS
-    // =========================================
+    // ==========================================
 
-    const todosLosEquipos =
-        obtenerTodosLosEquipos();
+    let todosLosEquipos = [];
 
 
-    // =========================================
+    zonas.forEach(zona => {
+
+        if (!datosLiga.zonas[zona]) {
+            return;
+        }
+
+
+        datosLiga.zonas[zona].forEach(equipo => {
+
+            todosLosEquipos.push({
+
+                nombre: equipo.equipo,
+
+                zona: zona,
+
+                datos: equipo
+
+            });
+
+        });
+
+    });
+
+
+    // ==========================================
+    // NORMALIZAR TEXTO
+    // ==========================================
+
+    function normalizar(texto) {
+
+        return texto
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .toLowerCase()
+            .trim();
+
+    }
+
+
+    // ==========================================
     // CALCULAR PUNTOS
-    // =========================================
+    // ==========================================
 
     function calcularPuntos(equipo) {
 
@@ -743,13 +654,92 @@
     }
 
 
-    // =========================================
-    // LÍDERES
-    // =========================================
+    // ==========================================
+    // BUSCADOR
+    // ==========================================
 
-    const zonas =
-        ["A", "B", "C", "D", "E", "F"];
+    buscador.addEventListener(
+        "input",
+        function() {
 
+
+            const texto =
+                normalizar(
+                    buscador.value
+                );
+
+
+            resultadosBusqueda.innerHTML =
+                "";
+
+
+            if (texto === "") {
+
+                return;
+
+            }
+
+
+            const encontrados =
+                todosLosEquipos.filter(item =>
+
+                    normalizar(
+                        item.nombre
+                    ).includes(texto)
+
+                );
+
+
+            if (encontrados.length === 0) {
+
+                resultadosBusqueda.innerHTML = `
+
+                    <p>
+                        ❌ No encontramos ese equipo.
+                    </p>
+
+                `;
+
+                return;
+
+            }
+
+
+            encontrados.forEach(item => {
+
+
+                resultadosBusqueda.innerHTML += `
+
+                    <div class="resultado-equipo">
+
+                        <a
+                            href="equipo.html?v=5&equipo=${encodeURIComponent(item.nombre)}&zona=${encodeURIComponent(item.zona)}"
+                        >
+
+                            ${item.nombre}
+
+                        </a>
+
+
+                        <span>
+
+                            Zona ${item.zona}
+
+                        </span>
+
+                    </div>
+
+                `;
+
+            });
+
+        }
+    );
+
+
+    // ==========================================
+    // LÍDERES DE CADA ZONA
+    // ==========================================
 
     let htmlLideres = "";
 
@@ -762,9 +752,7 @@
 
 
         if (!equipos) {
-
             return;
-
         }
 
 
@@ -774,6 +762,7 @@
 
                 const puntosA =
                     calcularPuntos(a);
+
 
                 const puntosB =
                     calcularPuntos(b);
@@ -801,7 +790,10 @@
 
         htmlLideres += `
 
-            <div class="zona">
+            <a
+                href="posiciones.html?zona=${zona}"
+                class="zona"
+            >
 
                 <h3>
                     Zona ${zona}
@@ -819,9 +811,9 @@
                         <br>
 
                         <span>
-                            ${lider.pg}V ·
-                            ${lider.pe}E ·
-                            ${lider.pp}D
+                            ${lider.pg} V ·
+                            ${lider.pe} E ·
+                            ${lider.pp} D
                         </span>
 
                     </div>
@@ -835,7 +827,14 @@
 
                 </div>
 
-            </div>
+
+                <div class="ver-zona">
+
+                    Ver posiciones de Zona ${zona} →
+
+                </div>
+
+            </a>
 
         `;
 
@@ -846,9 +845,9 @@
         htmlLideres;
 
 
-    // =========================================
+    // ==========================================
     // ENLACE A EQUIPO
-    // =========================================
+    // ==========================================
 
     function enlaceEquipo(
         nombre,
@@ -858,11 +857,7 @@
         return `
 
             <a
-                href="equipo.html?v=4&equipo=${encodeURIComponent(nombre)}&zona=${encodeURIComponent(zona)}"
-                style="
-                    color:#173d6b;
-                    text-decoration:none;
-                "
+                href="equipo.html?v=5&equipo=${encodeURIComponent(nombre)}&zona=${encodeURIComponent(zona)}"
             >
                 ${nombre}
             </a>
@@ -872,15 +867,17 @@
     }
 
 
-    // =========================================
+    // ==========================================
     // ÚLTIMOS RESULTADOS
-    // =========================================
+    // ==========================================
 
     const resultados =
         datosLiga.partidos
         .filter(partido =>
+
             partido.resultado &&
             partido.resultado !== "-"
+
         )
         .slice(-5)
         .reverse();
@@ -959,7 +956,6 @@
 
                     </div>
 
-
                 </div>
 
             `;
@@ -973,15 +969,17 @@
     }
 
 
-    // =========================================
+    // ==========================================
     // PRÓXIMOS PARTIDOS
-    // =========================================
+    // ==========================================
 
     const proximos =
         datosLiga.partidos
         .filter(partido =>
+
             !partido.resultado ||
             partido.resultado === "-"
+
         )
         .slice(0, 5);
 
@@ -1059,7 +1057,6 @@
 
                     </div>
 
-
                 </div>
 
             `;
@@ -1073,103 +1070,18 @@
     }
 
 
-    // =========================================
-    // BOTÓN VER PARTIDOS
-    // =========================================
-
     proximosPartidos.innerHTML += `
 
         <a
             href="partidos.html"
             class="ver-mas"
         >
+
             Ver todos los partidos →
+
         </a>
 
     `;
-
-
-    // =========================================
-    // BUSCADOR
-    // =========================================
-
-    buscador.addEventListener(
-        "input",
-        function() {
-
-
-            const texto =
-                buscador.value
-                .trim()
-                .toLowerCase();
-
-
-            resultadosBusqueda.innerHTML =
-                "";
-
-
-            if (!texto) {
-
-                return;
-
-            }
-
-
-            const resultados =
-                todosLosEquipos.filter(equipo =>
-
-                    equipo.equipo
-                    .toLowerCase()
-                    .includes(texto)
-
-                );
-
-
-            if (resultados.length === 0) {
-
-                resultadosBusqueda.innerHTML = `
-
-                    <p>
-                        No encontramos ese equipo.
-                    </p>
-
-                `;
-
-                return;
-
-            }
-
-
-            resultados.forEach(equipo => {
-
-
-                resultadosBusqueda.innerHTML += `
-
-                    <div class="resultado-equipo">
-
-                        <a
-                            href="equipo.html?v=4&equipo=${encodeURIComponent(equipo.equipo)}&zona=${encodeURIComponent(equipo.zona)}"
-                        >
-
-                            ${equipo.equipo}
-
-                        </a>
-
-
-                        <span>
-
-                            Zona ${equipo.zona}
-
-                        </span>
-
-                    </div>
-
-                `;
-
-            });
-
-        }
-    );
 
 
 </script>
