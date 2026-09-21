@@ -1,282 +1,329 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Posiciones - Liga Tucson</title>
+    <title>Posiciones | Liga Tucson</title>
 
-<style>
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+    <style>
+        * {
+            box-sizing: border-box;
+        }
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f2f6fa;
-    color: #172033;
-}
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f2f7fb;
+            color: #123;
+        }
 
-header {
-    background-color: #082b52;
-    color: white;
-    text-align: center;
-    padding: 25px 20px;
-}
+        header {
+            background: #062b5c;
+            color: white;
+            padding: 25px 15px;
+            text-align: center;
+        }
 
-header h1 {
-    font-size: 30px;
-}
+        header h1 {
+            margin: 0;
+            font-size: 30px;
+        }
 
-header p {
-    color: #8ed8ff;
-    margin-top: 6px;
-}
+        header p {
+            margin: 8px 0 0;
+            color: #b9e8ff;
+        }
 
-nav {
-    background-color: #0b3d73;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
+        nav {
+            background: #0b4f91;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
 
-nav a {
-    color: white;
-    text-decoration: none;
-    padding: 14px 18px;
-    font-weight: bold;
-}
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 16px;
+            font-weight: bold;
+        }
 
-nav a:hover {
-    background-color: #159bd7;
-}
+        nav a:hover {
+            background: #087fc1;
+        }
 
-.container {
-    width: 92%;
-    max-width: 1100px;
-    margin: 30px auto;
-}
+        main {
+            max-width: 1100px;
+            margin: auto;
+            padding: 25px 15px;
+        }
 
-.section {
-    background-color: white;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
-}
+        .titulo {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
 
-.section h2 {
-    color: #082b52;
-    border-left: 5px solid #159bd7;
-    padding-left: 10px;
-    margin-bottom: 20px;
-}
+        .titulo h2 {
+            margin: 0 0 8px;
+            color: #062b5c;
+        }
 
-.table-container {
-    overflow-x: auto;
-}
+        .titulo p {
+            margin: 0;
+            color: #555;
+        }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    min-width: 650px;
-}
+        .zona {
+            background: white;
+            margin-bottom: 30px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
 
-th {
-    background-color: #0b3d73;
-    color: white;
-    padding: 12px 8px;
-}
+        .zona-titulo {
+            background: #087fc1;
+            color: white;
+            padding: 15px;
+            font-size: 21px;
+            font-weight: bold;
+        }
 
-td {
-    padding: 12px 8px;
-    text-align: center;
-    border-bottom: 1px solid #ddd;
-}
+        .tabla-contenedor {
+            overflow-x: auto;
+        }
 
-td:nth-child(2) {
-    text-align: left;
-    font-weight: bold;
-}
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 700px;
+        }
 
-tr:hover {
-    background-color: #f2f6fa;
-}
+        th {
+            background: #062b5c;
+            color: white;
+            padding: 11px 7px;
+            font-size: 13px;
+        }
 
-.position {
-    font-weight: bold;
-    color: #082b52;
-}
+        td {
+            padding: 11px 7px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+            font-size: 14px;
+        }
 
-footer {
-    background-color: #082b52;
-    color: white;
-    text-align: center;
-    padding: 25px;
-    margin-top: 40px;
-}
+        td:nth-child(2) {
+            text-align: left;
+            font-weight: bold;
+        }
 
-footer span {
-    color: #8ed8ff;
-}
-</style>
+        tr:hover {
+            background: #eef8ff;
+        }
 
+        .primero {
+            background: #fff8cf;
+        }
+
+        .clasificado {
+            background: #eefaf0;
+        }
+
+        .puesto {
+            font-weight: bold;
+        }
+
+        .puntos {
+            font-weight: bold;
+            color: #062b5c;
+        }
+
+        footer {
+            background: #062b5c;
+            color: white;
+            text-align: center;
+            padding: 25px 15px;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 600px) {
+
+            header h1 {
+                font-size: 25px;
+            }
+
+            nav a {
+                padding: 11px 10px;
+                font-size: 14px;
+            }
+
+            main {
+                padding: 15px 10px;
+            }
+
+            .zona-titulo {
+                font-size: 18px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
 <header>
-
     <h1>⚽ LIGA TUCSON</h1>
-
-    <p>
-        Todo el fútbol tucumano en un solo lugar
-    </p>
-
+    <p>Todo el fútbol tucumano en un solo lugar</p>
 </header>
 
-
 <nav>
-
     <a href="index.html">Inicio</a>
-
-    <a href="equipos.html">Equipos</a>
-
     <a href="posiciones.html">Posiciones</a>
-
-    <a href="#">Partidos</a>
-
+    <a href="partidos.html">Partidos</a>
+    <a href="equipos.html">Equipos</a>
     <a href="#">Noticias</a>
-
 </nav>
 
+<main>
 
-<main class="container">
-
-    <section class="section">
-
+    <div class="titulo">
         <h2>🏆 Tabla de posiciones</h2>
+        <p id="torneo"></p>
+    </div>
 
-        <div class="table-container">
-
-            <table>
-
-                <thead>
-
-                    <tr>
-                        <th>Pos.</th>
-                        <th>Equipo</th>
-                        <th>PTS</th>
-                        <th>PJ</th>
-                        <th>PG</th>
-                        <th>PE</th>
-                        <th>PP</th>
-                        <th>GF</th>
-                        <th>GC</th>
-                        <th>DG</th>
-                    </tr>
-
-                </thead>
-
-                <tbody>
-
-                    <tr>
-                        <td class="position">1</td>
-                        <td>Atlético Tucumán</td>
-                        <td>23</td>
-                        <td>10</td>
-                        <td>7</td>
-                        <td>2</td>
-                        <td>1</td>
-                        <td>20</td>
-                        <td>8</td>
-                        <td>+12</td>
-                    </tr>
-
-                    <tr>
-                        <td class="position">2</td>
-                        <td>San Martín</td>
-                        <td>20</td>
-                        <td>10</td>
-                        <td>6</td>
-                        <td>2</td>
-                        <td>2</td>
-                        <td>17</td>
-                        <td>9</td>
-                        <td>+8</td>
-                    </tr>
-
-                    <tr>
-                        <td class="position">3</td>
-                        <td>Central Norte</td>
-                        <td>17</td>
-                        <td>10</td>
-                        <td>5</td>
-                        <td>2</td>
-                        <td>3</td>
-                        <td>15</td>
-                        <td>11</td>
-                        <td>+4</td>
-                    </tr>
-
-                    <tr>
-                        <td class="position">4</td>
-                        <td>Sportivo Guzmán</td>
-                        <td>14</td>
-                        <td>10</td>
-                        <td>4</td>
-                        <td>2</td>
-                        <td>4</td>
-                        <td>13</td>
-                        <td>14</td>
-                        <td>-1</td>
-                    </tr>
-
-                    <tr>
-                        <td class="position">5</td>
-                        <td>Amalia</td>
-                        <td>11</td>
-                        <td>10</td>
-                        <td>3</td>
-                        <td>2</td>
-                        <td>5</td>
-                        <td>11</td>
-                        <td>16</td>
-                        <td>-5</td>
-                    </tr>
-
-                    <tr>
-                        <td class="position">6</td>
-                        <td>Unión</td>
-                        <td>8</td>
-                        <td>10</td>
-                        <td>2</td>
-                        <td>2</td>
-                        <td>6</td>
-                        <td>8</td>
-                        <td>16</td>
-                        <td>-8</td>
-                    </tr>
-
-                </tbody>
-
-            </table>
-
-        </div>
-
-    </section>
+    <div id="tablas"></div>
 
 </main>
 
-
 <footer>
-
-    <p>
-        ⚽ <span>Liga Tucson</span> — Fútbol Tucumano
-    </p>
-
+    <p>⚽ Liga Tucson</p>
+    <p>Primera División A - Clausura 2026</p>
 </footer>
+
+
+<!-- IMPORTANTE: primero cargamos los datos -->
+<script src="datos.js"></script>
+
+<script>
+
+    const contenedor = document.getElementById("tablas");
+
+    document.getElementById("torneo").textContent =
+        datosLiga.torneo + " · Fecha " + datosLiga.fechaActual;
+
+
+    // Crear las seis zonas automáticamente
+    Object.keys(datosLiga.zonas).forEach(zona => {
+
+        const equipos = datosLiga.zonas[zona];
+
+        const bloque = document.createElement("div");
+
+        bloque.className = "zona";
+
+        let html = `
+            <div class="zona-titulo">
+                Zona ${zona}
+            </div>
+
+            <div class="tabla-contenedor">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>Pos.</th>
+                            <th>Equipo</th>
+                            <th>PTS</th>
+                            <th>PJ</th>
+                            <th>PG</th>
+                            <th>PE</th>
+                            <th>PP</th>
+                            <th>GF</th>
+                            <th>GC</th>
+                            <th>DG</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+        `;
+
+
+        equipos.forEach((equipo, index) => {
+
+            let clase = "";
+
+            if (index === 0) {
+                clase = "primero";
+            }
+
+            if (index >= 1 && index <= 3) {
+                clase = "clasificado";
+            }
+
+
+            html += `
+
+                <tr class="${clase}">
+
+                    <td class="puesto">
+                        ${index + 1}
+                    </td>
+
+                    <td>
+                        ${equipo.equipo}
+                    </td>
+
+                    <td class="puntos">
+                        ${equipo.pts}
+                    </td>
+
+                    <td>${equipo.pj}</td>
+
+                    <td>${equipo.pg}</td>
+
+                    <td>${equipo.pe}</td>
+
+                    <td>${equipo.pp}</td>
+
+                    <td>${equipo.gf}</td>
+
+                    <td>${equipo.gc}</td>
+
+                    <td>
+                        ${equipo.dg > 0 ? "+" : ""}${equipo.dg}
+                    </td>
+
+                </tr>
+
+            `;
+
+        });
+
+
+        html += `
+
+                    </tbody>
+
+                </table>
+
+            </div>
+        `;
+
+
+        bloque.innerHTML = html;
+
+        contenedor.appendChild(bloque);
+
+    });
+
+</script>
 
 </body>
 </html>
