@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Equipos | Liga Tucson</title>
+    <title>Equipo | Liga Tucson</title>
 
     <style>
         * {
@@ -54,122 +54,136 @@
         }
 
         main {
-            max-width: 1100px;
+            max-width: 1000px;
             margin: auto;
             padding: 25px 15px;
         }
 
-        .titulo {
+        .cabecera-equipo {
             background: white;
-            padding: 20px;
-            border-radius: 15px;
-            margin-bottom: 25px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-        }
-
-        .titulo h2 {
-            margin: 0 0 8px;
-            color: #062b5c;
-        }
-
-        .titulo p {
-            margin: 0;
-            color: #555;
-        }
-
-        .zona {
-            margin-bottom: 35px;
-        }
-
-        .zona-titulo {
-            background: #087fc1;
-            color: white;
-            padding: 14px 18px;
-            border-radius: 12px 12px 0 0;
-            font-size: 21px;
-            font-weight: bold;
-        }
-
-        .equipos {
-            background: white;
-            padding: 20px;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 18px;
-            border-radius: 0 0 12px 12px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-        }
-
-        .equipo {
-            border: 1px solid #dbe7f0;
-            border-radius: 15px;
-            padding: 18px;
+            border-radius: 18px;
+            padding: 30px 20px;
             text-align: center;
-            transition: 0.2s;
-            background: #fff;
-        }
-
-        .equipo:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.12);
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+            margin-bottom: 25px;
         }
 
         .escudo {
-            width: 75px;
-            height: 75px;
-            margin: 0 auto 12px;
+            width: 100px;
+            height: 100px;
+            margin: auto;
             border-radius: 50%;
             background: #062b5c;
             color: white;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 35px;
+            font-size: 48px;
         }
 
-        .equipo h3 {
-            margin: 5px 0;
+        .cabecera-equipo h2 {
+            margin: 15px 0 5px;
             color: #062b5c;
-            font-size: 18px;
+            font-size: 30px;
         }
 
-        .zona-equipo {
-            color: #777;
-            font-size: 13px;
-            margin-bottom: 12px;
+        .zona {
+            color: #087fc1;
+            font-weight: bold;
         }
 
-        .datos {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin: 12px 0;
+        .estadisticas {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            margin-top: 25px;
         }
 
-        .dato strong {
+        .estadistica {
+            background: #f2f7fb;
+            border-radius: 12px;
+            padding: 15px 8px;
+        }
+
+        .estadistica strong {
             display: block;
             color: #062b5c;
-            font-size: 18px;
+            font-size: 22px;
         }
 
-        .dato span {
-            font-size: 11px;
+        .estadistica span {
+            font-size: 12px;
+            color: #666;
+        }
+
+        .seccion {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
+
+        .seccion h3 {
+            margin-top: 0;
+            color: #062b5c;
+            border-bottom: 2px solid #087fc1;
+            padding-bottom: 10px;
+        }
+
+        .partido {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5px;
+            border-bottom: 1px solid #ddd;
+            gap: 10px;
+        }
+
+        .partido:last-child {
+            border-bottom: none;
+        }
+
+        .rivales {
+            flex: 1;
+        }
+
+        .local {
+            font-weight: bold;
+        }
+
+        .resultado {
+            font-size: 20px;
+            font-weight: bold;
+            color: #062b5c;
+            white-space: nowrap;
+        }
+
+        .estado {
+            font-size: 12px;
             color: #777;
         }
 
-        .boton {
+        .volver {
             display: inline-block;
             background: #087fc1;
             color: white;
             text-decoration: none;
-            padding: 9px 15px;
+            padding: 10px 16px;
             border-radius: 8px;
             font-weight: bold;
-            font-size: 14px;
+            margin-bottom: 20px;
         }
 
-        .boton:hover {
+        .volver:hover {
             background: #062b5c;
+        }
+
+        .mensaje {
+            text-align: center;
+            padding: 30px;
+            background: white;
+            border-radius: 15px;
         }
 
         footer {
@@ -180,15 +194,7 @@
             margin-top: 30px;
         }
 
-        @media (max-width: 800px) {
-
-            .equipos {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-        }
-
-        @media (max-width: 550px) {
+        @media (max-width: 700px) {
 
             header h1 {
                 font-size: 25px;
@@ -199,13 +205,17 @@
                 font-size: 14px;
             }
 
-            main {
-                padding: 15px 10px;
+            .estadisticas {
+                grid-template-columns: repeat(2, 1fr);
             }
 
-            .equipos {
-                grid-template-columns: 1fr;
-                padding: 12px;
+            .cabecera-equipo h2 {
+                font-size: 25px;
+            }
+
+            .partido {
+                flex-direction: column;
+                text-align: center;
             }
 
         }
@@ -229,12 +239,11 @@
 
 <main>
 
-    <div class="titulo">
-        <h2>⚽ Equipos</h2>
-        <p id="torneo"></p>
-    </div>
+    <a class="volver" href="equipos.html">
+        ← Volver a equipos
+    </a>
 
-    <div id="lista-zonas"></div>
+    <div id="contenido"></div>
 
 </main>
 
@@ -244,110 +253,190 @@
 </footer>
 
 
-<!-- Cargamos nuestra base de datos -->
 <script src="datos.js"></script>
 
 <script>
 
-    document.getElementById("torneo").textContent =
-        datosLiga.torneo + " · Fecha " + datosLiga.fechaActual;
+    const contenido = document.getElementById("contenido");
+
+    // Obtener los parámetros de la URL
+    const parametros = new URLSearchParams(window.location.search);
+
+    const nombreEquipo = parametros.get("equipo");
+
+    // Buscar el equipo
+    const equipo = buscarEquipo(nombreEquipo);
 
 
-    const contenedor = document.getElementById("lista-zonas");
+    if (!equipo) {
 
-
-    // Recorremos todas las zonas
-    Object.keys(datosLiga.zonas).forEach(zona => {
-
-        const equipos = datosLiga.zonas[zona];
-
-
-        // Creamos la sección de la zona
-        const zonaDiv = document.createElement("section");
-
-        zonaDiv.className = "zona";
-
-
-        let html = `
-
-            <div class="zona-titulo">
-                Zona ${zona}
+        contenido.innerHTML = `
+            <div class="mensaje">
+                <h2>Equipo no encontrado</h2>
+                <p>No pudimos encontrar este equipo en Liga Tucson.</p>
             </div>
-
-            <div class="equipos">
-
         `;
 
+    } else {
 
-        // Creamos cada tarjeta
-        equipos.forEach(equipo => {
+        // Buscar todos los partidos del equipo
+        const partidosEquipo = datosLiga.partidos.filter(partido =>
 
-            const nombreURL = encodeURIComponent(equipo.equipo);
+            partido.local.toLowerCase() === equipo.nombre.toLowerCase() ||
 
+            partido.visitante.toLowerCase() === equipo.nombre.toLowerCase()
 
-            html += `
-
-                <div class="equipo">
-
-                    <div class="escudo">
-                        ⚽
-                    </div>
-
-                    <h3>
-                        ${equipo.equipo}
-                    </h3>
-
-                    <div class="zona-equipo">
-                        Zona ${zona}
-                    </div>
+        );
 
 
-                    <div class="datos">
+        let partidosHTML = "";
 
-                        <div class="dato">
-                            <strong>${equipo.pts}</strong>
-                            <span>PTS</span>
+
+        if (partidosEquipo.length === 0) {
+
+            partidosHTML = `
+                <p>No hay partidos registrados para este equipo todavía.</p>
+            `;
+
+        } else {
+
+            partidosEquipo.forEach(partido => {
+
+                let rival;
+
+                if (
+                    partido.local.toLowerCase() ===
+                    equipo.nombre.toLowerCase()
+                ) {
+
+                    rival = "vs " + partido.visitante;
+
+                } else {
+
+                    rival = "@ " + partido.local;
+
+                }
+
+
+                let resultado = "VS";
+
+                if (partido.estado === "finalizado") {
+
+                    resultado =
+                        partido.golesLocal +
+                        " - " +
+                        partido.golesVisitante;
+
+                }
+
+
+                partidosHTML += `
+
+                    <div class="partido">
+
+                        <div class="rivales">
+
+                            <div class="local">
+                                ${rival}
+                            </div>
+
+                            <div class="estado">
+                                Fecha ${partido.fecha}
+                                · Zona ${partido.zona}
+                            </div>
+
                         </div>
 
-                        <div class="dato">
-                            <strong>${equipo.pj}</strong>
-                            <span>PJ</span>
-                        </div>
-
-                        <div class="dato">
-                            <strong>${equipo.dg > 0 ? "+" : ""}${equipo.dg}</strong>
-                            <span>DG</span>
+                        <div class="resultado">
+                            ${resultado}
                         </div>
 
                     </div>
 
+                `;
 
-                    <a
-                        class="boton"
-                        href="equipo.html?equipo=${nombreURL}&zona=${zona}"
-                    >
-                        Ver equipo
-                    </a>
+            });
+
+        }
+
+
+        contenido.innerHTML = `
+
+            <section class="cabecera-equipo">
+
+                <div class="escudo">
+                    ⚽
+                </div>
+
+                <h2>
+                    ${equipo.nombre}
+                </h2>
+
+                <div class="zona">
+                    Zona ${equipo.zona}
+                </div>
+
+
+                <div class="estadisticas">
+
+                    <div class="estadistica">
+                        <strong>${equipo.pts}</strong>
+                        <span>PUNTOS</span>
+                    </div>
+
+                    <div class="estadistica">
+                        <strong>${equipo.pj}</strong>
+                        <span>PARTIDOS</span>
+                    </div>
+
+                    <div class="estadistica">
+                        <strong>${equipo.pg}</strong>
+                        <span>GANADOS</span>
+                    </div>
+
+                    <div class="estadistica">
+                        <strong>${equipo.pe}</strong>
+                        <span>EMPATADOS</span>
+                    </div>
+
+                    <div class="estadistica">
+                        <strong>${equipo.pp}</strong>
+                        <span>PERDIDOS</span>
+                    </div>
+
+                    <div class="estadistica">
+                        <strong>${equipo.gf}</strong>
+                        <span>GF</span>
+                    </div>
+
+                    <div class="estadistica">
+                        <strong>${equipo.gc}</strong>
+                        <span>GC</span>
+                    </div>
+
+                    <div class="estadistica">
+                        <strong>
+                            ${equipo.dg > 0 ? "+" : ""}${equipo.dg}
+                        </strong>
+                        <span>DIFERENCIA</span>
+                    </div>
 
                 </div>
 
-            `;
-
-        });
+            </section>
 
 
-        html += `
+            <section class="seccion">
 
-            </div>
+                <h3>📅 Partidos</h3>
+
+                ${partidosHTML}
+
+            </section>
 
         `;
 
-
-        zonaDiv.innerHTML = html;
-
-        contenedor.appendChild(zonaDiv);
-
-    });
+    }
 
 </script>
 
