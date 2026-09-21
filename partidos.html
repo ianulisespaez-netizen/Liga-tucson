@@ -51,7 +51,7 @@
             background: white;
             border-radius: 20px;
             padding: 25px;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             box-shadow: 0 6px 20px rgba(0,0,0,0.07);
         }
 
@@ -64,6 +64,34 @@
             margin: 0;
             color: #687891;
             font-size: 18px;
+        }
+
+        .filtros {
+            background: white;
+            border-radius: 20px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.07);
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .filtro label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .filtro select {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #d4dce7;
+            border-radius: 10px;
+            background: white;
+            color: #172f55;
+            font-size: 16px;
         }
 
         .zona {
@@ -95,7 +123,7 @@
         .fecha {
             color: #687891;
             font-size: 14px;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             font-weight: bold;
         }
 
@@ -103,7 +131,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            gap: 15px;
+            gap: 10px;
         }
 
         .equipo {
@@ -120,8 +148,17 @@
             text-align: left;
         }
 
+        .equipo a {
+            color: #173d6b;
+            text-decoration: none;
+        }
+
+        .equipo a:hover {
+            color: #4ca0d8;
+        }
+
         .resultado {
-            min-width: 90px;
+            min-width: 80px;
             text-align: center;
             font-size: 22px;
             font-weight: bold;
@@ -145,11 +182,28 @@
 
         .sin-partidos {
             text-align: center;
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
             color: #687891;
-            padding: 15px;
+        }
+
+        .boton-limpiar {
+            margin-top: 15px;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 10px;
+            background: #173d6b;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
         }
 
         @media (max-width: 600px) {
+
+            .filtros {
+                grid-template-columns: 1fr;
+            }
 
             .zona {
                 padding: 18px;
@@ -159,16 +213,12 @@
                 font-size: 24px;
             }
 
-            .equipos-partido {
-                gap: 8px;
-            }
-
             .equipo {
-                font-size: 15px;
+                font-size: 14px;
             }
 
             .resultado {
-                min-width: 65px;
+                min-width: 60px;
                 font-size: 19px;
             }
 
@@ -181,6 +231,7 @@
 
 <body>
 
+
 <header>
 
     <h1>⚽ LIGA TUCSON</h1>
@@ -189,6 +240,7 @@
 
 
 <div class="contenedor">
+
 
     <a href="index.html" class="volver">
         ← Volver al inicio
@@ -206,6 +258,74 @@
     </div>
 
 
+    <!-- ============================== -->
+    <!-- FILTROS -->
+    <!-- ============================== -->
+
+    <div class="filtros">
+
+
+        <div class="filtro">
+
+            <label for="filtroZona">
+                Zona
+            </label>
+
+            <select id="filtroZona">
+
+                <option value="todas">
+                    Todas las zonas
+                </option>
+
+                <option value="A">
+                    Zona A
+                </option>
+
+                <option value="B">
+                    Zona B
+                </option>
+
+                <option value="C">
+                    Zona C
+                </option>
+
+                <option value="D">
+                    Zona D
+                </option>
+
+                <option value="E">
+                    Zona E
+                </option>
+
+                <option value="F">
+                    Zona F
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div class="filtro">
+
+            <label for="filtroFecha">
+                Fecha
+            </label>
+
+            <select id="filtroFecha">
+
+                <option value="todas">
+                    Todas las fechas
+                </option>
+
+            </select>
+
+        </div>
+
+
+    </div>
+
+
     <div id="partidos">
 
         <div class="sin-partidos">
@@ -214,165 +334,326 @@
 
     </div>
 
+
 </div>
 
-
-<!-- DATOS DE LA LIGA -->
 
 <script src="datos.js"></script>
 
 
 <script>
 
-    const contenedor = document.getElementById("partidos");
+
+    // ==========================================
+    // ELEMENTOS
+    // ==========================================
+
+    const contenedor =
+        document.getElementById("partidos");
+
+    const filtroZona =
+        document.getElementById("filtroZona");
+
+    const filtroFecha =
+        document.getElementById("filtroFecha");
 
 
     // ==========================================
-    // ZONAS
+    // CARGAR FECHAS DISPONIBLES
     // ==========================================
 
-    const zonas = ["A", "B", "C", "D", "E", "F"];
+    function cargarFechas() {
 
+        const fechas = [];
 
-    let contenido = "";
+        datosLiga.partidos.forEach(partido => {
 
+            const fecha =
+                partido.fecha || "Fecha 5";
 
-    // ==========================================
-    // RECORRER TODAS LAS ZONAS
-    // ==========================================
+            if (!fechas.includes(fecha)) {
 
-    zonas.forEach(zona => {
+                fechas.push(fecha);
 
-
-        const partidosZona = datosLiga.partidos.filter(partido => {
-
-            return partido.zona === zona;
+            }
 
         });
 
 
-        // Si no hay partidos cargados para esa zona
-        if (partidosZona.length === 0) {
+        fechas.sort((a, b) => {
+
+            const numeroA =
+                parseInt(a.replace(/\D/g, "")) || 0;
+
+            const numeroB =
+                parseInt(b.replace(/\D/g, "")) || 0;
+
+            return numeroA - numeroB;
+
+        });
+
+
+        fechas.forEach(fecha => {
+
+            const opcion =
+                document.createElement("option");
+
+            opcion.value = fecha;
+
+            opcion.textContent = fecha;
+
+            filtroFecha.appendChild(opcion);
+
+        });
+
+    }
+
+
+    // ==========================================
+    // CREAR ENLACE DEL EQUIPO
+    // ==========================================
+
+    function enlaceEquipo(nombre, zona) {
+
+        return `
+
+            <a href="equipo.html?v=3&equipo=${encodeURIComponent(nombre)}&zona=${encodeURIComponent(zona)}">
+
+                ${nombre}
+
+            </a>
+
+        `;
+
+    }
+
+
+    // ==========================================
+    // MOSTRAR PARTIDOS
+    // ==========================================
+
+    function mostrarPartidos() {
+
+
+        const zonaSeleccionada =
+            filtroZona.value;
+
+        const fechaSeleccionada =
+            filtroFecha.value;
+
+
+        let partidosFiltrados =
+            datosLiga.partidos.filter(partido => {
+
+
+                const coincideZona =
+
+                    zonaSeleccionada === "todas"
+
+                    ||
+
+                    partido.zona === zonaSeleccionada;
+
+
+                const fecha =
+                    partido.fecha || "Fecha 5";
+
+
+                const coincideFecha =
+
+                    fechaSeleccionada === "todas"
+
+                    ||
+
+                    fecha === fechaSeleccionada;
+
+
+                return coincideZona &&
+                       coincideFecha;
+
+            });
+
+
+        if (partidosFiltrados.length === 0) {
+
+            contenedor.innerHTML = `
+
+                <div class="sin-partidos">
+
+                    No hay partidos cargados
+                    para los filtros seleccionados.
+
+                </div>
+
+            `;
 
             return;
 
         }
 
 
-        contenido += `
-
-            <div class="zona">
-
-                <h2>
-                    Zona ${zona}
-                </h2>
-
-        `;
-
-
         // ======================================
-        // MOSTRAR PARTIDOS
+        // AGRUPAR POR ZONA
         // ======================================
 
-        partidosZona.forEach(partido => {
+        const zonas = {};
 
 
-            const tieneResultado =
-                partido.resultado &&
-                partido.resultado !== "-";
+        partidosFiltrados.forEach(partido => {
+
+            const zona =
+                partido.zona || "Sin zona";
 
 
-            contenido += `
+            if (!zonas[zona]) {
 
-                <div class="partido">
+                zonas[zona] = [];
 
-
-                    <div class="fecha">
-
-                        ${partido.fecha || "Fecha 5"}
-
-                    </div>
+            }
 
 
-                    <div class="equipos-partido">
-
-
-                        <div class="equipo local">
-
-                            ${partido.local}
-
-                        </div>
-
-
-                        <div class="resultado">
-
-                            ${
-                                tieneResultado
-                                ? partido.resultado
-                                : "VS"
-                            }
-
-                        </div>
-
-
-                        <div class="equipo visitante">
-
-                            ${partido.visitante}
-
-                        </div>
-
-
-                    </div>
-
-
-                    <div class="estado ${tieneResultado ? "finalizado" : "proximo"}">
-
-                        ${
-                            tieneResultado
-                            ? "✓ FINALIZADO"
-                            : "◷ PRÓXIMO PARTIDO"
-                        }
-
-                    </div>
-
-
-                </div>
-
-            `;
+            zonas[zona].push(partido);
 
         });
 
 
-        contenido += `
-
-            </div>
-
-        `;
-
-    });
+        let contenido = "";
 
 
-    // ==========================================
-    // MOSTRAR TODO
-    // ==========================================
+        Object.keys(zonas)
+            .sort()
+            .forEach(zona => {
 
-    if (contenido === "") {
 
-        contenedor.innerHTML = `
+                contenido += `
 
-            <div class="sin-partidos">
+                    <div class="zona">
 
-                Todavía no hay partidos cargados.
+                        <h2>
+                            Zona ${zona}
+                        </h2>
 
-            </div>
+                `;
 
-        `;
 
-    } else {
+                zonas[zona].forEach(partido => {
+
+
+                    const tieneResultado =
+
+                        partido.resultado &&
+                        partido.resultado !== "-";
+
+
+                    contenido += `
+
+                        <div class="partido">
+
+
+                            <div class="fecha">
+
+                                ${partido.fecha || "Fecha 5"}
+
+                            </div>
+
+
+                            <div class="equipos-partido">
+
+
+                                <div class="equipo local">
+
+                                    ${enlaceEquipo(
+                                        partido.local,
+                                        zona
+                                    )}
+
+                                </div>
+
+
+                                <div class="resultado">
+
+                                    ${
+                                        tieneResultado
+                                        ? partido.resultado
+                                        : "VS"
+                                    }
+
+                                </div>
+
+
+                                <div class="equipo visitante">
+
+                                    ${enlaceEquipo(
+                                        partido.visitante,
+                                        zona
+                                    )}
+
+                                </div>
+
+
+                            </div>
+
+
+                            <div class="estado ${
+                                tieneResultado
+                                ? "finalizado"
+                                : "proximo"
+                            }">
+
+                                ${
+                                    tieneResultado
+                                    ? "✓ FINALIZADO"
+                                    : "◷ PRÓXIMO PARTIDO"
+                                }
+
+                            </div>
+
+
+                        </div>
+
+                    `;
+
+                });
+
+
+                contenido += `
+
+                    </div>
+
+                `;
+
+            });
+
 
         contenedor.innerHTML = contenido;
 
     }
+
+
+    // ==========================================
+    // CAMBIAR FILTRO
+    // ==========================================
+
+    filtroZona.addEventListener(
+        "change",
+        mostrarPartidos
+    );
+
+
+    filtroFecha.addEventListener(
+        "change",
+        mostrarPartidos
+    );
+
+
+    // ==========================================
+    // INICIAR
+    // ==========================================
+
+    cargarFechas();
+
+    mostrarPartidos();
+
 
 </script>
 
