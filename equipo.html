@@ -2,7 +2,6 @@
 <html lang="es">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -10,186 +9,53 @@
 
     <style>
 
-        * {
-            box-sizing: border-box;
-        }
-
         body {
             margin: 0;
             font-family: Arial, sans-serif;
             background: #f1f5f9;
-            color: #172f55;
+            color: #173d6b;
         }
 
         header {
             background: linear-gradient(135deg, #173d6b, #4d86bd);
             color: white;
             text-align: center;
-            padding: 25px 15px;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 30px;
+            padding: 25px;
         }
 
         .contenedor {
-            max-width: 900px;
-            margin: auto;
-            padding: 30px 18px;
-        }
-
-        .volver {
-            display: inline-block;
-            color: #173d6b;
-            text-decoration: none;
-            font-size: 20px;
-            font-weight: bold;
-            margin-bottom: 30px;
+            padding: 30px 20px;
+            text-align: center;
         }
 
         .tarjeta {
             background: white;
-            border-radius: 22px;
-            padding: 30px;
-            margin-bottom: 25px;
-            box-shadow: 0 7px 25px rgba(0,0,0,0.08);
+            border-radius: 20px;
+            padding: 40px 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
         }
 
-        .cabecera-equipo {
-            text-align: center;
+        h2 {
+            font-size: 35px;
         }
 
         .pelota {
-            font-size: 75px;
+            font-size: 70px;
         }
 
-        .cabecera-equipo h2 {
-            font-size: 38px;
-            margin: 10px 0;
-        }
-
-        .zona {
-            font-size: 21px;
-            color: #687891;
+        .volver {
+            display: block;
+            text-align: left;
             margin-bottom: 30px;
-        }
-
-        .estadisticas {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-        }
-
-        .estadistica {
-            background: #f1f5f9;
-            border-radius: 15px;
-            text-align: center;
-            padding: 22px 10px;
-        }
-
-        .numero {
-            font-size: 38px;
+            font-size: 20px;
             font-weight: bold;
             color: #173d6b;
-        }
-
-        .texto {
-            color: #687891;
-            font-size: 17px;
-            margin-top: 5px;
-        }
-
-        .titulo-seccion {
-            border-left: 7px solid #4ca0d8;
-            padding-left: 14px;
-            font-size: 28px;
-            margin-top: 0;
-            margin-bottom: 20px;
-        }
-
-        .partido {
-            display: grid;
-            grid-template-columns: 1fr auto 1fr;
-            align-items: center;
-            gap: 10px;
-            padding: 18px 0;
-            border-bottom: 2px solid #e1e5e9;
-            font-size: 17px;
-        }
-
-        .partido:last-child {
-            border-bottom: none;
-        }
-
-        .local {
-            text-align: left;
-        }
-
-        .visitante {
-            text-align: right;
-        }
-
-        .resultado {
-            font-size: 22px;
-            font-weight: bold;
-            white-space: nowrap;
-        }
-
-        .proximo {
-            color: #4ca0d8;
-        }
-
-        .mensaje {
-            text-align: center;
-            font-size: 20px;
-            color: #687891;
-            padding: 25px 5px;
-        }
-
-        .error {
-            color: #b42318;
-        }
-
-        @media (max-width: 600px) {
-
-            .contenedor {
-                padding: 25px 16px;
-            }
-
-            .tarjeta {
-                padding: 22px 18px;
-            }
-
-            .cabecera-equipo h2 {
-                font-size: 31px;
-            }
-
-            .estadisticas {
-                gap: 10px;
-            }
-
-            .numero {
-                font-size: 31px;
-            }
-
-            .texto {
-                font-size: 15px;
-            }
-
-            .partido {
-                font-size: 14px;
-            }
-
-            .resultado {
-                font-size: 19px;
-            }
+            text-decoration: none;
         }
 
     </style>
 
 </head>
-
 
 <body>
 
@@ -197,471 +63,40 @@
     <h1>⚽ LIGA TUCSON</h1>
 </header>
 
-
 <div class="contenedor">
 
     <a href="equipos.html" class="volver">
         ← Volver a equipos
     </a>
 
-    <div id="contenido">
+    <div class="tarjeta">
 
-        <div class="mensaje">
-            Cargando equipo...
+        <div class="pelota">
+            ⚽
         </div>
+
+        <h2 id="nombreEquipo">
+            Cargando...
+        </h2>
+
+        <p>
+            Esta página funciona correctamente.
+        </p>
 
     </div>
 
 </div>
 
-
-<!-- IMPORTANTE: primero cargamos los datos -->
-<script src="./datos.js"></script>
-
-
 <script>
-
-try {
 
     const parametros = new URLSearchParams(window.location.search);
 
-    const nombreBuscado = parametros.get("equipo");
-    const zonaBuscada = parametros.get("zona");
+    const equipo = parametros.get("equipo");
 
-    const contenido = document.getElementById("contenido");
-
-
-    // Verificar que datos.js se haya cargado
-
-    if (typeof datosLiga === "undefined") {
-
-        contenido.innerHTML = `
-            <div class="tarjeta mensaje error">
-
-                No se pudieron cargar los datos de la Liga.
-
-                <br><br>
-
-                Revisá que el archivo
-                <strong>datos.js</strong>
-                esté en la misma carpeta.
-
-            </div>
-        `;
-
-    }
-
-    else if (!nombreBuscado) {
-
-        contenido.innerHTML = `
-            <div class="tarjeta mensaje error">
-
-                No se recibió ningún equipo.
-
-                <br><br>
-
-                Volvé a <a href="equipos.html">Equipos</a>
-                y seleccioná un club.
-
-            </div>
-        `;
-
-    }
-
-    else {
-
-        /*
-        Buscamos directamente dentro de las zonas.
-        De esta manera no dependemos de otra función.
-        */
-
-        let equipo = null;
-        let zonaEncontrada = zonaBuscada;
-
-
-        for (const zona in datosLiga.zonas) {
-
-            const listaEquipos = datosLiga.zonas[zona];
-
-            const encontrado = listaEquipos.find(e => {
-
-                return e.equipo &&
-                       e.equipo.toLowerCase() === nombreBuscado.toLowerCase();
-
-            });
-
-
-            if (encontrado) {
-
-                equipo = encontrado;
-
-                if (!zonaEncontrada) {
-                    zonaEncontrada = zona;
-                }
-
-                break;
-            }
-
-        }
-
-
-        // Si no encontramos el equipo
-
-        if (!equipo) {
-
-            contenido.innerHTML = `
-                <div class="tarjeta mensaje error">
-
-                    <h2>Equipo no encontrado</h2>
-
-                    <p>
-                        Equipo buscado:
-                        <strong>${nombreBuscado}</strong>
-                    </p>
-
-                    <a href="equipos.html">
-                        Volver a equipos
-                    </a>
-
-                </div>
-            `;
-
-        }
-
-        else {
-
-            // Estadísticas
-
-            const PJ = Number(equipo.PJ) || 0;
-            const PG = Number(equipo.PG) || 0;
-            const PE = Number(equipo.PE) || 0;
-            const PP = Number(equipo.PP) || 0;
-            const GF = Number(equipo.GF) || 0;
-            const GC = Number(equipo.GC) || 0;
-            const DG = Number(equipo.DG) || 0;
-
-            const puntos = (PG * 3) + PE;
-
-
-            // Buscar partidos del equipo
-
-            const todosLosPartidos = Array.isArray(datosLiga.partidos)
-                ? datosLiga.partidos
-                : [];
-
-
-            const partidosEquipo = todosLosPartidos.filter(partido => {
-
-                const local = partido.local || "";
-                const visitante = partido.visitante || "";
-
-                return (
-                    local.toLowerCase() === equipo.equipo.toLowerCase() ||
-                    visitante.toLowerCase() === equipo.equipo.toLowerCase()
-                );
-
-            });
-
-
-            // Partidos terminados
-
-            const resultados = partidosEquipo.filter(partido => {
-
-                return (
-                    partido.golesLocal !== undefined &&
-                    partido.golesVisitante !== undefined
-                );
-
-            });
-
-
-            // Partidos próximos
-
-            const proximos = partidosEquipo.filter(partido => {
-
-                return (
-                    partido.golesLocal === undefined ||
-                    partido.golesVisitante === undefined
-                );
-
-            });
-
-
-            contenido.innerHTML = `
-
-                <!-- CABECERA DEL EQUIPO -->
-
-                <div class="tarjeta">
-
-                    <div class="cabecera-equipo">
-
-                        <div class="pelota">
-                            ⚽
-                        </div>
-
-                        <h2>
-                            ${equipo.equipo}
-                        </h2>
-
-                        <div class="zona">
-                            Zona ${zonaEncontrada}
-                        </div>
-
-                    </div>
-
-
-                    <div class="estadisticas">
-
-
-                        <div class="estadistica">
-
-                            <div class="numero">
-                                ${PJ}
-                            </div>
-
-                            <div class="texto">
-                                Partidos
-                            </div>
-
-                        </div>
-
-
-                        <div class="estadistica">
-
-                            <div class="numero">
-                                ${PG}
-                            </div>
-
-                            <div class="texto">
-                                Ganados
-                            </div>
-
-                        </div>
-
-
-                        <div class="estadistica">
-
-                            <div class="numero">
-                                ${PE}
-                            </div>
-
-                            <div class="texto">
-                                Empatados
-                            </div>
-
-                        </div>
-
-
-                        <div class="estadistica">
-
-                            <div class="numero">
-                                ${puntos}
-                            </div>
-
-                            <div class="texto">
-                                Puntos
-                            </div>
-
-                        </div>
-
-
-                    </div>
-
-                </div>
-
-
-
-                <!-- INFORMACIÓN -->
-
-                <div class="tarjeta">
-
-                    <h2 class="titulo-seccion">
-                        Estadísticas
-                    </h2>
-
-
-                    <div class="estadisticas">
-
-
-                        <div class="estadistica">
-
-                            <div class="numero">
-                                ${PP}
-                            </div>
-
-                            <div class="texto">
-                                Perdidos
-                            </div>
-
-                        </div>
-
-
-                        <div class="estadistica">
-
-                            <div class="numero">
-                                ${GF}
-                            </div>
-
-                            <div class="texto">
-                                Goles a favor
-                            </div>
-
-                        </div>
-
-
-                        <div class="estadistica">
-
-                            <div class="numero">
-                                ${GC}
-                            </div>
-
-                            <div class="texto">
-                                Goles en contra
-                            </div>
-
-                        </div>
-
-
-                        <div class="estadistica">
-
-                            <div class="numero">
-                                ${DG}
-                            </div>
-
-                            <div class="texto">
-                                Diferencia
-                            </div>
-
-                        </div>
-
-
-                    </div>
-
-                </div>
-
-
-
-                <!-- ÚLTIMOS PARTIDOS -->
-
-                <div class="tarjeta">
-
-                    <h2 class="titulo-seccion">
-                        Últimos partidos
-                    </h2>
-
-                    ${
-                        resultados.length === 0
-
-                        ?
-
-                        `<div class="mensaje">
-                            No hay resultados cargados todavía.
-                        </div>`
-
-                        :
-
-                        resultados.map(partido => `
-
-                            <div class="partido">
-
-                                <div class="local">
-                                    ${partido.local}
-                                </div>
-
-                                <div class="resultado">
-                                    ${partido.golesLocal}
-                                    -
-                                    ${partido.golesVisitante}
-                                </div>
-
-                                <div class="visitante">
-                                    ${partido.visitante}
-                                </div>
-
-                            </div>
-
-                        `).join("")
-                    }
-
-                </div>
-
-
-
-                <!-- PRÓXIMOS PARTIDOS -->
-
-                <div class="tarjeta">
-
-                    <h2 class="titulo-seccion">
-                        Próximos partidos
-                    </h2>
-
-                    ${
-                        proximos.length === 0
-
-                        ?
-
-                        `<div class="mensaje">
-                            No hay próximos partidos cargados todavía.
-                        </div>`
-
-                        :
-
-                        proximos.map(partido => `
-
-                            <div class="partido">
-
-                                <div class="local">
-                                    ${partido.local}
-                                </div>
-
-                                <div class="resultado proximo">
-                                    VS
-                                </div>
-
-                                <div class="visitante">
-                                    ${partido.visitante}
-                                </div>
-
-                            </div>
-
-                        `).join("")
-                    }
-
-                </div>
-
-            `;
-
-        }
-
-    }
-
-} catch (error) {
-
-    document.getElementById("contenido").innerHTML = `
-
-        <div class="tarjeta mensaje error">
-
-            <h2>Ocurrió un error</h2>
-
-            <p>
-                No se pudo cargar la información del equipo.
-            </p>
-
-            <p>
-                Volvé a <a href="equipos.html">Equipos</a>
-                e intentá nuevamente.
-            </p>
-
-        </div>
-
-    `;
-
-    console.error(error);
-
-}
+    document.getElementById("nombreEquipo").textContent =
+        equipo || "Equipo no recibido";
 
 </script>
-
 
 </body>
 
