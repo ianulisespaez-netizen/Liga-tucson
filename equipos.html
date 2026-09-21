@@ -8,6 +8,7 @@
     <title>Equipos - Liga Tucson</title>
 
     <style>
+
         * {
             box-sizing: border-box;
         }
@@ -135,89 +136,158 @@
             }
 
         }
+
     </style>
+
 </head>
 
 <body>
 
 <header>
+
     <h1>⚽ LIGA TUCSON</h1>
+
 </header>
+
 
 <div class="contenedor">
 
-    <a href="index.html" class="volver">← Volver al inicio</a>
+
+    <a href="index.html" class="volver">
+        ← Volver al inicio
+    </a>
+
 
     <div class="titulo">
-        <h2>Equipos</h2>
-        <p>Primera División A - Clausura 2026</p>
+
+        <h2>
+            Equipos
+        </h2>
+
+        <p>
+            Primera División A - Clausura 2026
+        </p>
+
     </div>
 
+
     <div id="lista-equipos">
+
         Cargando equipos...
+
     </div>
+
 
 </div>
 
-<!-- Cargar los datos de la Liga -->
-<script src="datos.js"></script>
+
+<!-- DATOS DE LA LIGA -->
+
+<script src="./datos.js"></script>
+
 
 <script>
 
-    const contenedor = document.getElementById("lista-equipos");
+    const contenedor =
+        document.getElementById("lista-equipos");
 
-    // Zonas que queremos mostrar
-    const zonas = ["A", "B", "C", "D", "E", "F"];
+
+    const zonas = [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+    ];
+
 
     let contenido = "";
 
+
     zonas.forEach(zona => {
 
-        const equipos = datosLiga.zonas[zona];
+
+        const equipos =
+            datosLiga.zonas[zona];
+
 
         if (!equipos) {
             return;
         }
 
+
         contenido += `
+
             <div class="zona">
 
-                <h2>Zona ${zona}</h2>
+                <h2>
+                    Zona ${zona}
+                </h2>
 
                 <div class="equipos">
+
         `;
+
 
         equipos.forEach(equipo => {
 
+
+            /*
+             * El parámetro "v=2" obliga al navegador
+             * a cargar una dirección nueva.
+             */
+
+            const enlace =
+                "equipo.html?v=2&equipo=" +
+                encodeURIComponent(equipo.equipo) +
+                "&zona=" +
+                encodeURIComponent(zona);
+
+
             contenido += `
+
                 <div class="equipo">
 
                     <div class="nombre-equipo">
+
                         ${equipo.equipo}
+
                     </div>
+
 
                     <a
                         class="boton"
-                        href="equipo.html?equipo=${encodeURIComponent(equipo.equipo)}&zona=${zona}"
+                        href="${enlace}"
                     >
+
                         Ver equipo
+
                     </a>
 
                 </div>
+
             `;
 
         });
 
+
         contenido += `
+
                 </div>
+
             </div>
+
         `;
 
     });
 
-    contenedor.innerHTML = contenido;
+
+    contenedor.innerHTML =
+        contenido;
 
 </script>
+
 
 </body>
 
