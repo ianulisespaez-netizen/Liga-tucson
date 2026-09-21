@@ -8,6 +8,7 @@
     <title>Equipo - Liga Tucson</title>
 
     <style>
+
         * {
             box-sizing: border-box;
         }
@@ -52,7 +53,7 @@
             padding: 30px 20px;
             margin-bottom: 20px;
             text-align: center;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.07);
         }
 
         .cabecera-equipo h2 {
@@ -78,7 +79,7 @@
             border-radius: 18px;
             padding: 20px 10px;
             text-align: center;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.06);
         }
 
         .numero {
@@ -99,7 +100,7 @@
             border-radius: 20px;
             padding: 25px;
             margin-bottom: 20px;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.07);
         }
 
         .tarjeta h3 {
@@ -130,10 +131,7 @@
         .fecha {
             color: #687891;
             font-size: 14px;
-        }
-
-        .local {
-            text-align: right;
+            margin-top: 5px;
         }
 
         .mensaje {
@@ -166,46 +164,69 @@
                 align-items: flex-start;
             }
 
-            .local {
-                text-align: left;
-            }
         }
+
     </style>
+
 </head>
+
 
 <body>
 
 <header>
+
     <h1>⚽ LIGA TUCSON</h1>
+
 </header>
+
 
 <div class="contenedor">
 
-    <a href="equipos.html" class="volver">← Volver a equipos</a>
+    <a href="equipos.html" class="volver">
+        ← Volver a equipos
+    </a>
+
 
     <div id="contenido">
+
         <div class="mensaje">
             Cargando equipo...
         </div>
+
     </div>
 
 </div>
 
+
+<!-- DATOS DE LA LIGA -->
+
 <script src="datos.js"></script>
+
 
 <script>
 
-    // Leer los datos enviados desde equipos.html
+    // ==========================================
+    // LEER EQUIPO Y ZONA DESDE LA URL
+    // ==========================================
+
     const parametros = new URLSearchParams(window.location.search);
 
     const nombreEquipo = parametros.get("equipo");
+
     const zona = parametros.get("zona");
 
     const contenido = document.getElementById("contenido");
 
 
-    // Normalizar texto para evitar problemas con tildes
+    // ==========================================
+    // NORMALIZAR TEXTOS
+    // ==========================================
+
     function normalizar(texto) {
+
+        if (!texto) {
+            return "";
+        }
 
         return texto
             .normalize("NFD")
@@ -216,23 +237,35 @@
     }
 
 
-    // Buscar el equipo dentro de su zona
+    // ==========================================
+    // BUSCAR EQUIPO
+    // ==========================================
+
     let equipoEncontrado = null;
+
 
     if (zona && datosLiga.zonas[zona]) {
 
-        equipoEncontrado = datosLiga.zonas[zona].find(equipo =>
-            normalizar(equipo.equipo) === normalizar(nombreEquipo)
-        );
+        equipoEncontrado = datosLiga.zonas[zona].find(equipo => {
+
+            return normalizar(equipo.equipo) ===
+                   normalizar(nombreEquipo);
+
+        });
 
     }
 
 
-    // Si no encontramos el equipo
+    // ==========================================
+    // SI NO SE ENCUENTRA
+    // ==========================================
+
     if (!equipoEncontrado) {
 
         contenido.innerHTML = `
+
             <div class="mensaje">
+
                 <h2>Equipo no encontrado</h2>
 
                 <p>
@@ -240,59 +273,151 @@
                 </p>
 
                 <p>
-                    <strong>${nombreEquipo || "Sin nombre"}</strong>
+                    <strong>
+                        ${nombreEquipo || "Sin nombre"}
+                    </strong>
                 </p>
+
             </div>
+
         `;
 
-    } else {
+    }
 
-        // Calcular posición
-        const tabla = [...datosLiga.zonas[zona]].sort((a, b) => {
 
-            if (b.puntos !== a.puntos) {
-                return b.puntos - a.puntos;
-            }
+    // ==========================================
+    // SI ENCONTRAMOS EL EQUIPO
+    // ==========================================
 
-            return b.dg - a.dg;
+    else {
 
-        });
+
+        // ======================================
+        // CALCULAR PUNTOS
+        // ======================================
+
+        const puntos =
+            (Number(equipoEncontrado.pg) * 3) +
+            Number(equipoEncontrado.pe);
+
+
+        // ======================================
+        // CREAR TABLA DE LA ZONA
+        // ======================================
+
+        const tabla = datosLiga.zonas[zona]
+            .map(equipo => {
+
+                const puntosEquipo =
+                    (Number(equipo.pg) * 3) +
+                    Number(equipo.pe);
+
+                return {
+
+                    ...equipo,
+
+                    puntosCalculados: puntosEquipo
+
+                };
+
+            })
+            .sort((a, b) => {
+
+                // Primero puntos
+                if (b.puntosCalculados !== a.puntosCalculados) {
+
+                    return b.puntosCalculados -
+                           a.puntosCalculados;
+
+                }
+
+                // Después diferencia de gol
+                if (b.dg !== a.dg) {
+
+                    return b.dg - a.dg;
+
+                }
+
+                // Después goles a favor
+                return b.gf - a.gf;
+
+            });
+
+
+        // ======================================
+        // CALCULAR POSICIÓN
+        // ======================================
 
         const posicion =
-            tabla.findIndex(e =>
-                normalizar(e.equipo) === normalizar(equipoEncontrado.equipo)
+            tabla.findIndex(equipo =>
+
+                normalizar(equipo.equipo) ===
+                normalizar(equipoEncontrado.equipo)
+
             ) + 1;
 
 
-        // Buscar partidos del equipo
+        // ======================================
+        // BUSCAR PARTIDOS
+        // ======================================
+
         const partidos = datosLiga.partidos.filter(partido => {
 
-            return normalizar(partido.local) === normalizar(equipoEncontrado.equipo) ||
-                   normalizar(partido.visitante) === normalizar(equipoEncontrado.equipo);
+            return (
+
+                normalizar(partido.local) ===
+                normalizar(equipoEncontrado.equipo)
+
+                ||
+
+                normalizar(partido.visitante) ===
+                normalizar(equipoEncontrado.equipo)
+
+            );
 
         });
 
 
-        // Separar partidos jugados
-        const jugados = partidos.filter(partido =>
-            partido.resultado &&
-            partido.resultado !== "-"
-        );
+        // ======================================
+        // PARTIDOS JUGADOS
+        // ======================================
+
+        const jugados = partidos.filter(partido => {
+
+            return partido.resultado &&
+                   partido.resultado !== "-";
+
+        });
 
 
-        // Separar próximos partidos
-        const proximos = partidos.filter(partido =>
-            !partido.resultado ||
-            partido.resultado === "-"
-        );
+        // ======================================
+        // PRÓXIMOS PARTIDOS
+        // ======================================
+
+        const proximos = partidos.filter(partido => {
+
+            return !partido.resultado ||
+                   partido.resultado === "-";
+
+        });
 
 
-        // Mostrar la página
+        // ======================================
+        // MOSTRAR INFORMACIÓN
+        // ======================================
+
         contenido.innerHTML = `
+
+
+            <!-- ============================== -->
+            <!-- CABECERA -->
+            <!-- ============================== -->
 
             <div class="cabecera-equipo">
 
-                <h2>${equipoEncontrado.equipo}</h2>
+                <h2>
+                    ${equipoEncontrado.equipo}
+                </h2>
 
                 <p>
                     Primera División A · Zona ${zona}
@@ -301,151 +426,378 @@
             </div>
 
 
+            <!-- ============================== -->
+            <!-- ESTADÍSTICAS -->
+            <!-- ============================== -->
+
             <div class="estadisticas">
 
-                <div class="estadistica">
-                    <span class="numero">${posicion}</span>
-                    <span class="texto">Posición</span>
-                </div>
 
                 <div class="estadistica">
-                    <span class="numero">${equipoEncontrado.puntos}</span>
-                    <span class="texto">Puntos</span>
+
+                    <span class="numero">
+                        ${posicion}°
+                    </span>
+
+                    <span class="texto">
+                        Posición
+                    </span>
+
                 </div>
 
-                <div class="estadistica">
-                    <span class="numero">${equipoEncontrado.pj}</span>
-                    <span class="texto">Jugados</span>
-                </div>
 
                 <div class="estadistica">
-                    <span class="numero">${equipoEncontrado.gf}</span>
-                    <span class="texto">Goles a favor</span>
+
+                    <span class="numero">
+                        ${puntos}
+                    </span>
+
+                    <span class="texto">
+                        Puntos
+                    </span>
+
                 </div>
 
-                <div class="estadistica">
-                    <span class="numero">${equipoEncontrado.gc}</span>
-                    <span class="texto">Goles en contra</span>
-                </div>
 
                 <div class="estadistica">
-                    <span class="numero">${equipoEncontrado.dg}</span>
-                    <span class="texto">Dif. de gol</span>
+
+                    <span class="numero">
+                        ${equipoEncontrado.pj}
+                    </span>
+
+                    <span class="texto">
+                        Jugados
+                    </span>
+
                 </div>
 
-                <div class="estadistica">
-                    <span class="numero">${equipoEncontrado.pg}</span>
-                    <span class="texto">Victorias</span>
-                </div>
 
                 <div class="estadistica">
-                    <span class="numero">${equipoEncontrado.pe}</span>
-                    <span class="texto">Empates</span>
+
+                    <span class="numero">
+                        ${equipoEncontrado.pg}
+                    </span>
+
+                    <span class="texto">
+                        Victorias
+                    </span>
+
                 </div>
 
+
                 <div class="estadistica">
-                    <span class="numero">${equipoEncontrado.pp}</span>
-                    <span class="texto">Derrotas</span>
+
+                    <span class="numero">
+                        ${equipoEncontrado.pe}
+                    </span>
+
+                    <span class="texto">
+                        Empates
+                    </span>
+
                 </div>
+
+
+                <div class="estadistica">
+
+                    <span class="numero">
+                        ${equipoEncontrado.pp}
+                    </span>
+
+                    <span class="texto">
+                        Derrotas
+                    </span>
+
+                </div>
+
+
+                <div class="estadistica">
+
+                    <span class="numero">
+                        ${equipoEncontrado.gf}
+                    </span>
+
+                    <span class="texto">
+                        Goles a favor
+                    </span>
+
+                </div>
+
+
+                <div class="estadistica">
+
+                    <span class="numero">
+                        ${equipoEncontrado.gc}
+                    </span>
+
+                    <span class="texto">
+                        Goles en contra
+                    </span>
+
+                </div>
+
+
+                <div class="estadistica">
+
+                    <span class="numero">
+                        ${equipoEncontrado.dg}
+                    </span>
+
+                    <span class="texto">
+                        Diferencia de gol
+                    </span>
+
+                </div>
+
 
             </div>
 
 
+            <!-- ============================== -->
+            <!-- RESUMEN -->
+            <!-- ============================== -->
+
             <div class="tarjeta">
 
-                <h3>📊 Resumen</h3>
+                <h3>
+                    📊 Resumen
+                </h3>
+
 
                 <div class="fila">
-                    <span>Partidos jugados</span>
-                    <strong>${equipoEncontrado.pj}</strong>
+
+                    <span>
+                        Partidos jugados
+                    </span>
+
+                    <strong>
+                        ${equipoEncontrado.pj}
+                    </strong>
+
                 </div>
 
-                <div class="fila">
-                    <span>Partidos ganados</span>
-                    <strong>${equipoEncontrado.pg}</strong>
-                </div>
 
                 <div class="fila">
-                    <span>Partidos empatados</span>
-                    <strong>${equipoEncontrado.pe}</strong>
+
+                    <span>
+                        Partidos ganados
+                    </span>
+
+                    <strong>
+                        ${equipoEncontrado.pg}
+                    </strong>
+
                 </div>
 
+
                 <div class="fila">
-                    <span>Partidos perdidos</span>
-                    <strong>${equipoEncontrado.pp}</strong>
+
+                    <span>
+                        Partidos empatados
+                    </span>
+
+                    <strong>
+                        ${equipoEncontrado.pe}
+                    </strong>
+
                 </div>
+
+
+                <div class="fila">
+
+                    <span>
+                        Partidos perdidos
+                    </span>
+
+                    <strong>
+                        ${equipoEncontrado.pp}
+                    </strong>
+
+                </div>
+
+
+                <div class="fila">
+
+                    <span>
+                        Goles a favor
+                    </span>
+
+                    <strong>
+                        ${equipoEncontrado.gf}
+                    </strong>
+
+                </div>
+
+
+                <div class="fila">
+
+                    <span>
+                        Goles en contra
+                    </span>
+
+                    <strong>
+                        ${equipoEncontrado.gc}
+                    </strong>
+
+                </div>
+
+
+                <div class="fila">
+
+                    <span>
+                        Diferencia de gol
+                    </span>
+
+                    <strong>
+                        ${equipoEncontrado.dg}
+                    </strong>
+
+                </div>
+
+
+                <div class="fila">
+
+                    <span>
+                        Puntos
+                    </span>
+
+                    <strong>
+                        ${puntos}
+                    </strong>
+
+                </div>
+
 
             </div>
 
 
+            <!-- ============================== -->
+            <!-- RESULTADOS -->
+            <!-- ============================== -->
+
             <div class="tarjeta">
 
-                <h3>⚽ Resultados</h3>
+                <h3>
+                    ⚽ Últimos resultados
+                </h3>
+
 
                 ${
                     jugados.length > 0
+
                     ?
+
                     jugados.map(partido => `
 
                         <div class="fila">
 
                             <div>
+
                                 <div class="resultado">
-                                    ${partido.local} ${partido.resultado} ${partido.visitante}
+
+                                    ${partido.local}
+
+                                    &nbsp;
+
+                                    ${partido.resultado}
+
+                                    &nbsp;
+
+                                    ${partido.visitante}
+
                                 </div>
 
+
                                 <div class="fecha">
+
                                     ${partido.fecha || "Fecha 5"}
+
                                 </div>
+
                             </div>
 
                         </div>
 
                     `).join("")
+
+
                     :
+
                     `
+
                     <p>
-                        Todavía no hay resultados cargados para este equipo.
+                        Todavía no hay resultados
+                        cargados para este equipo.
                     </p>
+
                     `
+
                 }
 
             </div>
 
 
+            <!-- ============================== -->
+            <!-- PRÓXIMOS PARTIDOS -->
+            <!-- ============================== -->
+
             <div class="tarjeta">
 
-                <h3>📅 Próximos partidos</h3>
+                <h3>
+                    📅 Próximos partidos
+                </h3>
+
 
                 ${
                     proximos.length > 0
+
                     ?
+
                     proximos.map(partido => `
 
                         <div class="fila">
 
                             <div>
+
                                 <div class="resultado">
-                                    ${partido.local} vs ${partido.visitante}
+
+                                    ${partido.local}
+
+                                    &nbsp; vs &nbsp;
+
+                                    ${partido.visitante}
+
                                 </div>
 
+
                                 <div class="fecha">
+
                                     ${partido.fecha || "Próximamente"}
+
                                 </div>
+
                             </div>
 
                         </div>
 
                     `).join("")
+
+
                     :
+
                     `
+
                     <p>
-                        No hay próximos partidos cargados.
+                        No hay próximos partidos
+                        cargados.
                     </p>
+
                     `
+
                 }
 
             </div>
+
 
         `;
 
