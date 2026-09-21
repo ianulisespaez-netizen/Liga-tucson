@@ -1,131 +1,215 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Equipos - Liga Tucson</title>
+    <title>Equipos | Liga Tucson</title>
 
-<style>
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+    <style>
+        * {
+            box-sizing: border-box;
+        }
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f2f6fa;
-    color: #172033;
-}
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f2f7fb;
+            color: #123;
+        }
 
-header {
-    background-color: #082b52;
-    color: white;
-    text-align: center;
-    padding: 25px 20px;
-}
+        header {
+            background: #062b5c;
+            color: white;
+            text-align: center;
+            padding: 25px 15px;
+        }
 
-header h1 {
-    font-size: 30px;
-}
+        header h1 {
+            margin: 0;
+            font-size: 30px;
+        }
 
-header p {
-    color: #8ed8ff;
-    margin-top: 6px;
-}
+        header p {
+            margin: 8px 0 0;
+            color: #b9e8ff;
+        }
 
-nav {
-    background-color: #0b3d73;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
+        nav {
+            background: #0b4f91;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
 
-nav a {
-    color: white;
-    text-decoration: none;
-    padding: 14px 18px;
-    font-weight: bold;
-}
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 16px;
+            font-weight: bold;
+        }
 
-nav a:hover {
-    background-color: #159bd7;
-}
+        nav a:hover {
+            background: #087fc1;
+        }
 
-.container {
-    width: 92%;
-    max-width: 1000px;
-    margin: 30px auto;
-}
+        main {
+            max-width: 1100px;
+            margin: auto;
+            padding: 25px 15px;
+        }
 
-h2 {
-    color: #082b52;
-    text-align: center;
-    margin-bottom: 25px;
-}
+        .titulo {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
 
-.teams {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-}
+        .titulo h2 {
+            margin: 0 0 8px;
+            color: #062b5c;
+        }
 
-.team {
-    background-color: white;
-    padding: 25px 20px;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
-}
+        .titulo p {
+            margin: 0;
+            color: #555;
+        }
 
-.shield {
-    font-size: 60px;
-    margin-bottom: 12px;
-}
+        .zona {
+            margin-bottom: 35px;
+        }
 
-.team h3 {
-    color: #082b52;
-    margin-bottom: 8px;
-}
+        .zona-titulo {
+            background: #087fc1;
+            color: white;
+            padding: 14px 18px;
+            border-radius: 12px 12px 0 0;
+            font-size: 21px;
+            font-weight: bold;
+        }
 
-.team p {
-    color: #64748b;
-    margin-bottom: 18px;
-}
+        .equipos {
+            background: white;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            border-radius: 0 0 12px 12px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
 
-.button {
-    display: inline-block;
-    background-color: #159bd7;
-    color: white;
-    text-decoration: none;
-    padding: 10px 18px;
-    border-radius: 8px;
-    font-weight: bold;
-}
+        .equipo {
+            border: 1px solid #dbe7f0;
+            border-radius: 15px;
+            padding: 18px;
+            text-align: center;
+            transition: 0.2s;
+            background: #fff;
+        }
 
-.button:hover {
-    background-color: #0b3d73;
-}
+        .equipo:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.12);
+        }
 
-footer {
-    background-color: #082b52;
-    color: white;
-    text-align: center;
-    padding: 25px;
-    margin-top: 40px;
-}
+        .escudo {
+            width: 75px;
+            height: 75px;
+            margin: 0 auto 12px;
+            border-radius: 50%;
+            background: #062b5c;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 35px;
+        }
 
-footer span {
-    color: #8ed8ff;
-}
+        .equipo h3 {
+            margin: 5px 0;
+            color: #062b5c;
+            font-size: 18px;
+        }
 
-@media (max-width: 700px) {
-    .teams {
-        grid-template-columns: 1fr;
-    }
-}
-</style>
+        .zona-equipo {
+            color: #777;
+            font-size: 13px;
+            margin-bottom: 12px;
+        }
+
+        .datos {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 12px 0;
+        }
+
+        .dato strong {
+            display: block;
+            color: #062b5c;
+            font-size: 18px;
+        }
+
+        .dato span {
+            font-size: 11px;
+            color: #777;
+        }
+
+        .boton {
+            display: inline-block;
+            background: #087fc1;
+            color: white;
+            text-decoration: none;
+            padding: 9px 15px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .boton:hover {
+            background: #062b5c;
+        }
+
+        footer {
+            background: #062b5c;
+            color: white;
+            text-align: center;
+            padding: 25px 15px;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 800px) {
+
+            .equipos {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+        @media (max-width: 550px) {
+
+            header h1 {
+                font-size: 25px;
+            }
+
+            nav a {
+                padding: 11px 10px;
+                font-size: 14px;
+            }
+
+            main {
+                padding: 15px 10px;
+            }
+
+            .equipos {
+                grid-template-columns: 1fr;
+                padding: 12px;
+            }
+
+        }
+    </style>
 </head>
 
 <body>
@@ -137,79 +221,135 @@ footer span {
 
 <nav>
     <a href="index.html">Inicio</a>
+    <a href="posiciones.html">Posiciones</a>
+    <a href="partidos.html">Partidos</a>
     <a href="equipos.html">Equipos</a>
-    <a href="#">Posiciones</a>
-    <a href="#">Partidos</a>
     <a href="#">Noticias</a>
 </nav>
 
-<main class="container">
+<main>
 
-    <h2>Equipos</h2>
-
-    <div class="teams">
-
-        <div class="team">
-            <div class="shield">⚽</div>
-            <h3>Atlético Tucumán</h3>
-            <p>San Miguel de Tucumán</p>
-            <a class="button" href="equipo.html?equipo=atletico">
-                Ver equipo
-            </a>
-        </div>
-
-        <div class="team">
-            <div class="shield">⚽</div>
-            <h3>San Martín</h3>
-            <p>San Miguel de Tucumán</p>
-            <a class="button" href="equipo.html?equipo=sanmartin">
-                Ver equipo
-            </a>
-        </div>
-
-        <div class="team">
-            <div class="shield">⚽</div>
-            <h3>Central Norte</h3>
-            <p>San Miguel de Tucumán</p>
-            <a class="button" href="equipo.html?equipo=central">
-                Ver equipo
-            </a>
-        </div>
-
-        <div class="team">
-            <div class="shield">⚽</div>
-            <h3>Sportivo Guzmán</h3>
-            <p>Tucumán</p>
-            <a class="button" href="equipo.html?equipo=sportivo">
-                Ver equipo
-            </a>
-        </div>
-
-        <div class="team">
-            <div class="shield">⚽</div>
-            <h3>Amalia</h3>
-            <p>Tucumán</p>
-            <a class="button" href="equipo.html?equipo=amalia">
-                Ver equipo
-            </a>
-        </div>
-
-        <div class="team">
-            <div class="shield">⚽</div>
-            <h3>Unión</h3>
-            <p>Tucumán</p>
-            <a class="button" href="equipo.html?equipo=union">
-                Ver equipo
-            </a>
-        </div>
-
+    <div class="titulo">
+        <h2>⚽ Equipos</h2>
+        <p id="torneo"></p>
     </div>
+
+    <div id="lista-zonas"></div>
 
 </main>
 
 <footer>
-    <p>⚽ <span>Liga Tucson</span> — Fútbol Tucumano</p>
+    <p>⚽ Liga Tucson</p>
+    <p>Primera División A - Clausura 2026</p>
 </footer>
+
+
+<!-- Cargamos nuestra base de datos -->
+<script src="datos.js"></script>
+
+<script>
+
+    document.getElementById("torneo").textContent =
+        datosLiga.torneo + " · Fecha " + datosLiga.fechaActual;
+
+
+    const contenedor = document.getElementById("lista-zonas");
+
+
+    // Recorremos todas las zonas
+    Object.keys(datosLiga.zonas).forEach(zona => {
+
+        const equipos = datosLiga.zonas[zona];
+
+
+        // Creamos la sección de la zona
+        const zonaDiv = document.createElement("section");
+
+        zonaDiv.className = "zona";
+
+
+        let html = `
+
+            <div class="zona-titulo">
+                Zona ${zona}
+            </div>
+
+            <div class="equipos">
+
+        `;
+
+
+        // Creamos cada tarjeta
+        equipos.forEach(equipo => {
+
+            const nombreURL = encodeURIComponent(equipo.equipo);
+
+
+            html += `
+
+                <div class="equipo">
+
+                    <div class="escudo">
+                        ⚽
+                    </div>
+
+                    <h3>
+                        ${equipo.equipo}
+                    </h3>
+
+                    <div class="zona-equipo">
+                        Zona ${zona}
+                    </div>
+
+
+                    <div class="datos">
+
+                        <div class="dato">
+                            <strong>${equipo.pts}</strong>
+                            <span>PTS</span>
+                        </div>
+
+                        <div class="dato">
+                            <strong>${equipo.pj}</strong>
+                            <span>PJ</span>
+                        </div>
+
+                        <div class="dato">
+                            <strong>${equipo.dg > 0 ? "+" : ""}${equipo.dg}</strong>
+                            <span>DG</span>
+                        </div>
+
+                    </div>
+
+
+                    <a
+                        class="boton"
+                        href="equipo.html?equipo=${nombreURL}&zona=${zona}"
+                    >
+                        Ver equipo
+                    </a>
+
+                </div>
+
+            `;
+
+        });
+
+
+        html += `
+
+            </div>
+
+        `;
+
+
+        zonaDiv.innerHTML = html;
+
+        contenedor.appendChild(zonaDiv);
+
+    });
+
+</script>
 
 </body>
 </html>
