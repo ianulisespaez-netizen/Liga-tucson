@@ -1,142 +1,183 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Partidos - Liga Tucson</title>
+    <title>Partidos - Liga Tucson</title>
 
-<style>
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+    <style>
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f2f6fa;
-    color: #172033;
-}
+        * {
+            box-sizing: border-box;
+        }
 
-header {
-    background-color: #082b52;
-    color: white;
-    text-align: center;
-    padding: 25px 20px;
-}
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+            color: #172f55;
+        }
 
-header h1 {
-    font-size: 30px;
-}
+        header {
+            background: linear-gradient(135deg, #173d6b, #4d86bd);
+            color: white;
+            text-align: center;
+            padding: 25px 15px;
+        }
 
-header p {
-    color: #8ed8ff;
-    margin-top: 6px;
-}
+        header h1 {
+            margin: 0;
+            font-size: 30px;
+        }
 
-nav {
-    background-color: #0b3d73;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
+        .contenedor {
+            max-width: 1000px;
+            margin: auto;
+            padding: 25px 18px;
+        }
 
-nav a {
-    color: white;
-    text-decoration: none;
-    padding: 14px 18px;
-    font-weight: bold;
-}
+        .volver {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #173d6b;
+            text-decoration: none;
+            font-size: 19px;
+            font-weight: bold;
+        }
 
-nav a:hover {
-    background-color: #159bd7;
-}
+        .titulo {
+            background: white;
+            border-radius: 20px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.07);
+        }
 
-.container {
-    width: 92%;
-    max-width: 900px;
-    margin: 30px auto;
-}
+        .titulo h2 {
+            margin: 0 0 8px;
+            font-size: 32px;
+        }
 
-.section {
-    background-color: white;
-    padding: 25px;
-    border-radius: 12px;
-    margin-bottom: 25px;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
-}
+        .titulo p {
+            margin: 0;
+            color: #687891;
+            font-size: 18px;
+        }
 
-.section h2 {
-    color: #082b52;
-    border-left: 5px solid #159bd7;
-    padding-left: 10px;
-    margin-bottom: 20px;
-}
+        .zona {
+            background: white;
+            border-radius: 20px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.07);
+        }
 
-.match {
-    padding: 20px 10px;
-    border-bottom: 1px solid #ddd;
-}
+        .zona h2 {
+            margin-top: 0;
+            font-size: 27px;
+            border-left: 7px solid #4ca0d8;
+            padding-left: 12px;
+        }
 
-.match:last-child {
-    border-bottom: none;
-}
+        .partido {
+            background: #f1f5f9;
+            border-radius: 15px;
+            padding: 18px;
+            margin-bottom: 12px;
+        }
 
-.date {
-    color: #64748b;
-    font-size: 14px;
-    margin-bottom: 12px;
-}
+        .partido:last-child {
+            margin-bottom: 0;
+        }
 
-.teams {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-weight: bold;
-}
+        .fecha {
+            color: #687891;
+            font-size: 14px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
 
-.vs {
-    color: #159bd7;
-    font-size: 18px;
-}
+        .equipos-partido {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+        }
 
-.score {
-    color: #082b52;
-    font-size: 20px;
-}
+        .equipo {
+            width: 40%;
+            font-size: 17px;
+            font-weight: bold;
+        }
 
-.stadium {
-    color: #64748b;
-    font-size: 13px;
-    margin-top: 10px;
-}
+        .local {
+            text-align: right;
+        }
 
-footer {
-    background-color: #082b52;
-    color: white;
-    text-align: center;
-    padding: 25px;
-    margin-top: 40px;
-}
+        .visitante {
+            text-align: left;
+        }
 
-footer span {
-    color: #8ed8ff;
-}
+        .resultado {
+            min-width: 90px;
+            text-align: center;
+            font-size: 22px;
+            font-weight: bold;
+            color: #173d6b;
+        }
 
-@media (max-width: 600px) {
+        .estado {
+            margin-top: 10px;
+            text-align: center;
+            font-size: 13px;
+            font-weight: bold;
+        }
 
-    .teams {
-        font-size: 14px;
-    }
+        .finalizado {
+            color: #16803c;
+        }
 
-    .section {
-        padding: 18px;
-    }
-}
-</style>
+        .proximo {
+            color: #2878b8;
+        }
+
+        .sin-partidos {
+            text-align: center;
+            color: #687891;
+            padding: 15px;
+        }
+
+        @media (max-width: 600px) {
+
+            .zona {
+                padding: 18px;
+            }
+
+            .zona h2 {
+                font-size: 24px;
+            }
+
+            .equipos-partido {
+                gap: 8px;
+            }
+
+            .equipo {
+                font-size: 15px;
+            }
+
+            .resultado {
+                min-width: 65px;
+                font-size: 19px;
+            }
+
+        }
+
+    </style>
 
 </head>
+
 
 <body>
 
@@ -144,178 +185,198 @@ footer span {
 
     <h1>⚽ LIGA TUCSON</h1>
 
-    <p>Todo el fútbol tucumano en un solo lugar</p>
-
 </header>
 
 
-<nav>
+<div class="contenedor">
 
-    <a href="index.html">Inicio</a>
-
-    <a href="equipos.html">Equipos</a>
-
-    <a href="posiciones.html">Posiciones</a>
-
-    <a href="partidos.html">Partidos</a>
-
-    <a href="#">Noticias</a>
-
-</nav>
+    <a href="index.html" class="volver">
+        ← Volver al inicio
+    </a>
 
 
-<main class="container">
+    <div class="titulo">
+
+        <h2>Partidos</h2>
+
+        <p>
+            Primera División A - Clausura 2026
+        </p>
+
+    </div>
 
 
-    <section class="section">
+    <div id="partidos">
 
-        <h2>📅 Próximos partidos</h2>
-
-
-        <div class="match">
-
-            <div class="date">
-                Fecha 11 · Domingo
-            </div>
-
-            <div class="teams">
-
-                <span>Atlético Tucumán</span>
-
-                <span class="vs">VS</span>
-
-                <span>Sportivo Guzmán</span>
-
-            </div>
-
-            <div class="stadium">
-                🏟️ Estadio a confirmar · 16:00 hs
-            </div>
-
+        <div class="sin-partidos">
+            Cargando partidos...
         </div>
 
+    </div>
 
-        <div class="match">
+</div>
 
-            <div class="date">
-                Fecha 11 · Domingo
+
+<!-- DATOS DE LA LIGA -->
+
+<script src="datos.js"></script>
+
+
+<script>
+
+    const contenedor = document.getElementById("partidos");
+
+
+    // ==========================================
+    // ZONAS
+    // ==========================================
+
+    const zonas = ["A", "B", "C", "D", "E", "F"];
+
+
+    let contenido = "";
+
+
+    // ==========================================
+    // RECORRER TODAS LAS ZONAS
+    // ==========================================
+
+    zonas.forEach(zona => {
+
+
+        const partidosZona = datosLiga.partidos.filter(partido => {
+
+            return partido.zona === zona;
+
+        });
+
+
+        // Si no hay partidos cargados para esa zona
+        if (partidosZona.length === 0) {
+
+            return;
+
+        }
+
+
+        contenido += `
+
+            <div class="zona">
+
+                <h2>
+                    Zona ${zona}
+                </h2>
+
+        `;
+
+
+        // ======================================
+        // MOSTRAR PARTIDOS
+        // ======================================
+
+        partidosZona.forEach(partido => {
+
+
+            const tieneResultado =
+                partido.resultado &&
+                partido.resultado !== "-";
+
+
+            contenido += `
+
+                <div class="partido">
+
+
+                    <div class="fecha">
+
+                        ${partido.fecha || "Fecha 5"}
+
+                    </div>
+
+
+                    <div class="equipos-partido">
+
+
+                        <div class="equipo local">
+
+                            ${partido.local}
+
+                        </div>
+
+
+                        <div class="resultado">
+
+                            ${
+                                tieneResultado
+                                ? partido.resultado
+                                : "VS"
+                            }
+
+                        </div>
+
+
+                        <div class="equipo visitante">
+
+                            ${partido.visitante}
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="estado ${tieneResultado ? "finalizado" : "proximo"}">
+
+                        ${
+                            tieneResultado
+                            ? "✓ FINALIZADO"
+                            : "◷ PRÓXIMO PARTIDO"
+                        }
+
+                    </div>
+
+
+                </div>
+
+            `;
+
+        });
+
+
+        contenido += `
+
             </div>
 
-            <div class="teams">
+        `;
 
-                <span>Amalia</span>
-
-                <span class="vs">VS</span>
-
-                <span>San Martín</span>
-
-            </div>
-
-            <div class="stadium">
-                🏟️ Estadio a confirmar · 17:00 hs
-            </div>
-
-        </div>
+    });
 
 
-        <div class="match">
+    // ==========================================
+    // MOSTRAR TODO
+    // ==========================================
 
-            <div class="date">
-                Fecha 11 · Domingo
-            </div>
+    if (contenido === "") {
 
-            <div class="teams">
+        contenedor.innerHTML = `
 
-                <span>Central Norte</span>
+            <div class="sin-partidos">
 
-                <span class="vs">VS</span>
-
-                <span>Unión</span>
+                Todavía no hay partidos cargados.
 
             </div>
 
-            <div class="stadium">
-                🏟️ Estadio a confirmar · 16:30 hs
-            </div>
+        `;
 
-        </div>
+    } else {
 
-    </section>
+        contenedor.innerHTML = contenido;
 
+    }
 
-    <section class="section">
+</script>
 
-        <h2>⚽ Últimos resultados</h2>
-
-
-        <div class="match">
-
-            <div class="date">
-                Fecha 10
-            </div>
-
-            <div class="teams">
-
-                <span>Atlético Tucumán</span>
-
-                <span class="score">2 - 0</span>
-
-                <span>San Martín</span>
-
-            </div>
-
-        </div>
-
-
-        <div class="match">
-
-            <div class="date">
-                Fecha 10
-            </div>
-
-            <div class="teams">
-
-                <span>Unión</span>
-
-                <span class="score">1 - 1</span>
-
-                <span>Central Norte</span>
-
-            </div>
-
-        </div>
-
-
-        <div class="match">
-
-            <div class="date">
-                Fecha 10
-            </div>
-
-            <div class="teams">
-
-                <span>Amalia</span>
-
-                <span class="score">3 - 1</span>
-
-                <span>Sportivo Guzmán</span>
-
-            </div>
-
-        </div>
-
-    </section>
-
-</main>
-
-
-<footer>
-
-    <p>
-        ⚽ <span>Liga Tucson</span> — Fútbol Tucumano
-    </p>
-
-</footer>
 
 </body>
+
 </html>
