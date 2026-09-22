@@ -7,7 +7,6 @@
 <title>Equipos | Liga Tucson</title>
 
 <style>
-
 * {
     box-sizing: border-box;
 }
@@ -30,7 +29,6 @@ header {
     margin: auto;
     display: flex;
     align-items: center;
-    justify-content: space-between;
     gap: 20px;
 }
 
@@ -78,13 +76,13 @@ nav a:hover {
     padding: 25px 15px;
 }
 
-h2 {
-    margin-top: 30px;
-    color: #061a33;
-}
-
 .zona {
     margin-bottom: 40px;
+}
+
+.zona h2 {
+    color: #061a33;
+    margin-bottom: 18px;
 }
 
 .grid-equipos {
@@ -108,8 +106,8 @@ h2 {
 }
 
 .escudo {
-    width: 100px;
-    height: 100px;
+    width: 105px;
+    height: 105px;
     object-fit: contain;
     margin-bottom: 12px;
 }
@@ -134,9 +132,9 @@ h2 {
 }
 
 .sin-escudo {
-    width: 100px;
-    height: 100px;
-    margin: auto;
+    width: 105px;
+    height: 105px;
+    margin: 0 auto 12px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -153,14 +151,12 @@ footer {
     text-align: center;
     padding: 20px;
 }
-
 </style>
 </head>
 
 <body>
 
 <header>
-
     <div class="header-contenido">
 
         <img
@@ -175,7 +171,6 @@ footer {
         </div>
 
     </div>
-
 </header>
 
 <nav>
@@ -201,24 +196,39 @@ footer {
 
 <script>
 
+// ==========================================
+// ESCUDOS DE LOS EQUIPOS
+// ==========================================
+
 const escudos = {
 
+    // ---------- ZONA A ----------
+
     "Talleres": "IMG_1621.png",
-
     "Juventud Unida": "IMG_1622.png",
-
     "Estación Experimental": "IMG_1623.png",
-
     "Central Norte": "IMG_1624.jpeg",
-
     "Villa Mitre": "IMG_1625.jpeg",
-
     "All Boys": "IMG_1627.png",
+    "San José": "IMG_1628.png",
 
-    "San José": "IMG_1628.png"
+
+    // ---------- ZONA B ----------
+
+    "Argentinos del Norte": "IMG_1629.png",
+    "San Martín": "IMG_1630.png",
+    "San Antonio": "IMG_1631.jpeg",
+    "Atlético Tucumán": "IMG_1632.jpeg",
+    "Sportivo Guzmán": "IMG_1633.png",
+    "Amalia": "IMG_1634.png",
+    "Tucumán Central": "IMG_1635.png"
 
 };
 
+
+// ==========================================
+// MOSTRAR EQUIPOS
+// ==========================================
 
 const container = document.getElementById("equipos-container");
 
@@ -231,11 +241,13 @@ zonas.forEach(zona => {
 
     if (!equipos || equipos.length === 0) return;
 
+
     const zonaDiv = document.createElement("div");
 
     zonaDiv.className = "zona";
 
     zonaDiv.innerHTML = `<h2>Zona ${zona}</h2>`;
+
 
     const grid = document.createElement("div");
 
@@ -248,12 +260,14 @@ zonas.forEach(zona => {
 
         const archivoEscudo = escudos[nombre];
 
+
         const tarjeta = document.createElement("div");
 
         tarjeta.className = "equipo";
 
 
         let escudoHTML;
+
 
         if (archivoEscudo) {
 
@@ -284,7 +298,7 @@ zonas.forEach(zona => {
 
             <a
                 class="boton"
-                href="equipo.html?v=6&equipo=${encodeURIComponent(nombre)}&zona=${zona}"
+                href="equipo.html?v=7&equipo=${encodeURIComponent(nombre)}&zona=${zona}"
             >
                 Ver equipo
             </a>
