@@ -1,294 +1,309 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Equipos - Liga Tucson</title>
+<title>Equipos | Liga Tucson</title>
 
-    <style>
+<style>
 
-        * {
-            box-sizing: border-box;
-        }
+* {
+    box-sizing: border-box;
+}
 
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f1f5f9;
-            color: #172f55;
-        }
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f2f6fa;
+    color: #102a43;
+}
 
-        header {
-            background: linear-gradient(135deg, #173d6b, #4d86bd);
-            color: white;
-            text-align: center;
-            padding: 25px 15px;
-        }
+header {
+    background: #061a33;
+    color: white;
+    padding: 15px 20px;
+}
 
-        header h1 {
-            margin: 0;
-            font-size: 30px;
-        }
+.header-contenido {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
 
-        .contenedor {
-            max-width: 1000px;
-            margin: auto;
-            padding: 25px 18px;
-        }
+.logo {
+    width: 65px;
+    height: 65px;
+    object-fit: contain;
+}
 
-        .volver {
-            display: inline-block;
-            margin-bottom: 25px;
-            color: #173d6b;
-            text-decoration: none;
-            font-size: 20px;
-            font-weight: bold;
-        }
+.titulo {
+    flex: 1;
+}
 
-        .titulo {
-            background: white;
-            border-radius: 20px;
-            padding: 25px;
-            margin-bottom: 25px;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
-        }
+.titulo h1 {
+    margin: 0;
+    font-size: 25px;
+}
 
-        .titulo h2 {
-            margin: 0 0 8px 0;
-            font-size: 32px;
-        }
+.titulo p {
+    margin: 4px 0 0;
+    color: #8bdcff;
+    font-size: 13px;
+}
 
-        .titulo p {
-            margin: 0;
-            color: #687891;
-            font-size: 18px;
-        }
+nav {
+    background: #0b3158;
+    padding: 10px;
+    text-align: center;
+}
 
-        .zona {
-            background: white;
-            border-radius: 20px;
-            padding: 25px;
-            margin-bottom: 25px;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
-        }
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+}
 
-        .zona h2 {
-            margin-top: 0;
-            font-size: 27px;
-            border-left: 7px solid #4ca0d8;
-            padding-left: 12px;
-        }
+nav a:hover {
+    color: #7edcff;
+}
 
-        .equipos {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-        }
+.contenedor {
+    max-width: 1100px;
+    margin: auto;
+    padding: 25px 15px;
+}
 
-        .equipo {
-            background: #f1f5f9;
-            border-radius: 15px;
-            padding: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 10px;
-        }
+h2 {
+    margin-top: 30px;
+    color: #061a33;
+}
 
-        .nombre-equipo {
-            font-size: 18px;
-            font-weight: bold;
-        }
+.zona {
+    margin-bottom: 40px;
+}
 
-        .boton {
-            background: #173d6b;
-            color: white;
-            text-decoration: none;
-            padding: 10px 14px;
-            border-radius: 10px;
-            font-weight: bold;
-            white-space: nowrap;
-        }
+.grid-equipos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+}
 
-        .boton:hover {
-            background: #4ca0d8;
-        }
+.equipo {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: 0.2s;
+}
 
-        @media (max-width: 600px) {
+.equipo:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
 
-            .equipos {
-                grid-template-columns: 1fr;
-            }
+.escudo {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 12px;
+}
 
-            .equipo {
-                padding: 18px;
-            }
+.equipo h3 {
+    margin: 8px 0 15px;
+    font-size: 18px;
+}
 
-            .nombre-equipo {
-                font-size: 17px;
-            }
+.boton {
+    display: inline-block;
+    background: #087ec4;
+    color: white;
+    padding: 9px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
 
-            .boton {
-                padding: 9px 11px;
-                font-size: 14px;
-            }
+.boton:hover {
+    background: #055b91;
+}
 
-        }
+.sin-escudo {
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e5edf5;
+    border-radius: 50%;
+    color: #789;
+    font-size: 12px;
+}
 
-    </style>
+footer {
+    margin-top: 40px;
+    background: #061a33;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
 
+</style>
 </head>
 
 <body>
 
 <header>
 
-    <h1>⚽ LIGA TUCSON</h1>
+    <div class="header-contenido">
+
+        <img
+            class="logo"
+            src="https://raw.githubusercontent.com/ianulisespaez-netizen/Liga-tucson/main/FDDF80B7-4151-4091-AB6F-C5DF10F36391.png"
+            alt="Liga Tucson"
+        >
+
+        <div class="titulo">
+            <h1>⚽ LIGA TUCSON</h1>
+            <p>Primera División A - Clausura 2026</p>
+        </div>
+
+    </div>
 
 </header>
 
+<nav>
+    <a href="index.html">Inicio</a>
+    <a href="posiciones.html">Posiciones</a>
+    <a href="partidos.html">Partidos</a>
+    <a href="equipos.html">Equipos</a>
+</nav>
 
 <div class="contenedor">
 
+    <h2>⚽ Equipos</h2>
 
-    <a href="index.html" class="volver">
-        ← Volver al inicio
-    </a>
-
-
-    <div class="titulo">
-
-        <h2>
-            Equipos
-        </h2>
-
-        <p>
-            Primera División A - Clausura 2026
-        </p>
-
-    </div>
-
-
-    <div id="lista-equipos">
-
-        Cargando equipos...
-
-    </div>
-
+    <div id="equipos-container"></div>
 
 </div>
 
+<footer>
+    Liga Tucson © 2026
+</footer>
 
-<!-- DATOS DE LA LIGA -->
-
-<script src="./datos.js"></script>
-
+<script src="datos.js"></script>
 
 <script>
 
-    const contenedor =
-        document.getElementById("lista-equipos");
+const escudos = {
+
+    "Talleres": "IMG_1621.png",
+
+    "Juventud Unida": "IMG_1622.png",
+
+    "Estación Experimental": "IMG_1623.png",
+
+    "Central Norte": "IMG_1624.jpeg",
+
+    "Villa Mitre": "IMG_1625.jpeg",
+
+    "All Boys": "IMG_1627.png",
+
+    "San José": "IMG_1628.png"
+
+};
 
 
-    const zonas = [
-        "A",
-        "B",
-        "C",
-        "D",
-        "E",
-        "F"
-    ];
+const container = document.getElementById("equipos-container");
+
+const zonas = ["A", "B", "C", "D", "E", "F"];
 
 
-    let contenido = "";
+zonas.forEach(zona => {
+
+    const equipos = datosLiga.zonas[zona];
+
+    if (!equipos || equipos.length === 0) return;
+
+    const zonaDiv = document.createElement("div");
+
+    zonaDiv.className = "zona";
+
+    zonaDiv.innerHTML = `<h2>Zona ${zona}</h2>`;
+
+    const grid = document.createElement("div");
+
+    grid.className = "grid-equipos";
 
 
-    zonas.forEach(zona => {
+    equipos.forEach(equipo => {
+
+        const nombre = equipo.equipo;
+
+        const archivoEscudo = escudos[nombre];
+
+        const tarjeta = document.createElement("div");
+
+        tarjeta.className = "equipo";
 
 
-        const equipos =
-            datosLiga.zonas[zona];
+        let escudoHTML;
 
+        if (archivoEscudo) {
 
-        if (!equipos) {
-            return;
+            escudoHTML = `
+                <img
+                    class="escudo"
+                    src="${archivoEscudo}"
+                    alt="Escudo de ${nombre}"
+                >
+            `;
+
+        } else {
+
+            escudoHTML = `
+                <div class="sin-escudo">
+                    Sin escudo
+                </div>
+            `;
+
         }
 
 
-        contenido += `
+        tarjeta.innerHTML = `
 
-            <div class="zona">
+            ${escudoHTML}
 
-                <h2>
-                    Zona ${zona}
-                </h2>
+            <h3>${nombre}</h3>
 
-                <div class="equipos">
-
-        `;
-
-
-        equipos.forEach(equipo => {
-
-
-            /*
-             * El parámetro "v=2" obliga al navegador
-             * a cargar una dirección nueva.
-             */
-
-            const enlace =
-                "equipo.html?v=2&equipo=" +
-                encodeURIComponent(equipo.equipo) +
-                "&zona=" +
-                encodeURIComponent(zona);
-
-
-            contenido += `
-
-                <div class="equipo">
-
-                    <div class="nombre-equipo">
-
-                        ${equipo.equipo}
-
-                    </div>
-
-
-                    <a
-                        class="boton"
-                        href="${enlace}"
-                    >
-
-                        Ver equipo
-
-                    </a>
-
-                </div>
-
-            `;
-
-        });
-
-
-        contenido += `
-
-                </div>
-
-            </div>
+            <a
+                class="boton"
+                href="equipo.html?v=6&equipo=${encodeURIComponent(nombre)}&zona=${zona}"
+            >
+                Ver equipo
+            </a>
 
         `;
+
+
+        grid.appendChild(tarjeta);
 
     });
 
 
-    contenedor.innerHTML =
-        contenido;
+    zonaDiv.appendChild(grid);
+
+    container.appendChild(zonaDiv);
+
+});
 
 </script>
 
-
 </body>
-
 </html>
