@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Liga Tucson</title>
+  <title>Liga Tucson | Fútbol Tucumán</title>
 
   <style>
     * {
@@ -14,23 +14,27 @@
     }
 
     body {
-      font-family: Arial, sans-serif;
-      background: #eef6ff;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f2f7fc;
       color: #102a43;
     }
 
+    /* =========================
+       HEADER
+    ========================= */
+
     header {
-      background: linear-gradient(135deg, #061a36, #0b4f91);
+      background: linear-gradient(135deg, #04152d, #07569c);
       color: white;
-      padding: 15px 20px;
+      padding: 12px 18px;
       position: sticky;
       top: 0;
-      z-index: 100;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+      z-index: 1000;
+      box-shadow: 0 3px 12px rgba(0,0,0,.22);
     }
 
     .header-contenido {
-      max-width: 1100px;
+      max-width: 1150px;
       margin: auto;
       display: flex;
       align-items: center;
@@ -47,26 +51,27 @@
     }
 
     .logo {
-      width: 65px;
-      height: 65px;
+      width: 62px;
+      height: 62px;
       object-fit: contain;
       border-radius: 50%;
     }
 
     .titulo {
-      font-size: 25px;
-      font-weight: bold;
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: .5px;
     }
 
     .subtitulo {
-      font-size: 13px;
-      opacity: 0.85;
+      font-size: 12px;
       margin-top: 3px;
+      opacity: .8;
     }
 
     nav {
       display: flex;
-      gap: 8px;
+      gap: 5px;
       flex-wrap: wrap;
       justify-content: center;
     }
@@ -77,51 +82,100 @@
       padding: 9px 12px;
       border-radius: 8px;
       font-size: 14px;
+      font-weight: 600;
     }
 
     nav a:hover {
-      background: rgba(255,255,255,0.15);
+      background: rgba(255,255,255,.15);
     }
 
-    main {
-      max-width: 1100px;
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      background:
+        linear-gradient(
+          135deg,
+          rgba(3,22,48,.97),
+          rgba(7,82,148,.92)
+        );
+      color: white;
+      padding: 45px 20px;
+    }
+
+    .hero-contenido {
+      max-width: 1150px;
       margin: auto;
-      padding: 25px 15px 50px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 35px;
     }
 
-    .bienvenida {
-      background: white;
-      border-radius: 18px;
-      padding: 25px;
-      margin-bottom: 25px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-      text-align: center;
+    .hero-texto {
+      flex: 1;
     }
 
-    .bienvenida h1 {
-      color: #0b4f91;
-      margin-bottom: 8px;
-      font-size: 30px;
+    .hero-texto .etiqueta {
+      display: inline-block;
+      background: rgba(255,255,255,.13);
+      padding: 7px 12px;
+      border-radius: 20px;
+      font-size: 13px;
+      margin-bottom: 15px;
     }
 
-    .bienvenida p {
-      color: #557086;
+    .hero h1 {
+      font-size: 42px;
+      line-height: 1.05;
+      margin-bottom: 14px;
+    }
+
+    .hero h1 span {
+      color: #72c8ff;
+    }
+
+    .hero p {
+      font-size: 17px;
+      line-height: 1.5;
+      max-width: 600px;
+      opacity: .9;
+    }
+
+    .hero-logo {
+      width: 210px;
+      height: 210px;
+      object-fit: contain;
+      filter: drop-shadow(0 10px 20px rgba(0,0,0,.3));
+    }
+
+    /* =========================
+       BUSCADOR
+    ========================= */
+
+    .buscador-box {
+      max-width: 1150px;
+      margin: -25px auto 0;
+      padding: 0 15px;
+      position: relative;
+      z-index: 10;
     }
 
     .buscador {
-      margin-top: 20px;
+      background: white;
+      border-radius: 16px;
+      padding: 15px;
+      box-shadow: 0 7px 25px rgba(0,0,0,.13);
       display: flex;
       gap: 10px;
-      max-width: 650px;
-      margin-left: auto;
-      margin-right: auto;
     }
 
     .buscador input {
       flex: 1;
-      padding: 14px;
-      border: 2px solid #c7d9eb;
+      border: 2px solid #d8e5f0;
       border-radius: 10px;
+      padding: 13px;
       font-size: 16px;
       outline: none;
     }
@@ -131,44 +185,113 @@
     }
 
     .buscador button {
-      background: #0b65b1;
-      color: white;
       border: none;
-      padding: 0 20px;
       border-radius: 10px;
+      padding: 0 22px;
+      background: #0865ae;
+      color: white;
+      font-size: 15px;
       font-weight: bold;
       cursor: pointer;
     }
 
+    .buscador button:hover {
+      background: #064e88;
+    }
+
     .resultado-busqueda {
-      margin-top: 15px;
-      text-align: left;
+      margin-top: 10px;
     }
 
     .resultado-equipo {
       display: block;
-      background: #f1f8ff;
-      border: 1px solid #c7d9eb;
+      background: #eef7ff;
+      border: 1px solid #cfe3f5;
       padding: 12px 15px;
-      border-radius: 10px;
-      margin-top: 8px;
+      margin-top: 7px;
+      border-radius: 9px;
       text-decoration: none;
-      color: #0b4f91;
+      color: #07569c;
       font-weight: bold;
     }
 
-    .resultado-equipo:hover {
-      background: #dceeff;
+    /* =========================
+       CONTENIDO
+    ========================= */
+
+    main {
+      max-width: 1150px;
+      margin: auto;
+      padding: 40px 15px 60px;
     }
 
     .seccion {
-      margin-top: 25px;
+      margin-bottom: 35px;
     }
 
-    .seccion h2 {
-      margin-bottom: 15px;
-      color: #0b4f91;
+    .titulo-seccion {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
     }
+
+    .titulo-seccion h2 {
+      font-size: 23px;
+      color: #07569c;
+    }
+
+    .ver-todo {
+      color: #0876c9;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    /* =========================
+       ACCESOS
+    ========================= */
+
+    .accesos {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+
+    .acceso {
+      background: white;
+      border-radius: 15px;
+      padding: 22px;
+      text-decoration: none;
+      color: #102a43;
+      box-shadow: 0 4px 14px rgba(0,0,0,.07);
+      transition: .2s;
+      border-top: 4px solid #168cff;
+    }
+
+    .acceso:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0,0,0,.12);
+    }
+
+    .acceso-icono {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .acceso h3 {
+      color: #07569c;
+      margin-bottom: 5px;
+    }
+
+    .acceso p {
+      color: #71869a;
+      font-size: 13px;
+    }
+
+    /* =========================
+       ZONAS
+    ========================= */
 
     .zonas {
       display: grid;
@@ -182,50 +305,63 @@
       padding: 20px;
       text-decoration: none;
       color: #102a43;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      box-shadow: 0 4px 14px rgba(0,0,0,.07);
       border-left: 5px solid #168cff;
-      transition: 0.2s;
+      transition: .2s;
     }
 
     .zona:hover {
       transform: translateY(-3px);
-      box-shadow: 0 7px 18px rgba(0,0,0,0.12);
+    }
+
+    .zona-numero {
+      font-size: 13px;
+      color: #168cff;
+      font-weight: bold;
+      margin-bottom: 5px;
     }
 
     .zona h3 {
-      color: #0b4f91;
-      margin-bottom: 8px;
+      font-size: 20px;
+      color: #07569c;
+      margin-bottom: 7px;
     }
 
     .zona p {
-      font-size: 14px;
-      color: #647b91;
+      font-size: 13px;
+      color: #71869a;
     }
 
-    .tarjetas {
+    /* =========================
+       PARTIDOS
+    ========================= */
+
+    .columnas {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 15px;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
     }
 
     .tarjeta {
       background: white;
-      border-radius: 15px;
-      padding: 18px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 4px 14px rgba(0,0,0,.07);
     }
 
     .tarjeta h3 {
-      color: #0b4f91;
+      color: #07569c;
       margin-bottom: 12px;
     }
 
     .partido {
-      padding: 10px 0;
-      border-bottom: 1px solid #e2eaf1;
       display: flex;
       justify-content: space-between;
+      align-items: center;
       gap: 10px;
+      padding: 12px 0;
+      border-bottom: 1px solid #e6edf3;
+      font-size: 14px;
     }
 
     .partido:last-child {
@@ -233,18 +369,13 @@
     }
 
     .equipo-link {
-      color: #0b4f91;
+      color: #07569c;
       text-decoration: none;
       font-weight: bold;
     }
 
-    .equipo-link:hover {
-      text-decoration: underline;
-    }
-
     .marcador {
       font-weight: bold;
-      color: #102a43;
       white-space: nowrap;
     }
 
@@ -255,22 +386,34 @@
     }
 
     .sin-datos {
-      color: #777;
+      color: #7b8995;
       font-size: 14px;
     }
 
+    /* =========================
+       FOOTER
+    ========================= */
+
     footer {
-      background: #061a36;
+      background: #04152d;
       color: white;
       text-align: center;
-      padding: 25px 15px;
-      margin-top: 30px;
+      padding: 28px 15px;
+    }
+
+    footer strong {
+      font-size: 19px;
     }
 
     footer p {
-      margin: 5px;
-      opacity: 0.85;
+      margin-top: 6px;
+      opacity: .75;
+      font-size: 13px;
     }
+
+    /* =========================
+       CELULAR
+    ========================= */
 
     @media (max-width: 800px) {
 
@@ -278,18 +421,32 @@
         flex-direction: column;
       }
 
+      .hero-contenido {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .hero h1 {
+        font-size: 34px;
+      }
+
+      .hero p {
+        margin: auto;
+      }
+
+      .hero-logo {
+        width: 150px;
+        height: 150px;
+      }
+
+      .accesos,
       .zonas {
         grid-template-columns: repeat(2, 1fr);
       }
 
-      .tarjetas {
+      .columnas {
         grid-template-columns: 1fr;
       }
-
-      nav {
-        width: 100%;
-      }
-
     }
 
     @media (max-width: 550px) {
@@ -298,13 +455,26 @@
         font-size: 21px;
       }
 
-      .logo {
-        width: 55px;
-        height: 55px;
+      nav {
+        width: 100%;
       }
 
-      .zonas {
-        grid-template-columns: 1fr;
+      nav a {
+        font-size: 13px;
+        padding: 8px;
+      }
+
+      .hero {
+        padding: 35px 18px;
+      }
+
+      .hero h1 {
+        font-size: 31px;
+      }
+
+      .hero-logo {
+        width: 125px;
+        height: 125px;
       }
 
       .buscador {
@@ -315,11 +485,19 @@
         padding: 13px;
       }
 
+      .accesos,
+      .zonas {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 
 <body>
+
+<!-- =========================
+     HEADER
+========================= -->
 
 <header>
 
@@ -327,7 +505,6 @@
 
     <a href="index.html" class="marca">
 
-      <!-- LOGO OFICIAL -->
       <img
         src="https://raw.githubusercontent.com/ianulisespaez-netizen/Liga-tucson/main/FDDF80B7-4151-4091-AB6F-C5DF10F36391.png"
         alt="Liga Tucson"
@@ -353,46 +530,146 @@
 </header>
 
 
-<main>
+<!-- =========================
+     HERO
+========================= -->
 
-  <!-- BIENVENIDA -->
+<section class="hero">
 
-  <section class="bienvenida">
+  <div class="hero-contenido">
 
-    <h1>⚽ Liga Tucson</h1>
+    <div class="hero-texto">
 
-    <p>
-      Toda la información de la Liga Tucumana de Fútbol
-    </p>
+      <div class="etiqueta">
+        ⚽ Primera División A · Clausura 2026
+      </div>
 
-    <div class="buscador">
+      <h1>
+        Todo el fútbol<br>
+        de <span>Tucumán</span>
+      </h1>
 
-      <input
-        type="text"
-        id="busqueda"
-        placeholder="Buscar equipo..."
-        autocomplete="off"
-      >
-
-      <button onclick="buscar()">
-        Buscar
-      </button>
+      <p>
+        Resultados, posiciones, partidos y equipos
+        de la Liga Tucumana de Fútbol.
+      </p>
 
     </div>
 
-    <div
-      id="resultadoBusqueda"
-      class="resultado-busqueda">
+    <img
+      src="https://raw.githubusercontent.com/ianulisespaez-netizen/Liga-tucson/main/FDDF80B7-4151-4091-AB6F-C5DF10F36391.png"
+      alt="Liga Tucson"
+      class="hero-logo"
+    >
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     BUSCADOR
+========================= -->
+
+<div class="buscador-box">
+
+  <div class="buscador">
+
+    <input
+      type="text"
+      id="busqueda"
+      placeholder="🔎 Buscar tu equipo..."
+      autocomplete="off"
+    >
+
+    <button onclick="buscar()">
+      Buscar
+    </button>
+
+  </div>
+
+  <div
+    id="resultadoBusqueda"
+    class="resultado-busqueda">
+  </div>
+
+</div>
+
+
+<main>
+
+  <!-- =========================
+       ACCESOS RÁPIDOS
+  ========================= -->
+
+  <section class="seccion">
+
+    <div class="titulo-seccion">
+
+      <h2>Accesos rápidos</h2>
+
+    </div>
+
+    <div class="accesos">
+
+      <a href="posiciones.html" class="acceso">
+
+        <div class="acceso-icono">📊</div>
+
+        <h3>Posiciones</h3>
+
+        <p>
+          Consultá las tablas de todas las zonas.
+        </p>
+
+      </a>
+
+
+      <a href="partidos.html" class="acceso">
+
+        <div class="acceso-icono">📅</div>
+
+        <h3>Partidos</h3>
+
+        <p>
+          Mirá resultados y próximos encuentros.
+        </p>
+
+      </a>
+
+
+      <a href="equipos.html" class="acceso">
+
+        <div class="acceso-icono">⚽</div>
+
+        <h3>Equipos</h3>
+
+        <p>
+          Conocé todos los clubes del torneo.
+        </p>
+
+      </a>
+
     </div>
 
   </section>
 
 
-  <!-- ZONAS -->
+  <!-- =========================
+       ZONAS
+  ========================= -->
 
   <section class="seccion">
 
-    <h2>🏆 Primera División A - Clausura 2026</h2>
+    <div class="titulo-seccion">
+
+      <h2>🏆 Zonas del torneo</h2>
+
+      <a href="posiciones.html" class="ver-todo">
+        Ver todas →
+      </a>
+
+    </div>
 
     <div class="zonas" id="zonas">
     </div>
@@ -400,11 +677,13 @@
   </section>
 
 
-  <!-- RESULTADOS Y PRÓXIMOS -->
+  <!-- =========================
+       RESULTADOS / PRÓXIMOS
+  ========================= -->
 
   <section class="seccion">
 
-    <div class="tarjetas">
+    <div class="columnas">
 
       <div class="tarjeta">
 
@@ -432,27 +711,33 @@
 </main>
 
 
+<!-- =========================
+     FOOTER
+========================= -->
+
 <footer>
 
-  <p><strong>⚽ LIGA TUCSON</strong></p>
+  <strong>⚽ LIGA TUCSON</strong>
 
   <p>
     Liga Tucumana de Fútbol · Clausura 2026
   </p>
 
+  <p>
+    Información deportiva de Tucumán
+  </p>
+
 </footer>
 
-
-<!-- DATOS DE LA LIGA -->
 
 <script src="datos.js"></script>
 
 
 <script>
 
-  // =========================
-  // EQUIPOS
-  // =========================
+  /* =========================
+     EQUIPOS
+  ========================= */
 
   let todosLosEquipos = [];
 
@@ -481,9 +766,9 @@
   });
 
 
-  // =========================
-  // BUSCADOR
-  // =========================
+  /* =========================
+     NORMALIZAR TEXTO
+  ========================= */
 
   function normalizar(texto) {
 
@@ -495,6 +780,10 @@
 
   }
 
+
+  /* =========================
+     BUSCADOR
+  ========================= */
 
   function buscar() {
 
@@ -541,23 +830,26 @@
       encontrados.map(function(item) {
 
         return `
+
           <a
             class="resultado-equipo"
             href="equipo.html?v=5&equipo=${encodeURIComponent(item.equipo)}&zona=${encodeURIComponent(item.zona)}"
           >
+
             ⚽ ${item.equipo}
+
             <span style="float:right;">
               Zona ${item.zona}
             </span>
+
           </a>
+
         `;
 
       }).join("");
 
   }
 
-
-  // Buscar al presionar ENTER
 
   document
     .getElementById("busqueda")
@@ -570,9 +862,9 @@
     });
 
 
-  // =========================
-  // MOSTRAR ZONAS
-  // =========================
+  /* =========================
+     ZONAS
+  ========================= */
 
   const contenedorZonas =
     document.getElementById("zonas");
@@ -596,7 +888,9 @@
     const enlace =
       document.createElement("a");
 
+
     enlace.className = "zona";
+
 
     enlace.href =
       "posiciones.html?zona=" +
@@ -605,14 +899,16 @@
 
     enlace.innerHTML = `
 
-      <h3>Zona ${zona}</h3>
+      <div class="zona-numero">
+        PRIMERA DIVISIÓN A
+      </div>
+
+      <h3>
+        Zona ${zona}
+      </h3>
 
       <p>
-        ${cantidad} equipos
-      </p>
-
-      <p style="margin-top:8px;">
-        Ver tabla de posiciones →
+        ${cantidad} equipos · Ver posiciones →
       </p>
 
     `;
@@ -623,9 +919,9 @@
   });
 
 
-  // =========================
-  // RESULTADOS
-  // =========================
+  /* =========================
+     RESULTADOS
+  ========================= */
 
   const contenedorResultados =
     document.getElementById("resultados");
@@ -663,6 +959,7 @@
         const zona =
           partido.zona || "";
 
+
         return `
 
           <div class="partido">
@@ -676,7 +973,13 @@
                 ${partido.local}
               </a>
 
-              vs
+              <br>
+
+              <span style="font-size:12px;color:#8a9aaa;">
+                vs
+              </span>
+
+              <br>
 
               <a
                 class="equipo-link"
@@ -700,9 +1003,9 @@
   }
 
 
-  // =========================
-  // PRÓXIMOS PARTIDOS
-  // =========================
+  /* =========================
+     PRÓXIMOS
+  ========================= */
 
   const contenedorProximos =
     document.getElementById("proximos");
@@ -730,7 +1033,9 @@
   if (proximos.length === 0) {
 
     contenedorProximos.innerHTML =
-      '<p class="sin-datos">No hay próximos partidos cargados.</p>';
+      '<p class="sin-datos">
+        No hay próximos partidos cargados.
+      </p>';
 
   } else {
 
@@ -739,6 +1044,7 @@
 
         const zona =
           partido.zona || "";
+
 
         return `
 
@@ -753,7 +1059,13 @@
                 ${partido.local}
               </a>
 
-              vs
+              <br>
+
+              <span style="font-size:12px;color:#8a9aaa;">
+                vs
+              </span>
+
+              <br>
 
               <a
                 class="equipo-link"
