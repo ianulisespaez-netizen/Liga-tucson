@@ -4,9 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Liga Tucson | Fútbol Tucumán</title>
+  <title>Liga Tucson - Liga Tucumana de Fútbol</title>
 
   <style>
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -15,1080 +16,856 @@
 
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background: #f2f7fc;
-      color: #102a43;
+      background: #eef3f9;
+      color: #16324f;
     }
 
-    /* =========================
-       HEADER
-    ========================= */
+    /* ========================= */
+    /* ENCABEZADO */
+    /* ========================= */
 
-    header {
-      background: linear-gradient(135deg, #04152d, #07569c);
-      color: white;
-      padding: 12px 18px;
+    .site-header {
       position: sticky;
       top: 0;
       z-index: 1000;
-      box-shadow: 0 3px 12px rgba(0,0,0,.22);
+
+      transition:
+        transform 0.35s ease,
+        opacity 0.35s ease;
+
+      transform: translateY(0);
+      opacity: 1;
     }
 
-    .header-contenido {
-      max-width: 1150px;
-      margin: auto;
+    .site-header.header-hidden {
+      transform: translateY(-100%);
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .header-top {
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
-    .marca {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      text-decoration: none;
-      color: white;
-    }
-
-    .logo {
-      width: 62px;
-      height: 62px;
-      object-fit: contain;
-      border-radius: 50%;
-    }
-
-    .titulo {
-      font-size: 24px;
-      font-weight: 800;
-      letter-spacing: .5px;
-    }
-
-    .subtitulo {
-      font-size: 12px;
-      margin-top: 3px;
-      opacity: .8;
-    }
-
-    nav {
-      display: flex;
-      gap: 5px;
-      flex-wrap: wrap;
       justify-content: center;
+      gap: 18px;
+
+      padding: 28px 20px 20px;
+
+      background: linear-gradient(
+        135deg,
+        #062b52,
+        #1269a8
+      );
     }
 
-    nav a {
+    .header-logo {
+      width: 82px;
+      height: 82px;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+
+    .header-title {
+      text-align: left;
+    }
+
+    .header-title h1 {
+      color: white;
+      font-size: 32px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    .header-title p {
+      margin-top: 5px;
+      color: #d9e9f8;
+      font-size: 17px;
+    }
+
+    /* ========================= */
+    /* MENÚ */
+    /* ========================= */
+
+    .main-nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 42px;
+
+      padding: 18px 15px;
+
+      background: linear-gradient(
+        135deg,
+        #062b52,
+        #1269a8
+      );
+    }
+
+    .main-nav a {
       color: white;
       text-decoration: none;
-      padding: 9px 12px;
-      border-radius: 8px;
-      font-size: 14px;
-      font-weight: 600;
+
+      font-size: 18px;
+      font-weight: 700;
+
+      transition: 0.2s;
     }
 
-    nav a:hover {
-      background: rgba(255,255,255,.15);
+    .main-nav a:hover {
+      color: #55b8ff;
     }
 
-    /* =========================
-       HERO
-    ========================= */
+    /* ========================= */
+    /* HERO */
+    /* ========================= */
 
     .hero {
-      background:
-        linear-gradient(
-          135deg,
-          rgba(3,22,48,.97),
-          rgba(7,82,148,.92)
-        );
+      min-height: 680px;
+
+      padding: 58px 25px 75px;
+
+      text-align: center;
+
+      background: linear-gradient(
+        135deg,
+        #0a3159,
+        #1269a8
+      );
+
       color: white;
-      padding: 45px 20px;
     }
 
-    .hero-contenido {
-      max-width: 1150px;
-      margin: auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 35px;
-    }
-
-    .hero-texto {
-      flex: 1;
-    }
-
-    .hero-texto .etiqueta {
+    .torneo {
       display: inline-block;
-      background: rgba(255,255,255,.13);
-      padding: 7px 12px;
-      border-radius: 20px;
-      font-size: 13px;
-      margin-bottom: 15px;
+
+      padding: 15px 22px;
+
+      margin-bottom: 25px;
+
+      border-radius: 30px;
+
+      background: rgba(255,255,255,0.15);
+
+      font-size: 18px;
     }
 
-    .hero h1 {
-      font-size: 42px;
-      line-height: 1.05;
-      margin-bottom: 14px;
+    .hero h2 {
+      font-size: 48px;
+      line-height: 1.1;
+
+      max-width: 750px;
+
+      margin: 0 auto 25px;
     }
 
-    .hero h1 span {
-      color: #72c8ff;
+    .hero h2 span {
+      color: #52b9ff;
     }
 
     .hero p {
-      font-size: 17px;
+      max-width: 760px;
+
+      margin: 0 auto;
+
+      font-size: 24px;
       line-height: 1.5;
-      max-width: 600px;
-      opacity: .9;
+
+      color: #f2f7fc;
     }
 
     .hero-logo {
-      width: 210px;
-      height: 210px;
+      width: 180px;
+      height: 180px;
+
       object-fit: contain;
-      filter: drop-shadow(0 10px 20px rgba(0,0,0,.3));
+
+      margin-top: 55px;
     }
 
-    /* =========================
-       BUSCADOR
-    ========================= */
+    /* ========================= */
+    /* BUSCADOR */
+    /* ========================= */
 
-    .buscador-box {
-      max-width: 1150px;
-      margin: -25px auto 0;
-      padding: 0 15px;
+    .search-card {
       position: relative;
+
+      width: calc(100% - 50px);
+      max-width: 660px;
+
+      margin: -40px auto 70px;
+
+      padding: 25px;
+
+      background: white;
+
+      border-radius: 28px;
+
+      box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+
       z-index: 10;
     }
 
-    .buscador {
-      background: white;
-      border-radius: 16px;
-      padding: 15px;
-      box-shadow: 0 7px 25px rgba(0,0,0,.13);
-      display: flex;
-      gap: 10px;
-    }
+    .search-input {
+      width: 100%;
 
-    .buscador input {
-      flex: 1;
-      border: 2px solid #d8e5f0;
-      border-radius: 10px;
-      padding: 13px;
-      font-size: 16px;
+      padding: 20px;
+
+      border: 3px solid #dbe5ef;
+
+      border-radius: 17px;
+
+      font-size: 20px;
+
       outline: none;
     }
 
-    .buscador input:focus {
-      border-color: #168cff;
+    .search-input:focus {
+      border-color: #1684d4;
     }
 
-    .buscador button {
+    .search-button {
+      width: 100%;
+
+      margin-top: 16px;
+
+      padding: 20px;
+
       border: none;
-      border-radius: 10px;
-      padding: 0 22px;
-      background: #0865ae;
+
+      border-radius: 17px;
+
+      background: #1474b9;
+
       color: white;
-      font-size: 15px;
-      font-weight: bold;
+
+      font-size: 20px;
+      font-weight: 700;
+
       cursor: pointer;
     }
 
-    .buscador button:hover {
-      background: #064e88;
+    .search-button:hover {
+      background: #0e609c;
     }
 
-    .resultado-busqueda {
-      margin-top: 10px;
+    .search-result {
+      margin-top: 15px;
+
+      font-size: 16px;
+
+      color: #555;
     }
 
-    .resultado-equipo {
+    /* ========================= */
+    /* ACCESOS RÁPIDOS */
+    /* ========================= */
+
+    .quick-section {
+      padding: 0 25px 60px;
+
+      max-width: 1200px;
+
+      margin: 0 auto;
+    }
+
+    .quick-section h2 {
+      margin-bottom: 28px;
+
+      color: #12609a;
+
+      font-size: 34px;
+    }
+
+    .quick-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(4, 1fr);
+
+      gap: 20px;
+    }
+
+    .quick-card {
       display: block;
-      background: #eef7ff;
-      border: 1px solid #cfe3f5;
-      padding: 12px 15px;
-      margin-top: 7px;
-      border-radius: 9px;
-      text-decoration: none;
-      color: #07569c;
-      font-weight: bold;
-    }
 
-    /* =========================
-       CONTENIDO
-    ========================= */
+      padding: 28px 22px;
 
-    main {
-      max-width: 1150px;
-      margin: auto;
-      padding: 40px 15px 60px;
-    }
-
-    .seccion {
-      margin-bottom: 35px;
-    }
-
-    .titulo-seccion {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 16px;
-    }
-
-    .titulo-seccion h2 {
-      font-size: 23px;
-      color: #07569c;
-    }
-
-    .ver-todo {
-      color: #0876c9;
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: bold;
-    }
-
-    /* =========================
-       ACCESOS
-    ========================= */
-
-    .accesos {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 15px;
-    }
-
-    .acceso {
       background: white;
-      border-radius: 15px;
-      padding: 22px;
+
+      border-radius: 22px;
+
+      border-top: 6px solid #258ce0;
+
       text-decoration: none;
-      color: #102a43;
-      box-shadow: 0 4px 14px rgba(0,0,0,.07);
-      transition: .2s;
-      border-top: 4px solid #168cff;
+
+      color: #16324f;
+
+      box-shadow:
+        0 7px 22px rgba(0,0,0,0.08);
+
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
     }
 
-    .acceso:hover {
+    .quick-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 8px 20px rgba(0,0,0,.12);
+
+      box-shadow:
+        0 12px 28px rgba(0,0,0,0.12);
     }
 
-    .acceso-icono {
-      font-size: 30px;
-      margin-bottom: 10px;
+    .quick-icon {
+      font-size: 38px;
+
+      margin-bottom: 15px;
     }
 
-    .acceso h3 {
-      color: #07569c;
-      margin-bottom: 5px;
+    .quick-card h3 {
+      font-size: 23px;
+
+      margin-bottom: 8px;
+
+      color: #12609a;
     }
 
-    .acceso p {
-      color: #71869a;
-      font-size: 13px;
+    .quick-card p {
+      color: #718096;
+
+      font-size: 16px;
+
+      line-height: 1.4;
     }
 
-    /* =========================
-       ZONAS
-    ========================= */
-
-    .zonas {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 15px;
-    }
-
-    .zona {
-      background: white;
-      border-radius: 15px;
-      padding: 20px;
-      text-decoration: none;
-      color: #102a43;
-      box-shadow: 0 4px 14px rgba(0,0,0,.07);
-      border-left: 5px solid #168cff;
-      transition: .2s;
-    }
-
-    .zona:hover {
-      transform: translateY(-3px);
-    }
-
-    .zona-numero {
-      font-size: 13px;
-      color: #168cff;
-      font-weight: bold;
-      margin-bottom: 5px;
-    }
-
-    .zona h3 {
-      font-size: 20px;
-      color: #07569c;
-      margin-bottom: 7px;
-    }
-
-    .zona p {
-      font-size: 13px;
-      color: #71869a;
-    }
-
-    /* =========================
-       PARTIDOS
-    ========================= */
-
-    .columnas {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
-    }
-
-    .tarjeta {
-      background: white;
-      border-radius: 16px;
-      padding: 20px;
-      box-shadow: 0 4px 14px rgba(0,0,0,.07);
-    }
-
-    .tarjeta h3 {
-      color: #07569c;
-      margin-bottom: 12px;
-    }
-
-    .partido {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 10px;
-      padding: 12px 0;
-      border-bottom: 1px solid #e6edf3;
-      font-size: 14px;
-    }
-
-    .partido:last-child {
-      border-bottom: none;
-    }
-
-    .equipo-link {
-      color: #07569c;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .marcador {
-      font-weight: bold;
-      white-space: nowrap;
-    }
-
-    .proximo {
-      color: #168cff;
-      font-weight: bold;
-      white-space: nowrap;
-    }
-
-    .sin-datos {
-      color: #7b8995;
-      font-size: 14px;
-    }
-
-    /* =========================
-       FOOTER
-    ========================= */
+    /* ========================= */
+    /* PIE */
+    /* ========================= */
 
     footer {
-      background: #04152d;
-      color: white;
+      padding: 30px 20px;
+
       text-align: center;
-      padding: 28px 15px;
+
+      background: #082d50;
+
+      color: #d8e6f3;
     }
 
     footer strong {
-      font-size: 19px;
+      color: white;
     }
 
-    footer p {
-      margin-top: 6px;
-      opacity: .75;
-      font-size: 13px;
-    }
+    /* ========================= */
+    /* CELULAR */
+    /* ========================= */
 
-    /* =========================
-       CELULAR
-    ========================= */
+    @media (max-width: 700px) {
 
-    @media (max-width: 800px) {
+      .header-top {
+        padding: 20px 15px 16px;
 
-      .header-contenido {
-        flex-direction: column;
+        gap: 12px;
       }
 
-      .hero-contenido {
-        flex-direction: column;
-        text-align: center;
+      .header-logo {
+        width: 68px;
+        height: 68px;
       }
 
-      .hero h1 {
-        font-size: 34px;
+      .header-title h1 {
+        font-size: 25px;
       }
 
-      .hero p {
-        margin: auto;
+      .header-title p {
+        font-size: 14px;
       }
 
-      .hero-logo {
-        width: 150px;
-        height: 150px;
+      .main-nav {
+        gap: 25px;
+
+        padding: 15px 10px;
       }
 
-      .accesos,
-      .zonas {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .columnas {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 550px) {
-
-      .titulo {
-        font-size: 21px;
-      }
-
-      nav {
-        width: 100%;
-      }
-
-      nav a {
-        font-size: 13px;
-        padding: 8px;
+      .main-nav a {
+        font-size: 16px;
       }
 
       .hero {
-        padding: 35px 18px;
+        min-height: 680px;
+
+        padding: 58px 20px 70px;
       }
 
-      .hero h1 {
-        font-size: 31px;
+      .torneo {
+        font-size: 16px;
+
+        padding: 13px 17px;
+      }
+
+      .hero h2 {
+        font-size: 40px;
+      }
+
+      .hero p {
+        font-size: 21px;
       }
 
       .hero-logo {
-        width: 125px;
-        height: 125px;
+        width: 165px;
+        height: 165px;
+
+        margin-top: 48px;
       }
 
-      .buscador {
-        flex-direction: column;
+      .search-card {
+        width: calc(100% - 50px);
+
+        margin-top: -40px;
       }
 
-      .buscador button {
-        padding: 13px;
-      }
-
-      .accesos,
-      .zonas {
+      .quick-grid {
         grid-template-columns: 1fr;
       }
+
+      .quick-section {
+        padding-left: 25px;
+        padding-right: 25px;
+      }
+
+      .quick-section h2 {
+        font-size: 32px;
+      }
     }
+
   </style>
 </head>
 
 <body>
 
-<!-- =========================
-     HEADER
-========================= -->
+  <!-- ========================= -->
+  <!-- ENCABEZADO -->
+  <!-- ========================= -->
 
-<header>
+  <header class="site-header" id="siteHeader">
 
-  <div class="header-contenido">
-
-    <a href="index.html" class="marca">
+    <div class="header-top">
 
       <img
-        src="https://raw.githubusercontent.com/ianulisespaez-netizen/Liga-tucson/main/FDDF80B7-4151-4091-AB6F-C5DF10F36391.png"
+        src="FDDF80B7-4151-4091-AB6F-C5DF10F36391.png"
         alt="Liga Tucson"
-        class="logo"
+        class="header-logo"
       >
 
-      <div>
-        <div class="titulo">LIGA TUCSON</div>
-        <div class="subtitulo">Liga Tucumana de Fútbol</div>
+      <div class="header-title">
+
+        <h1>LIGA TUCSON</h1>
+
+        <p>Liga Tucumana de Fútbol</p>
+
       </div>
-
-    </a>
-
-    <nav>
-      <a href="index.html">Inicio</a>
-      <a href="posiciones.html">Posiciones</a>
-      <a href="partidos.html">Partidos</a>
-      <a href="equipos.html">Equipos</a>
-    </nav>
-
-  </div>
-
-</header>
-
-
-<!-- =========================
-     HERO
-========================= -->
-
-<section class="hero">
-
-  <div class="hero-contenido">
-
-    <div class="hero-texto">
-
-      <div class="etiqueta">
-        ⚽ Primera División A · Clausura 2026
-      </div>
-
-      <h1>
-        Todo el fútbol<br>
-        de <span>Tucumán</span>
-      </h1>
-
-      <p>
-        Resultados, posiciones, partidos y equipos
-        de la Liga Tucumana de Fútbol.
-      </p>
 
     </div>
 
+
+    <nav class="main-nav">
+
+      <a href="index.html">
+        Inicio
+      </a>
+
+      <a href="posiciones.html">
+        Posiciones
+      </a>
+
+      <a href="partidos.html">
+        Partidos
+      </a>
+
+      <a href="equipos.html">
+        Equipos
+      </a>
+
+    </nav>
+
+  </header>
+
+
+  <!-- ========================= -->
+  <!-- PRESENTACIÓN -->
+  <!-- ========================= -->
+
+  <section class="hero">
+
+    <div class="torneo">
+      ⚽ Primera División A · Clausura 2026
+    </div>
+
+    <h2>
+      Todo el fútbol<br>
+      de <span>Tucumán</span>
+    </h2>
+
+    <p>
+      Resultados, posiciones, partidos y equipos
+      de la Liga Tucumana de Fútbol.
+    </p>
+
     <img
-      src="https://raw.githubusercontent.com/ianulisespaez-netizen/Liga-tucson/main/FDDF80B7-4151-4091-AB6F-C5DF10F36391.png"
+      src="FDDF80B7-4151-4091-AB6F-C5DF10F36391.png"
       alt="Liga Tucson"
       class="hero-logo"
     >
 
-  </div>
-
-</section>
+  </section>
 
 
-<!-- =========================
-     BUSCADOR
-========================= -->
+  <!-- ========================= -->
+  <!-- BUSCADOR -->
+  <!-- ========================= -->
 
-<div class="buscador-box">
-
-  <div class="buscador">
+  <div class="search-card">
 
     <input
       type="text"
-      id="busqueda"
+      id="searchTeam"
+      class="search-input"
       placeholder="🔎 Buscar tu equipo..."
       autocomplete="off"
     >
 
-    <button onclick="buscar()">
+    <button
+      class="search-button"
+      onclick="buscarEquipo()"
+    >
       Buscar
     </button>
 
+    <div
+      id="searchResult"
+      class="search-result"
+    ></div>
+
   </div>
 
-  <div
-    id="resultadoBusqueda"
-    class="resultado-busqueda">
-  </div>
 
-</div>
+  <!-- ========================= -->
+  <!-- ACCESOS RÁPIDOS -->
+  <!-- ========================= -->
 
+  <section class="quick-section">
 
-<main>
-
-  <!-- =========================
-       ACCESOS RÁPIDOS
-  ========================= -->
-
-  <section class="seccion">
-
-    <div class="titulo-seccion">
-
-      <h2>Accesos rápidos</h2>
-
-    </div>
-
-    <div class="accesos">
-
-      <a href="posiciones.html" class="acceso">
-
-        <div class="acceso-icono">📊</div>
-
-        <h3>Posiciones</h3>
-
-        <p>
-          Consultá las tablas de todas las zonas.
-        </p>
-
-      </a>
+    <h2>
+      Accesos rápidos
+    </h2>
 
 
-      <a href="partidos.html" class="acceso">
-
-        <div class="acceso-icono">📅</div>
-
-        <h3>Partidos</h3>
-
-        <p>
-          Mirá resultados y próximos encuentros.
-        </p>
-
-      </a>
+    <div class="quick-grid">
 
 
-      <a href="equipos.html" class="acceso">
+      <a
+        href="posiciones.html"
+        class="quick-card"
+      >
 
-        <div class="acceso-icono">⚽</div>
-
-        <h3>Equipos</h3>
-
-        <p>
-          Conocé todos los clubes del torneo.
-        </p>
-
-      </a>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       ZONAS
-  ========================= -->
-
-  <section class="seccion">
-
-    <div class="titulo-seccion">
-
-      <h2>🏆 Zonas del torneo</h2>
-
-      <a href="posiciones.html" class="ver-todo">
-        Ver todas →
-      </a>
-
-    </div>
-
-    <div class="zonas" id="zonas">
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       RESULTADOS / PRÓXIMOS
-  ========================= -->
-
-  <section class="seccion">
-
-    <div class="columnas">
-
-      <div class="tarjeta">
-
-        <h3>📋 Últimos resultados</h3>
-
-        <div id="resultados">
+        <div class="quick-icon">
+          📊
         </div>
 
-      </div>
+        <h3>
+          Posiciones
+        </h3>
+
+        <p>
+          Consultá las tablas de todas
+          las zonas del torneo.
+        </p>
+
+      </a>
 
 
-      <div class="tarjeta">
+      <a
+        href="partidos.html"
+        class="quick-card"
+      >
 
-        <h3>📅 Próximos partidos</h3>
-
-        <div id="proximos">
+        <div class="quick-icon">
+          ⚽
         </div>
 
-      </div>
+        <h3>
+          Partidos
+        </h3>
+
+        <p>
+          Mirá resultados y próximos
+          partidos de la Liga.
+        </p>
+
+      </a>
+
+
+      <a
+        href="equipos.html"
+        class="quick-card"
+      >
+
+        <div class="quick-icon">
+          🛡️
+        </div>
+
+        <h3>
+          Equipos
+        </h3>
+
+        <p>
+          Conocé todos los clubes
+          participantes.
+        </p>
+
+      </a>
+
+
+      <a
+        href="partidos.html"
+        class="quick-card"
+      >
+
+        <div class="quick-icon">
+          🗓️
+        </div>
+
+        <h3>
+          Fixture
+        </h3>
+
+        <p>
+          Consultá los encuentros
+          del campeonato.
+        </p>
+
+      </a>
+
 
     </div>
 
   </section>
 
-</main>
 
+  <!-- ========================= -->
+  <!-- PIE -->
+  <!-- ========================= -->
 
-<!-- =========================
-     FOOTER
-========================= -->
+  <footer>
 
-<footer>
+    <strong>
+      Liga Tucson
+    </strong>
 
-  <strong>⚽ LIGA TUCSON</strong>
+    <br>
 
-  <p>
     Liga Tucumana de Fútbol · Clausura 2026
-  </p>
 
-  <p>
-    Información deportiva de Tucumán
-  </p>
-
-</footer>
+  </footer>
 
 
-<script src="datos.js"></script>
+  <!-- ========================= -->
+  <!-- JAVASCRIPT -->
+  <!-- ========================= -->
+
+  <script src="datos.js"></script>
+
+  <script>
+
+    /* =========================
+       ENCABEZADO AL DESPLAZAR
+       ========================= */
+
+    let ultimaPosicion = window.scrollY;
+
+    const header =
+      document.getElementById("siteHeader");
 
 
-<script>
+    window.addEventListener(
+      "scroll",
+      function () {
 
-  /* =========================
-     EQUIPOS
-  ========================= */
-
-  let todosLosEquipos = [];
-
-  const zonasDisponibles = ["A", "B", "C", "D", "E", "F"];
+        const posicionActual =
+          window.scrollY;
 
 
-  zonasDisponibles.forEach(function(zona) {
+        /* Si estamos arriba de todo */
 
-    if (
-      datosLiga &&
-      datosLiga.zonas &&
-      datosLiga.zonas[zona]
-    ) {
+        if (posicionActual <= 10) {
 
-      datosLiga.zonas[zona].forEach(function(equipo) {
+          header.classList.remove(
+            "header-hidden"
+          );
 
-        todosLosEquipos.push({
-          equipo: equipo.equipo,
-          zona: zona
-        });
-
-      });
-
-    }
-
-  });
+        }
 
 
-  /* =========================
-     NORMALIZAR TEXTO
-  ========================= */
+        /* Si bajamos */
 
-  function normalizar(texto) {
+        else if (
+          posicionActual > ultimaPosicion
+        ) {
 
-    return texto
-      .normalize("NFD")
-      .replace(/[\u0300-\u036f]/g, "")
-      .toLowerCase()
-      .trim();
+          header.classList.add(
+            "header-hidden"
+          );
 
-  }
+        }
 
 
-  /* =========================
-     BUSCADOR
-  ========================= */
+        /* Si subimos */
 
-  function buscar() {
+        else if (
+          posicionActual < ultimaPosicion
+        ) {
 
-    const texto =
-      document.getElementById("busqueda").value;
+          header.classList.remove(
+            "header-hidden"
+          );
 
-    const resultado =
-      document.getElementById("resultadoBusqueda");
-
-    const busqueda =
-      normalizar(texto);
+        }
 
 
-    if (!busqueda) {
+        ultimaPosicion =
+          posicionActual;
 
-      resultado.innerHTML =
-        '<p class="sin-datos">Escribí el nombre de un equipo.</p>';
-
-      return;
-
-    }
-
-
-    const encontrados =
-      todosLosEquipos.filter(function(item) {
-
-        return normalizar(item.equipo)
-          .includes(busqueda);
-
-      });
+      },
+      {
+        passive: true
+      }
+    );
 
 
-    if (encontrados.length === 0) {
+    /* =========================
+       BUSCADOR DE EQUIPOS
+       ========================= */
 
-      resultado.innerHTML =
-        '<p class="sin-datos">No encontramos ese equipo.</p>';
+    function buscarEquipo() {
 
-      return;
+      const input =
+        document
+          .getElementById("searchTeam")
+          .value
+          .trim()
+          .toLowerCase();
 
-    }
-
-
-    resultado.innerHTML =
-      encontrados.map(function(item) {
-
-        return `
-
-          <a
-            class="resultado-equipo"
-            href="equipo.html?v=5&equipo=${encodeURIComponent(item.equipo)}&zona=${encodeURIComponent(item.zona)}"
-          >
-
-            ⚽ ${item.equipo}
-
-            <span style="float:right;">
-              Zona ${item.zona}
-            </span>
-
-          </a>
-
-        `;
-
-      }).join("");
-
-  }
+      const resultado =
+        document.getElementById(
+          "searchResult"
+        );
 
 
-  document
-    .getElementById("busqueda")
-    .addEventListener("keydown", function(event) {
+      if (!input) {
 
-      if (event.key === "Enter") {
-        buscar();
+        resultado.textContent =
+          "Escribí el nombre de un equipo.";
+
+        return;
       }
 
-    });
+
+      if (
+        typeof datosLiga === "undefined" ||
+        !datosLiga.zonas
+      ) {
+
+        resultado.textContent =
+          "No se pudieron cargar los equipos.";
+
+        return;
+      }
 
 
-  /* =========================
-     ZONAS
-  ========================= */
-
-  const contenedorZonas =
-    document.getElementById("zonas");
+      let equipoEncontrado = null;
+      let zonaEncontrada = null;
 
 
-  zonasDisponibles.forEach(function(zona) {
+      for (
+        const zona in datosLiga.zonas
+      ) {
 
-    if (
-      !datosLiga ||
-      !datosLiga.zonas ||
-      !datosLiga.zonas[zona]
-    ) {
-      return;
+        const equipos =
+          datosLiga.zonas[zona];
+
+
+        for (
+          const equipo of equipos
+        ) {
+
+          const nombre =
+            equipo.equipo.toLowerCase();
+
+
+          if (
+            nombre.includes(input)
+          ) {
+
+            equipoEncontrado =
+              equipo.equipo;
+
+            zonaEncontrada =
+              zona;
+
+            break;
+          }
+
+        }
+
+
+        if (equipoEncontrado) {
+          break;
+        }
+
+      }
+
+
+      if (equipoEncontrado) {
+
+        window.location.href =
+          "equipo.html?v=12&equipo=" +
+          encodeURIComponent(
+            equipoEncontrado
+          ) +
+          "&zona=" +
+          encodeURIComponent(
+            zonaEncontrada
+          );
+
+      } else {
+
+        resultado.textContent =
+          "No encontramos ese equipo.";
+
+      }
+
     }
 
 
-    const cantidad =
-      datosLiga.zonas[zona].length;
+    /* Buscar también presionando ENTER */
 
+    document
+      .getElementById("searchTeam")
+      .addEventListener(
+        "keydown",
+        function(event) {
 
-    const enlace =
-      document.createElement("a");
+          if (
+            event.key === "Enter"
+          ) {
 
+            buscarEquipo();
 
-    enlace.className = "zona";
+          }
 
+        }
+      );
 
-    enlace.href =
-      "posiciones.html?zona=" +
-      encodeURIComponent(zona);
-
-
-    enlace.innerHTML = `
-
-      <div class="zona-numero">
-        PRIMERA DIVISIÓN A
-      </div>
-
-      <h3>
-        Zona ${zona}
-      </h3>
-
-      <p>
-        ${cantidad} equipos · Ver posiciones →
-      </p>
-
-    `;
-
-
-    contenedorZonas.appendChild(enlace);
-
-  });
-
-
-  /* =========================
-     RESULTADOS
-  ========================= */
-
-  const contenedorResultados =
-    document.getElementById("resultados");
-
-
-  let resultados = [];
-
-
-  if (
-    datosLiga &&
-    Array.isArray(datosLiga.partidos)
-  ) {
-
-    resultados =
-      datosLiga.partidos.filter(function(partido) {
-
-        return partido.resultado &&
-               partido.resultado !== "";
-
-      });
-
-  }
-
-
-  if (resultados.length === 0) {
-
-    contenedorResultados.innerHTML =
-      '<p class="sin-datos">Todavía no hay resultados cargados.</p>';
-
-  } else {
-
-    contenedorResultados.innerHTML =
-      resultados.slice(0, 5).map(function(partido) {
-
-        const zona =
-          partido.zona || "";
-
-
-        return `
-
-          <div class="partido">
-
-            <span>
-
-              <a
-                class="equipo-link"
-                href="equipo.html?v=5&equipo=${encodeURIComponent(partido.local)}&zona=${encodeURIComponent(zona)}"
-              >
-                ${partido.local}
-              </a>
-
-              <br>
-
-              <span style="font-size:12px;color:#8a9aaa;">
-                vs
-              </span>
-
-              <br>
-
-              <a
-                class="equipo-link"
-                href="equipo.html?v=5&equipo=${encodeURIComponent(partido.visitante)}&zona=${encodeURIComponent(zona)}"
-              >
-                ${partido.visitante}
-              </a>
-
-            </span>
-
-            <span class="marcador">
-              ${partido.resultado}
-            </span>
-
-          </div>
-
-        `;
-
-      }).join("");
-
-  }
-
-
-  /* =========================
-     PRÓXIMOS
-  ========================= */
-
-  const contenedorProximos =
-    document.getElementById("proximos");
-
-
-  let proximos = [];
-
-
-  if (
-    datosLiga &&
-    Array.isArray(datosLiga.partidos)
-  ) {
-
-    proximos =
-      datosLiga.partidos.filter(function(partido) {
-
-        return !partido.resultado ||
-               partido.resultado === "";
-
-      });
-
-  }
-
-
-  if (proximos.length === 0) {
-
-    contenedorProximos.innerHTML =
-      '<p class="sin-datos">
-        No hay próximos partidos cargados.
-      </p>';
-
-  } else {
-
-    contenedorProximos.innerHTML =
-      proximos.slice(0, 5).map(function(partido) {
-
-        const zona =
-          partido.zona || "";
-
-
-        return `
-
-          <div class="partido">
-
-            <span>
-
-              <a
-                class="equipo-link"
-                href="equipo.html?v=5&equipo=${encodeURIComponent(partido.local)}&zona=${encodeURIComponent(zona)}"
-              >
-                ${partido.local}
-              </a>
-
-              <br>
-
-              <span style="font-size:12px;color:#8a9aaa;">
-                vs
-              </span>
-
-              <br>
-
-              <a
-                class="equipo-link"
-                href="equipo.html?v=5&equipo=${encodeURIComponent(partido.visitante)}&zona=${encodeURIComponent(zona)}"
-              >
-                ${partido.visitante}
-              </a>
-
-            </span>
-
-            <span class="proximo">
-              Próximo
-            </span>
-
-          </div>
-
-        `;
-
-      }).join("");
-
-  }
-
-</script>
+  </script>
 
 </body>
 </html>
