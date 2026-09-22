@@ -8,6 +8,10 @@
 
 <style>
 
+/* =========================
+   GENERAL
+========================= */
+
 * {
     box-sizing: border-box;
 }
@@ -107,122 +111,134 @@ h2 {
 .filtro {
     border: none;
     background: #dcecf7;
-    color: #061a33;
-    padding: 10px 17px;
-    border-radius: 8px;
+    color: #102a43;
+    padding: 10px 20px;
+    border-radius: 10px;
     font-weight: bold;
+    font-size: 16px;
     cursor: pointer;
 }
 
 .filtro:hover {
-    background: #b9def2;
+    background: #c7e1f1;
 }
 
 .filtro.activo {
-    background: #087ec4;
+    background: linear-gradient(180deg, #a9d2ee, #65a8d5);
     color: white;
 }
 
 /* =========================
-   PARTIDO
+   LISTA DE PARTIDOS
 ========================= */
 
 .partidos {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 22px;
 }
+
+/* =========================
+   TARJETA
+========================= */
 
 .partido {
     background: white;
-    border-radius: 15px;
-    padding: 18px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    border-radius: 24px;
+    padding: 25px 28px 18px;
+    box-shadow: 0 8px 25px rgba(30, 55, 80, 0.08);
 }
+
+/* =========================
+   CABECERA DEL PARTIDO
+========================= */
 
 .cabecera-partido {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
     gap: 10px;
-    margin-bottom: 18px;
-    color: #617386;
-    font-size: 13px;
+    margin-bottom: 25px;
 }
 
 .fecha {
+    color: #68798c;
+    font-size: 20px;
     font-weight: bold;
 }
 
 .estado {
-    background: #dff5e8;
-    color: #177245;
-    padding: 5px 10px;
-    border-radius: 20px;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 18px;
     font-weight: bold;
+    background: #dff3e7;
+    color: #287548;
 }
 
 .estado.proximo {
-    background: #e1f0fa;
-    color: #087ec4;
+    background: #e2f0fb;
+    color: #287fc2;
 }
 
 /* =========================
-   EQUIPOS DEL PARTIDO
+   ENFRENTAMIENTO
 ========================= */
 
 .enfrentamiento {
     display: grid;
-    grid-template-columns: 1fr auto 1fr;
+    grid-template-columns: 1fr 110px 1fr;
     align-items: center;
     gap: 15px;
 }
 
+/* =========================
+   EQUIPO
+========================= */
+
 .equipo-partido {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 12px;
-}
-
-.equipo-partido.local {
-    justify-content: flex-end;
-    text-align: right;
-}
-
-.equipo-partido.visitante {
     justify-content: flex-start;
-    text-align: left;
+    text-align: center;
+    min-width: 0;
 }
 
 .escudo-partido {
-    width: 55px;
-    height: 55px;
+    width: 105px;
+    height: 105px;
     object-fit: contain;
-    flex-shrink: 0;
+    margin-bottom: 12px;
 }
 
 .nombre-equipo {
     color: #102a43;
     text-decoration: none;
+    font-size: 21px;
     font-weight: bold;
-    font-size: 16px;
+    line-height: 1.2;
 }
 
 .nombre-equipo:hover {
     color: #087ec4;
 }
 
+/* =========================
+   RESULTADO / VS
+========================= */
+
 .resultado {
-    font-size: 22px;
+    text-align: center;
+    font-size: 38px;
     font-weight: bold;
     color: #061a33;
-    min-width: 65px;
-    text-align: center;
+    white-space: nowrap;
 }
 
 .sin-resultado {
-    font-size: 14px;
-    color: #789;
+    font-size: 28px;
+    color: #78899a;
 }
 
 /* =========================
@@ -230,15 +246,23 @@ h2 {
 ========================= */
 
 .info-partido {
-    margin-top: 15px;
-    padding-top: 12px;
-    border-top: 1px solid #e5edf3;
+    margin-top: 28px;
+    padding-top: 18px;
+    border-top: 2px solid #e8eef3;
+
     display: flex;
     justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    color: #617386;
-    font-size: 13px;
+    align-items: center;
+    gap: 35px;
+
+    color: #68798c;
+    font-size: 18px;
+}
+
+.info-partido span {
+    display: flex;
+    align-items: center;
+    gap: 7px;
 }
 
 /* =========================
@@ -247,10 +271,11 @@ h2 {
 
 .sin-partidos {
     background: white;
-    border-radius: 15px;
-    padding: 30px;
+    border-radius: 20px;
+    padding: 35px;
     text-align: center;
-    color: #789;
+    color: #718296;
+    font-size: 18px;
 }
 
 /* =========================
@@ -258,7 +283,7 @@ h2 {
 ========================= */
 
 footer {
-    margin-top: 40px;
+    margin-top: 45px;
     background: #061a33;
     color: white;
     text-align: center;
@@ -281,39 +306,69 @@ footer {
         margin: 5px 7px;
     }
 
-    .enfrentamiento {
-        grid-template-columns: 1fr;
-        gap: 10px;
+    .contenedor {
+        padding: 20px 12px;
     }
 
-    .equipo-partido.local,
-    .equipo-partido.visitante {
-        justify-content: center;
-        text-align: center;
+    .partido {
+        padding: 25px 15px 18px;
+        border-radius: 24px;
+    }
+
+    .filtros {
+        gap: 12px;
+    }
+
+    .filtro {
+        padding: 10px 18px;
+    }
+
+    .enfrentamiento {
+        grid-template-columns: 1fr 65px 1fr;
+        gap: 5px;
+    }
+
+    .escudo-partido {
+        width: 85px;
+        height: 85px;
+    }
+
+    .nombre-equipo {
+        font-size: 17px;
     }
 
     .resultado {
-        order: 2;
+        font-size: 28px;
     }
 
-    .equipo-partido.local {
-        order: 1;
+    .sin-resultado {
+        font-size: 23px;
     }
 
-    .equipo-partido.visitante {
-        order: 3;
+    .fecha {
+        font-size: 19px;
     }
 
-    .cabecera-partido {
+    .estado {
+        font-size: 17px;
+        padding: 9px 18px;
+    }
+
+    .info-partido {
         flex-direction: column;
+        gap: 8px;
+        font-size: 16px;
     }
-
 }
 
 </style>
 </head>
 
 <body>
+
+<!-- =========================
+     HEADER
+========================= -->
 
 <header>
 
@@ -340,6 +395,10 @@ footer {
 </header>
 
 
+<!-- =========================
+     NAVEGACIÓN
+========================= -->
+
 <nav>
 
     <a href="index.html">Inicio</a>
@@ -350,9 +409,16 @@ footer {
 </nav>
 
 
+<!-- =========================
+     CONTENIDO
+========================= -->
+
 <div class="contenedor">
 
     <h2>⚽ Partidos</h2>
+
+
+    <!-- FILTROS -->
 
     <div class="filtros">
 
@@ -387,7 +453,12 @@ footer {
     </div>
 
 
-    <div id="partidos-container" class="partidos"></div>
+    <!-- PARTIDOS -->
+
+    <div
+        id="partidos-container"
+        class="partidos">
+    </div>
 
 </div>
 
@@ -476,7 +547,7 @@ const escudos = {
 
 
 /* =====================================================
-   CONTENEDOR
+   ELEMENTOS
 ===================================================== */
 
 const container =
@@ -487,7 +558,7 @@ const botones =
 
 
 /* =====================================================
-   OBTENER ZONA DE UN EQUIPO
+   OBTENER ZONA
 ===================================================== */
 
 function obtenerZonaEquipo(nombre) {
@@ -500,7 +571,9 @@ function obtenerZonaEquipo(nombre) {
         if (!equipos) continue;
 
         const encontrado =
-            equipos.find(e => e.equipo === nombre);
+            equipos.find(
+                e => e.equipo === nombre
+            );
 
         if (encontrado) {
             return zona;
@@ -515,7 +588,9 @@ function obtenerZonaEquipo(nombre) {
    MOSTRAR PARTIDOS
 ===================================================== */
 
-function mostrarPartidos(zonaSeleccionada = "TODAS") {
+function mostrarPartidos(
+    zonaSeleccionada = "TODAS"
+) {
 
     container.innerHTML = "";
 
@@ -523,7 +598,7 @@ function mostrarPartidos(zonaSeleccionada = "TODAS") {
         datosLiga.partidos || [];
 
 
-    /* Filtrar zona */
+    /* FILTRAR ZONA */
 
     if (zonaSeleccionada !== "TODAS") {
 
@@ -531,10 +606,14 @@ function mostrarPartidos(zonaSeleccionada = "TODAS") {
             partidos.filter(partido => {
 
                 const zonaLocal =
-                    obtenerZonaEquipo(partido.local);
+                    obtenerZonaEquipo(
+                        partido.local
+                    );
 
                 const zonaVisitante =
-                    obtenerZonaEquipo(partido.visitante);
+                    obtenerZonaEquipo(
+                        partido.visitante
+                    );
 
                 return (
                     zonaLocal === zonaSeleccionada ||
@@ -546,7 +625,7 @@ function mostrarPartidos(zonaSeleccionada = "TODAS") {
     }
 
 
-    /* Sin partidos */
+    /* SIN PARTIDOS */
 
     if (partidos.length === 0) {
 
@@ -565,10 +644,9 @@ function mostrarPartidos(zonaSeleccionada = "TODAS") {
     }
 
 
-    /* Crear partidos */
+    /* CREAR CADA PARTIDO */
 
     partidos.forEach(partido => {
-
 
         const local =
             partido.local;
@@ -577,9 +655,18 @@ function mostrarPartidos(zonaSeleccionada = "TODAS") {
             partido.visitante;
 
 
-        const zona =
+        const zonaLocal =
             obtenerZonaEquipo(local);
 
+        const zonaVisitante =
+            obtenerZonaEquipo(visitante);
+
+
+        const zona =
+            zonaLocal || zonaVisitante;
+
+
+        /* ESCUDOS */
 
         const escudoLocal =
             escudos[local];
@@ -588,9 +675,10 @@ function mostrarPartidos(zonaSeleccionada = "TODAS") {
             escudos[visitante];
 
 
-        /* Determinar estado */
+        /* RESULTADO */
 
         const tieneResultado =
+
             partido.golesLocal !== undefined &&
             partido.golesLocal !== null &&
             partido.golesVisitante !== undefined &&
@@ -629,53 +717,72 @@ function mostrarPartidos(zonaSeleccionada = "TODAS") {
         }
 
 
+        /* ESTADO */
+
         const estadoHTML =
+
             tieneResultado
 
-                ? `
-                    <span class="estado">
-                        Finalizado
-                    </span>
-                  `
+            ? `
 
-                : `
-                    <span class="estado proximo">
-                        Próximo
-                    </span>
-                  `;
+                <span class="estado">
+
+                    Finalizado
+
+                </span>
+
+              `
+
+            : `
+
+                <span class="estado proximo">
+
+                    Próximo
+
+                </span>
+
+              `;
 
 
-        /* Escudos */
+        /* IMAGEN LOCAL */
 
         const imagenLocal =
+
             escudoLocal
 
-                ? `
-                    <img
-                        class="escudo-partido"
-                        src="${escudoLocal}"
-                        alt="Escudo de ${local}"
-                    >
-                  `
+            ? `
 
-                : "";
+                <img
+                    class="escudo-partido"
+                    src="${escudoLocal}"
+                    alt="Escudo de ${local}"
+                >
 
+              `
+
+            : "";
+
+
+        /* IMAGEN VISITANTE */
 
         const imagenVisitante =
+
             escudoVisitante
 
-                ? `
-                    <img
-                        class="escudo-partido"
-                        src="${escudoVisitante}"
-                        alt="Escudo de ${visitante}"
-                    >
-                  `
+            ? `
 
-                : "";
+                <img
+                    class="escudo-partido"
+                    src="${escudoVisitante}"
+                    alt="Escudo de ${visitante}"
+                >
+
+              `
+
+            : "";
 
 
-        /* Tarjeta */
+        /* TARJETA */
 
         const tarjeta =
             document.createElement("div");
@@ -686,11 +793,13 @@ function mostrarPartidos(zonaSeleccionada = "TODAS") {
 
         tarjeta.innerHTML = `
 
+            <!-- CABECERA -->
+
             <div class="cabecera-partido">
 
                 <span class="fecha">
 
-                    ${partido.fecha || "Fecha por confirmar"}
+                    Fecha ${partido.fecha || "—"}
 
                 </span>
 
@@ -699,50 +808,75 @@ function mostrarPartidos(zonaSeleccionada = "TODAS") {
             </div>
 
 
+            <!-- ENFRENTAMIENTO -->
+
             <div class="enfrentamiento">
 
 
-                <div class="equipo-partido local">
+                <!-- LOCAL -->
+
+                <div class="equipo-partido">
 
                     <a
-                        class="nombre-equipo"
-                        href="equipo.html?v=11&equipo=${encodeURIComponent(local)}&zona=${zona}"
+                        href="equipo.html?v=12&equipo=${encodeURIComponent(local)}&zona=${zonaLocal}"
                     >
-                        ${local}
-                    </a>
 
-                    ${imagenLocal}
+                        ${imagenLocal}
+
+                        <div class="nombre-equipo">
+
+                            ${local}
+
+                        </div>
+
+                    </a>
 
                 </div>
 
+
+                <!-- RESULTADO -->
 
                 ${resultadoHTML}
 
 
-                <div class="equipo-partido visitante">
+                <!-- VISITANTE -->
 
-                    ${imagenVisitante}
+                <div class="equipo-partido">
 
                     <a
-                        class="nombre-equipo"
-                        href="equipo.html?v=11&equipo=${encodeURIComponent(visitante)}&zona=${obtenerZonaEquipo(visitante)}"
+                        href="equipo.html?v=12&equipo=${encodeURIComponent(visitante)}&zona=${zonaVisitante}"
                     >
-                        ${visitante}
+
+                        ${imagenVisitante}
+
+                        <div class="nombre-equipo">
+
+                            ${visitante}
+
+                        </div>
+
                     </a>
 
                 </div>
 
+
             </div>
 
+
+            <!-- INFORMACIÓN -->
 
             <div class="info-partido">
 
                 <span>
-                    📍 ${partido.cancha || "Cancha por confirmar"}
+
+                    📍 Cancha por confirmar
+
                 </span>
 
                 <span>
+
                     Zona ${zona || "—"}
+
                 </span>
 
             </div>
@@ -758,25 +892,28 @@ function mostrarPartidos(zonaSeleccionada = "TODAS") {
 
 
 /* =====================================================
-   BOTONES
+   FILTROS
 ===================================================== */
 
 botones.forEach(boton => {
 
-    boton.addEventListener("click", () => {
+    boton.addEventListener(
+        "click",
+        () => {
 
-        botones.forEach(b =>
-            b.classList.remove("activo")
-        );
+            botones.forEach(b =>
+                b.classList.remove("activo")
+            );
 
-        boton.classList.add("activo");
+            boton.classList.add("activo");
 
 
-        mostrarPartidos(
-            boton.dataset.zona
-        );
+            mostrarPartidos(
+                boton.dataset.zona
+            );
 
-    });
+        }
+    );
 
 });
 
@@ -786,7 +923,9 @@ botones.forEach(boton => {
 ===================================================== */
 
 const parametros =
-    new URLSearchParams(window.location.search);
+    new URLSearchParams(
+        window.location.search
+    );
 
 const zonaURL =
     parametros.get("zona");
@@ -794,18 +933,24 @@ const zonaURL =
 
 if (
     zonaURL &&
-    ["A", "B", "C", "D", "E", "F"].includes(zonaURL)
+    ["A", "B", "C", "D", "E", "F"]
+        .includes(zonaURL)
 ) {
 
     botones.forEach(boton => {
 
         boton.classList.remove("activo");
 
-        if (boton.dataset.zona === zonaURL) {
+        if (
+            boton.dataset.zona === zonaURL
+        ) {
+
             boton.classList.add("activo");
+
         }
 
     });
+
 
     mostrarPartidos(zonaURL);
 
