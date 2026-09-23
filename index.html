@@ -90,7 +90,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 42px;
+      gap: 30px;
 
       padding: 18px 15px;
 
@@ -99,6 +99,8 @@
         #062b52,
         #1269a8
       );
+
+      flex-wrap: wrap;
     }
 
     .main-nav a {
@@ -338,6 +340,18 @@
     }
 
     /* ========================= */
+    /* PLAY-OFF */
+    /* ========================= */
+
+    .quick-card.playoff {
+      border-top-color: #d4a600;
+    }
+
+    .quick-card.playoff h3 {
+      color: #9a7800;
+    }
+
+    /* ========================= */
     /* PIE */
     /* ========================= */
 
@@ -381,7 +395,7 @@
       }
 
       .main-nav {
-        gap: 25px;
+        gap: 20px;
 
         padding: 15px 10px;
       }
@@ -435,6 +449,7 @@
       .quick-section h2 {
         font-size: 32px;
       }
+
     }
 
   </style>
@@ -442,11 +457,15 @@
 
 <body>
 
+
   <!-- ========================= -->
   <!-- ENCABEZADO -->
   <!-- ========================= -->
 
-  <header class="site-header" id="siteHeader">
+  <header
+    class="site-header"
+    id="siteHeader"
+  >
 
     <div class="header-top">
 
@@ -458,14 +477,22 @@
 
       <div class="header-title">
 
-        <h1>LIGA TUCSON</h1>
+        <h1>
+          LIGA TUCSON
+        </h1>
 
-        <p>Liga Tucumana de Fútbol</p>
+        <p>
+          Liga Tucumana de Fútbol
+        </p>
 
       </div>
 
     </div>
 
+
+    <!-- ========================= -->
+    <!-- MENÚ -->
+    <!-- ========================= -->
 
     <nav class="main-nav">
 
@@ -485,6 +512,10 @@
         Equipos
       </a>
 
+      <a href="playoff.html">
+        🏆 Play-Off
+      </a>
+
     </nav>
 
   </header>
@@ -501,13 +532,18 @@
     </div>
 
     <h2>
+
       Todo el fútbol<br>
+
       de <span>Tucumán</span>
+
     </h2>
 
     <p>
+
       Resultados, posiciones, partidos y equipos
       de la Liga Tucumana de Fútbol.
+
     </p>
 
     <img
@@ -562,6 +598,8 @@
     <div class="quick-grid">
 
 
+      <!-- POSICIONES -->
+
       <a
         href="posiciones.html"
         class="quick-card"
@@ -582,6 +620,8 @@
 
       </a>
 
+
+      <!-- PARTIDOS -->
 
       <a
         href="partidos.html"
@@ -604,6 +644,8 @@
       </a>
 
 
+      <!-- EQUIPOS -->
+
       <a
         href="equipos.html"
         class="quick-card"
@@ -625,6 +667,8 @@
       </a>
 
 
+      <!-- FIXTURE -->
+
       <a
         href="partidos.html"
         class="quick-card"
@@ -641,6 +685,29 @@
         <p>
           Consultá los encuentros
           del campeonato.
+        </p>
+
+      </a>
+
+
+      <!-- PLAY-OFF -->
+
+      <a
+        href="playoff.html"
+        class="quick-card playoff"
+      >
+
+        <div class="quick-icon">
+          🏆
+        </div>
+
+        <h3>
+          Play-Off
+        </h3>
+
+        <p>
+          Consultá las clasificaciones,
+          cruces y camino hacia la final.
         </p>
 
       </a>
@@ -676,14 +743,19 @@
 
   <script>
 
+
     /* =========================
        ENCABEZADO AL DESPLAZAR
-       ========================= */
+    ========================= */
 
-    let ultimaPosicion = window.scrollY;
+    let ultimaPosicion =
+      window.scrollY;
+
 
     const header =
-      document.getElementById("siteHeader");
+      document.getElementById(
+        "siteHeader"
+      );
 
 
     window.addEventListener(
@@ -696,7 +768,9 @@
 
         /* Si estamos arriba de todo */
 
-        if (posicionActual <= 10) {
+        if (
+          posicionActual <= 10
+        ) {
 
           header.classList.remove(
             "header-hidden"
@@ -743,7 +817,7 @@
 
     /* =========================
        BUSCADOR DE EQUIPOS
-       ========================= */
+    ========================= */
 
     function buscarEquipo() {
 
@@ -753,6 +827,7 @@
           .value
           .trim()
           .toLowerCase();
+
 
       const resultado =
         document.getElementById(
@@ -766,6 +841,7 @@
           "Escribí el nombre de un equipo.";
 
         return;
+
       }
 
 
@@ -778,10 +854,12 @@
           "No se pudieron cargar los equipos.";
 
         return;
+
       }
 
 
       let equipoEncontrado = null;
+
       let zonaEncontrada = null;
 
 
@@ -812,19 +890,26 @@
               zona;
 
             break;
+
           }
 
         }
 
 
-        if (equipoEncontrado) {
+        if (
+          equipoEncontrado
+        ) {
+
           break;
+
         }
 
       }
 
 
-      if (equipoEncontrado) {
+      if (
+        equipoEncontrado
+      ) {
 
         window.location.href =
           "equipo.html?v=12&equipo=" +
@@ -836,7 +921,9 @@
             zonaEncontrada
           );
 
-      } else {
+      }
+
+      else {
 
         resultado.textContent =
           "No encontramos ese equipo.";
@@ -846,7 +933,9 @@
     }
 
 
-    /* Buscar también presionando ENTER */
+    /* =========================
+       BUSCAR CON ENTER
+    ========================= */
 
     document
       .getElementById("searchTeam")
