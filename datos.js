@@ -1,7 +1,6 @@
 // ==========================================
 // LIGA TUCSON
 // Primera División A - Clausura 2026
-// Datos correspondientes a Fecha 5
 // ==========================================
 
 const datosLiga = {
@@ -558,11 +557,13 @@ const datosLiga = {
             estado: "finalizado"
         },
 
+
         // ==========================================
         // FECHA 2
         // ==========================================
 
         // ZONA A
+
         {
             fecha: 2,
             zona: "A",
@@ -604,7 +605,9 @@ const datosLiga = {
             interzonal: true
         },
 
+
         // ZONA B
+
         {
             fecha: 2,
             zona: "B",
@@ -646,7 +649,9 @@ const datosLiga = {
             interzonal: true
         },
 
+
         // ZONA C
+
         {
             fecha: 2,
             zona: "C",
@@ -677,7 +682,9 @@ const datosLiga = {
             estado: "finalizado"
         },
 
+
         // ZONA D
+
         {
             fecha: 2,
             zona: "D",
@@ -708,7 +715,9 @@ const datosLiga = {
             estado: "finalizado"
         },
 
+
         // ZONA E
+
         {
             fecha: 2,
             zona: "E",
@@ -749,7 +758,9 @@ const datosLiga = {
             estado: "finalizado"
         },
 
+
         // ZONA F
+
         {
             fecha: 2,
             zona: "F",
@@ -790,11 +801,13 @@ const datosLiga = {
             estado: "finalizado"
         },
 
+
         // ==========================================
         // FECHA 3
         // ==========================================
 
         // ZONA A
+
         {
             fecha: 3,
             zona: "A",
@@ -815,7 +828,9 @@ const datosLiga = {
             estado: "finalizado"
         },
 
+
         // ZONA B
+
         {
             fecha: 3,
             zona: "B",
@@ -857,7 +872,9 @@ const datosLiga = {
             interzonal: true
         },
 
+
         // ZONA C
+
         {
             fecha: 3,
             zona: "C",
@@ -888,7 +905,9 @@ const datosLiga = {
             estado: "finalizado"
         },
 
+
         // ZONA D
+
         {
             fecha: 3,
             zona: "D",
@@ -929,7 +948,9 @@ const datosLiga = {
             estado: "finalizado"
         },
 
+
         // ZONA E
+
         {
             fecha: 3,
             zona: "E",
@@ -970,7 +991,9 @@ const datosLiga = {
             estado: "finalizado"
         },
 
+
         // ZONA F
+
         {
             fecha: 3,
             zona: "F",
@@ -1011,32 +1034,13 @@ const datosLiga = {
             estado: "finalizado"
         },
 
-        // OTROS INTERZONALES FECHA 3
-        {
-            fecha: 3,
-            zona: "B",
-            local: "Sportivo Guzmán",
-            visitante: "Tucumán Central",
-            golesLocal: 1,
-            golesVisitante: 1,
-            estado: "finalizado"
-        },
-
-        {
-            fecha: 3,
-            zona: "D",
-            local: "San Fernando",
-            visitante: "Famaillá",
-            golesLocal: 2,
-            golesVisitante: 1,
-            estado: "finalizado"
-        },
 
         // ==========================================
         // FECHA 4
         // ==========================================
 
         // ZONA A
+
         {
             fecha: 4,
             zona: "A",
@@ -1068,7 +1072,9 @@ const datosLiga = {
             interzonal: true
         },
 
+
         // ZONA B
+
         {
             fecha: 4,
             zona: "B",
@@ -1110,7 +1116,9 @@ const datosLiga = {
             interzonal: true
         },
 
+
         // ZONA C
+
         {
             fecha: 4,
             zona: "C",
@@ -1141,18 +1149,9 @@ const datosLiga = {
             estado: "finalizado"
         },
 
-        {
-            fecha: 4,
-            zona: "C",
-            local: "Atlético Concepción",
-            visitante: "Lastenia",
-            golesLocal: 2,
-            golesVisitante: 1,
-            estado: "finalizado",
-            interzonal: true
-        },
 
         // ZONA D
+
         {
             fecha: 4,
             zona: "D",
@@ -1173,7 +1172,9 @@ const datosLiga = {
             estado: "finalizado"
         },
 
+
         // ZONA E
+
         {
             fecha: 4,
             zona: "E",
@@ -1225,7 +1226,9 @@ const datosLiga = {
             interzonal: true
         },
 
+
         // ZONA F
+
         {
             fecha: 4,
             zona: "F",
@@ -1266,11 +1269,13 @@ const datosLiga = {
             estado: "finalizado"
         },
 
+
         // ==========================================
         // FECHA 5
         // ==========================================
 
         // ZONA A
+
         {
             fecha: 5,
             zona: "A",
@@ -1308,7 +1313,9 @@ const datosLiga = {
             interzonal: true
         },
 
+
         // ZONA B
+
         {
             fecha: 5,
             zona: "B",
@@ -1346,7 +1353,9 @@ const datosLiga = {
             interzonal: true
         },
 
+
         // ZONA D
+
         {
             fecha: 5,
             zona: "D",
@@ -1375,7 +1384,9 @@ const datosLiga = {
             estado: "programado"
         },
 
+
         // ZONA E
+
         {
             fecha: 5,
             zona: "E",
@@ -1414,7 +1425,9 @@ const datosLiga = {
             estado: "programado"
         },
 
+
         // ZONA F
+
         {
             fecha: 5,
             zona: "F",
@@ -1452,6 +1465,7 @@ const datosLiga = {
             visitante: "Trinidad",
             estado: "programado"
         }
+
     ]
 };
 
@@ -1490,7 +1504,10 @@ function obtenerTodosLosEquipos() {
 }
 
 
-// Buscar un equipo por nombre
+// ==========================================
+// BUSCAR EQUIPO
+// ==========================================
+
 function buscarEquipo(nombre) {
 
     const equipos = obtenerTodosLosEquipos();
@@ -1503,7 +1520,10 @@ function buscarEquipo(nombre) {
 }
 
 
-// Obtener la tabla de una zona
+// ==========================================
+// OBTENER TABLA DE UNA ZONA
+// ==========================================
+
 function obtenerTabla(zona) {
 
     return datosLiga.zonas[zona] || [];
@@ -1511,7 +1531,10 @@ function obtenerTabla(zona) {
 }
 
 
-// Obtener partidos de una zona
+// ==========================================
+// OBTENER PARTIDOS DE UNA ZONA
+// ==========================================
+
 function obtenerPartidosZona(zona) {
 
     return datosLiga.partidos.filter(
@@ -1521,7 +1544,44 @@ function obtenerPartidosZona(zona) {
 }
 
 
-// Obtener partidos finalizados
+// ==========================================
+// OBTENER PARTIDOS DE UNA FECHA
+// ==========================================
+
+function obtenerPartidosFecha(fecha) {
+
+    return datosLiga.partidos.filter(
+        partido => Number(partido.fecha) === Number(fecha)
+    );
+
+}
+
+
+// ==========================================
+// OBTENER PARTIDOS DE FECHA Y ZONA
+// ==========================================
+
+function obtenerPartidosFechaZona(fecha, zona) {
+
+    return datosLiga.partidos.filter(partido => {
+
+        const coincideFecha =
+            Number(partido.fecha) === Number(fecha);
+
+        const coincideZona =
+            partido.zona === zona;
+
+        return coincideFecha && coincideZona;
+
+    });
+
+}
+
+
+// ==========================================
+// OBTENER RESULTADOS
+// ==========================================
+
 function obtenerResultados() {
 
     return datosLiga.partidos.filter(
@@ -1531,11 +1591,32 @@ function obtenerResultados() {
 }
 
 
-// Obtener próximos partidos
+// ==========================================
+// OBTENER PRÓXIMOS PARTIDOS
+// ==========================================
+
 function obtenerProximosPartidos() {
 
     return datosLiga.partidos.filter(
         partido => partido.estado === "programado"
     );
+
+}
+
+
+// ==========================================
+// OBTENER PARTIDOS DE UN EQUIPO
+// ==========================================
+
+function obtenerPartidosEquipo(nombreEquipo) {
+
+    return datosLiga.partidos.filter(partido => {
+
+        return (
+            partido.local.toLowerCase() === nombreEquipo.toLowerCase() ||
+            partido.visitante.toLowerCase() === nombreEquipo.toLowerCase()
+        );
+
+    });
 
 }
