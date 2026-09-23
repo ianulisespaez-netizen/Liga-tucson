@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Play-Off | Liga Tucson</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f3f7fb;
+            color: #172033;
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            background: linear-gradient(
+                135deg,
+                #061a35,
+                #0b315c
+            );
+
+            color: white;
+            padding: 18px 20px;
+            box-shadow: 0 3px 12px rgba(0,0,0,.15);
+        }
+
+        .header-contenido {
+            max-width: 1150px;
+            margin: auto;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo img {
+            width: 48px;
+            height: 48px;
+            object-fit: contain;
+        }
+
+        .logo-texto h1 {
+            font-size: 24px;
+            letter-spacing: 1px;
+        }
+
+        .logo-texto span {
+            color: #8ed8ff;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        nav {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 9px 12px;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        nav a:hover,
+        nav a.activo {
+            background: #168bd0;
+        }
+
+
+        /* =========================
+           CONTENEDOR
+        ========================= */
+
+        .contenedor {
+            width: 94%;
+            max-width: 1150px;
+            margin: 30px auto 60px;
+        }
+
+        .titulo-principal {
+            text-align: center;
+            margin-bottom: 8px;
+            color: #06234a;
+            font-size: 32px;
+        }
+
+        .subtitulo {
+            text-align: center;
+            color: #667085;
+            margin-bottom: 30px;
+        }
+
+
+        /* =========================
+           CAMPEONES
+        ========================= */
+
+        .seccion {
+            margin-bottom: 38px;
+        }
+
+        .titulo-seccion {
+            background: #06234a;
+            color: white;
+            padding: 13px 18px;
+            border-radius: 12px 12px 0 0;
+            font-size: 20px;
+        }
+
+        .campeones {
+            background: white;
+            padding: 18px;
+
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(180px, 1fr));
+
+            gap: 12px;
+
+            border-radius: 0 0 12px 12px;
+            box-shadow: 0 4px 14px rgba(0,0,0,.08);
+        }
+
+        .campeon {
+            border: 1px solid #dce5ef;
+            border-radius: 12px;
+            padding: 14px;
+            text-align: center;
+            background: #f8fbff;
+        }
+
+        .campeon-posicion {
+            color: #168bd0;
+            font-weight: bold;
+            font-size: 13px;
+            margin-bottom: 7px;
+        }
+
+        .campeon-nombre {
+            font-weight: bold;
+            color: #09264c;
+            font-size: 15px;
+        }
+
+        .campeon-zona {
+            color: #777;
+            font-size: 12px;
+            margin-top: 5px;
+        }
+
+
+        /* =========================
+           RANKING
+        ========================= */
+
+        .ranking {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 14px rgba(0,0,0,.08);
+            overflow: hidden;
+        }
+
+        .ranking-item {
+            display: grid;
+            grid-template-columns: 50px 1fr 80px 80px;
+            align-items: center;
+
+            padding: 11px 15px;
+
+            border-bottom: 1px solid #edf1f5;
+        }
+
+        .ranking-item:last-child {
+            border-bottom: none;
+        }
+
+        .ranking-pos {
+            font-weight: bold;
+            color: #168bd0;
+        }
+
+        .ranking-equipo {
+            font-weight: bold;
+        }
+
+        .ranking-zona {
+            color: #777;
+            font-size: 12px;
+        }
+
+        .ranking-dato {
+            text-align: center;
+            font-size: 13px;
+        }
+
+        .ranking-item.campeon {
+            background: #eef8ff;
+        }
+
+        .ranking-item.mejor-quinto {
+            background: #fff8dc;
+        }
+
+
+        /* =========================
+           LLAVES
+        ========================= */
+
+        .llaves {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(280px, 1fr));
+
+            gap: 16px;
+        }
+
+        .llave {
+            background: white;
+            border-radius: 14px;
+            padding: 16px;
+
+            box-shadow: 0 4px 14px rgba(0,0,0,.08);
+
+            border: 1px solid #e1e8f0;
+        }
+
+        .llave-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            margin-bottom: 13px;
+        }
+
+        .llave-id {
+            font-weight: bold;
+            color: #168bd0;
+        }
+
+        .llave-ronda {
+            font-size: 11px;
+            color: #777;
+        }
+
+        .equipo-llave {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 12px 10px;
+
+            border-radius: 8px;
+            background: #f5f8fb;
+
+            margin-top: 7px;
+        }
+
+        .equipo-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .equipo-nombre {
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .equipo-seed {
+            font-size: 11px;
+            color: #777;
+        }
+
+        .resultado {
+            min-width: 32px;
+            text-align: center;
+
+            font-size: 18px;
+            font-weight: bold;
+
+            color: #06234a;
+        }
+
+        .pendiente {
+            font-size: 11px;
+            color: #999;
+            font-weight: normal;
+        }
+
+        .ventaja {
+            margin-top: 10px;
+
+            background: #e9f6ff;
+            color: #08649d;
+
+            padding: 8px;
+
+            border-radius: 7px;
+
+            font-size: 11px;
+            text-align: center;
+        }
+
+        .cancha {
+            margin-top: 8px;
+            font-size: 11px;
+            color: #888;
+            text-align: center;
+        }
+
+
+        /* =========================
+           DESTACADOS
+        ========================= */
+
+        .bloque-info {
+            background: white;
+            border-radius: 12px;
+
+            padding: 18px;
+
+            margin-bottom: 20px;
+
+            box-shadow: 0 4px 14px rgba(0,0,0,.07);
+        }
+
+        .bloque-info p {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 6px;
+        }
+
+        .destacado {
+            font-weight: bold;
+            color: #06234a;
+        }
+
+
+        /* =========================
+           FINAL
+        ========================= */
+
+        .final-card {
+            background:
+                linear-gradient(
+                    135deg,
+                    #06234a,
+                    #0c4c82
+                );
+
+            color: white;
+
+            padding: 25px;
+
+            border-radius: 16px;
+
+            text-align: center;
+
+            box-shadow: 0 6px 20px rgba(0,0,0,.15);
+        }
+
+        .final-card h3 {
+            margin-bottom: 15px;
+        }
+
+        .final-equipos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .final-equipo {
+            font-size: 19px;
+            font-weight: bold;
+        }
+
+        .vs {
+            font-size: 14px;
+            opacity: .8;
+        }
+
+
+        /* =========================
+           MENSAJE VACÍO
+        ========================= */
+
+        .vacio {
+            background: white;
+            padding: 25px;
+            text-align: center;
+            border-radius: 12px;
+            color: #777;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #061a35;
+            color: white;
+
+            text-align: center;
+
+            padding: 25px 15px;
+
+            font-size: 13px;
+        }
+
+        footer span {
+            color: #8ed8ff;
+        }
+
+
+        /* =========================
+           CELULAR
+        ========================= */
+
+        @media (max-width: 700px) {
+
+            .header-contenido {
+                flex-direction: column;
+            }
+
+            nav {
+                justify-content: center;
+            }
+
+            .titulo-principal {
+                font-size: 26px;
+            }
+
+            .ranking-item {
+                grid-template-columns:
+                    35px 1fr 55px;
+            }
+
+            .ranking-item .ranking-dato:last-child {
+                display: none;
+            }
+
+            .llaves {
+                grid-template-columns: 1fr;
+            }
+
+            .final-equipo {
+                font-size: 16px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- ==========================================
+     HEADER
+========================================== -->
+
+<header>
+
+    <div class="header-contenido">
+
+        <div class="logo">
+
+            <img
+                src="https://raw.githubusercontent.com/ianulisespaez-netizen/Liga-tucson/main/FDDF80B7-4151-4091-AB6F-C5DF10F36391.png"
+                alt="Liga Tucson"
+            >
+
+            <div class="logo-texto">
+
+                <h1>⚽ LIGA TUCSON</h1>
+
+                <span>
+                    Liga Tucumana de Fútbol
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <nav>
+
+            <a href="index.html">
+                Inicio
+            </a>
+
+            <a href="posiciones.html">
+                Posiciones
+            </a>
+
+            <a href="partidos.html">
+                Partidos
+            </a>
+
+            <a href="equipos.html">
+                Equipos
+            </a>
+
+            <a
+                href="playoff.html"
+                class="activo"
+            >
+                Play-Off
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+
+<!-- ==========================================
+     CONTENIDO
+========================================== -->
+
+<main class="contenedor">
+
+
+    <h2 class="titulo-principal">
+        🏆 PLAY-OFF
+    </h2>
+
+    <p class="subtitulo">
+        Primera División A · Clausura 2026
+    </p>
+
+
+
+    <!-- ======================================
+         INFORMACIÓN
+    ======================================= -->
+
+    <div class="bloque-info">
+
+        <p>
+            <span class="destacado">
+                6 campeones de zona
+            </span>
+            avanzan directamente a la segunda ronda.
+        </p>
+
+        <p>
+            Los equipos ubicados del
+            <span class="destacado">
+                2.º al 4.º puesto
+            </span>
+            de cada zona y los
+            <span class="destacado">
+                2 mejores quintos
+            </span>
+            disputan la primera ronda.
+        </p>
+
+        <p>
+            Las posiciones se ordenan automáticamente por
+            puntos, diferencia de gol, goles a favor y goles en contra.
+        </p>
+
+    </div>
+
+
+
+    <!-- ======================================
+         CAMPEONES DE ZONA
+    ======================================= -->
+
+    <section class="seccion">
+
+        <div class="titulo-seccion">
+            🥇 Campeones de zona · Pase directo
+        </div>
+
+        <div
+            id="campeones"
+            class="campeones"
+        ></div>
+
+    </section>
+
+
+
+    <!-- ======================================
+         PRIMERA RONDA
+    ======================================= -->
+
+    <section class="seccion">
+
+        <div class="titulo-seccion">
+            ⚔️ Primera Ronda
+        </div>
+
+        <div
+            id="primera-ronda"
+            class="llaves"
+        ></div>
+
+    </section>
+
+
+
+    <!-- ======================================
+         OCTAVOS
+    ======================================= -->
+
+    <section class="seccion">
+
+        <div class="titulo-seccion">
+            🔵 Segunda Ronda · Octavos de Final
+        </div>
+
+        <div
+            id="segunda-ronda"
+            class="llaves"
+        ></div>
+
+    </section>
+
+
+
+    <!-- ======================================
+         CUARTOS
+    ======================================= -->
+
+    <section class="seccion">
+
+        <div class="titulo-seccion">
+            🔷 Cuartos de Final
+        </div>
+
+        <div
+            id="cuartos"
+            class="llaves"
+        ></div>
+
+    </section>
+
+
+
+    <!-- ======================================
+         SEMIFINALES
+    ======================================= -->
+
+    <section class="seccion">
+
+        <div class="titulo-seccion">
+            🔥 Semifinales
+        </div>
+
+        <div
+            id="semifinales"
+            class="llaves"
+        ></div>
+
+    </section>
+
+
+
+    <!-- ======================================
+         FINAL
+    ======================================= -->
+
+    <section class="seccion">
+
+        <div class="titulo-seccion">
+            🏆 Final
+        </div>
+
+        <div id="final"></div>
+
+    </section>
+
+
+</main>
+
+
+
+<!-- ==========================================
+     FOOTER
+========================================== -->
+
+<footer>
+
+    <p>
+        ⚽ <span>LIGA TUCSON</span>
+    </p>
+
+    <p>
+        Liga Tucumana de Fútbol · Primera División A
+    </p>
+
+</footer>
+
+
+
+<!-- ==========================================
+     DATOS DE LA LIGA
+========================================== -->
+
+<script src="datos.js"></script>
+
+
+<script>
+
+
+/* ==========================================
+   OBTENER PLAY-OFF
+========================================== */
+
+const playoffs =
+    obtenerPlayoffs();
+
+
+
+/* ==========================================
+   CAMPEONES
+========================================== */
+
+function mostrarCampeones() {
+
+    const contenedor =
+        document.getElementById(
+            "campeones"
+        );
+
+    contenedor.innerHTML = "";
+
+
+    playoffs.primeros.forEach(
+        (equipo, indice) => {
+
+            const tarjeta =
+                document.createElement("div");
+
+            tarjeta.className =
+                "campeon";
+
+
+            tarjeta.innerHTML = `
+
+                <div class="campeon-posicion">
+                    ${indice + 1}° MEJOR CAMPEÓN
+                </div>
+
+                <div class="campeon-nombre">
+                    ${equipo.nombre}
+                </div>
+
+                <div class="campeon-zona">
+                    Zona ${equipo.zona}
+                    · ${equipo.pts} pts
+                </div>
+
+            `;
+
+            contenedor.appendChild(
+                tarjeta
+            );
+
+        }
+    );
+
+}
+
+
+
+/* ==========================================
+   CREAR TARJETA DE LLAVE
+========================================== */
+
+function crearTarjetaLlave(llave) {
+
+    const tarjeta =
+        document.createElement("div");
+
+    tarjeta.className =
+        "llave";
+
+
+    const golesLocal =
+        llave.golesLocal !== null
+            ? llave.golesLocal
+            : `<span class="pendiente">-</span>`;
+
+
+    const golesVisitante =
+        llave.golesVisitante !== null
+            ? llave.golesVisitante
+            : `<span class="pendiente">-</span>`;
+
+
+    tarjeta.innerHTML = `
+
+        <div class="llave-header">
+
+            <span class="llave-id">
+                ${llave.id}
+            </span>
+
+            <span class="llave-ronda">
+                ${llave.ronda}
+            </span>
+
+        </div>
+
+
+        <div class="equipo-llave">
+
+            <div class="equipo-info">
+
+                <span class="equipo-nombre">
+                    ${llave.local}
+                </span>
+
+                <span class="equipo-seed">
+                    Ranking ${llave.seedMejor}
+                </span>
+
+            </div>
+
+            <div class="resultado">
+                ${golesLocal}
+            </div>
+
+        </div>
+
+
+        <div class="equipo-llave">
+
+            <div class="equipo-info">
+
+                <span class="equipo-nombre">
+                    ${llave.visitante}
+                </span>
+
+                <span class="equipo-seed">
+                    Ranking ${llave.seedPeor}
+                </span>
+
+            </div>
+
+            <div class="resultado">
+                ${golesVisitante}
+            </div>
+
+        </div>
+
+
+        <div class="ventaja">
+
+            Ventaja deportiva:
+            <strong>
+                ${llave.ventajaDeportiva}
+            </strong>
+
+        </div>
+
+
+        <div class="cancha">
+
+            📍 ${llave.cancha}
+
+        </div>
+
+    `;
+
+
+    return tarjeta;
+
+}
+
+
+
+/* ==========================================
+   MOSTRAR LLAVES
+========================================== */
+
+function mostrarLlaves(
+    id,
+    llaves
+) {
+
+    const contenedor =
+        document.getElementById(id);
+
+    contenedor.innerHTML = "";
+
+
+    if (
+        !llaves ||
+        llaves.length === 0
+    ) {
+
+        contenedor.innerHTML = `
+
+            <div class="vacio">
+
+                ⏳
+                Esta ronda todavía está pendiente
+                de resultados.
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    llaves.forEach(
+        llave => {
+
+            contenedor.appendChild(
+                crearTarjetaLlave(llave)
+            );
+
+        }
+    );
+
+}
+
+
+
+/* ==========================================
+   FINAL
+========================================== */
+
+function mostrarFinal() {
+
+    const contenedor =
+        document.getElementById(
+            "final"
+        );
+
+
+    if (
+        !playoffs.final ||
+        playoffs.final.length === 0
+    ) {
+
+        contenedor.innerHTML = `
+
+            <div class="final-card">
+
+                <h3>
+                    🏆 Final
+                </h3>
+
+                <p>
+                    Los finalistas se determinarán
+                    automáticamente.
+                </p>
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    const llave =
+        playoffs.final[0];
+
+
+    contenedor.innerHTML = `
+
+        <div class="final-card">
+
+            <h3>
+                🏆 FINAL
+            </h3>
+
+
+            <div class="final-equipos">
+
+                <div class="final-equipo">
+                    ${llave.local}
+                </div>
+
+                <div class="vs">
+                    VS
+                </div>
+
+                <div class="final-equipo">
+                    ${llave.visitante}
+                </div>
+
+            </div>
+
+
+            <div style="margin-top:15px;font-size:14px;">
+
+                ${llave.golesLocal !== null
+                    ? llave.golesLocal
+                    : "-"
+                }
+
+                &nbsp; - &nbsp;
+
+                ${llave.golesVisitante !== null
+                    ? llave.golesVisitante
+                    : "-"
+                }
+
+            </div>
+
+
+            <div style="margin-top:12px;font-size:12px;opacity:.8;">
+
+                Ventaja deportiva:
+                ${llave.ventajaDeportiva}
+
+            </div>
+
+        </div>
+
+    `;
+
+}
+
+
+
+/* ==========================================
+   EJECUTAR
+========================================== */
+
+mostrarCampeones();
+
+mostrarLlaves(
+    "primera-ronda",
+    playoffs.primeraRonda
+);
+
+mostrarLlaves(
+    "segunda-ronda",
+    playoffs.segundaRonda
+);
+
+mostrarLlaves(
+    "cuartos",
+    playoffs.cuartos
+);
+
+mostrarLlaves(
+    "semifinales",
+    playoffs.semifinales
+);
+
+mostrarFinal();
+
+
+</script>
+
+
+</body>
+
+</html>
