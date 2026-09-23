@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Posiciones | Liga Tucson</title>
 
 <style>
+
+/* =====================================================
+   GENERAL
+===================================================== */
 
 *{
     box-sizing:border-box;
@@ -20,9 +27,10 @@ body{
     color:#172b3a;
 }
 
-/* =========================
+
+/* =====================================================
    HEADER
-========================= */
+===================================================== */
 
 header{
     background:#082b49;
@@ -68,9 +76,10 @@ nav a.activo{
     background:#0e527e;
 }
 
-/* =========================
+
+/* =====================================================
    CONTENEDOR
-========================= */
+===================================================== */
 
 .contenedor{
     max-width:1100px;
@@ -90,9 +99,10 @@ nav a.activo{
     margin-bottom:25px;
 }
 
-/* =========================
+
+/* =====================================================
    BOTONES DE ZONA
-========================= */
+===================================================== */
 
 .zonas{
     display:flex;
@@ -123,9 +133,10 @@ nav a.activo{
     border-color:#0b638f;
 }
 
-/* =========================
+
+/* =====================================================
    TABLA
-========================= */
+===================================================== */
 
 .bloque-zona{
     background:white;
@@ -150,7 +161,7 @@ nav a.activo{
 table{
     width:100%;
     border-collapse:collapse;
-    min-width:700px;
+    min-width:760px;
 }
 
 thead{
@@ -189,8 +200,8 @@ td.equipo{
 }
 
 .escudo{
-    width:32px;
-    height:32px;
+    width:34px;
+    height:34px;
     object-fit:contain;
     flex-shrink:0;
 }
@@ -205,27 +216,35 @@ td.equipo{
     font-size:15px;
 }
 
-/* =========================
-   CLASIFICACIÓN
-========================= */
 
+/* =====================================================
+   COLORES DE CLASIFICACIÓN
+===================================================== */
+
+/* 1.º de zona */
 .clasifica-directo{
     background:#e2f5e8 !important;
 }
 
+/* 2.º al 4.º */
 .clasifica-ronda{
     background:#e5f3fa !important;
 }
 
+/* 2 mejores quintos */
 .mejor-quinto{
     background:#fff4cf !important;
 }
 
+/* Sin clasificación especial */
 .sin-clasificar{
     background:white;
 }
 
-/* Borde lateral para identificar rápidamente */
+
+/* =====================================================
+   BORDES LATERALES
+===================================================== */
 
 .clasifica-directo td:first-child{
     border-left:5px solid #27a653;
@@ -239,9 +258,10 @@ td.equipo{
     border-left:5px solid #e4ad00;
 }
 
-/* =========================
+
+/* =====================================================
    ETIQUETAS
-========================= */
+===================================================== */
 
 .estado{
     display:inline-block;
@@ -267,62 +287,10 @@ td.equipo{
     color:#806000;
 }
 
-/* =========================
-   LEYENDA
-========================= */
 
-.leyenda{
-    background:white;
-    border-radius:15px;
-    padding:20px;
-    margin-top:10px;
-    margin-bottom:30px;
-    box-shadow:0 4px 15px rgba(0,0,0,.07);
-}
-
-.leyenda h3{
-    color:#082b49;
-    margin-bottom:15px;
-}
-
-.leyenda-item{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    margin:9px 0;
-    font-size:14px;
-}
-
-.color{
-    width:22px;
-    height:22px;
-    border-radius:5px;
-    flex-shrink:0;
-}
-
-.color-verde{
-    background:#e2f5e8;
-    border-left:4px solid #27a653;
-}
-
-.color-celeste{
-    background:#e5f3fa;
-    border-left:4px solid #2196c9;
-}
-
-.color-amarillo{
-    background:#fff4cf;
-    border-left:4px solid #e4ad00;
-}
-
-.color-rojo{
-    background:#fde3e3;
-    border-left:4px solid #d93636;
-}
-
-/* =========================
+/* =====================================================
    2 MEJORES QUINTOS
-========================= */
+===================================================== */
 
 .mejor-quintos-box{
     background:white;
@@ -375,9 +343,64 @@ td.equipo{
     color:#806000;
 }
 
-/* =========================
-   TABLA ANUAL PREPARADA
-========================= */
+
+/* =====================================================
+   LEYENDA
+===================================================== */
+
+.leyenda{
+    background:white;
+    border-radius:15px;
+    padding:20px;
+    margin-top:10px;
+    margin-bottom:30px;
+    box-shadow:0 4px 15px rgba(0,0,0,.07);
+}
+
+.leyenda h3{
+    color:#082b49;
+    margin-bottom:15px;
+}
+
+.leyenda-item{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin:9px 0;
+    font-size:14px;
+}
+
+.color{
+    width:22px;
+    height:22px;
+    border-radius:5px;
+    flex-shrink:0;
+}
+
+.color-verde{
+    background:#e2f5e8;
+    border-left:4px solid #27a653;
+}
+
+.color-celeste{
+    background:#e5f3fa;
+    border-left:4px solid #2196c9;
+}
+
+.color-amarillo{
+    background:#fff4cf;
+    border-left:4px solid #e4ad00;
+}
+
+.color-rojo{
+    background:#fde3e3;
+    border-left:4px solid #d93636;
+}
+
+
+/* =====================================================
+   TABLA ANUAL
+===================================================== */
 
 .anual-box{
     background:white;
@@ -397,9 +420,10 @@ td.equipo{
     font-size:14px;
 }
 
-/* =========================
+
+/* =====================================================
    FOOTER
-========================= */
+===================================================== */
 
 footer{
     background:#082b49;
@@ -410,9 +434,10 @@ footer{
     margin-top:20px;
 }
 
-/* =========================
+
+/* =====================================================
    MOBILE
-========================= */
+===================================================== */
 
 @media(max-width:600px){
 
@@ -457,27 +482,38 @@ footer{
 }
 
 </style>
+
 </head>
 
+
 <body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
 
 <header>
 
     <div class="logo">
 
         <img
-        src="https://raw.githubusercontent.com/ianulisespaez-netizen/Liga-tucson/main/FDDF80B7-4151-4091-AB6F-C5DF10F36391.png"
-        alt="Liga Tucson">
+            src="https://raw.githubusercontent.com/ianulisespaez-netizen/Liga-tucson/main/FDDF80B7-4151-4091-AB6F-C5DF10F36391.png"
+            alt="Liga Tucson"
+        >
 
         <span>⚽ LIGA TUCSON</span>
 
     </div>
 
+
     <nav>
 
-        <a href="index.html">Inicio</a>
+        <a href="index.html">
+            Inicio
+        </a>
 
-        <a href="posiciones.html?v=11" class="activo">
+        <a href="posiciones.html?v=13" class="activo">
             Posiciones
         </a>
 
@@ -498,62 +534,101 @@ footer{
 </header>
 
 
+
+<!-- =====================================================
+     CONTENIDO
+===================================================== -->
+
 <main class="contenedor">
+
 
     <h1 class="titulo">
         Tabla de Posiciones
     </h1>
+
 
     <p class="subtitulo" id="torneo">
         Primera División A - Clausura 2026
     </p>
 
 
-    <!-- =========================
+
+    <!-- =================================================
          BOTONES
-    ========================== -->
+    ================================================== -->
 
     <div class="zonas">
 
-        <button class="zona-btn activa" data-zona="TODAS">
+        <button
+            class="zona-btn activa"
+            data-zona="TODAS"
+        >
             Todas
         </button>
 
-        <button class="zona-btn" data-zona="A">
+
+        <button
+            class="zona-btn"
+            data-zona="A"
+        >
             Zona A
         </button>
 
-        <button class="zona-btn" data-zona="B">
+
+        <button
+            class="zona-btn"
+            data-zona="B"
+        >
             Zona B
         </button>
 
-        <button class="zona-btn" data-zona="C">
+
+        <button
+            class="zona-btn"
+            data-zona="C"
+        >
             Zona C
         </button>
 
-        <button class="zona-btn" data-zona="D">
+
+        <button
+            class="zona-btn"
+            data-zona="D"
+        >
             Zona D
         </button>
 
-        <button class="zona-btn" data-zona="E">
+
+        <button
+            class="zona-btn"
+            data-zona="E"
+        >
             Zona E
         </button>
 
-        <button class="zona-btn" data-zona="F">
+
+        <button
+            class="zona-btn"
+            data-zona="F"
+        >
             Zona F
         </button>
 
     </div>
 
 
-    <!-- TABLAS -->
+
+    <!-- =================================================
+         TABLAS
+    ================================================== -->
 
     <div id="tablas"></div>
 
 
-    <!-- =========================
+
+    <!-- =================================================
          2 MEJORES QUINTOS
-    ========================== -->
+    ================================================== -->
 
     <section class="mejor-quintos-box">
 
@@ -562,24 +637,29 @@ footer{
         </h3>
 
         <p>
-            Los dos mejores equipos ubicados en el 5.º puesto de las seis zonas
-            clasifican a la primera ronda.
+            Los dos mejores equipos ubicados en el 5.º puesto
+            de las seis zonas clasifican a la primera ronda.
         </p>
 
-        <div id="mejoresQuintos" class="quintos-grid"></div>
+        <div
+            id="mejoresQuintos"
+            class="quintos-grid"
+        ></div>
 
     </section>
 
 
-    <!-- =========================
+
+    <!-- =================================================
          LEYENDA
-    ========================== -->
+    ================================================== -->
 
     <section class="leyenda">
 
         <h3>
             📖 Sistema de clasificación
         </h3>
+
 
         <div class="leyenda-item">
 
@@ -631,10 +711,10 @@ footer{
     </section>
 
 
-    <!-- =========================
+
+    <!-- =================================================
          TABLA ANUAL
-         PREPARADA PARA MÁS ADELANTE
-    ========================== -->
+    ================================================== -->
 
     <section class="anual-box">
 
@@ -643,14 +723,20 @@ footer{
         </h2>
 
         <p>
-            La tabla anual se incorporará posteriormente con los puntos
-            acumulados del Apertura y Clausura 2026.
+            La tabla anual se incorporará posteriormente
+            con los puntos acumulados del Apertura y Clausura 2026.
         </p>
 
     </section>
 
+
 </main>
 
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
 
 <footer>
 
@@ -659,7 +745,13 @@ footer{
 </footer>
 
 
+
+<!-- =====================================================
+     DATOS DE LA LIGA
+===================================================== -->
+
 <script src="datos.js"></script>
+
 
 
 <script>
@@ -671,60 +763,106 @@ footer{
 const escudos = {
 
     "Talleres":"IMG_1621.png",
+
     "Juventud Unida":"IMG_1622.png",
+
     "Estación Experimental":"IMG_1623.png",
-    "Central Norte":"21B48DFD-98C8-4EDD-B633-35738F9B089D.png",
+
+    "Central Norte":
+        "21B48DFD-98C8-4EDD-B633-35738F9B089D.png",
+
     "Villa Mitre":"IMG_1625.jpeg",
+
     "All Boys":"IMG_1627.png",
+
     "San José":"IMG_1628.png",
 
+
     "Argentinos del Norte":"IMG_1629.png",
+
     "San Martín":"IMG_1630.png",
+
     "San Antonio":"IMG_1631.jpeg",
+
     "Atlético Tucumán":"IMG_1632.jpeg",
+
     "Sportivo Guzmán":"IMG_1633.png",
+
     "Amalia":"IMG_1634.png",
+
     "Tucumán Central":"IMG_1635.png",
 
+
     "Garmendia":"IMG_1637.jpeg",
+
     "Atlético Concepción":"IMG_1638.png",
-    "San Juan":"9D389031-3751-4B06-A800-AE5B7A426605.png",
+
+    "San Juan":
+        "9D389031-3751-4B06-A800-AE5B7A426605.png",
+
     "San Lorenzo (DG)":"IMG_1646.png",
+
     "Unión del Norte":"IMG_1641.jpeg",
+
     "Lastenia":"IMG_1645.png",
+
     "Cruz Alta":"IMG_1644.png",
 
+
     "Bella Vista":"IMG_1651.png",
+
     "San Fernando":"IMG_1652.png",
+
     "Almirante Brown":"IMG_1653.jpeg",
+
     "Famaillá":"IMG_1654.png",
+
     "Ateneo Parroquial Alderetes":"IMG_1655.png",
+
     "Santa Lucía":"IMG_1656.jpeg",
+
     "San Pablo":"IMG_1671.png",
 
+
     "Alto Verde":"IMG_1657.png",
+
     "Concepción FC":"IMG_1658.png",
+
     "Azucarera Argentina":"IMG_1659.png",
+
     "Ñuñorco":"IMG_1660.png",
+
     "Unión Simoca":"IMG_1661.jpeg",
+
     "San Ramón":"IMG_1662.jpeg",
+
     "Santa Rosa":"IMG_1663.png",
+
     "La Providencia":"IMG_1664.jpeg",
 
+
     "Deportivo Aguilares":"IMG_1665.png",
+
     "San Lorenzo (SA)":"IMG_1666.webp",
+
     "Jorge Newbery":"IMG_1673.png",
+
     "Graneros":"IMG_1667.jpeg",
+
     "Santa Ana":"IMG_1668.png",
+
     "Trinidad":"IMG_1669.png",
+
     "Marapa":"IMG_1670.jpeg",
+
     "Llorens":"IMG_1672.jpeg"
 
 };
 
 
+
 /* =====================================================
-   URL DEL ESCUDO
+   OBTENER URL DEL ESCUDO
 ===================================================== */
 
 function obtenerEscudo(nombre){
@@ -732,7 +870,9 @@ function obtenerEscudo(nombre){
     const archivo = escudos[nombre];
 
     if(!archivo){
+
         return "";
+
     }
 
     return "https://raw.githubusercontent.com/ianulisespaez-netizen/Liga-tucson/main/" + archivo;
@@ -740,28 +880,76 @@ function obtenerEscudo(nombre){
 }
 
 
+
 /* =====================================================
    NORMALIZAR EQUIPO
 ===================================================== */
 
+/*
+   IMPORTANTE:
+
+   En datos.js los equipos están guardados como:
+
+   equipo: "Talleres"
+
+   y no como:
+
+   nombre: "Talleres"
+
+   Por eso acá convertimos ambos formatos
+   a una propiedad común llamada "nombre".
+*/
+
 function prepararEquipo(equipo){
 
+    const nombre =
+        equipo.equipo ||
+        equipo.nombre ||
+        "";
+
+    const pg =
+        Number(equipo.pg || 0);
+
+    const pe =
+        Number(equipo.pe || 0);
+
+    const gf =
+        Number(equipo.gf || 0);
+
+    const gc =
+        Number(equipo.gc || 0);
+
     const puntos =
-        (equipo.pg * 3) +
-        equipo.pe;
+        (pg * 3) + pe;
 
     const dg =
         equipo.dg !== undefined
-        ? equipo.dg
-        : equipo.gf - equipo.gc;
+        ? Number(equipo.dg)
+        : gf - gc;
+
 
     return {
+
         ...equipo,
+
+        nombre:nombre,
+
+        pg:pg,
+
+        pe:pe,
+
+        gf:gf,
+
+        gc:gc,
+
         pts:puntos,
+
         dg:dg
+
     };
 
 }
+
 
 
 /* =====================================================
@@ -771,77 +959,140 @@ function prepararEquipo(equipo){
 function ordenarTabla(equipos){
 
     return [...equipos]
+
         .map(prepararEquipo)
+
         .sort((a,b)=>{
 
-            if(b.pts !== a.pts)
+            /* Puntos */
+
+            if(b.pts !== a.pts){
+
                 return b.pts - a.pts;
 
-            if(b.dg !== a.dg)
+            }
+
+
+            /* Diferencia de gol */
+
+            if(b.dg !== a.dg){
+
                 return b.dg - a.dg;
 
-            if(b.gf !== a.gf)
+            }
+
+
+            /* Goles a favor */
+
+            if(b.gf !== a.gf){
+
                 return b.gf - a.gf;
 
-            if(a.gc !== b.gc)
+            }
+
+
+            /* Goles en contra */
+
+            if(a.gc !== b.gc){
+
                 return a.gc - b.gc;
 
-            return a.nombre.localeCompare(b.nombre);
+            }
+
+
+            /* Nombre */
+
+            return a.nombre.localeCompare(
+                b.nombre,
+                "es"
+            );
 
         });
 
 }
 
 
+
 /* =====================================================
-   OBTENER TODOS LOS QUINTOS
+   OBTENER LOS SEIS QUINTOS
 ===================================================== */
 
 function obtenerQuintos(){
 
     const quintos = [];
 
-    Object.keys(datosLiga.zonas).forEach(zona=>{
 
-        const tabla = ordenarTabla(
-            datosLiga.zonas[zona]
-        );
+    Object.keys(datosLiga.zonas)
+        .forEach(zona=>{
 
-        if(tabla.length >= 5){
-
-            quintos.push({
-
-                ...tabla[4],
-
-                zona:zona
-
-            });
-
-        }
-
-    });
+            const tabla =
+                ordenarTabla(
+                    datosLiga.zonas[zona]
+                );
 
 
-    return quintos
-        .sort((a,b)=>{
+            if(tabla.length >= 5){
 
-            if(b.pts !== a.pts)
-                return b.pts - a.pts;
+                quintos.push({
 
-            if(b.dg !== a.dg)
-                return b.dg - a.dg;
+                    ...tabla[4],
 
-            if(b.gf !== a.gf)
-                return b.gf - a.gf;
+                    zona:zona
 
-            if(a.gc !== b.gc)
-                return a.gc - b.gc;
+                });
 
-            return a.nombre.localeCompare(b.nombre);
+            }
 
         });
 
+
+    return quintos.sort((a,b)=>{
+
+        /* Puntos */
+
+        if(b.pts !== a.pts){
+
+            return b.pts - a.pts;
+
+        }
+
+
+        /* Diferencia de gol */
+
+        if(b.dg !== a.dg){
+
+            return b.dg - a.dg;
+
+        }
+
+
+        /* Goles a favor */
+
+        if(b.gf !== a.gf){
+
+            return b.gf - a.gf;
+
+        }
+
+
+        /* Goles en contra */
+
+        if(a.gc !== b.gc){
+
+            return a.gc - b.gc;
+
+        }
+
+
+        return a.nombre.localeCompare(
+            b.nombre,
+            "es"
+        );
+
+    });
+
 }
+
 
 
 /* =====================================================
@@ -851,104 +1102,148 @@ function obtenerQuintos(){
 function mostrarMejoresQuintos(){
 
     const contenedor =
-        document.getElementById("mejoresQuintos");
+        document.getElementById(
+            "mejoresQuintos"
+        );
+
 
     const quintos =
         obtenerQuintos();
 
+
     contenedor.innerHTML = "";
 
 
-    quintos.slice(0,2).forEach((equipo,index)=>{
+    quintos
+        .slice(0,2)
+        .forEach((equipo,index)=>{
 
-        const card =
-            document.createElement("div");
-
-        card.className = "quinto-card";
-
-
-        const escudo =
-            obtenerEscudo(equipo.nombre);
+            const card =
+                document.createElement("div");
 
 
-        card.innerHTML = `
-
-            <img
-                src="${escudo}"
-                alt="${equipo.nombre}"
-            >
-
-            <div>
-
-                <strong>
-                    ${index + 1}° mejor 5°
-                </strong>
-
-                <span>
-                    ${equipo.nombre} · Zona ${equipo.zona}
-                    · ${equipo.pts} pts
-                </span>
-
-            </div>
-
-        `;
+            card.className =
+                "quinto-card";
 
 
-        contenedor.appendChild(card);
+            const escudo =
+                obtenerEscudo(
+                    equipo.nombre
+                );
 
-    });
+
+            card.innerHTML = `
+
+                <img
+                    src="${escudo}"
+                    alt="${equipo.nombre}"
+                    onerror="this.style.display='none'"
+                >
+
+                <div>
+
+                    <strong>
+                        ${index + 1}° mejor 5°
+                    </strong>
+
+                    <span>
+                        ${equipo.nombre}
+                        · Zona ${equipo.zona}
+                        · ${equipo.pts} pts
+                    </span>
+
+                </div>
+
+            `;
+
+
+            contenedor.appendChild(card);
+
+        });
 
 }
+
 
 
 /* =====================================================
    ESTADO DE CLASIFICACIÓN
 ===================================================== */
 
-function obtenerEstado(posicion, equipo){
+function obtenerEstado(posicion,equipo){
+
+    /* -----------------------------------------------
+       1.º DE ZONA
+       Pasa directamente a la 2.ª ronda
+    ------------------------------------------------ */
 
     if(posicion === 1){
 
         return {
+
             clase:"clasifica-directo",
+
             etiqueta:"2.ª RONDA"
+
         };
 
     }
 
 
-    if(posicion >= 2 && posicion <= 4){
+
+    /* -----------------------------------------------
+       2.º AL 4.º
+       Primera ronda
+    ------------------------------------------------ */
+
+    if(
+        posicion >= 2 &&
+        posicion <= 4
+    ){
 
         return {
+
             clase:"clasifica-ronda",
+
             etiqueta:"1.ª RONDA"
+
         };
 
     }
 
 
-    /*
-       Los 2 mejores quintos se detectan
-       comparando las seis zonas.
-    */
+
+    /* -----------------------------------------------
+       5.º
+       Solamente los 2 mejores quintos
+    ------------------------------------------------ */
 
     if(posicion === 5){
 
         const quintos =
             obtenerQuintos();
 
+
         const esMejorQuinto =
             quintos
                 .slice(0,2)
-                .some(q =>
-                    q.nombre === equipo.nombre
-                );
+                .some(q => {
+
+                    return (
+                        q.nombre ===
+                        equipo.nombre
+                    );
+
+                });
+
 
         if(esMejorQuinto){
 
             return {
+
                 clase:"mejor-quinto",
+
                 etiqueta:"MEJOR 5.º"
+
             };
 
         }
@@ -956,32 +1251,47 @@ function obtenerEstado(posicion, equipo){
     }
 
 
+
+    /* -----------------------------------------------
+       Sin clasificación especial
+    ------------------------------------------------ */
+
     return {
+
         clase:"",
+
         etiqueta:""
+
     };
 
 }
 
 
+
 /* =====================================================
-   RENDER TABLA
+   MOSTRAR ZONA
 ===================================================== */
 
 function mostrarZona(zona){
 
     const contenedor =
-        document.getElementById("tablas");
+        document.getElementById(
+            "tablas"
+        );
+
 
     contenedor.innerHTML = "";
 
 
     let zonasMostrar = [];
 
+
     if(zona === "TODAS"){
 
         zonasMostrar =
-            Object.keys(datosLiga.zonas);
+            Object.keys(
+                datosLiga.zonas
+            );
 
     }else{
 
@@ -990,22 +1300,29 @@ function mostrarZona(zona){
     }
 
 
+
     zonasMostrar.forEach(letraZona=>{
 
         const equipos =
             ordenarTabla(
-                datosLiga.zonas[letraZona]
+                datosLiga.zonas[
+                    letraZona
+                ]
             );
 
 
         const bloque =
-            document.createElement("section");
+            document.createElement(
+                "section"
+            );
+
 
         bloque.className =
             "bloque-zona";
 
 
         let filas = "";
+
 
 
         equipos.forEach((equipo,index)=>{
@@ -1027,9 +1344,47 @@ function mostrarZona(zona){
                 );
 
 
+
+            let claseEstado = "";
+
+
+            if(
+                estado.clase ===
+                "clasifica-directo"
+            ){
+
+                claseEstado =
+                    "estado-directo";
+
+            }
+
+            else if(
+                estado.clase ===
+                "clasifica-ronda"
+            ){
+
+                claseEstado =
+                    "estado-ronda";
+
+            }
+
+            else if(
+                estado.clase ===
+                "mejor-quinto"
+            ){
+
+                claseEstado =
+                    "estado-quinto";
+
+            }
+
+
+
             filas += `
 
-                <tr class="${estado.clase}">
+                <tr
+                    class="${estado.clase}"
+                >
 
                     <td class="pos">
                         ${posicion}
@@ -1040,13 +1395,14 @@ function mostrarZona(zona){
 
                         <a
                             class="equipo-link"
-                            href="equipo.html?v=11&equipo=${encodeURIComponent(equipo.nombre)}&zona=${letraZona}"
+                            href="equipo.html?v=13&equipo=${encodeURIComponent(equipo.nombre)}&zona=${letraZona}"
                         >
 
                             <img
                                 class="escudo"
                                 src="${escudo}"
                                 alt="${equipo.nombre}"
+                                onerror="this.style.display='none'"
                             >
 
                             <span>
@@ -1102,20 +1458,21 @@ function mostrarZona(zona){
 
                         ${
                             estado.etiqueta
+
                             ?
-                            `<span class="estado ${
-                                estado.clase === "clasifica-directo"
-                                ? "estado-directo"
-                                :
-                                estado.clase === "clasifica-ronda"
-                                ? "estado-ronda"
-                                :
-                                "estado-quinto"
-                            }">
+
+                            `
+                            <span
+                                class="estado ${claseEstado}"
+                            >
                                 ${estado.etiqueta}
-                            </span>`
+                            </span>
+                            `
+
                             :
+
                             ""
+
                         }
 
                     </td>
@@ -1127,10 +1484,13 @@ function mostrarZona(zona){
         });
 
 
+
         bloque.innerHTML = `
 
             <div class="encabezado-zona">
+
                 Zona ${letraZona}
+
             </div>
 
 
@@ -1142,21 +1502,51 @@ function mostrarZona(zona){
 
                         <tr>
 
-                            <th>#</th>
+                            <th>
+                                #
+                            </th>
 
-                            <th style="text-align:left">
+                            <th
+                                style="text-align:left"
+                            >
                                 Equipo
                             </th>
 
-                            <th>PJ</th>
-                            <th>PG</th>
-                            <th>PE</th>
-                            <th>PP</th>
-                            <th>GF</th>
-                            <th>GC</th>
-                            <th>DG</th>
-                            <th>PTS</th>
-                            <th></th>
+                            <th>
+                                PJ
+                            </th>
+
+                            <th>
+                                PG
+                            </th>
+
+                            <th>
+                                PE
+                            </th>
+
+                            <th>
+                                PP
+                            </th>
+
+                            <th>
+                                GF
+                            </th>
+
+                            <th>
+                                GC
+                            </th>
+
+                            <th>
+                                DG
+                            </th>
+
+                            <th>
+                                PTS
+                            </th>
+
+                            <th>
+                                Clasificación
+                            </th>
 
                         </tr>
 
@@ -1176,6 +1566,7 @@ function mostrarZona(zona){
         `;
 
 
+
         contenedor.appendChild(
             bloque
         );
@@ -1183,67 +1574,97 @@ function mostrarZona(zona){
     });
 
 
+
+    /* Actualizar los 2 mejores quintos */
+
     mostrarMejoresQuintos();
 
 }
 
 
+
 /* =====================================================
-   BOTONES
+   BOTONES DE ZONA
 ===================================================== */
 
 document
-.querySelectorAll(".zona-btn")
-.forEach(boton=>{
-
-    boton.addEventListener(
-        "click",
-        ()=>{
-
-            document
-            .querySelectorAll(".zona-btn")
-            .forEach(btn =>
-                btn.classList.remove("activa")
-            );
+    .querySelectorAll(".zona-btn")
+    .forEach(boton=>{
 
 
-            boton.classList.add("activa");
+        boton.addEventListener(
+            "click",
+            ()=>{
 
 
-            const zona =
-                boton.dataset.zona;
+                /* Quitar botón activo */
+
+                document
+                    .querySelectorAll(
+                        ".zona-btn"
+                    )
+                    .forEach(btn=>{
+
+                        btn.classList.remove(
+                            "activa"
+                        );
+
+                    });
 
 
-            mostrarZona(zona);
 
+                /* Activar botón seleccionado */
 
-            /*
-               Actualizamos la URL
-               sin recargar la página.
-            */
-
-            if(zona === "TODAS"){
-
-                history.replaceState(
-                    null,
-                    "",
-                    "posiciones.html?v=11"
+                boton.classList.add(
+                    "activa"
                 );
 
-            }else{
 
-                history.replaceState(
-                    null,
-                    "",
-                    "posiciones.html?v=11&zona=" + zona
+
+                const zona =
+                    boton.dataset.zona;
+
+
+
+                /* Mostrar tabla */
+
+                mostrarZona(
+                    zona
                 );
+
+
+
+                /* Actualizar URL */
+
+                if(
+                    zona === "TODAS"
+                ){
+
+                    history.replaceState(
+                        null,
+                        "",
+                        "posiciones.html?v=13"
+                    );
+
+                }
+
+                else{
+
+                    history.replaceState(
+                        null,
+                        "",
+                        "posiciones.html?v=13&zona=" +
+                        zona
+                    );
+
+                }
 
             }
 
-        }
-    );
+        );
 
-});
+    });
+
 
 
 /* =====================================================
@@ -1255,8 +1676,10 @@ const parametros =
         window.location.search
     );
 
+
 const zonaInicial =
     parametros.get("zona");
+
 
 
 if(
@@ -1269,27 +1692,46 @@ if(
             `[data-zona="${zonaInicial}"]`
         );
 
+
     if(boton){
 
         document
-        .querySelectorAll(".zona-btn")
-        .forEach(btn =>
-            btn.classList.remove("activa")
-        );
+            .querySelectorAll(
+                ".zona-btn"
+            )
+            .forEach(btn=>{
 
-        boton.classList.add("activa");
+                btn.classList.remove(
+                    "activa"
+                );
+
+            });
+
+
+        boton.classList.add(
+            "activa"
+        );
 
     }
 
-    mostrarZona(zonaInicial);
 
-}else{
+    mostrarZona(
+        zonaInicial
+    );
 
-    mostrarZona("TODAS");
+}
+
+else{
+
+    mostrarZona(
+        "TODAS"
+    );
 
 }
 
 </script>
 
+
 </body>
+
 </html>
