@@ -8,254 +8,450 @@
 
 <style>
 
-* {
-    box-sizing: border-box;
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
 }
 
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f2f6fa;
-    color: #102a43;
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f4f8fb;
+    color:#172b3a;
 }
 
 /* =========================
    HEADER
 ========================= */
 
-header {
-    background: #061a33;
-    color: white;
-    padding: 15px 20px;
+header{
+    background:#082b49;
+    color:white;
+    padding:15px 20px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:15px;
 }
 
-.header-contenido {
-    max-width: 1100px;
-    margin: auto;
-    display: flex;
-    align-items: center;
-    gap: 20px;
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    font-weight:bold;
+    font-size:22px;
 }
 
-.logo {
-    width: 65px;
-    height: 65px;
-    object-fit: contain;
+.logo img{
+    width:48px;
+    height:48px;
+    object-fit:contain;
 }
 
-.titulo {
-    flex: 1;
+nav{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
 }
 
-.titulo h1 {
-    margin: 0;
-    font-size: 25px;
+nav a{
+    color:white;
+    text-decoration:none;
+    padding:9px 12px;
+    border-radius:8px;
+    font-size:14px;
 }
 
-.titulo p {
-    margin: 4px 0 0;
-    color: #8bdcff;
-    font-size: 13px;
-}
-
-/* =========================
-   NAVEGACIÓN
-========================= */
-
-nav {
-    background: #0b3158;
-    padding: 10px;
-    text-align: center;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 10px;
-    font-weight: bold;
-}
-
-nav a:hover {
-    color: #7edcff;
+nav a:hover,
+nav a.activo{
+    background:#0e527e;
 }
 
 /* =========================
-   CONTENIDO
+   CONTENEDOR
 ========================= */
 
-.contenedor {
-    max-width: 1150px;
-    margin: auto;
-    padding: 25px 15px;
+.contenedor{
+    max-width:1100px;
+    margin:auto;
+    padding:25px 15px 50px;
 }
 
-h2 {
-    color: #061a33;
+.titulo{
+    text-align:center;
+    margin-bottom:8px;
+    color:#082b49;
+}
+
+.subtitulo{
+    text-align:center;
+    color:#607483;
+    margin-bottom:25px;
 }
 
 /* =========================
    BOTONES DE ZONA
 ========================= */
 
-.filtros {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin: 20px 0 30px;
+.zonas{
+    display:flex;
+    justify-content:center;
+    gap:8px;
+    flex-wrap:wrap;
+    margin-bottom:25px;
 }
 
-.filtro {
-    border: none;
-    background: #dcecf7;
-    color: #061a33;
-    padding: 10px 17px;
-    border-radius: 8px;
-    font-weight: bold;
-    cursor: pointer;
+.zona-btn{
+    border:none;
+    background:white;
+    color:#082b49;
+    border:2px solid #b9dbea;
+    padding:9px 17px;
+    border-radius:20px;
+    cursor:pointer;
+    font-weight:bold;
 }
 
-.filtro:hover {
-    background: #b9def2;
+.zona-btn:hover{
+    background:#e8f5fb;
 }
 
-.filtro.activo {
-    background: #087ec4;
-    color: white;
+.zona-btn.activa{
+    background:#0b638f;
+    color:white;
+    border-color:#0b638f;
 }
 
 /* =========================
    TABLA
 ========================= */
 
-.tabla-contenedor {
-    background: white;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-    overflow-x: auto;
+.bloque-zona{
+    background:white;
+    border-radius:15px;
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
+    overflow:hidden;
+    margin-bottom:25px;
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    min-width: 700px;
+.encabezado-zona{
+    background:#082b49;
+    color:white;
+    padding:15px 18px;
+    font-size:19px;
+    font-weight:bold;
 }
 
-thead {
-    background: #061a33;
-    color: white;
+.tabla-scroll{
+    overflow-x:auto;
 }
 
-th {
-    padding: 13px 8px;
-    font-size: 13px;
-    white-space: nowrap;
+table{
+    width:100%;
+    border-collapse:collapse;
+    min-width:700px;
 }
 
-td {
-    padding: 11px 8px;
-    text-align: center;
-    border-bottom: 1px solid #e5edf3;
-    font-size: 14px;
+thead{
+    background:#e9f2f7;
 }
 
-tbody tr:hover {
-    background: #f2f8fc;
+th{
+    padding:11px 8px;
+    font-size:12px;
+    color:#496171;
+    text-align:center;
 }
 
-/* =========================
-   POSICIÓN
-========================= */
-
-.posicion {
-    font-weight: bold;
-    width: 45px;
+td{
+    padding:10px 7px;
+    border-top:1px solid #edf1f4;
+    text-align:center;
+    font-size:13px;
 }
 
-/* =========================
-   EQUIPO
-========================= */
-
-.equipo-celda {
-    text-align: left;
-    min-width: 230px;
+td.equipo{
+    text-align:left;
 }
 
-.equipo-link {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    color: #102a43;
-    text-decoration: none;
-    font-weight: bold;
+.equipo-link{
+    display:flex;
+    align-items:center;
+    gap:9px;
+    color:#172b3a;
+    text-decoration:none;
+    font-weight:bold;
 }
 
-.equipo-link:hover {
-    color: #087ec4;
+.equipo-link:hover{
+    color:#0b638f;
 }
 
-.escudo {
-    width: 38px;
-    height: 38px;
-    object-fit: contain;
-    flex-shrink: 0;
+.escudo{
+    width:32px;
+    height:32px;
+    object-fit:contain;
+    flex-shrink:0;
 }
 
-/* =========================
-   PUNTOS
-========================= */
+.pos{
+    font-weight:bold;
+    width:40px;
+}
 
-.puntos {
-    font-weight: bold;
-    color: #087ec4;
-    font-size: 16px;
+.puntos{
+    font-weight:bold;
+    font-size:15px;
 }
 
 /* =========================
-   DESTACADOS
+   CLASIFICACIÓN
 ========================= */
 
-.puesto-1 {
-    background: #f7f1d4;
+.clasifica-directo{
+    background:#e2f5e8 !important;
 }
 
-.puesto-2 {
-    background: #eeeeee;
+.clasifica-ronda{
+    background:#e5f3fa !important;
 }
 
-.puesto-3 {
-    background: #f5e4d5;
+.mejor-quinto{
+    background:#fff4cf !important;
+}
+
+.sin-clasificar{
+    background:white;
+}
+
+/* Borde lateral para identificar rápidamente */
+
+.clasifica-directo td:first-child{
+    border-left:5px solid #27a653;
+}
+
+.clasifica-ronda td:first-child{
+    border-left:5px solid #2196c9;
+}
+
+.mejor-quinto td:first-child{
+    border-left:5px solid #e4ad00;
+}
+
+/* =========================
+   ETIQUETAS
+========================= */
+
+.estado{
+    display:inline-block;
+    padding:4px 8px;
+    border-radius:10px;
+    font-size:10px;
+    font-weight:bold;
+    white-space:nowrap;
+}
+
+.estado-directo{
+    background:#ccebd5;
+    color:#167331;
+}
+
+.estado-ronda{
+    background:#cdeaf7;
+    color:#096087;
+}
+
+.estado-quinto{
+    background:#ffedab;
+    color:#806000;
+}
+
+/* =========================
+   LEYENDA
+========================= */
+
+.leyenda{
+    background:white;
+    border-radius:15px;
+    padding:20px;
+    margin-top:10px;
+    margin-bottom:30px;
+    box-shadow:0 4px 15px rgba(0,0,0,.07);
+}
+
+.leyenda h3{
+    color:#082b49;
+    margin-bottom:15px;
+}
+
+.leyenda-item{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin:9px 0;
+    font-size:14px;
+}
+
+.color{
+    width:22px;
+    height:22px;
+    border-radius:5px;
+    flex-shrink:0;
+}
+
+.color-verde{
+    background:#e2f5e8;
+    border-left:4px solid #27a653;
+}
+
+.color-celeste{
+    background:#e5f3fa;
+    border-left:4px solid #2196c9;
+}
+
+.color-amarillo{
+    background:#fff4cf;
+    border-left:4px solid #e4ad00;
+}
+
+.color-rojo{
+    background:#fde3e3;
+    border-left:4px solid #d93636;
+}
+
+/* =========================
+   2 MEJORES QUINTOS
+========================= */
+
+.mejor-quintos-box{
+    background:white;
+    border-radius:15px;
+    padding:20px;
+    margin-bottom:30px;
+    box-shadow:0 4px 15px rgba(0,0,0,.07);
+}
+
+.mejor-quintos-box h3{
+    color:#082b49;
+    margin-bottom:8px;
+}
+
+.mejor-quintos-box p{
+    color:#607483;
+    font-size:14px;
+    margin-bottom:15px;
+}
+
+.quintos-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:12px;
+}
+
+.quinto-card{
+    border:2px solid #f0d36b;
+    background:#fff9e5;
+    border-radius:12px;
+    padding:12px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.quinto-card img{
+    width:42px;
+    height:42px;
+    object-fit:contain;
+}
+
+.quinto-card strong{
+    display:block;
+    color:#5e4a00;
+}
+
+.quinto-card span{
+    font-size:12px;
+    color:#806000;
+}
+
+/* =========================
+   TABLA ANUAL PREPARADA
+========================= */
+
+.anual-box{
+    background:white;
+    border-radius:15px;
+    padding:20px;
+    margin-top:30px;
+    box-shadow:0 4px 15px rgba(0,0,0,.07);
+}
+
+.anual-box h2{
+    color:#082b49;
+    margin-bottom:7px;
+}
+
+.anual-box p{
+    color:#607483;
+    font-size:14px;
 }
 
 /* =========================
    FOOTER
 ========================= */
 
-footer {
-    margin-top: 40px;
-    background: #061a33;
-    color: white;
-    text-align: center;
-    padding: 20px;
+footer{
+    background:#082b49;
+    color:white;
+    text-align:center;
+    padding:20px;
+    font-size:13px;
+    margin-top:20px;
 }
 
 /* =========================
-   CELULAR
+   MOBILE
 ========================= */
 
-@media (max-width: 600px) {
+@media(max-width:600px){
 
-    .header-contenido {
-        flex-direction: column;
-        text-align: center;
+    header{
+        justify-content:center;
     }
 
-    nav a {
-        display: inline-block;
-        margin: 5px 7px;
+    .logo{
+        width:100%;
+        justify-content:center;
     }
 
-    .filtros {
-        justify-content: center;
+    nav{
+        justify-content:center;
+    }
+
+    .contenedor{
+        padding:20px 10px 40px;
+    }
+
+    .titulo{
+        font-size:24px;
+    }
+
+    .subtitulo{
+        font-size:14px;
+    }
+
+    .encabezado-zona{
+        font-size:17px;
+    }
+
+    th,
+    td{
+        font-size:11px;
+    }
+
+    .estado{
+        font-size:9px;
     }
 
 }
@@ -265,135 +461,200 @@ footer {
 
 <body>
 
-<!-- =========================
-     HEADER
-========================= -->
-
 <header>
 
-    <div class="header-contenido">
+    <div class="logo">
 
         <img
-            class="logo"
-            src="https://raw.githubusercontent.com/ianulisespaez-netizen/Liga-tucson/main/FDDF80B7-4151-4091-AB6F-C5DF10F36391.png"
-            alt="Liga Tucson"
-        >
+        src="https://raw.githubusercontent.com/ianulisespaez-netizen/Liga-tucson/main/FDDF80B7-4151-4091-AB6F-C5DF10F36391.png"
+        alt="Liga Tucson">
 
-        <div class="titulo">
-
-            <h1>⚽ LIGA TUCSON</h1>
-
-            <p>
-                Primera División A - Clausura 2026
-            </p>
-
-        </div>
+        <span>⚽ LIGA TUCSON</span>
 
     </div>
+
+    <nav>
+
+        <a href="index.html">Inicio</a>
+
+        <a href="posiciones.html?v=11" class="activo">
+            Posiciones
+        </a>
+
+        <a href="partidos.html">
+            Partidos
+        </a>
+
+        <a href="equipos.html">
+            Equipos
+        </a>
+
+        <a href="#">
+            Noticias
+        </a>
+
+    </nav>
 
 </header>
 
 
-<!-- =========================
-     NAVEGACIÓN
-========================= -->
+<main class="contenedor">
 
-<nav>
+    <h1 class="titulo">
+        Tabla de Posiciones
+    </h1>
 
-    <a href="index.html">Inicio</a>
-
-    <a href="posiciones.html">Posiciones</a>
-
-    <a href="partidos.html">Partidos</a>
-
-    <a href="equipos.html">Equipos</a>
-
-</nav>
+    <p class="subtitulo" id="torneo">
+        Primera División A - Clausura 2026
+    </p>
 
 
-<!-- =========================
-     CONTENIDO
-========================= -->
+    <!-- =========================
+         BOTONES
+    ========================== -->
 
-<div class="contenedor">
+    <div class="zonas">
 
-    <h2>🏆 Tabla de posiciones</h2>
+        <button class="zona-btn activa" data-zona="TODAS">
+            Todas
+        </button>
 
-    <div class="filtros">
-
-        <button class="filtro" data-zona="A">
+        <button class="zona-btn" data-zona="A">
             Zona A
         </button>
 
-        <button class="filtro" data-zona="B">
+        <button class="zona-btn" data-zona="B">
             Zona B
         </button>
 
-        <button class="filtro" data-zona="C">
+        <button class="zona-btn" data-zona="C">
             Zona C
         </button>
 
-        <button class="filtro" data-zona="D">
+        <button class="zona-btn" data-zona="D">
             Zona D
         </button>
 
-        <button class="filtro" data-zona="E">
+        <button class="zona-btn" data-zona="E">
             Zona E
         </button>
 
-        <button class="filtro" data-zona="F">
+        <button class="zona-btn" data-zona="F">
             Zona F
         </button>
 
     </div>
 
 
-    <div class="tabla-contenedor">
+    <!-- TABLAS -->
 
-        <table>
+    <div id="tablas"></div>
 
-            <thead>
 
-                <tr>
+    <!-- =========================
+         2 MEJORES QUINTOS
+    ========================== -->
 
-                    <th>#</th>
+    <section class="mejor-quintos-box">
 
-                    <th>Equipo</th>
+        <h3>
+            🟡 Los 2 mejores quintos
+        </h3>
 
-                    <th>PJ</th>
+        <p>
+            Los dos mejores equipos ubicados en el 5.º puesto de las seis zonas
+            clasifican a la primera ronda.
+        </p>
 
-                    <th>PG</th>
+        <div id="mejoresQuintos" class="quintos-grid"></div>
 
-                    <th>PE</th>
+    </section>
 
-                    <th>PP</th>
 
-                    <th>GF</th>
+    <!-- =========================
+         LEYENDA
+    ========================== -->
 
-                    <th>GC</th>
+    <section class="leyenda">
 
-                    <th>DG</th>
+        <h3>
+            📖 Sistema de clasificación
+        </h3>
 
-                    <th>PTS</th>
+        <div class="leyenda-item">
 
-                </tr>
+            <span class="color color-verde"></span>
 
-            </thead>
+            <span>
+                <strong>1.º de zona:</strong>
+                clasifica directamente a la 2.ª ronda / 8vos de final.
+            </span>
 
-            <tbody id="tabla-posiciones">
+        </div>
 
-            </tbody>
 
-        </table>
+        <div class="leyenda-item">
 
-    </div>
+            <span class="color color-celeste"></span>
 
-</div>
+            <span>
+                <strong>2.º al 4.º:</strong>
+                clasifican a la 1.ª ronda.
+            </span>
+
+        </div>
+
+
+        <div class="leyenda-item">
+
+            <span class="color color-amarillo"></span>
+
+            <span>
+                <strong>2 mejores 5.º:</strong>
+                clasifican a la 1.ª ronda.
+            </span>
+
+        </div>
+
+
+        <div class="leyenda-item">
+
+            <span class="color color-rojo"></span>
+
+            <span>
+                <strong>Descenso:</strong>
+                se determinará mediante la tabla anual.
+            </span>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         TABLA ANUAL
+         PREPARADA PARA MÁS ADELANTE
+    ========================== -->
+
+    <section class="anual-box">
+
+        <h2>
+            📊 Tabla Anual
+        </h2>
+
+        <p>
+            La tabla anual se incorporará posteriormente con los puntos
+            acumulados del Apertura y Clausura 2026.
+        </p>
+
+    </section>
+
+</main>
 
 
 <footer>
 
-    Liga Tucson © 2026
+    Liga Tucson · Primera División A · Clausura 2026
 
 </footer>
 
@@ -409,231 +670,520 @@ footer {
 
 const escudos = {
 
-    // ZONA A
+    "Talleres":"IMG_1621.png",
+    "Juventud Unida":"IMG_1622.png",
+    "Estación Experimental":"IMG_1623.png",
+    "Central Norte":"21B48DFD-98C8-4EDD-B633-35738F9B089D.png",
+    "Villa Mitre":"IMG_1625.jpeg",
+    "All Boys":"IMG_1627.png",
+    "San José":"IMG_1628.png",
 
-    "Talleres": "IMG_1621.png",
-    "Juventud Unida": "IMG_1622.png",
-    "Estación Experimental": "IMG_1623.png",
-    "Central Norte": "21B48DFD-98C8-4EDD-B633-35738F9B089D.png",
-    "Villa Mitre": "IMG_1625.jpeg",
-    "All Boys": "IMG_1627.png",
-    "San José": "IMG_1628.png",
+    "Argentinos del Norte":"IMG_1629.png",
+    "San Martín":"IMG_1630.png",
+    "San Antonio":"IMG_1631.jpeg",
+    "Atlético Tucumán":"IMG_1632.jpeg",
+    "Sportivo Guzmán":"IMG_1633.png",
+    "Amalia":"IMG_1634.png",
+    "Tucumán Central":"IMG_1635.png",
 
+    "Garmendia":"IMG_1637.jpeg",
+    "Atlético Concepción":"IMG_1638.png",
+    "San Juan":"9D389031-3751-4B06-A800-AE5B7A426605.png",
+    "San Lorenzo (DG)":"IMG_1646.png",
+    "Unión del Norte":"IMG_1641.jpeg",
+    "Lastenia":"IMG_1645.png",
+    "Cruz Alta":"IMG_1644.png",
 
-    // ZONA B
+    "Bella Vista":"IMG_1651.png",
+    "San Fernando":"IMG_1652.png",
+    "Almirante Brown":"IMG_1653.jpeg",
+    "Famaillá":"IMG_1654.png",
+    "Ateneo Parroquial Alderetes":"IMG_1655.png",
+    "Santa Lucía":"IMG_1656.jpeg",
+    "San Pablo":"IMG_1671.png",
 
-    "Argentinos del Norte": "IMG_1629.png",
-    "San Martín": "IMG_1630.png",
-    "San Antonio": "IMG_1631.jpeg",
-    "Atlético Tucumán": "IMG_1632.jpeg",
-    "Sportivo Guzmán": "IMG_1633.png",
-    "Amalia": "IMG_1634.png",
-    "Tucumán Central": "IMG_1635.png",
+    "Alto Verde":"IMG_1657.png",
+    "Concepción FC":"IMG_1658.png",
+    "Azucarera Argentina":"IMG_1659.png",
+    "Ñuñorco":"IMG_1660.png",
+    "Unión Simoca":"IMG_1661.jpeg",
+    "San Ramón":"IMG_1662.jpeg",
+    "Santa Rosa":"IMG_1663.png",
+    "La Providencia":"IMG_1664.jpeg",
 
-
-    // ZONA C
-
-    "Garmendia": "IMG_1637.jpeg",
-    "Atlético Concepción": "IMG_1638.png",
-    "San Juan": "9D389031-3751-4B06-A800-AE5B7A426605.png",
-    "San Lorenzo (DG)": "IMG_1646.png",
-    "Unión del Norte": "IMG_1641.jpeg",
-    "Lastenia": "IMG_1645.png",
-    "Cruz Alta": "IMG_1644.png",
-
-
-    // ZONA D
-
-    "Bella Vista": "IMG_1651.png",
-    "San Fernando": "IMG_1652.png",
-    "Almirante Brown": "IMG_1653.jpeg",
-    "Famaillá": "IMG_1654.png",
-    "Ateneo Parroquial Alderetes": "IMG_1655.png",
-    "Santa Lucía": "IMG_1656.jpeg",
-    "San Pablo": "IMG_1671.png",
-
-
-    // ZONA E
-
-    "Alto Verde": "IMG_1657.png",
-    "Concepción FC": "IMG_1658.png",
-    "Azucarera Argentina": "IMG_1659.png",
-    "Ñuñorco": "IMG_1660.png",
-    "Unión Simoca": "IMG_1661.jpeg",
-    "San Ramón": "IMG_1662.jpeg",
-    "Santa Rosa": "IMG_1663.png",
-    "La Providencia": "IMG_1664.jpeg",
-
-
-    // ZONA F
-
-    "Deportivo Aguilares": "IMG_1665.png",
-    "San Lorenzo (SA)": "IMG_1666.webp",
-    "Jorge Newbery": "IMG_1673.png",
-    "Graneros": "IMG_1667.jpeg",
-    "Santa Ana": "IMG_1668.png",
-    "Trinidad": "IMG_1669.png",
-    "Marapa": "IMG_1670.jpeg",
-    "Llorens": "IMG_1672.jpeg"
+    "Deportivo Aguilares":"IMG_1665.png",
+    "San Lorenzo (SA)":"IMG_1666.webp",
+    "Jorge Newbery":"IMG_1673.png",
+    "Graneros":"IMG_1667.jpeg",
+    "Santa Ana":"IMG_1668.png",
+    "Trinidad":"IMG_1669.png",
+    "Marapa":"IMG_1670.jpeg",
+    "Llorens":"IMG_1672.jpeg"
 
 };
 
 
 /* =====================================================
-   TABLA
+   URL DEL ESCUDO
 ===================================================== */
 
-const tabla =
-    document.getElementById("tabla-posiciones");
+function obtenerEscudo(nombre){
 
-const botones =
-    document.querySelectorAll(".filtro");
+    const archivo = escudos[nombre];
+
+    if(!archivo){
+        return "";
+    }
+
+    return "https://raw.githubusercontent.com/ianulisespaez-netizen/Liga-tucson/main/" + archivo;
+
+}
 
 
 /* =====================================================
-   MOSTRAR TABLA
+   NORMALIZAR EQUIPO
 ===================================================== */
 
-function mostrarTabla(zona) {
+function prepararEquipo(equipo){
 
-    tabla.innerHTML = "";
+    const puntos =
+        (equipo.pg * 3) +
+        equipo.pe;
 
-    let equipos =
-        datosLiga.zonas[zona];
+    const dg =
+        equipo.dg !== undefined
+        ? equipo.dg
+        : equipo.gf - equipo.gc;
 
-    if (!equipos) {
-        return;
-    }
+    return {
+        ...equipo,
+        pts:puntos,
+        dg:dg
+    };
+
+}
 
 
-    /* Copia para no modificar datosLiga */
+/* =====================================================
+   ORDENAR TABLA
+===================================================== */
 
-    equipos = [...equipos];
+function ordenarTabla(equipos){
+
+    return [...equipos]
+        .map(prepararEquipo)
+        .sort((a,b)=>{
+
+            if(b.pts !== a.pts)
+                return b.pts - a.pts;
+
+            if(b.dg !== a.dg)
+                return b.dg - a.dg;
+
+            if(b.gf !== a.gf)
+                return b.gf - a.gf;
+
+            if(a.gc !== b.gc)
+                return a.gc - b.gc;
+
+            return a.nombre.localeCompare(b.nombre);
+
+        });
+
+}
 
 
-    /* Calcular puntos */
+/* =====================================================
+   OBTENER TODOS LOS QUINTOS
+===================================================== */
 
-    equipos.forEach(equipo => {
+function obtenerQuintos(){
 
-        equipo._puntos =
-            (Number(equipo.pg) * 3) +
-            Number(equipo.pe);
+    const quintos = [];
+
+    Object.keys(datosLiga.zonas).forEach(zona=>{
+
+        const tabla = ordenarTabla(
+            datosLiga.zonas[zona]
+        );
+
+        if(tabla.length >= 5){
+
+            quintos.push({
+
+                ...tabla[4],
+
+                zona:zona
+
+            });
+
+        }
 
     });
 
 
-    /* Ordenar */
+    return quintos
+        .sort((a,b)=>{
 
-    equipos.sort((a, b) => {
+            if(b.pts !== a.pts)
+                return b.pts - a.pts;
 
-        if (b._puntos !== a._puntos) {
-            return b._puntos - a._puntos;
-        }
+            if(b.dg !== a.dg)
+                return b.dg - a.dg;
 
-        if (b.dg !== a.dg) {
-            return b.dg - a.dg;
-        }
+            if(b.gf !== a.gf)
+                return b.gf - a.gf;
 
-        return b.gf - a.gf;
+            if(a.gc !== b.gc)
+                return a.gc - b.gc;
 
-    });
+            return a.nombre.localeCompare(b.nombre);
+
+        });
+
+}
 
 
-    /* Crear filas */
+/* =====================================================
+   MOSTRAR LOS 2 MEJORES QUINTOS
+===================================================== */
 
-    equipos.forEach((equipo, index) => {
+function mostrarMejoresQuintos(){
 
-        const posicion =
-            index + 1;
+    const contenedor =
+        document.getElementById("mejoresQuintos");
 
-        const nombre =
-            equipo.equipo;
+    const quintos =
+        obtenerQuintos();
+
+    contenedor.innerHTML = "";
+
+
+    quintos.slice(0,2).forEach((equipo,index)=>{
+
+        const card =
+            document.createElement("div");
+
+        card.className = "quinto-card";
+
 
         const escudo =
-            escudos[nombre];
+            obtenerEscudo(equipo.nombre);
 
 
-        const fila =
-            document.createElement("tr");
+        card.innerHTML = `
 
+            <img
+                src="${escudo}"
+                alt="${equipo.nombre}"
+            >
 
-        if (posicion === 1) {
-            fila.classList.add("puesto-1");
-        }
+            <div>
 
-        if (posicion === 2) {
-            fila.classList.add("puesto-2");
-        }
+                <strong>
+                    ${index + 1}° mejor 5°
+                </strong>
 
-        if (posicion === 3) {
-            fila.classList.add("puesto-3");
-        }
+                <span>
+                    ${equipo.nombre} · Zona ${equipo.zona}
+                    · ${equipo.pts} pts
+                </span>
 
-
-        let escudoHTML = "";
-
-        if (escudo) {
-
-            escudoHTML = `
-
-                <img
-                    class="escudo"
-                    src="${escudo}"
-                    alt="Escudo de ${nombre}"
-                >
-
-            `;
-
-        }
-
-
-        fila.innerHTML = `
-
-            <td class="posicion">
-                ${posicion}
-            </td>
-
-            <td class="equipo-celda">
-
-                <a
-                    class="equipo-link"
-                    href="equipo.html?v=10&equipo=${encodeURIComponent(nombre)}&zona=${zona}"
-                >
-
-                    ${escudoHTML}
-
-                    <span>
-                        ${nombre}
-                    </span>
-
-                </a>
-
-            </td>
-
-            <td>${equipo.pj}</td>
-
-            <td>${equipo.pg}</td>
-
-            <td>${equipo.pe}</td>
-
-            <td>${equipo.pp}</td>
-
-            <td>${equipo.gf}</td>
-
-            <td>${equipo.gc}</td>
-
-            <td>${equipo.dg}</td>
-
-            <td class="puntos">
-                ${equipo._puntos}
-            </td>
+            </div>
 
         `;
 
 
-        tabla.appendChild(fila);
+        contenedor.appendChild(card);
 
     });
+
+}
+
+
+/* =====================================================
+   ESTADO DE CLASIFICACIÓN
+===================================================== */
+
+function obtenerEstado(posicion, equipo){
+
+    if(posicion === 1){
+
+        return {
+            clase:"clasifica-directo",
+            etiqueta:"2.ª RONDA"
+        };
+
+    }
+
+
+    if(posicion >= 2 && posicion <= 4){
+
+        return {
+            clase:"clasifica-ronda",
+            etiqueta:"1.ª RONDA"
+        };
+
+    }
+
+
+    /*
+       Los 2 mejores quintos se detectan
+       comparando las seis zonas.
+    */
+
+    if(posicion === 5){
+
+        const quintos =
+            obtenerQuintos();
+
+        const esMejorQuinto =
+            quintos
+                .slice(0,2)
+                .some(q =>
+                    q.nombre === equipo.nombre
+                );
+
+        if(esMejorQuinto){
+
+            return {
+                clase:"mejor-quinto",
+                etiqueta:"MEJOR 5.º"
+            };
+
+        }
+
+    }
+
+
+    return {
+        clase:"",
+        etiqueta:""
+    };
+
+}
+
+
+/* =====================================================
+   RENDER TABLA
+===================================================== */
+
+function mostrarZona(zona){
+
+    const contenedor =
+        document.getElementById("tablas");
+
+    contenedor.innerHTML = "";
+
+
+    let zonasMostrar = [];
+
+    if(zona === "TODAS"){
+
+        zonasMostrar =
+            Object.keys(datosLiga.zonas);
+
+    }else{
+
+        zonasMostrar = [zona];
+
+    }
+
+
+    zonasMostrar.forEach(letraZona=>{
+
+        const equipos =
+            ordenarTabla(
+                datosLiga.zonas[letraZona]
+            );
+
+
+        const bloque =
+            document.createElement("section");
+
+        bloque.className =
+            "bloque-zona";
+
+
+        let filas = "";
+
+
+        equipos.forEach((equipo,index)=>{
+
+            const posicion =
+                index + 1;
+
+
+            const estado =
+                obtenerEstado(
+                    posicion,
+                    equipo
+                );
+
+
+            const escudo =
+                obtenerEscudo(
+                    equipo.nombre
+                );
+
+
+            filas += `
+
+                <tr class="${estado.clase}">
+
+                    <td class="pos">
+                        ${posicion}
+                    </td>
+
+
+                    <td class="equipo">
+
+                        <a
+                            class="equipo-link"
+                            href="equipo.html?v=11&equipo=${encodeURIComponent(equipo.nombre)}&zona=${letraZona}"
+                        >
+
+                            <img
+                                class="escudo"
+                                src="${escudo}"
+                                alt="${equipo.nombre}"
+                            >
+
+                            <span>
+                                ${equipo.nombre}
+                            </span>
+
+                        </a>
+
+                    </td>
+
+
+                    <td>
+                        ${equipo.pj}
+                    </td>
+
+
+                    <td>
+                        ${equipo.pg}
+                    </td>
+
+
+                    <td>
+                        ${equipo.pe}
+                    </td>
+
+
+                    <td>
+                        ${equipo.pp}
+                    </td>
+
+
+                    <td>
+                        ${equipo.gf}
+                    </td>
+
+
+                    <td>
+                        ${equipo.gc}
+                    </td>
+
+
+                    <td>
+                        ${equipo.dg}
+                    </td>
+
+
+                    <td class="puntos">
+                        ${equipo.pts}
+                    </td>
+
+
+                    <td>
+
+                        ${
+                            estado.etiqueta
+                            ?
+                            `<span class="estado ${
+                                estado.clase === "clasifica-directo"
+                                ? "estado-directo"
+                                :
+                                estado.clase === "clasifica-ronda"
+                                ? "estado-ronda"
+                                :
+                                "estado-quinto"
+                            }">
+                                ${estado.etiqueta}
+                            </span>`
+                            :
+                            ""
+                        }
+
+                    </td>
+
+                </tr>
+
+            `;
+
+        });
+
+
+        bloque.innerHTML = `
+
+            <div class="encabezado-zona">
+                Zona ${letraZona}
+            </div>
+
+
+            <div class="tabla-scroll">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>#</th>
+
+                            <th style="text-align:left">
+                                Equipo
+                            </th>
+
+                            <th>PJ</th>
+                            <th>PG</th>
+                            <th>PE</th>
+                            <th>PP</th>
+                            <th>GF</th>
+                            <th>GC</th>
+                            <th>DG</th>
+                            <th>PTS</th>
+                            <th></th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+                        ${filas}
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        `;
+
+
+        contenedor.appendChild(
+            bloque
+        );
+
+    });
+
+
+    mostrarMejoresQuintos();
 
 }
 
@@ -642,48 +1192,102 @@ function mostrarTabla(zona) {
    BOTONES
 ===================================================== */
 
-botones.forEach(boton => {
+document
+.querySelectorAll(".zona-btn")
+.forEach(boton=>{
 
-    boton.addEventListener("click", () => {
+    boton.addEventListener(
+        "click",
+        ()=>{
 
-        botones.forEach(b =>
-            b.classList.remove("activo")
-        );
+            document
+            .querySelectorAll(".zona-btn")
+            .forEach(btn =>
+                btn.classList.remove("activa")
+            );
 
-        boton.classList.add("activo");
 
-        mostrarTabla(
-            boton.dataset.zona
-        );
+            boton.classList.add("activa");
 
-    });
+
+            const zona =
+                boton.dataset.zona;
+
+
+            mostrarZona(zona);
+
+
+            /*
+               Actualizamos la URL
+               sin recargar la página.
+            */
+
+            if(zona === "TODAS"){
+
+                history.replaceState(
+                    null,
+                    "",
+                    "posiciones.html?v=11"
+                );
+
+            }else{
+
+                history.replaceState(
+                    null,
+                    "",
+                    "posiciones.html?v=11&zona=" + zona
+                );
+
+            }
+
+        }
+    );
 
 });
 
 
 /* =====================================================
-   ZONA INICIAL
+   INICIO
 ===================================================== */
 
 const parametros =
-    new URLSearchParams(window.location.search);
+    new URLSearchParams(
+        window.location.search
+    );
 
-const zonaURL =
+const zonaInicial =
     parametros.get("zona");
 
 
-let zonaInicial =
-    ["A", "B", "C", "D", "E", "F"].includes(zonaURL)
-        ? zonaURL
-        : "A";
+if(
+    zonaInicial &&
+    datosLiga.zonas[zonaInicial]
+){
 
+    const boton =
+        document.querySelector(
+            `[data-zona="${zonaInicial}"]`
+        );
 
-document
-    .querySelector(`[data-zona="${zonaInicial}"]`)
-    .classList.add("activo");
+    if(boton){
 
+        document
+        .querySelectorAll(".zona-btn")
+        .forEach(btn =>
+            btn.classList.remove("activa")
+        );
 
-mostrarTabla(zonaInicial);
+        boton.classList.add("activa");
+
+    }
+
+    mostrarZona(zonaInicial);
+
+}else{
+
+    mostrarZona("TODAS");
+
+}
 
 </script>
 
