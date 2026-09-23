@@ -518,14 +518,759 @@ const datosLiga = {
         ]
     },
 
-
     // ==========================================
     // PARTIDOS / RESULTADOS
     // ==========================================
 
     partidos: [
 
-        // ---------- ZONA A ----------
+        // ==========================================
+        // FECHA 1
+        // ==========================================
+
+        {
+            fecha: 1,
+            zona: "E",
+            local: "Concepción FC",
+            visitante: "Azucarera Argentina",
+            golesLocal: 1,
+            golesVisitante: 1,
+            estado: "finalizado"
+        },
+
+        {
+            fecha: 1,
+            zona: "C",
+            local: "Atlético Concepción",
+            visitante: "Lastenia",
+            golesLocal: 2,
+            golesVisitante: 1,
+            estado: "finalizado"
+        },
+
+        {
+            fecha: 1,
+            zona: "F",
+            local: "San Lorenzo (SA)",
+            visitante: "Graneros",
+            golesLocal: 1,
+            golesVisitante: 2,
+            estado: "finalizado"
+        },
+
+        // ==========================================
+        // FECHA 2
+        // ==========================================
+
+        // ZONA A
+        {
+            fecha: 2,
+            zona: "A",
+            local: "San José",
+            visitante: "All Boys",
+            golesLocal: 1,
+            golesVisitante: 0,
+            estado: "finalizado"
+        },
+
+        {
+            fecha: 2,
+            zona: "A",
+            local: "Central Norte",
+            visitante: "Juventud Unida",
+            golesLocal: 0,
+            golesVisitante: 0,
+            estado: "finalizado"
+        },
+
+        {
+            fecha: 2,
+            zona: "A",
+            local: "Talleres",
+            visitante: "Estación Experimental",
+            golesLocal: 2,
+            golesVisitante: 1,
+            estado: "finalizado"
+        },
+
+        {
+            fecha: 2,
+            zona: "A",
+            local: "Villa Mitre",
+            visitante: "San Pablo",
+            golesLocal: 2,
+            golesVisitante: 3,
+            estado: "finalizado",
+            interzonal: true
+        },
+
+        // ZONA B
+        {
+            fecha: 2,
+            zona: "B",
+            local: "Sportivo Guzmán",
+            visitante: "Argentinos del Norte",
+            golesLocal: 0,
+            golesVisitante: 1,
+            estado: "finalizado"
+        },
+
+        {
+            fecha: 2,
+            zona: "B",
+            local: "Atlético Tucumán",
+            visitante: "San Martín",
+            golesLocal: 1,
+            golesVisitante: 1,
+            estado: "finalizado"
+        },
+
+        {
+            fecha: 2,
+            zona: "B",
+            local: "San Antonio",
+            visitante: "Amalia",
+            golesLocal: 2,
+            golesVisitante: 0,
+            estado: "finalizado"
+        },
+
+        {
+            fecha: 2,
+            zona: "B",
+            local: "Tucumán Central",
+            visitante: "Atlético Concepción",
+            golesLocal: 1,
+            golesVisitante: 1,
+            estado: "finalizado",
+            interzonal: true
+        },
+
+        // ZONA C
+        {
+            fecha: 2,
+            zona: "C",
+            local: "San Juan",
+            visitante: "Unión del Norte",
+            golesLocal: 1,
+            golesVisitante: 1,
+            estado: "finalizado"
+        },
+
+        {
+            fecha: 2,
+            zona: "C",
+            local: "Cruz Alta",
+            visitante: "Garmendia",
+            golesLocal: 0,
+            golesVisitante: 1,
+            estado: "finalizado"
+        },
+
+        {
+            fecha: 2,
+            zona: "C",
+            local: "Lastenia",
+            visitante: "San Lorenzo (DG)",
+            golesLocal: 0,
+            golesVisitante: 1,
+            estado: "finalizado"
+        },
+
+        // ZONA D
+        {
+            fecha: 2,
+            zona: "D",
+            local: "Bella Vista",
+            visitante: "San Fernando",
+            golesLocal: 3,
+            golesVisitante: 1,
+            estado: "finalizado"
+        },
+
+        {
+            fecha: 2,
+            zona: "D",
+            local: "Famaillá",
+            visitante: "Almirante Brown",
+            golesLocal: 0,
+            golesVisitante: 3,
+            estado: "finalizado"
+        },
+
+        {
+            fecha: 2,
+            zona: "D",
+            local: "Santa Lucía",
+            visitante: "Ateneo Parroquial Alderetes",
+            golesLocal: 1,
+            golesVisitante: 1,
+            estado: "finalizado"
+        },
+
+        // ZONA E
+        {
+            fecha: 2,
+            zona: "E",
+            local: "Alto Verde",
+            visitante: "Azucarera Argentina",
+            golesLocal: 6,
+            golesVisitante: 0,
+            estado: "finalizado"
+        },
+
+        {
+            fecha: 2,
+            zona: "E",
+            local: "Santa Rosa",
+            visitante: "Unión Simoca",
+            golesLocal: 1,
+            golesVisitante: 1,
+            estado: "finalizado"
+        },
+
+        {
+            fecha: 2,
+            zona: "E",
+            local: "San Ramón",
+            visitante: "La Providencia",
+            golesLocal: 0,
+            golesVisitante: 0,
+            estado: "finalizado"
+        },
+
+        {
+            fecha: 2,
+            zona: "E",
+            local: "Ñuñorco",
+            visitante: "Concepción FC",
+            golesLocal: 0,
+            golesVisitante: 1,
+            estado: "finalizado"
+        },
+
+        // ZONA F
+        {
+            fecha: 2,
+            zona: "F",
+            local: "Graneros",
+            visitante: "Santa Ana",
+            golesLocal: 3,
+            golesVisitante: 0,
+            estado: "finalizado"
+        },
+
+        {
+            fecha: 2,
+            zona: "F",
+            local: "Llorens",
+            visitante: "Deportivo Aguilares",
+            golesLocal: 2,
+            golesVisitante: 3,
+            estado: "finalizado"
+        },
+
+        {
+            fecha: 2,
+            zona: "F",
+            local: "Trinidad",
+            visitante: "Marapa",
+            golesLocal: 0,
+            golesVisitante: 0,
+            estado: "finalizado"
+        },
+
+        {
+            fecha: 2,
+            zona: "F",
+            local: "Jorge Newbery",
+            visitante: "San Lorenzo (SA)",
+            golesLocal: 0,
+            golesVisitante: 0,
+            estado: "finalizado"
+        },
+
+        // ==========================================
+        // FECHA 3
+        // ==========================================
+
+        // ZONA A
+        {
+            fecha: 3,
+            zona: "A",
+            local: "Juventud Unida",
+            visitante: "Estación Experimental",
+            golesLocal: 0,
+            golesVisitante: 1,
+            estado: "finalizado"
+        },
+
+        {
+            fecha: 3,
+            zona: "A",
+            local: "Talleres",
+            visitante: "Villa Mitre",
+            golesLocal: 1,
+            golesVisitante: 0,
+            estado: "finalizado"
+        },
+
+        // ZONA B
+        {
+            fecha: 3,
+            zona: "B",
+            local: "Amalia",
+            visitante: "Argentinos del Norte",
+            golesLocal: 1,
+            golesVisitante: 0,
+            estado: "finalizado"
+        },
+
+        {
+            fecha: 3,
+            zona: "B",
+            local: "Sportivo Guzmán",
+            visitante: "Tucumán Central",
+            golesLocal: 1,
+            golesVisitante: 1,
+            estado: "finalizado"
+        },
+
+        {
+            fecha: 3,
+            zona: "B",
+            local: "San Martín",
+            visitante: "San Antonio",
+            golesLocal: 1,
+            golesVisitante: 0,
+            estado: "finalizado"
+        },
+
+        {
+            fecha: 3,
+            zona: "B",
+            local: "Lastenia",
+            visitante: "Atlético Tucumán",
+            golesLocal: 1,
+            golesVisitante: 0,
+            estado: "finalizado",
+            interzonal: true
+        },
+
+        // ZONA C
+        {
+            fecha: 3,
+            zona: "C",
+            local: "Garmendia",
+            visitante: "Unión del Norte",
+            golesLocal: 0,
+            golesVisitante: 0,
+            estado: "finalizado"
+        },
+
+        {
+            fecha: 3,
+            zona: "C",
+            local: "San Juan",
+            visitante: "Atlético Concepción",
+            golesLocal: 3,
+            golesVisitante: 1,
+            estado: "finalizado"
+        },
+
+        {
+            fecha: 3,
+            zona: "C",
+            local: "San Lorenzo (DG)",
+            visitante: "Cruz Alta",
+            golesLocal: 3,
+            golesVisitante: 1,
+            estado: "finalizado"
+        },
+
+        // ZONA D
+        {
+            fecha: 3,
+            zona: "D",
+            local: "Bella Vista",
+            visitante: "San José",
+            golesLocal: 1,
+            golesVisitante: 0,
+            estado: "finalizado"
+        },
+
+        {
+            fecha: 3,
+            zona: "D",
+            local: "San Fernando",
+            visitante: "Famaillá",
+            golesLocal: 2,
+            golesVisitante: 1,
+            estado: "finalizado"
+        },
+
+        {
+            fecha: 3,
+            zona: "D",
+            local: "Santa Lucía",
+            visitante: "San Pablo",
+            golesLocal: 1,
+            golesVisitante: 0,
+            estado: "finalizado"
+        },
+
+        {
+            fecha: 3,
+            zona: "D",
+            local: "Almirante Brown",
+            visitante: "Ateneo Parroquial Alderetes",
+            golesLocal: 3,
+            golesVisitante: 3,
+            estado: "finalizado"
+        },
+
+        // ZONA E
+        {
+            fecha: 3,
+            zona: "E",
+            local: "Azucarera Argentina",
+            visitante: "San Ramón",
+            golesLocal: 0,
+            golesVisitante: 2,
+            estado: "finalizado"
+        },
+
+        {
+            fecha: 3,
+            zona: "E",
+            local: "Unión Simoca",
+            visitante: "Ñuñorco",
+            golesLocal: 1,
+            golesVisitante: 0,
+            estado: "finalizado"
+        },
+
+        {
+            fecha: 3,
+            zona: "E",
+            local: "La Providencia",
+            visitante: "Santa Rosa",
+            golesLocal: 1,
+            golesVisitante: 0,
+            estado: "finalizado"
+        },
+
+        {
+            fecha: 3,
+            zona: "E",
+            local: "Concepción FC",
+            visitante: "Alto Verde",
+            golesLocal: 2,
+            golesVisitante: 1,
+            estado: "finalizado"
+        },
+
+        // ZONA F
+        {
+            fecha: 3,
+            zona: "F",
+            local: "Deportivo Aguilares",
+            visitante: "Graneros",
+            golesLocal: 1,
+            golesVisitante: 0,
+            estado: "finalizado"
+        },
+
+        {
+            fecha: 3,
+            zona: "F",
+            local: "Marapa",
+            visitante: "Llorens",
+            golesLocal: 3,
+            golesVisitante: 2,
+            estado: "finalizado"
+        },
+
+        {
+            fecha: 3,
+            zona: "F",
+            local: "Santa Ana",
+            visitante: "Jorge Newbery",
+            golesLocal: 0,
+            golesVisitante: 0,
+            estado: "finalizado"
+        },
+
+        {
+            fecha: 3,
+            zona: "F",
+            local: "San Lorenzo (SA)",
+            visitante: "Trinidad",
+            golesLocal: 2,
+            golesVisitante: 1,
+            estado: "finalizado"
+        },
+
+        // OTROS INTERZONALES FECHA 3
+        {
+            fecha: 3,
+            zona: "B",
+            local: "Sportivo Guzmán",
+            visitante: "Tucumán Central",
+            golesLocal: 1,
+            golesVisitante: 1,
+            estado: "finalizado"
+        },
+
+        {
+            fecha: 3,
+            zona: "D",
+            local: "San Fernando",
+            visitante: "Famaillá",
+            golesLocal: 2,
+            golesVisitante: 1,
+            estado: "finalizado"
+        },
+
+        // ==========================================
+        // FECHA 4
+        // ==========================================
+
+        // ZONA A
+        {
+            fecha: 4,
+            zona: "A",
+            local: "Central Norte",
+            visitante: "Villa Mitre",
+            golesLocal: 2,
+            golesVisitante: 1,
+            estado: "finalizado"
+        },
+
+        {
+            fecha: 4,
+            zona: "A",
+            local: "San José",
+            visitante: "Talleres",
+            golesLocal: 0,
+            golesVisitante: 1,
+            estado: "finalizado"
+        },
+
+        {
+            fecha: 4,
+            zona: "A",
+            local: "Almirante Brown",
+            visitante: "Juventud Unida",
+            golesLocal: 5,
+            golesVisitante: 0,
+            estado: "finalizado",
+            interzonal: true
+        },
+
+        // ZONA B
+        {
+            fecha: 4,
+            zona: "B",
+            local: "Atlético Tucumán",
+            visitante: "Sportivo Guzmán",
+            golesLocal: 0,
+            golesVisitante: 1,
+            estado: "finalizado"
+        },
+
+        {
+            fecha: 4,
+            zona: "B",
+            local: "Argentinos del Norte",
+            visitante: "San Martín",
+            golesLocal: 3,
+            golesVisitante: 1,
+            estado: "finalizado"
+        },
+
+        {
+            fecha: 4,
+            zona: "B",
+            local: "San Antonio",
+            visitante: "Tucumán Central",
+            golesLocal: 1,
+            golesVisitante: 0,
+            estado: "finalizado"
+        },
+
+        {
+            fecha: 4,
+            zona: "B",
+            local: "Garmendia",
+            visitante: "Amalia",
+            golesLocal: 1,
+            golesVisitante: 0,
+            estado: "finalizado",
+            interzonal: true
+        },
+
+        // ZONA C
+        {
+            fecha: 4,
+            zona: "C",
+            local: "Cruz Alta",
+            visitante: "Atlético Concepción",
+            golesLocal: 1,
+            golesVisitante: 4,
+            estado: "finalizado"
+        },
+
+        {
+            fecha: 4,
+            zona: "C",
+            local: "Unión del Norte",
+            visitante: "San Lorenzo (DG)",
+            golesLocal: 1,
+            golesVisitante: 1,
+            estado: "finalizado"
+        },
+
+        {
+            fecha: 4,
+            zona: "C",
+            local: "Lastenia",
+            visitante: "San Juan",
+            golesLocal: 1,
+            golesVisitante: 1,
+            estado: "finalizado"
+        },
+
+        {
+            fecha: 4,
+            zona: "C",
+            local: "Atlético Concepción",
+            visitante: "Lastenia",
+            golesLocal: 2,
+            golesVisitante: 1,
+            estado: "finalizado",
+            interzonal: true
+        },
+
+        // ZONA D
+        {
+            fecha: 4,
+            zona: "D",
+            local: "Bella Vista",
+            visitante: "Santa Lucía",
+            golesLocal: 5,
+            golesVisitante: 0,
+            estado: "finalizado"
+        },
+
+        {
+            fecha: 4,
+            zona: "D",
+            local: "Ateneo Parroquial Alderetes",
+            visitante: "San Fernando",
+            golesLocal: 3,
+            golesVisitante: 0,
+            estado: "finalizado"
+        },
+
+        // ZONA E
+        {
+            fecha: 4,
+            zona: "E",
+            local: "Santa Rosa",
+            visitante: "Azucarera Argentina",
+            golesLocal: 0,
+            golesVisitante: 1,
+            estado: "finalizado"
+        },
+
+        {
+            fecha: 4,
+            zona: "E",
+            local: "Unión Simoca",
+            visitante: "Concepción FC",
+            golesLocal: 1,
+            golesVisitante: 1,
+            estado: "finalizado"
+        },
+
+        {
+            fecha: 4,
+            zona: "E",
+            local: "Ñuñorco",
+            visitante: "La Providencia",
+            golesLocal: 3,
+            golesVisitante: 0,
+            estado: "finalizado"
+        },
+
+        {
+            fecha: 4,
+            zona: "E",
+            local: "San Ramón",
+            visitante: "Alto Verde",
+            golesLocal: 1,
+            golesVisitante: 2,
+            estado: "finalizado"
+        },
+
+        {
+            fecha: 4,
+            zona: "E",
+            local: "Concepción FC",
+            visitante: "Argentinos del Norte",
+            golesLocal: 1,
+            golesVisitante: 3,
+            estado: "finalizado",
+            interzonal: true
+        },
+
+        // ZONA F
+        {
+            fecha: 4,
+            zona: "F",
+            local: "Trinidad",
+            visitante: "Santa Ana",
+            golesLocal: 1,
+            golesVisitante: 0,
+            estado: "finalizado"
+        },
+
+        {
+            fecha: 4,
+            zona: "F",
+            local: "Marapa",
+            visitante: "Deportivo Aguilares",
+            golesLocal: 1,
+            golesVisitante: 6,
+            estado: "finalizado"
+        },
+
+        {
+            fecha: 4,
+            zona: "F",
+            local: "Jorge Newbery",
+            visitante: "Graneros",
+            golesLocal: 2,
+            golesVisitante: 1,
+            estado: "finalizado"
+        },
+
+        {
+            fecha: 4,
+            zona: "F",
+            local: "Llorens",
+            visitante: "San Lorenzo (SA)",
+            golesLocal: 1,
+            golesVisitante: 2,
+            estado: "finalizado"
+        },
+
+        // ==========================================
+        // FECHA 5
+        // ==========================================
+
+        // ZONA A
         {
             fecha: 5,
             zona: "A",
@@ -535,6 +1280,7 @@ const datosLiga = {
             golesVisitante: 1,
             estado: "finalizado"
         },
+
         {
             fecha: 5,
             zona: "A",
@@ -542,6 +1288,7 @@ const datosLiga = {
             visitante: "Estación Experimental",
             estado: "programado"
         },
+
         {
             fecha: 5,
             zona: "A",
@@ -549,6 +1296,7 @@ const datosLiga = {
             visitante: "Central Norte",
             estado: "programado"
         },
+
         {
             fecha: 5,
             zona: "A",
@@ -560,8 +1308,7 @@ const datosLiga = {
             interzonal: true
         },
 
-
-        // ---------- ZONA B ----------
+        // ZONA B
         {
             fecha: 5,
             zona: "B",
@@ -571,6 +1318,7 @@ const datosLiga = {
             golesVisitante: 2,
             estado: "finalizado"
         },
+
         {
             fecha: 5,
             zona: "B",
@@ -578,6 +1326,7 @@ const datosLiga = {
             visitante: "Argentinos del Norte",
             estado: "programado"
         },
+
         {
             fecha: 5,
             zona: "B",
@@ -585,6 +1334,7 @@ const datosLiga = {
             visitante: "San Antonio",
             estado: "programado"
         },
+
         {
             fecha: 5,
             zona: "B",
@@ -596,13 +1346,7 @@ const datosLiga = {
             interzonal: true
         },
 
-
-        // ---------- ZONA C ----------
-        // La programación de Fecha 5 visible corresponde
-        // principalmente a partidos interzonales.
-
-
-        // ---------- ZONA D ----------
+        // ZONA D
         {
             fecha: 5,
             zona: "D",
@@ -612,6 +1356,7 @@ const datosLiga = {
             golesVisitante: 1,
             estado: "finalizado"
         },
+
         {
             fecha: 5,
             zona: "D",
@@ -621,6 +1366,7 @@ const datosLiga = {
             golesVisitante: 1,
             estado: "finalizado"
         },
+
         {
             fecha: 5,
             zona: "D",
@@ -628,19 +1374,8 @@ const datosLiga = {
             visitante: "Ateneo Parroquial Alderetes",
             estado: "programado"
         },
-        {
-            fecha: 5,
-            zona: "D",
-            local: "San Fernando",
-            visitante: "All Boys",
-            golesLocal: 3,
-            golesVisitante: 1,
-            estado: "finalizado",
-            interzonal: true
-        },
 
-
-        // ---------- ZONA E ----------
+        // ZONA E
         {
             fecha: 5,
             zona: "E",
@@ -650,6 +1385,7 @@ const datosLiga = {
             golesVisitante: 1,
             estado: "finalizado"
         },
+
         {
             fecha: 5,
             zona: "E",
@@ -659,6 +1395,7 @@ const datosLiga = {
             golesVisitante: 1,
             estado: "finalizado"
         },
+
         {
             fecha: 5,
             zona: "E",
@@ -668,6 +1405,7 @@ const datosLiga = {
             golesVisitante: 1,
             estado: "finalizado"
         },
+
         {
             fecha: 5,
             zona: "E",
@@ -676,8 +1414,7 @@ const datosLiga = {
             estado: "programado"
         },
 
-
-        // ---------- ZONA F ----------
+        // ZONA F
         {
             fecha: 5,
             zona: "F",
@@ -687,6 +1424,7 @@ const datosLiga = {
             golesVisitante: 0,
             estado: "finalizado"
         },
+
         {
             fecha: 5,
             zona: "F",
@@ -696,6 +1434,7 @@ const datosLiga = {
             golesVisitante: 0,
             estado: "finalizado"
         },
+
         {
             fecha: 5,
             zona: "F",
@@ -705,6 +1444,7 @@ const datosLiga = {
             golesVisitante: 0,
             estado: "finalizado"
         },
+
         {
             fecha: 5,
             zona: "F",
@@ -713,7 +1453,6 @@ const datosLiga = {
             estado: "programado"
         }
     ]
-
 };
 
 
