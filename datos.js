@@ -1,14 +1,3 @@
-/* =========================================================
-   LIGA TUCSON
-   TORNEO ANUAL DE FÚTBOL 2026 - CLAUSURA
-   CATEGORÍA 1° DIVISIÓN "A"
-
-   - Se mantienen las 14 fechas.
-   - Los partidos sin resultado quedan pendientes.
-   - Las tablas se calculan automáticamente.
-   - Los resultados se cargan solamente en RESULTADOS OFICIALES.
-   ========================================================= */
-
 const datosLiga = {
   torneo: "Primera División A - Clausura 2026",
   fechaActual: 5,
