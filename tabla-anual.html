@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tabla Anual | Liga Tucson</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f7fa;
+            color: #17212b;
+        }
+
+        header {
+            background: #071d35;
+            color: white;
+            padding: 18px 20px;
+            text-align: center;
+        }
+
+        header img {
+            width: 85px;
+            height: 85px;
+            object-fit: contain;
+            margin-bottom: 8px;
+        }
+
+        header h1 {
+            font-size: 28px;
+            letter-spacing: 1px;
+        }
+
+        nav {
+            background: #0b2d50;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 5px;
+            padding: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 14px;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: 0.2s;
+        }
+
+        nav a:hover {
+            background: #174a78;
+        }
+
+        nav a.activo {
+            background: #1d6fa5;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 15px;
+        }
+
+        .titulo {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .titulo h2 {
+            color: #071d35;
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+
+        .titulo p {
+            color: #66727d;
+            font-size: 15px;
+        }
+
+        .tabla-contenedor {
+            background: white;
+            border-radius: 10px;
+            overflow-x: auto;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 850px;
+        }
+
+        thead {
+            background: #071d35;
+            color: white;
+        }
+
+        th {
+            padding: 13px 10px;
+            font-size: 13px;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        th:nth-child(2) {
+            text-align: left;
+        }
+
+        td {
+            padding: 11px 10px;
+            border-bottom: 1px solid #e5e9ed;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        td:nth-child(2) {
+            text-align: left;
+            font-weight: 600;
+        }
+
+        tbody tr:hover {
+            background: #f1f6fa;
+        }
+
+        .posicion {
+            width: 45px;
+            font-weight: bold;
+        }
+
+        .equipo {
+            min-width: 230px;
+        }
+
+        .pts {
+            font-weight: bold;
+            font-size: 15px;
+        }
+
+        .diferencia-positiva {
+            color: #167344;
+            font-weight: bold;
+        }
+
+        .diferencia-negativa {
+            color: #c0392b;
+            font-weight: bold;
+        }
+
+        .zona-descenso {
+            background: #ffe7e7;
+        }
+
+        .zona-descenso:hover {
+            background: #ffdcdc;
+        }
+
+        .zona-descenso td:first-child {
+            border-left: 5px solid #c0392b;
+        }
+
+        .etiqueta-descenso {
+            display: inline-block;
+            margin-left: 8px;
+            padding: 3px 7px;
+            background: #c0392b;
+            color: white;
+            border-radius: 4px;
+            font-size: 10px;
+            font-weight: bold;
+            vertical-align: middle;
+        }
+
+        .referencias {
+            margin-top: 18px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 18px;
+            font-size: 13px;
+            color: #555;
+        }
+
+        .referencia {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+        }
+
+        .cuadro {
+            width: 15px;
+            height: 15px;
+            border-radius: 3px;
+        }
+
+        .cuadro-rojo {
+            background: #c0392b;
+        }
+
+        .info {
+            margin-top: 25px;
+            background: white;
+            padding: 18px;
+            border-radius: 10px;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+        }
+
+        .info h3 {
+            color: #071d35;
+            margin-bottom: 8px;
+            font-size: 18px;
+        }
+
+        .info p {
+            color: #66727d;
+            line-height: 1.5;
+            font-size: 14px;
+        }
+
+        footer {
+            margin-top: 40px;
+            background: #071d35;
+            color: #cbd5df;
+            text-align: center;
+            padding: 20px;
+            font-size: 13px;
+        }
+
+        @media (max-width: 600px) {
+
+            header h1 {
+                font-size: 23px;
+            }
+
+            header img {
+                width: 70px;
+                height: 70px;
+            }
+
+            nav a {
+                font-size: 13px;
+                padding: 8px 10px;
+            }
+
+            main {
+                margin-top: 20px;
+            }
+
+            .titulo h2 {
+                font-size: 23px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+
+    <img
+        src="FDDF80B7-4151-4091-AB6F-C5DF10F36391.png"
+        alt="Liga Tucson"
+    >
+
+    <h1>LIGA TUCSON</h1>
+
+</header>
+
+<nav>
+
+    <a href="index.html">Inicio</a>
+
+    <a href="posiciones.html">Posiciones</a>
+
+    <a href="tabla-anual.html" class="activo">Tabla Anual</a>
+
+    <a href="partidos.html">Partidos</a>
+
+    <a href="equipos.html">Equipos</a>
+
+    <a href="playoff.html">Play-Off</a>
+
+</nav>
+
+<main>
+
+    <section class="titulo">
+
+        <h2>Tabla Anual</h2>
+
+        <p>
+            Apertura + Clausura 2026
+        </p>
+
+    </section>
+
+    <div class="tabla-contenedor">
+
+        <table>
+
+            <thead>
+
+                <tr>
+                    <th>Pos.</th>
+                    <th>Equipo</th>
+                    <th>PTS</th>
+                    <th>PJ</th>
+                    <th>PG</th>
+                    <th>PE</th>
+                    <th>PP</th>
+                    <th>GF</th>
+                    <th>GC</th>
+                    <th>DG</th>
+                </tr>
+
+            </thead>
+
+            <tbody id="tablaAnual">
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <div class="referencias">
+
+        <div class="referencia">
+            <span class="cuadro cuadro-rojo"></span>
+            <span>Zona de repechaje por descenso</span>
+        </div>
+
+    </div>
+
+    <section class="info">
+
+        <h3>Tabla anual</h3>
+
+        <p>
+            La tabla anual reúne los puntos obtenidos durante el Torneo Apertura
+            y el Torneo Clausura 2026. Los cuatro equipos ubicados en las últimas
+            posiciones quedan señalados como zona de repechaje por descenso.
+        </p>
+
+    </section>
+
+</main>
+
+<footer>
+
+    Liga Tucson — Liga Tucumana de Fútbol
+
+</footer>
+
+
+<script src="datos.js"></script>
+
+<script>
+
+function mostrarTablaAnual() {
+
+    const contenedor = document.getElementById("tablaAnual");
+
+    contenedor.innerHTML = "";
+
+    if (
+        typeof datosLiga === "undefined" ||
+        typeof datosLiga.obtenerTablaAnual !== "function"
+    ) {
+
+        contenedor.innerHTML = `
+            <tr>
+                <td colspan="10">
+                    No se pudo cargar la tabla anual.
+                </td>
+            </tr>
+        `;
+
+        return;
+    }
+
+    const tabla = datosLiga.obtenerTablaAnual();
+
+    if (!tabla || tabla.length === 0) {
+
+        contenedor.innerHTML = `
+            <tr>
+                <td colspan="10">
+                    No hay datos disponibles.
+                </td>
+            </tr>
+        `;
+
+        return;
+    }
+
+    tabla.forEach((equipo, indice) => {
+
+        const posicion = indice + 1;
+
+        const fila = document.createElement("tr");
+
+        if (posicion > tabla.length - 4) {
+            fila.classList.add("zona-descenso");
+        }
+
+        let diferenciaClase = "";
+
+        if (equipo.dg > 0) {
+            diferenciaClase = "diferencia-positiva";
+        }
+
+        if (equipo.dg < 0) {
+            diferenciaClase = "diferencia-negativa";
+        }
+
+        fila.innerHTML = `
+
+            <td class="posicion">
+                ${posicion}
+            </td>
+
+            <td class="equipo">
+
+                ${equipo.equipo}
+
+                ${
+                    posicion > tabla.length - 4
+                    ? `<span class="etiqueta-descenso">REPECHAJE</span>`
+                    : ""
+                }
+
+            </td>
+
+            <td class="pts">
+                ${equipo.pts}
+            </td>
+
+            <td>
+                ${equipo.pj}
+            </td>
+
+            <td>
+                ${equipo.pg}
+            </td>
+
+            <td>
+                ${equipo.pe}
+            </td>
+
+            <td>
+                ${equipo.pp}
+            </td>
+
+            <td>
+                ${equipo.gf}
+            </td>
+
+            <td>
+                ${equipo.gc}
+            </td>
+
+            <td class="${diferenciaClase}">
+                ${equipo.dg > 0 ? "+" : ""}${equipo.dg}
+            </td>
+
+        `;
+
+        contenedor.appendChild(fila);
+
+    });
+
+}
+
+mostrarTablaAnual();
+
+</script>
+
+</body>
+</html>
