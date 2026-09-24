@@ -318,9 +318,7 @@
     }
 
     .quick-icon {
-      font-size: 38px;
-
-      margin-bottom: 15px;
+      display: none;
     }
 
     .quick-card h3 {
@@ -349,6 +347,18 @@
 
     .quick-card.playoff h3 {
       color: #9a7800;
+    }
+
+    /* ========================= */
+    /* TABLA ANUAL */
+    /* ========================= */
+
+    .quick-card.anual {
+      border-top-color: #1269a8;
+    }
+
+    .quick-card.anual h3 {
+      color: #12609a;
     }
 
     /* ========================= */
@@ -395,13 +405,13 @@
       }
 
       .main-nav {
-        gap: 20px;
+        gap: 15px;
 
         padding: 15px 10px;
       }
 
       .main-nav a {
-        font-size: 16px;
+        font-size: 15px;
       }
 
       .hero {
@@ -504,6 +514,10 @@
         Posiciones
       </a>
 
+      <a href="tabla-anual.html">
+        Tabla Anual
+      </a>
+
       <a href="partidos.html">
         Partidos
       </a>
@@ -513,7 +527,7 @@
       </a>
 
       <a href="playoff.html">
-        🏆 Play-Off
+        Play-Off
       </a>
 
     </nav>
@@ -528,7 +542,7 @@
   <section class="hero">
 
     <div class="torneo">
-      ⚽ Primera División A · Clausura 2026
+      Primera División A · Clausura 2026
     </div>
 
     <h2>
@@ -565,7 +579,7 @@
       type="text"
       id="searchTeam"
       class="search-input"
-      placeholder="🔎 Buscar tu equipo..."
+      placeholder="Buscar tu equipo..."
       autocomplete="off"
     >
 
@@ -605,10 +619,6 @@
         class="quick-card"
       >
 
-        <div class="quick-icon">
-          📊
-        </div>
-
         <h3>
           Posiciones
         </h3>
@@ -621,16 +631,31 @@
       </a>
 
 
+      <!-- TABLA ANUAL -->
+
+      <a
+        href="tabla-anual.html"
+        class="quick-card anual"
+      >
+
+        <h3>
+          Tabla Anual
+        </h3>
+
+        <p>
+          Consultá la clasificación acumulada
+          de Apertura y Clausura 2026.
+        </p>
+
+      </a>
+
+
       <!-- PARTIDOS -->
 
       <a
         href="partidos.html"
         class="quick-card"
       >
-
-        <div class="quick-icon">
-          ⚽
-        </div>
 
         <h3>
           Partidos
@@ -651,10 +676,6 @@
         class="quick-card"
       >
 
-        <div class="quick-icon">
-          🛡️
-        </div>
-
         <h3>
           Equipos
         </h3>
@@ -674,10 +695,6 @@
         class="quick-card"
       >
 
-        <div class="quick-icon">
-          🗓️
-        </div>
-
         <h3>
           Fixture
         </h3>
@@ -696,10 +713,6 @@
         href="playoff.html"
         class="quick-card playoff"
       >
-
-        <div class="quick-icon">
-          🏆
-        </div>
 
         <h3>
           Play-Off
@@ -766,8 +779,6 @@
           window.scrollY;
 
 
-        /* Si estamos arriba de todo */
-
         if (
           posicionActual <= 10
         ) {
@@ -778,9 +789,6 @@
 
         }
 
-
-        /* Si bajamos */
-
         else if (
           posicionActual > ultimaPosicion
         ) {
@@ -790,9 +798,6 @@
           );
 
         }
-
-
-        /* Si subimos */
 
         else if (
           posicionActual < ultimaPosicion
