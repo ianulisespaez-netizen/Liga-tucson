@@ -579,6 +579,32 @@
       color: #6c7b88;
 
       line-height: 1.5;
+
+      margin-bottom: 20px;
+    }
+
+    .annual-button {
+      display: inline-block;
+
+      padding: 13px 20px;
+
+      border-radius: 12px;
+
+      background: #1269a8;
+
+      color: white;
+
+      text-decoration: none;
+
+      font-weight: 800;
+
+      transition: 0.2s;
+    }
+
+    .annual-button:hover {
+      background: #0b4f82;
+
+      transform: translateY(-2px);
     }
 
     /* ========================= */
@@ -664,13 +690,21 @@
         text-align: center;
       }
 
+      .annual-card {
+        padding: 22px;
+      }
+
+      .annual-button {
+        width: 100%;
+        text-align: center;
+      }
+
     }
 
   </style>
 </head>
 
 <body>
-
 
   <!-- ========================= -->
   <!-- ENCABEZADO -->
@@ -703,7 +737,6 @@
 
     </div>
 
-
     <nav class="main-nav">
 
       <a href="index.html">
@@ -725,8 +758,12 @@
         Equipos
       </a>
 
+      <a href="tabla-anual.html">
+        Tabla Anual
+      </a>
+
       <a href="playoff.html">
-        🏆 Play-Off
+        Play-Off
       </a>
 
     </nav>
@@ -773,7 +810,7 @@
     <section class="fifths-section">
 
       <h2 class="fifths-title">
-        ⭐ Los 2 mejores quintos
+        Los 2 mejores quintos
       </h2>
 
       <div
@@ -793,7 +830,7 @@
       <div class="playoff-content">
 
         <h2>
-          🏆 Play-Off
+          Play-Off
         </h2>
 
         <p>
@@ -808,7 +845,7 @@
         href="playoff.html"
         class="playoff-button"
       >
-        Ver Play-Off →
+        Ver Play-Off
       </a>
 
     </section>
@@ -824,7 +861,6 @@
         Referencias de clasificación
       </h3>
 
-
       <div class="legend-item">
 
         <span
@@ -836,7 +872,6 @@
         </span>
 
       </div>
-
 
       <div class="legend-item">
 
@@ -850,7 +885,6 @@
 
       </div>
 
-
       <div class="legend-item">
 
         <span
@@ -862,7 +896,6 @@
         </span>
 
       </div>
-
 
       <div class="legend-item">
 
@@ -890,10 +923,16 @@
       </h2>
 
       <p>
-        La tabla anual se incorporará posteriormente
-        con los resultados correspondientes a todas
-        las fases del campeonato.
+        Consultá la clasificación acumulada de la temporada
+        y la situación anual de los 44 equipos.
       </p>
+
+      <a
+        href="tabla-anual.html"
+        class="annual-button"
+      >
+        Ver Tabla Anual
+      </a>
 
     </section>
 
@@ -925,7 +964,6 @@
 
   <script>
 
-
     /* =========================
        ESCUDOS
     ========================= */
@@ -953,7 +991,6 @@
       "San José":
         "IMG_1628.png",
 
-
       "Argentinos del Norte":
         "IMG_1629.png",
 
@@ -974,7 +1011,6 @@
 
       "Tucumán Central":
         "IMG_1635.png",
-
 
       "Garmendia":
         "IMG_1637.jpeg",
@@ -997,7 +1033,6 @@
       "Cruz Alta":
         "IMG_1644.png",
 
-
       "Bella Vista":
         "IMG_1651.png",
 
@@ -1018,7 +1053,6 @@
 
       "San Pablo":
         "IMG_1671.png",
-
 
       "Alto Verde":
         "IMG_1657.png",
@@ -1043,7 +1077,6 @@
 
       "La Providencia":
         "IMG_1664.jpeg",
-
 
       "Deportivo Aguilares":
         "IMG_1665.png",
@@ -1105,25 +1138,17 @@
           (gf - gc)
         );
 
-
       return {
 
         ...equipo,
 
         pts,
-
         pj,
-
         pg,
-
         pe,
-
         pp,
-
         gf,
-
         gc,
-
         dg
 
       };
@@ -1221,7 +1246,6 @@
 
       }
 
-
       return quintos.sort(
         (a, b) => {
 
@@ -1279,11 +1303,9 @@
           "mejoresQuintos"
         );
 
-
       const quintos =
         obtenerQuintos()
           .slice(0, 2);
-
 
       if (
         quintos.length === 0
@@ -1296,7 +1318,6 @@
 
       }
 
-
       contenedor.innerHTML =
         quintos
           .map(
@@ -1307,7 +1328,6 @@
                   equipo.equipo
                 ] || "";
 
-
               return `
 
                 <div class="fifth-card">
@@ -1317,7 +1337,6 @@
                     ${index + 1}° MEJOR QUINTO · ZONA ${equipo.zona}
 
                   </div>
-
 
                   <div class="fifth-team">
 
@@ -1337,7 +1356,6 @@
                     </span>
 
                   </div>
-
 
                   <div class="fifth-stats">
 
@@ -1378,7 +1396,6 @@
 
       }
 
-
       if (
         posicion >= 2 &&
         posicion <= 4
@@ -1392,7 +1409,6 @@
 
       }
 
-
       if (
         posicion === 5
       ) {
@@ -1404,7 +1420,6 @@
         `;
 
       }
-
 
       return "";
 
@@ -1424,10 +1439,8 @@
           "tablaContainer"
         );
 
-
       const equipos =
         datosLiga.zonas[zona];
-
 
       if (
         !equipos
@@ -1440,10 +1453,8 @@
 
       }
 
-
       const tabla =
         ordenarTabla(equipos);
-
 
       container.innerHTML = `
 
@@ -1455,7 +1466,6 @@
 
           </div>
 
-
           <div class="table-wrapper">
 
             <table>
@@ -1464,50 +1474,29 @@
 
                 <tr>
 
-                  <th>
-                    #
-                  </th>
+                  <th>#</th>
 
-                  <th>
-                    Equipo
-                  </th>
+                  <th>Equipo</th>
 
-                  <th>
-                    PJ
-                  </th>
+                  <th>PJ</th>
 
-                  <th>
-                    PG
-                  </th>
+                  <th>PG</th>
 
-                  <th>
-                    PE
-                  </th>
+                  <th>PE</th>
 
-                  <th>
-                    PP
-                  </th>
+                  <th>PP</th>
 
-                  <th>
-                    GF
-                  </th>
+                  <th>GF</th>
 
-                  <th>
-                    GC
-                  </th>
+                  <th>GC</th>
 
-                  <th>
-                    DG
-                  </th>
+                  <th>DG</th>
 
-                  <th>
-                    PTS
-                  </th>
+                  <th>PTS</th>
 
                 </tr>
 
               </thead>
-
 
               <tbody>
 
@@ -1519,9 +1508,7 @@
                         const posicion =
                           index + 1;
 
-
                         let clase = "";
-
 
                         if (
                           posicion === 1
@@ -1530,36 +1517,28 @@
                           clase =
                             "first-place";
 
-                        }
-
-                        else if (
+                        } else if (
                           posicion === 2
                         ) {
 
                           clase =
                             "second-place";
 
-                        }
-
-                        else if (
+                        } else if (
                           posicion === 3
                         ) {
 
                           clase =
                             "third-place";
 
-                        }
-
-                        else if (
+                        } else if (
                           posicion === 4
                         ) {
 
                           clase =
                             "fourth-place";
 
-                        }
-
-                        else if (
+                        } else if (
                           posicion === 5
                         ) {
 
@@ -1568,12 +1547,10 @@
 
                         }
 
-
                         const escudo =
                           escudos[
                             equipo.equipo
                           ] || "";
-
 
                         return `
 
@@ -1582,11 +1559,8 @@
                           >
 
                             <td class="position">
-
                               ${posicion}
-
                             </td>
-
 
                             <td>
 
@@ -1617,7 +1591,6 @@
                               </div>
 
                             </td>
-
 
                             <td>
                               ${equipo.pj}
@@ -1684,12 +1657,10 @@
           "zoneButtons"
         );
 
-
       const zonas =
         Object.keys(
           datosLiga.zonas
         );
-
 
       container.innerHTML =
         zonas
@@ -1746,11 +1717,9 @@
           }
         );
 
-
       boton.classList.add(
         "active"
       );
-
 
       mostrarZona(zona);
 
@@ -1764,12 +1733,10 @@
     let ultimaPosicion =
       window.scrollY;
 
-
     const header =
       document.getElementById(
         "siteHeader"
       );
-
 
     window.addEventListener(
       "scroll",
@@ -1777,7 +1744,6 @@
 
         const posicionActual =
           window.scrollY;
-
 
         if (
           posicionActual <= 10
@@ -1810,7 +1776,6 @@
           );
 
         }
-
 
         ultimaPosicion =
           posicionActual;
