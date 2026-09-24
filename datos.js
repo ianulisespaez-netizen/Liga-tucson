@@ -322,6 +322,7 @@ const resultadosOficiales = {
 
 "Tucumán Central>Argentinos del Norte=1-1",
 "Amalia>Atlético Tucumán=0-2",
+"Sportivo Guzmán>San Antonio=0-0",
 
 "Atlético Concepción>Unión del Norte=1-1",
 "Garmendia>Lastenia=0-0",
