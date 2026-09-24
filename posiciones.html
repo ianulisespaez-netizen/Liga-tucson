@@ -17,12 +17,12 @@
     body {
       font-family: Arial, Helvetica, sans-serif;
       background: #eef3f9;
-      color: #16324f;
+      color: #10243d;
     }
 
-    /* ========================= */
-    /* ENCABEZADO */
-    /* ========================= */
+    /* =========================
+       ENCABEZADO
+    ========================= */
 
     .site-header {
       position: sticky;
@@ -40,89 +40,100 @@
       pointer-events: none;
     }
 
+    /* PARTE SUPERIOR */
+
     .header-top {
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 18px;
 
-      padding: 28px 20px 20px;
+      padding: 45px 20px 38px;
 
-      background: linear-gradient(
-        135deg,
-        #062b52,
-        #1269a8
-      );
+      background: #0b1f38;
+
+      text-align: center;
     }
 
     .header-logo {
-      width: 82px;
-      height: 82px;
-      object-fit: contain;
-    }
+      width: 110px;
+      height: 110px;
 
-    .header-title {
-      text-align: left;
+      object-fit: contain;
+
+      margin-bottom: 18px;
     }
 
     .header-title h1 {
       color: white;
-      font-size: 32px;
+
+      font-size: 46px;
       font-weight: 800;
-      letter-spacing: 1px;
+
+      letter-spacing: 2px;
     }
 
     .header-title p {
-      margin-top: 5px;
-      color: #d9e9f8;
-      font-size: 17px;
+      margin-top: 8px;
+
+      color: #d8e5f2;
+
+      font-size: 19px;
     }
 
-    /* ========================= */
-    /* MENÚ */
-    /* ========================= */
+    /* =========================
+       MENÚ
+    ========================= */
 
     .main-nav {
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 30px;
 
-      padding: 18px 15px;
+      gap: 10px 24px;
 
-      background: linear-gradient(
-        135deg,
-        #062b52,
-        #1269a8
-      );
+      padding: 18px 20px;
+
+      background: #17365d;
 
       flex-wrap: wrap;
     }
 
     .main-nav a {
+      display: inline-block;
+
       color: white;
+
       text-decoration: none;
 
-      font-size: 18px;
-      font-weight: 700;
+      font-size: 20px;
+      font-weight: 500;
 
-      transition: 0.2s;
+      padding: 14px 18px;
+
+      border-radius: 10px;
+
+      transition:
+        background 0.2s ease,
+        color 0.2s ease;
     }
 
     .main-nav a:hover {
-      color: #55b8ff;
+      background: #28527e;
     }
 
     .main-nav a.active {
-      color: #55b8ff;
+      background: #3f7fb8;
+      color: white;
     }
 
-    /* ========================= */
-    /* CONTENEDOR */
-    /* ========================= */
+    /* =========================
+       CONTENEDOR
+    ========================= */
 
     .container {
       max-width: 1200px;
+
       margin: 0 auto;
 
       padding: 45px 20px 70px;
@@ -130,30 +141,36 @@
 
     .page-title {
       text-align: center;
-      margin-bottom: 10px;
 
-      color: #0b4f82;
+      color: #10243d;
+
       font-size: 42px;
+      font-weight: 800;
+
+      margin-bottom: 10px;
     }
 
     .page-subtitle {
       text-align: center;
 
-      color: #6c7b88;
+      color: #6c7886;
 
-      font-size: 18px;
+      font-size: 20px;
 
       margin-bottom: 35px;
     }
 
-    /* ========================= */
-    /* BOTONES DE ZONA */
-    /* ========================= */
+    /* =========================
+       BOTONES DE ZONA
+    ========================= */
 
     .zone-buttons {
       display: flex;
+
       justify-content: center;
+
       flex-wrap: wrap;
+
       gap: 12px;
 
       margin-bottom: 35px;
@@ -162,34 +179,40 @@
     .zone-button {
       border: none;
 
-      padding: 13px 24px;
+      padding: 13px 25px;
 
       border-radius: 30px;
 
-      background: #dbe8f4;
+      background: #dce8f3;
 
-      color: #164b73;
+      color: #1a4d74;
 
-      font-size: 16px;
+      font-size: 17px;
       font-weight: 700;
 
       cursor: pointer;
 
-      transition: 0.2s;
+      transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
     }
 
     .zone-button:hover {
-      background: #bcd9ed;
+      background: #c4dced;
+
+      transform: translateY(-1px);
     }
 
     .zone-button.active {
       background: #1269a8;
+
       color: white;
     }
 
-    /* ========================= */
-    /* TABLA */
-    /* ========================= */
+    /* =========================
+       TABLA
+    ========================= */
 
     .table-card {
       background: white;
@@ -199,7 +222,7 @@
       overflow: hidden;
 
       box-shadow:
-        0 8px 25px rgba(0,0,0,0.08);
+        0 8px 25px rgba(0, 0, 0, 0.08);
 
       margin-bottom: 40px;
     }
@@ -207,11 +230,12 @@
     .zone-title {
       padding: 22px 25px;
 
-      background: linear-gradient(
-        135deg,
-        #0a3159,
-        #1269a8
-      );
+      background:
+        linear-gradient(
+          135deg,
+          #0b3158,
+          #1269a8
+        );
 
       color: white;
 
@@ -221,15 +245,16 @@
 
     .table-wrapper {
       width: 100%;
+
       overflow-x: auto;
     }
 
     table {
       width: 100%;
 
-      border-collapse: collapse;
+      min-width: 760px;
 
-      min-width: 720px;
+      border-collapse: collapse;
     }
 
     thead {
@@ -253,7 +278,8 @@
     td {
       padding: 15px 10px;
 
-      border-top: 1px solid #edf1f5;
+      border-top:
+        1px solid #edf1f5;
 
       text-align: center;
 
@@ -266,6 +292,7 @@
 
     .team-cell {
       display: flex;
+
       align-items: center;
 
       gap: 10px;
@@ -274,8 +301,8 @@
     }
 
     .team-crest {
-      width: 34px;
-      height: 34px;
+      width: 36px;
+      height: 36px;
 
       object-fit: contain;
 
@@ -283,19 +310,20 @@
     }
 
     .position {
-      width: 42px;
+      width: 45px;
 
       font-weight: 800;
     }
 
     .points {
       font-size: 17px;
+
       font-weight: 800;
     }
 
-    /* ========================= */
-    /* CLASIFICACIONES */
-    /* ========================= */
+    /* =========================
+       COLORES DE CLASIFICACIÓN
+    ========================= */
 
     tr.first-place {
       background: #e4f5e8;
@@ -345,9 +373,9 @@
       color: #806300;
     }
 
-    /* ========================= */
-    /* MEJORES QUINTOS */
-    /* ========================= */
+    /* =========================
+       MEJORES QUINTOS
+    ========================= */
 
     .fifths-section {
       margin-top: 15px;
@@ -378,9 +406,10 @@
       padding: 22px;
 
       box-shadow:
-        0 7px 22px rgba(0,0,0,0.08);
+        0 7px 22px rgba(0, 0, 0, 0.08);
 
-      border-left: 6px solid #d8b000;
+      border-left:
+        6px solid #d8b000;
     }
 
     .fifth-position {
@@ -394,6 +423,7 @@
 
     .fifth-team {
       display: flex;
+
       align-items: center;
 
       gap: 12px;
@@ -419,9 +449,9 @@
       font-size: 14px;
     }
 
-    /* ========================= */
-    /* PLAY-OFF */
-    /* ========================= */
+    /* =========================
+       PLAY-OFF
+    ========================= */
 
     .playoff-card {
       margin: 45px 0;
@@ -440,7 +470,7 @@
       color: white;
 
       box-shadow:
-        0 10px 30px rgba(0,0,0,0.12);
+        0 10px 30px rgba(0, 0, 0, 0.12);
 
       display: flex;
 
@@ -482,7 +512,9 @@
 
       font-weight: 800;
 
-      transition: 0.2s;
+      transition:
+        transform 0.2s ease,
+        background 0.2s ease;
     }
 
     .playoff-button:hover {
@@ -491,9 +523,9 @@
       background: #e9f5ff;
     }
 
-    /* ========================= */
-    /* REFERENCIAS */
-    /* ========================= */
+    /* =========================
+       REFERENCIAS
+    ========================= */
 
     .legend-card {
       background: white;
@@ -503,7 +535,7 @@
       padding: 25px;
 
       box-shadow:
-        0 7px 22px rgba(0,0,0,0.07);
+        0 7px 22px rgba(0, 0, 0, 0.07);
 
       margin-top: 30px;
     }
@@ -516,6 +548,7 @@
 
     .legend-item {
       display: flex;
+
       align-items: center;
 
       gap: 10px;
@@ -552,9 +585,9 @@
       background: #ffe0e0;
     }
 
-    /* ========================= */
-    /* TABLA ANUAL */
-    /* ========================= */
+    /* =========================
+       TABLA ANUAL
+    ========================= */
 
     .annual-card {
       margin-top: 40px;
@@ -566,7 +599,7 @@
       padding: 28px;
 
       box-shadow:
-        0 7px 22px rgba(0,0,0,0.07);
+        0 7px 22px rgba(0, 0, 0, 0.07);
     }
 
     .annual-card h2 {
@@ -598,7 +631,9 @@
 
       font-weight: 800;
 
-      transition: 0.2s;
+      transition:
+        background 0.2s ease,
+        transform 0.2s ease;
     }
 
     .annual-button:hover {
@@ -607,55 +642,63 @@
       transform: translateY(-2px);
     }
 
-    /* ========================= */
-    /* FOOTER */
-    /* ========================= */
+    /* =========================
+       FOOTER
+    ========================= */
 
     footer {
       padding: 30px 20px;
 
       text-align: center;
 
-      background: #082d50;
+      background: #0b1f38;
 
       color: #d8e6f3;
+
+      font-size: 16px;
     }
 
     footer strong {
       color: white;
     }
 
-    /* ========================= */
-    /* CELULAR */
-    /* ========================= */
+    /* =========================
+       CELULAR
+    ========================= */
 
     @media (max-width: 700px) {
 
       .header-top {
-        padding: 20px 15px 16px;
-        gap: 12px;
+        padding: 42px 15px 34px;
       }
 
       .header-logo {
-        width: 68px;
-        height: 68px;
+        width: 92px;
+        height: 92px;
+
+        margin-bottom: 14px;
       }
 
       .header-title h1 {
-        font-size: 25px;
+        font-size: 32px;
+
+        letter-spacing: 1.5px;
       }
 
       .header-title p {
-        font-size: 14px;
+        font-size: 16px;
       }
 
       .main-nav {
-        gap: 20px;
-        padding: 15px 10px;
+        gap: 4px 10px;
+
+        padding: 12px 10px;
       }
 
       .main-nav a {
-        font-size: 16px;
+        font-size: 18px;
+
+        padding: 10px 12px;
       }
 
       .container {
@@ -690,25 +733,23 @@
         text-align: center;
       }
 
-      .annual-card {
-        padding: 22px;
-      }
-
       .annual-button {
         width: 100%;
+
         text-align: center;
       }
 
     }
 
   </style>
+
 </head>
 
 <body>
 
-  <!-- ========================= -->
-  <!-- ENCABEZADO -->
-  <!-- ========================= -->
+  <!-- =========================
+       ENCABEZADO
+  ========================= -->
 
   <header
     class="site-header"
@@ -723,19 +764,8 @@
         class="header-logo"
       >
 
-      <div class="header-title">
 
-        <h1>
-          LIGA TUCSON
-        </h1>
-
-        <p>
-          Liga Tucumana de Fútbol
-        </p>
-
-      </div>
-
-    </div>
+  </div>
 
     <nav class="main-nav">
 
@@ -750,16 +780,16 @@
         Posiciones
       </a>
 
+      <a href="tabla-anual.html">
+        Tabla Anual
+      </a>
+
       <a href="partidos.html">
         Partidos
       </a>
 
       <a href="equipos.html">
         Equipos
-      </a>
-
-      <a href="tabla-anual.html">
-        Tabla Anual
       </a>
 
       <a href="playoff.html">
@@ -771,9 +801,9 @@
   </header>
 
 
-  <!-- ========================= -->
-  <!-- CONTENIDO -->
-  <!-- ========================= -->
+  <!-- =========================
+       CONTENIDO
+  ========================= -->
 
   <main class="container">
 
@@ -786,9 +816,7 @@
     </p>
 
 
-    <!-- ========================= -->
     <!-- BOTONES DE ZONA -->
-    <!-- ========================= -->
 
     <div
       class="zone-buttons"
@@ -796,16 +824,14 @@
     ></div>
 
 
-    <!-- ========================= -->
     <!-- TABLA -->
-    <!-- ========================= -->
 
     <div id="tablaContainer"></div>
 
 
-    <!-- ========================= -->
-    <!-- MEJORES QUINTOS -->
-    <!-- ========================= -->
+    <!-- =========================
+         MEJORES QUINTOS
+    ========================= -->
 
     <section class="fifths-section">
 
@@ -821,9 +847,9 @@
     </section>
 
 
-    <!-- ========================= -->
-    <!-- PLAY-OFF -->
-    <!-- ========================= -->
+    <!-- =========================
+         PLAY-OFF
+    ========================= -->
 
     <section class="playoff-card">
 
@@ -836,7 +862,7 @@
         <p>
           Los equipos clasificados avanzan a las
           distintas rondas del Play-Off según su
-          posición y rendimiento en la fase de zonas.
+          posición en la fase de zonas.
         </p>
 
       </div>
@@ -851,9 +877,9 @@
     </section>
 
 
-    <!-- ========================= -->
-    <!-- REFERENCIAS -->
-    <!-- ========================= -->
+    <!-- =========================
+         REFERENCIAS
+    ========================= -->
 
     <section class="legend-card">
 
@@ -873,6 +899,7 @@
 
       </div>
 
+
       <div class="legend-item">
 
         <span
@@ -884,6 +911,7 @@
         </span>
 
       </div>
+
 
       <div class="legend-item">
 
@@ -897,6 +925,7 @@
 
       </div>
 
+
       <div class="legend-item">
 
         <span
@@ -904,7 +933,7 @@
         ></span>
 
         <span>
-          Descenso anual — se definirá según la tabla correspondiente.
+          Descenso anual — se definirá según la tabla anual.
         </span>
 
       </div>
@@ -912,9 +941,9 @@
     </section>
 
 
-    <!-- ========================= -->
-    <!-- TABLA ANUAL -->
-    <!-- ========================= -->
+    <!-- =========================
+         TABLA ANUAL
+    ========================= -->
 
     <section class="annual-card">
 
@@ -939,9 +968,9 @@
   </main>
 
 
-  <!-- ========================= -->
-  <!-- FOOTER -->
-  <!-- ========================= -->
+  <!-- =========================
+       FOOTER
+  ========================= -->
 
   <footer>
 
@@ -956,11 +985,12 @@
   </footer>
 
 
-  <!-- ========================= -->
-  <!-- JAVASCRIPT -->
-  <!-- ========================= -->
+  <!-- =========================
+       DATOS
+  ========================= -->
 
   <script src="datos.js"></script>
+
 
   <script>
 
@@ -1106,179 +1136,28 @@
 
 
     /* =========================
-       PREPARAR EQUIPO
-    ========================= */
-
-    function prepararEquipo(equipo) {
-
-      const pts =
-        Number(equipo.pts || 0);
-
-      const pj =
-        Number(equipo.pj || 0);
-
-      const pg =
-        Number(equipo.pg || 0);
-
-      const pe =
-        Number(equipo.pe || 0);
-
-      const pp =
-        Number(equipo.pp || 0);
-
-      const gf =
-        Number(equipo.gf || 0);
-
-      const gc =
-        Number(equipo.gc || 0);
-
-      const dg =
-        Number(
-          equipo.dg ??
-          (gf - gc)
-        );
-
-      return {
-
-        ...equipo,
-
-        pts,
-        pj,
-        pg,
-        pe,
-        pp,
-        gf,
-        gc,
-        dg
-
-      };
-
-    }
-
-
-    /* =========================
        ORDENAR TABLA
     ========================= */
 
     function ordenarTabla(equipos) {
 
-      return [...equipos]
-        .map(prepararEquipo)
-        .sort(
-          (a, b) => {
-
-            if (
-              b.pts !== a.pts
-            ) {
-
-              return b.pts - a.pts;
-
-            }
-
-            if (
-              b.dg !== a.dg
-            ) {
-
-              return b.dg - a.dg;
-
-            }
-
-            if (
-              b.gf !== a.gf
-            ) {
-
-              return b.gf - a.gf;
-
-            }
-
-            if (
-              a.gc !== b.gc
-            ) {
-
-              return a.gc - b.gc;
-
-            }
-
-            return a.equipo.localeCompare(
-              b.equipo,
-              "es"
-            );
-
-          }
-        );
-
-    }
-
-
-    /* =========================
-       OBTENER QUINTOS
-    ========================= */
-
-    function obtenerQuintos() {
-
-      const quintos = [];
-
-      for (
-        const zona in datosLiga.zonas
-      ) {
-
-        const tabla =
-          ordenarTabla(
-            datosLiga.zonas[zona]
-          );
-
-        if (
-          tabla.length >= 5
-        ) {
-
-          const quinto =
-            tabla[4];
-
-          quintos.push({
-
-            ...quinto,
-
-            zona
-
-          });
-
-        }
-
-      }
-
-      return quintos.sort(
+      return [...equipos].sort(
         (a, b) => {
 
-          if (
-            b.pts !== a.pts
-          ) {
-
+          if (b.pts !== a.pts) {
             return b.pts - a.pts;
-
           }
 
-          if (
-            b.dg !== a.dg
-          ) {
-
+          if (b.dg !== a.dg) {
             return b.dg - a.dg;
-
           }
 
-          if (
-            b.gf !== a.gf
-          ) {
-
+          if (b.gf !== a.gf) {
             return b.gf - a.gf;
-
           }
 
-          if (
-            a.gc !== b.gc
-          ) {
-
+          if (a.gc !== b.gc) {
             return a.gc - b.gc;
-
           }
 
           return a.equipo.localeCompare(
@@ -1293,7 +1172,69 @@
 
 
     /* =========================
-       MEJORES QUINTOS
+       OBTENER QUINTOS
+    ========================= */
+
+    function obtenerQuintos() {
+
+      const quintos = [];
+
+      const tablas =
+        datosLiga.tablasClausura;
+
+      for (const zona in tablas) {
+
+        const tabla =
+          ordenarTabla(
+            tablas[zona]
+          );
+
+        if (tabla.length >= 5) {
+
+          quintos.push({
+
+            ...tabla[4],
+
+            zona: zona
+
+          });
+
+        }
+
+      }
+
+      return quintos.sort(
+        (a, b) => {
+
+          if (b.pts !== a.pts) {
+            return b.pts - a.pts;
+          }
+
+          if (b.dg !== a.dg) {
+            return b.dg - a.dg;
+          }
+
+          if (b.gf !== a.gf) {
+            return b.gf - a.gf;
+          }
+
+          if (a.gc !== b.gc) {
+            return a.gc - b.gc;
+          }
+
+          return a.equipo.localeCompare(
+            b.equipo,
+            "es"
+          );
+
+        }
+      );
+
+    }
+
+
+    /* =========================
+       MOSTRAR MEJORES QUINTOS
     ========================= */
 
     function mostrarMejoresQuintos() {
@@ -1304,12 +1245,9 @@
         );
 
       const quintos =
-        obtenerQuintos()
-          .slice(0, 2);
+        obtenerQuintos().slice(0, 2);
 
-      if (
-        quintos.length === 0
-      ) {
+      if (!quintos.length) {
 
         contenedor.innerHTML =
           "<p>No hay datos suficientes.</p>";
@@ -1319,79 +1257,73 @@
       }
 
       contenedor.innerHTML =
-        quintos
-          .map(
-            (equipo, index) => {
+        quintos.map(
+          (equipo, index) => {
 
-              const escudo =
-                escudos[
-                  equipo.equipo
-                ] || "";
+            const escudo =
+              escudos[equipo.equipo] || "";
 
-              return `
+            return `
 
-                <div class="fifth-card">
+              <div class="fifth-card">
 
-                  <div class="fifth-position">
+                <div class="fifth-position">
 
-                    ${index + 1}° MEJOR QUINTO · ZONA ${equipo.zona}
-
-                  </div>
-
-                  <div class="fifth-team">
-
-                    ${
-                      escudo
-                        ? `
-                          <img
-                            src="${escudo}"
-                            alt="${equipo.equipo}"
-                          >
-                        `
-                        : ""
-                    }
-
-                    <span>
-                      ${equipo.equipo}
-                    </span>
-
-                  </div>
-
-                  <div class="fifth-stats">
-
-                    ${equipo.pts} pts ·
-                    ${equipo.pj} PJ ·
-                    DG ${equipo.dg}
-
-                  </div>
+                  ${index + 1}.º MEJOR QUINTO · ZONA ${equipo.zona}
 
                 </div>
 
-              `;
+                <div class="fifth-team">
 
-            }
-          )
-          .join("");
+                  ${
+                    escudo
+                      ? `
+                        <img
+                          src="${escudo}"
+                          alt="${equipo.equipo}"
+                        >
+                      `
+                      : ""
+                  }
+
+                  <span>
+                    ${equipo.equipo}
+                  </span>
+
+                </div>
+
+                <div class="fifth-stats">
+
+                  ${equipo.pts} pts ·
+                  ${equipo.pj} PJ ·
+                  DG ${equipo.dg}
+
+                </div>
+
+              </div>
+
+            `;
+
+          }
+        ).join("");
 
     }
 
 
     /* =========================
-       ESTADO
+       ESTADO DE CLASIFICACIÓN
     ========================= */
 
-    function obtenerEstado(
-      posicion
-    ) {
+    function obtenerEstado(posicion) {
 
-      if (
-        posicion === 1
-      ) {
+      if (posicion === 1) {
 
         return `
+
           <span class="badge badge-green">
             2.ª ronda
           </span>
+
         `;
 
       }
@@ -1402,21 +1334,23 @@
       ) {
 
         return `
+
           <span class="badge badge-blue">
             Play-Off
           </span>
+
         `;
 
       }
 
-      if (
-        posicion === 5
-      ) {
+      if (posicion === 5) {
 
         return `
+
           <span class="badge badge-yellow">
             Mejor 5.º
           </span>
+
         `;
 
       }
@@ -1430,24 +1364,37 @@
        MOSTRAR ZONA
     ========================= */
 
-    function mostrarZona(
-      zona
-    ) {
+    function mostrarZona(zona) {
 
       const container =
         document.getElementById(
           "tablaContainer"
         );
 
+      const tablas =
+        datosLiga.tablasClausura;
+
       const equipos =
-        datosLiga.zonas[zona];
+        tablas[zona];
 
-      if (
-        !equipos
-      ) {
+      if (!equipos) {
 
-        container.innerHTML =
-          "<p>No hay datos para esta zona.</p>";
+        container.innerHTML = `
+
+          <div class="table-card">
+
+            <div style="
+              padding: 30px;
+              text-align: center;
+            ">
+
+              No hay datos para esta zona.
+
+            </div>
+
+          </div>
+
+        `;
 
         return;
 
@@ -1456,14 +1403,13 @@
       const tabla =
         ordenarTabla(equipos);
 
+
       container.innerHTML = `
 
         <div class="table-card">
 
           <div class="zone-title">
-
             Zona ${zona}
-
           </div>
 
           <div class="table-wrapper">
@@ -1501,136 +1447,142 @@
               <tbody>
 
                 ${
-                  tabla
-                    .map(
-                      (equipo, index) => {
+                  tabla.map(
+                    (equipo, index) => {
 
-                        const posicion =
-                          index + 1;
+                      const posicion =
+                        index + 1;
 
-                        let clase = "";
+                      let clase = "";
 
-                        if (
-                          posicion === 1
-                        ) {
+                      if (
+                        posicion === 1
+                      ) {
 
-                          clase =
-                            "first-place";
-
-                        } else if (
-                          posicion === 2
-                        ) {
-
-                          clase =
-                            "second-place";
-
-                        } else if (
-                          posicion === 3
-                        ) {
-
-                          clase =
-                            "third-place";
-
-                        } else if (
-                          posicion === 4
-                        ) {
-
-                          clase =
-                            "fourth-place";
-
-                        } else if (
-                          posicion === 5
-                        ) {
-
-                          clase =
-                            "fifth-place";
-
-                        }
-
-                        const escudo =
-                          escudos[
-                            equipo.equipo
-                          ] || "";
-
-                        return `
-
-                          <tr
-                            class="${clase}"
-                          >
-
-                            <td class="position">
-                              ${posicion}
-                            </td>
-
-                            <td>
-
-                              <div class="team-cell">
-
-                                ${
-                                  escudo
-                                    ? `
-                                      <img
-                                        src="${escudo}"
-                                        alt="${equipo.equipo}"
-                                        class="team-crest"
-                                      >
-                                    `
-                                    : ""
-                                }
-
-                                <span>
-
-                                  ${equipo.equipo}
-
-                                  ${obtenerEstado(
-                                    posicion
-                                  )}
-
-                                </span>
-
-                              </div>
-
-                            </td>
-
-                            <td>
-                              ${equipo.pj}
-                            </td>
-
-                            <td>
-                              ${equipo.pg}
-                            </td>
-
-                            <td>
-                              ${equipo.pe}
-                            </td>
-
-                            <td>
-                              ${equipo.pp}
-                            </td>
-
-                            <td>
-                              ${equipo.gf}
-                            </td>
-
-                            <td>
-                              ${equipo.gc}
-                            </td>
-
-                            <td>
-                              ${equipo.dg}
-                            </td>
-
-                            <td class="points">
-                              ${equipo.pts}
-                            </td>
-
-                          </tr>
-
-                        `;
+                        clase =
+                          "first-place";
 
                       }
-                    )
-                    .join("")
+                      else if (
+                        posicion === 2
+                      ) {
+
+                        clase =
+                          "second-place";
+
+                      }
+                      else if (
+                        posicion === 3
+                      ) {
+
+                        clase =
+                          "third-place";
+
+                      }
+                      else if (
+                        posicion === 4
+                      ) {
+
+                        clase =
+                          "fourth-place";
+
+                      }
+                      else if (
+                        posicion === 5
+                      ) {
+
+                        clase =
+                          "fifth-place";
+
+                      }
+
+
+                      const escudo =
+                        escudos[
+                          equipo.equipo
+                        ] || "";
+
+
+                      return `
+
+                        <tr
+                          class="${clase}"
+                        >
+
+                          <td class="position">
+                            ${posicion}
+                          </td>
+
+                          <td>
+
+                            <div class="team-cell">
+
+                              ${
+                                escudo
+                                  ? `
+
+                                    <img
+                                      src="${escudo}"
+                                      alt="${equipo.equipo}"
+                                      class="team-crest"
+                                    >
+
+                                  `
+                                  : ""
+                              }
+
+                              <span>
+
+                                ${equipo.equipo}
+
+                                ${obtenerEstado(
+                                  posicion
+                                )}
+
+                              </span>
+
+                            </div>
+
+                          </td>
+
+                          <td>
+                            ${equipo.pj}
+                          </td>
+
+                          <td>
+                            ${equipo.pg}
+                          </td>
+
+                          <td>
+                            ${equipo.pe}
+                          </td>
+
+                          <td>
+                            ${equipo.pp}
+                          </td>
+
+                          <td>
+                            ${equipo.gf}
+                          </td>
+
+                          <td>
+                            ${equipo.gc}
+                          </td>
+
+                          <td>
+                            ${equipo.dg}
+                          </td>
+
+                          <td class="points">
+                            ${equipo.pts}
+                          </td>
+
+                        </tr>
+
+                      `;
+
+                    }
+                  ).join("")
                 }
 
               </tbody>
@@ -1647,7 +1599,7 @@
 
 
     /* =========================
-       BOTONES DE ZONAS
+       BOTONES DE ZONA
     ========================= */
 
     function cargarBotonesZona() {
@@ -1659,37 +1611,37 @@
 
       const zonas =
         Object.keys(
-          datosLiga.zonas
+          datosLiga.tablasClausura
         );
 
       container.innerHTML =
-        zonas
-          .map(
-            (zona, index) => {
+        zonas.map(
+          (zona, index) => {
 
-              return `
+            return `
 
-                <button
-                  class="zone-button ${
-                    index === 0
-                      ? "active"
-                      : ""
-                  }"
-                  onclick="seleccionarZona(
+              <button
+                class="zone-button ${
+                  index === 0
+                    ? "active"
+                    : ""
+                }"
+                onclick="
+                  seleccionarZona(
                     '${zona}',
                     this
-                  )"
-                >
+                  )
+                "
+              >
 
-                  Zona ${zona}
+                Zona ${zona}
 
-                </button>
+              </button>
 
-              `;
+            `;
 
-            }
-          )
-          .join("");
+          }
+        ).join("");
 
     }
 
