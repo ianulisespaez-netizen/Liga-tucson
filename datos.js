@@ -867,32 +867,176 @@ const interzonalesBC = [
 const resultadosClausura = [
 
   /* =========================
-     FECHA 1
-     ========================= */
+   FECHA 1
+   ========================= */
 
-  {
-    fecha: 1,
-    local: "Concepción FC",
-    visitante: "Azucarera Argentina",
-    golesLocal: 1,
-    golesVisitante: 1
-  },
+{
+  fecha: 1,
+  local: "Villa Mitre",
+  visitante: "San José",
+  golesLocal: 2,
+  golesVisitante: 0
+},
 
-  {
-    fecha: 1,
-    local: "Atlético Concepción",
-    visitante: "Lastenia",
-    golesLocal: 2,
-    golesVisitante: 1
-  },
+{
+  fecha: 1,
+  local: "All Boys",
+  visitante: "Juventud Unida",
+  golesLocal: 1,
+  golesVisitante: 3
+},
 
-  {
-    fecha: 1,
-    local: "San Lorenzo (SA)",
-    visitante: "Graneros",
-    golesLocal: 1,
-    golesVisitante: 2
-  },
+{
+  fecha: 1,
+  local: "Experimental",
+  visitante: "Central Norte",
+  golesLocal: 2,
+  golesVisitante: 1
+},
+
+{
+  fecha: 1,
+  local: "Tucumán Central",
+  visitante: "Atlético Tucumán",
+  golesLocal: 1,
+  golesVisitante: 1
+},
+
+{
+  fecha: 1,
+  local: "San Martín",
+  visitante: "Amalia",
+  golesLocal: 0,
+  golesVisitante: 0
+},
+
+{
+  fecha: 1,
+  local: "Argentinos del Norte",
+  visitante: "San Antonio",
+  golesLocal: 3,
+  golesVisitante: 2
+},
+
+{
+  fecha: 1,
+  local: "Atlético Concepción",
+  visitante: "Lastenia",
+  golesLocal: 2,
+  golesVisitante: 1
+},
+
+{
+  fecha: 1,
+  local: "San Lorenzo (DG)",
+  visitante: "Garmendia FC",
+  golesLocal: 0,
+  golesVisitante: 1
+},
+
+{
+  fecha: 1,
+  local: "Unión del Norte",
+  visitante: "Cruz Alta",
+  golesLocal: 3,
+  golesVisitante: 0
+},
+
+{
+  fecha: 1,
+  local: "San Pablo",
+  visitante: "Bella Vista",
+  golesLocal: 2,
+  golesVisitante: 1
+},
+
+{
+  fecha: 1,
+  local: "San Fernando",
+  visitante: "Almirante Brown",
+  golesLocal: 2,
+  golesVisitante: 1
+},
+
+{
+  fecha: 1,
+  local: "Ateneo Parroquial",
+  visitante: "Famaillá",
+  golesLocal: 0,
+  golesVisitante: 2
+},
+
+{
+  fecha: 1,
+  local: "Santa Lucía FC",
+  visitante: "Talleres",
+  golesLocal: 0,
+  golesVisitante: 0
+},
+
+{
+  fecha: 1,
+  local: "Concepción FC",
+  visitante: "Azucarera Argentina",
+  golesLocal: 1,
+  golesVisitante: 1
+},
+
+{
+  fecha: 1,
+  local: "La Providencia",
+  visitante: "Alto Verde",
+  golesLocal: 1,
+  golesVisitante: 3
+},
+
+{
+  fecha: 1,
+  local: "Unión Simoca",
+  visitante: "San Ramón",
+  golesLocal: 1,
+  golesVisitante: 1
+},
+
+{
+  fecha: 1,
+  local: "Ñuñorco",
+  visitante: "Santa Rosa",
+  golesLocal: 0,
+  golesVisitante: 2
+},
+
+{
+  fecha: 1,
+  local: "Deportivo Llorens",
+  visitante: "Sportivo Trinidad",
+  golesLocal: 1,
+  golesVisitante: 0
+},
+
+{
+  fecha: 1,
+  local: "Deportivo Aguilares",
+  visitante: "Santa Ana",
+  golesLocal: 2,
+  golesVisitante: 1
+},
+
+{
+  fecha: 1,
+  local: "San Lorenzo Santa Ana",
+  visitante: "Deportivo Graneros",
+  golesLocal: 1,
+  golesVisitante: 2
+},
+
+{
+  fecha: 1,
+  local: "Deportivo Marapa",
+  visitante: "Jorge Newbery",
+  golesLocal: 1,
+  golesVisitante: 3
+},
 
 
   /* =========================
