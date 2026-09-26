@@ -12,7 +12,6 @@
 
     <title>Play-Off | Liga Tucson</title>
 
-
     <style>
 
         * {
@@ -21,7 +20,6 @@
             padding: 0;
         }
 
-
         body {
             font-family:
                 Arial,
@@ -29,7 +27,6 @@
                 sans-serif;
 
             background: #f3f7fb;
-
             color: #172033;
         }
 
@@ -39,38 +36,26 @@
         ========================= */
 
         .site-header {
-
             position: sticky;
-
             top: 0;
-
             z-index: 1000;
 
             transition:
                 transform 0.35s ease,
                 opacity 0.35s ease;
-
         }
 
-
         .site-header.header-hidden {
-
             transform:
                 translateY(-100%);
 
             opacity: 0;
-
             pointer-events: none;
-
         }
 
-
         .header-top {
-
             display: flex;
-
             align-items: center;
-
             justify-content: center;
 
             padding:
@@ -84,18 +69,12 @@
                     #062b52,
                     #1269a8
                 );
-
         }
 
-
         .header-logo {
-
             width: 68px;
-
             height: 68px;
-
             object-fit: contain;
-
         }
 
 
@@ -104,11 +83,8 @@
         ========================= */
 
         .main-nav {
-
             display: flex;
-
             justify-content: center;
-
             align-items: center;
 
             gap: 24px;
@@ -125,30 +101,21 @@
                 );
 
             flex-wrap: wrap;
-
         }
 
-
         .main-nav a {
-
             color: white;
-
             text-decoration: none;
 
             font-size: 16px;
-
             font-weight: 700;
 
             transition: 0.2s;
-
         }
-
 
         .main-nav a:hover,
         .main-nav a.active {
-
             color: #55b8ff;
-
         }
 
 
@@ -157,20 +124,15 @@
         ========================= */
 
         .container {
-
             width: 94%;
-
-            max-width: 1500px;
+            max-width: 1700px;
 
             margin:
                 35px auto
                 70px;
-
         }
 
-
         .page-title {
-
             text-align: center;
 
             color: #06234a;
@@ -178,12 +140,9 @@
             font-size: 36px;
 
             margin-bottom: 8px;
-
         }
 
-
         .page-subtitle {
-
             text-align: center;
 
             color: #667085;
@@ -191,7 +150,6 @@
             margin-bottom: 30px;
 
             font-size: 16px;
-
         }
 
 
@@ -200,7 +158,6 @@
         ========================= */
 
         .info-box {
-
             background: white;
 
             border-radius: 14px;
@@ -212,53 +169,37 @@
             box-shadow:
                 0 4px 14px
                 rgba(0,0,0,.07);
-
         }
 
-
         .info-box p {
-
             color: #555;
 
             line-height: 1.6;
 
             margin-bottom: 7px;
-
         }
-
 
         .info-box p:last-child {
-
             margin-bottom: 0;
-
         }
 
-
         .info-box strong {
-
             color: #06234a;
-
         }
 
 
         /* =========================
-           PRIMEROS DE ZONA
+           SECCIONES
         ========================= */
 
-        .primeros-section {
-
-            margin-bottom: 35px;
-
-        }
-
-
         .section-title {
-
             background: #06234a;
 
             color: white;
 
-            padding: 14px 18px;
+            padding:
+                14px
+                18px;
 
             border-radius:
                 12px
@@ -267,14 +208,19 @@
                 0;
 
             font-size: 20px;
-
             font-weight: bold;
-
         }
 
 
-        .primeros-grid {
+        /* =========================
+           PRIMEROS DE ZONA
+        ========================= */
 
+        .primeros-section {
+            margin-bottom: 35px;
+        }
+
+        .primeros-grid {
             background: white;
 
             padding: 18px;
@@ -284,7 +230,7 @@
             grid-template-columns:
                 repeat(
                     6,
-                    minmax(130px, 1fr)
+                    minmax(140px, 1fr)
                 );
 
             gap: 12px;
@@ -298,12 +244,9 @@
             box-shadow:
                 0 4px 14px
                 rgba(0,0,0,.08);
-
         }
 
-
         .primero-card {
-
             border:
                 1px solid
                 #dce5ef;
@@ -315,12 +258,9 @@
             padding: 14px;
 
             text-align: center;
-
         }
 
-
         .primero-ranking {
-
             color: #168bd0;
 
             font-size: 11px;
@@ -328,25 +268,18 @@
             font-weight: bold;
 
             margin-bottom: 8px;
-
         }
 
-
         .primero-escudo {
-
             width: 48px;
-
             height: 48px;
 
             object-fit: contain;
 
             margin-bottom: 7px;
-
         }
 
-
         .primero-nombre {
-
             color: #09264c;
 
             font-size: 14px;
@@ -354,18 +287,14 @@
             font-weight: bold;
 
             line-height: 1.25;
-
         }
 
-
         .primero-zona {
-
             color: #777;
 
             font-size: 11px;
 
             margin-top: 5px;
-
         }
 
 
@@ -374,68 +303,59 @@
         ========================= */
 
         .cuadro-section {
-
             margin-top: 35px;
-
         }
 
-
         .cuadro-wrapper {
-
             background: white;
 
-            border-radius: 0 0 14px 14px;
+            border-radius:
+                0
+                0
+                14px
+                14px;
 
             box-shadow:
                 0 4px 18px
                 rgba(0,0,0,.08);
 
             overflow-x: auto;
-
             overflow-y: hidden;
 
-            padding: 30px;
-
+            padding: 35px;
         }
 
-
         .cuadro {
-
             display: grid;
 
             grid-template-columns:
-                280px
-                280px
-                280px
-                280px
-                300px;
+                330px
+                330px
+                330px
+                330px
+                330px;
 
-            gap: 30px;
+            gap: 45px;
 
-            min-width: 1430px;
+            min-width: 1850px;
 
             align-items: stretch;
-
         }
 
 
         /* =========================
-           COLUMNA DE RONDA
+           RONDA
         ========================= */
 
         .ronda {
-
             display: flex;
 
             flex-direction: column;
 
             min-width: 0;
-
         }
 
-
         .ronda-titulo {
-
             text-align: center;
 
             background: #0a3159;
@@ -444,19 +364,16 @@
 
             border-radius: 9px;
 
-            padding: 10px;
+            padding: 11px;
 
-            font-size: 13px;
+            font-size: 14px;
 
             font-weight: bold;
 
-            margin-bottom: 18px;
-
+            margin-bottom: 20px;
         }
 
-
         .ronda-contenido {
-
             flex: 1;
 
             display: flex;
@@ -465,8 +382,7 @@
 
             justify-content: space-around;
 
-            gap: 12px;
-
+            gap: 16px;
         }
 
 
@@ -475,7 +391,6 @@
         ========================= */
 
         .llave {
-
             position: relative;
 
             background: #f8fbff;
@@ -484,128 +399,121 @@
                 1px solid
                 #d9e4ee;
 
-            border-radius: 10px;
+            border-radius: 12px;
 
-            padding: 10px;
+            padding: 12px;
 
             box-shadow:
-                0 3px 9px
+                0 3px 10px
                 rgba(0,0,0,.05);
-
         }
 
+        .llave::after {
+            content: "";
+
+            position: absolute;
+
+            top: 50%;
+
+            right: -46px;
+
+            width: 45px;
+
+            height: 1px;
+
+            background:
+                #b7c9d9;
+        }
 
         .llave-identificador {
-
             display: flex;
 
-            justify-content: space-between;
+            justify-content:
+                space-between;
 
             align-items: center;
 
-            margin-bottom: 7px;
-
+            margin-bottom: 8px;
         }
 
-
         .llave-id {
-
             color: #168bd0;
 
-            font-size: 10px;
+            font-size: 11px;
 
             font-weight: bold;
 
-            text-transform: uppercase;
-
+            text-transform:
+                uppercase;
         }
 
-
         .llave-ronda {
-
             color: #8995a3;
 
-            font-size: 9px;
-
+            font-size: 10px;
         }
 
 
         /* =========================
-           EQUIPO DE LLAVE
+           EQUIPO
         ========================= */
 
         .equipo {
-
             display: flex;
 
             align-items: center;
 
-            justify-content: space-between;
+            justify-content:
+                space-between;
 
-            min-height: 40px;
+            min-height: 48px;
 
             padding:
-                6px
-                7px;
+                7px
+                8px;
 
             background: white;
 
             border:
                 1px solid
-                #e7edf3;
+                #e2e9f0;
 
-            border-radius: 7px;
-
+            border-radius: 8px;
         }
-
 
         .equipo + .equipo {
-
-            margin-top: 4px;
-
+            margin-top: 5px;
         }
 
-
         .equipo-info {
-
             display: flex;
 
             align-items: center;
 
-            gap: 7px;
+            gap: 8px;
 
             min-width: 0;
-
         }
 
-
         .equipo-escudo {
-
-            width: 27px;
-
-            height: 27px;
+            width: 30px;
+            height: 30px;
 
             object-fit: contain;
 
             flex-shrink: 0;
-
         }
-
 
         .equipo-texto {
-
             min-width: 0;
-
         }
 
-
         .equipo-nombre {
-
             display: block;
 
             color: #172033;
 
-            font-size: 11px;
+            font-size: 12px;
 
             font-weight: bold;
 
@@ -613,29 +521,24 @@
 
             overflow: hidden;
 
-            text-overflow: ellipsis;
+            text-overflow:
+                ellipsis;
 
-            max-width: 175px;
-
+            max-width: 220px;
         }
 
-
         .equipo-seed {
-
             display: block;
 
             color: #8995a3;
 
             font-size: 9px;
 
-            margin-top: 2px;
-
+            margin-top: 3px;
         }
 
-
         .equipo-goles {
-
-            min-width: 24px;
+            min-width: 25px;
 
             text-align: center;
 
@@ -644,18 +547,14 @@
             font-size: 15px;
 
             font-weight: bold;
-
         }
 
-
         .equipo-pendiente {
-
             color: #9ba5af;
 
             font-size: 13px;
 
             font-weight: normal;
-
         }
 
 
@@ -664,62 +563,108 @@
         ========================= */
 
         .ventaja {
+            margin-top: 8px;
 
-            margin-top: 7px;
-
-            padding: 5px;
+            padding: 6px;
 
             background: #e9f6ff;
 
             color: #08649d;
 
-            border-radius: 5px;
+            border-radius: 6px;
 
             text-align: center;
 
-            font-size: 9px;
-
+            font-size: 10px;
         }
 
 
         /* =========================
-           CONECTORES
+           ESPERA DE PRIMEROS
         ========================= */
 
-        .llave-conector-derecho {
+        .esperando {
+            min-height: 48px;
 
-            position: absolute;
+            display: flex;
 
-            top: 50%;
+            align-items: center;
 
-            right: -31px;
+            justify-content: center;
 
-            width: 30px;
+            text-align: center;
 
-            height: 1px;
+            padding: 8px;
 
-            background: #b7c9d9;
+            background:
+                #f5f8fb;
 
+            border:
+                1px dashed
+                #c6d2dd;
+
+            border-radius: 8px;
+
+            color: #7f8b98;
+
+            font-size: 11px;
+
+            font-weight: 600;
+        }
+
+        .esperando small {
+            display: block;
+
+            margin-top: 3px;
+
+            font-size: 9px;
+
+            font-weight: normal;
+
+            color: #9aa5b0;
         }
 
 
-        .ronda:not(:last-child)
-        .llave::after {
+        /* =========================
+           PRIMEROS EN SEGUNDA RONDA
+        ========================= */
 
-            content: "";
+        .primero-segunda {
+            border:
+                1px solid
+                #bcd7ea;
 
-            position: absolute;
+            background:
+                #f1f9ff;
+        }
 
-            top: 50%;
+        .primero-segunda .equipo {
+            background: white;
+        }
 
-            right: -31px;
 
-            width: 30px;
+        /* =========================
+           LLAVES FUTURAS
+        ========================= */
 
-            height: 1px;
+        .futura {
+            background:
+                #fafbfd;
 
-            background: #b7c9d9;
+            border:
+                1px dashed
+                #ccd7e1;
+        }
 
+        .futura .equipo {
+            background:
+                #f7f9fb;
+
+            color: #8a96a3;
+        }
+
+        .futura .equipo-nombre {
+            color: #8a96a3;
         }
 
 
@@ -727,25 +672,13 @@
            FINAL
         ========================= */
 
-        .final-ronda {
-
-            display: flex;
-
-            flex-direction: column;
-
-        }
-
-
         .final-ronda
         .ronda-contenido {
-
-            justify-content: center;
-
+            justify-content:
+                center;
         }
 
-
         .final-llave {
-
             background:
                 linear-gradient(
                     135deg,
@@ -764,21 +697,13 @@
             box-shadow:
                 0 7px 20px
                 rgba(0,0,0,.15);
-
         }
 
-
-        .final-llave
-        .llave-id {
-
+        .final-llave .llave-id {
             color: #8ed8ff;
-
         }
 
-
-        .final-llave
-        .equipo {
-
+        .final-llave .equipo {
             background:
                 rgba(
                     255,
@@ -795,56 +720,18 @@
                     255,
                     .15
                 );
-
         }
 
-
-        .final-llave
-        .equipo-nombre {
-
+        .final-llave .equipo-nombre {
             color: white;
-
         }
 
-
-        .final-llave
-        .equipo-seed {
-
+        .final-llave .equipo-seed {
             color: #bcd9ec;
-
         }
 
-
-        .final-llave
-        .equipo-goles {
-
+        .final-llave .equipo-goles {
             color: white;
-
-        }
-
-
-        /* =========================
-           PENDIENTE
-        ========================= */
-
-        .pendiente-ronda {
-
-            background: #f8fafc;
-
-            border:
-                1px dashed
-                #ccd7e1;
-
-            border-radius: 10px;
-
-            padding: 18px 10px;
-
-            text-align: center;
-
-            color: #8a96a3;
-
-            font-size: 11px;
-
         }
 
 
@@ -853,24 +740,21 @@
         ========================= */
 
         footer {
-
             background: #061a35;
 
             color: white;
 
             text-align: center;
 
-            padding: 25px 15px;
+            padding:
+                25px
+                15px;
 
             font-size: 13px;
-
         }
 
-
         footer span {
-
             color: #8ed8ff;
-
         }
 
 
@@ -881,81 +765,56 @@
         @media (max-width: 700px) {
 
             .header-top {
-
                 padding:
                     18px
                     15px
                     12px;
-
             }
-
 
             .header-logo {
-
                 width: 60px;
-
                 height: 60px;
-
             }
 
-
             .main-nav {
-
                 gap: 18px;
 
                 padding:
                     14px
                     10px;
-
             }
-
 
             .main-nav a {
-
                 font-size: 15px;
-
             }
 
-
             .container {
-
                 width: 96%;
 
                 margin-top: 25px;
-
             }
-
 
             .page-title {
-
                 font-size: 30px;
-
             }
-
 
             .page-subtitle {
-
                 font-size: 14px;
-
             }
-
 
             .primeros-grid {
-
                 grid-template-columns:
-                    repeat(2, 1fr);
-
+                    repeat(
+                        2,
+                        1fr
+                    );
             }
 
-
             .cuadro-wrapper {
-
                 padding: 20px;
-
             }
 
         }
-
 
     </style>
 
@@ -1063,8 +922,9 @@
         </p>
 
         <p>
-            El orden de los cruces se determina automáticamente
-            según el ranking correspondiente.
+            Los cruces se ordenan automáticamente
+            según el ranking general de los equipos
+            clasificados.
         </p>
 
     </div>
@@ -1105,7 +965,9 @@
             <div class="cuadro">
 
 
-                <!-- PRIMERA RONDA -->
+                <!-- =====================
+                     PRIMERA RONDA
+                ====================== -->
 
                 <div class="ronda">
 
@@ -1121,7 +983,9 @@
                 </div>
 
 
-                <!-- SEGUNDA RONDA -->
+                <!-- =====================
+                     SEGUNDA RONDA
+                ====================== -->
 
                 <div class="ronda">
 
@@ -1137,7 +1001,9 @@
                 </div>
 
 
-                <!-- CUARTOS -->
+                <!-- =====================
+                     CUARTOS
+                ====================== -->
 
                 <div class="ronda">
 
@@ -1153,7 +1019,9 @@
                 </div>
 
 
-                <!-- SEMIFINALES -->
+                <!-- =====================
+                     SEMIFINALES
+                ====================== -->
 
                 <div class="ronda">
 
@@ -1169,7 +1037,9 @@
                 </div>
 
 
-                <!-- FINAL -->
+                <!-- =====================
+                     FINAL
+                ====================== -->
 
                 <div class="ronda final-ronda">
 
@@ -1364,21 +1234,29 @@ const escudos = {
 
 
 /* =====================================================
-   OBTENER PLAY-OFF
+   DATOS DEL PLAY-OFF
 ===================================================== */
 
-let playoffs = null;
+let clasificacion = [];
 
+let primeros = [];
+
+let primeraRonda = [];
+
+
+/* =====================================================
+   CARGAR CLASIFICACIÓN
+===================================================== */
 
 try {
 
-    playoffs =
-        obtenerPlayoffs();
+    clasificacion =
+        generarClasificacionPlayoff();
 
 } catch (error) {
 
     console.error(
-        "Error al obtener los Play-Off:",
+        "Error al generar la clasificación:",
         error
     );
 
@@ -1386,70 +1264,695 @@ try {
 
 
 /* =====================================================
-   FUNCIONES
+   COMPARADOR
 ===================================================== */
 
-function obtenerNombreEquipo(
-    equipo
-) {
+function compararRanking(a, b) {
 
-    if (!equipo) {
-        return "Pendiente";
+    if (
+        typeof compararEquipos ===
+        "function"
+    ) {
+
+        return compararEquipos(
+            a,
+            b
+        );
+
     }
 
     if (
-        typeof equipo === "string"
+        b.pts !== a.pts
     ) {
-        return equipo;
-    }
 
-    return (
-        equipo.nombre ||
-        equipo.equipo ||
-        equipo.team ||
-        "Pendiente"
-    );
+        return b.pts - a.pts;
 
-}
-
-
-function obtenerZonaEquipo(
-    equipo
-) {
-
-    if (!equipo) {
-        return "";
     }
 
     if (
-        typeof equipo === "object" &&
-        equipo.zona
+        b.dg !== a.dg
     ) {
 
-        return equipo.zona;
+        return b.dg - a.dg;
 
     }
 
-    return "";
-
-}
-
-
-function obtenerEscudo(
-    nombre
-) {
-
-    if (!nombre) {
-        return "";
-    }
-
-    return escudos[nombre] || "";
+    return b.gf - a.gf;
 
 }
 
 
 /* =====================================================
-   PRIMEROS DE ZONA
+   OBTENER PRIMEROS
+===================================================== */
+
+function obtenerPrimeros() {
+
+    return clasificacion
+
+        .filter(
+            equipo =>
+                equipo.posicionZona === 1
+        )
+
+        .sort(
+            compararRanking
+        );
+
+}
+
+
+/* =====================================================
+   OBTENER CLASIFICADOS DE PRIMERA RONDA
+=====================================================
+
+   2.º, 3.º y 4.º de cada zona
+   +
+   los 2 mejores quintos.
+
+===================================================== */
+
+function obtenerClasificadosPrimeraRonda() {
+
+    const puestosNormales =
+        clasificacion.filter(
+            equipo =>
+                equipo.posicionZona >= 2 &&
+                equipo.posicionZona <= 4
+        );
+
+
+    const quintos =
+        clasificacion
+
+            .filter(
+                equipo =>
+                    equipo.posicionZona === 5
+            )
+
+            .sort(
+                compararRanking
+            );
+
+
+    const mejoresQuintos =
+        quintos.slice(
+            0,
+            2
+        );
+
+
+    return [
+        ...puestosNormales,
+        ...mejoresQuintos
+    ]
+
+    .sort(
+        compararRanking
+    );
+
+}
+
+
+/* =====================================================
+   CREAR PRIMERA RONDA
+===================================================== */
+
+function crearPrimeraRonda() {
+
+    const equipos =
+        obtenerClasificadosPrimeraRonda();
+
+
+    const llaves = [];
+
+
+    for (
+        let i = 0;
+        i < equipos.length / 2;
+        i++
+    ) {
+
+        const mejor =
+            equipos[i];
+
+        const peor =
+            equipos[
+                equipos.length - 1 - i
+            ];
+
+
+        llaves.push({
+
+            numero:
+                i + 1,
+
+            local:
+                mejor.equipo,
+
+            visitante:
+                peor.equipo,
+
+            rankingLocal:
+                obtenerRankingGlobal(
+                    mejor.equipo
+                ),
+
+            rankingVisitante:
+                obtenerRankingGlobal(
+                    peor.equipo
+                )
+
+        });
+
+    }
+
+
+    return llaves;
+
+}
+
+
+/* =====================================================
+   RANKING GLOBAL
+=====================================================
+
+   El ranking se obtiene sobre los 30 equipos
+   que actualmente ocupan los cinco primeros
+   puestos de sus respectivas zonas.
+
+===================================================== */
+
+function obtenerRankingGlobal(
+    nombre
+) {
+
+    const ordenados =
+        [...clasificacion]
+            .sort(
+                compararRanking
+            );
+
+
+    const indice =
+        ordenados.findIndex(
+            equipo =>
+                equipo.equipo === nombre
+        );
+
+
+    if (
+        indice === -1
+    ) {
+
+        return "";
+
+    }
+
+
+    return indice + 1;
+
+}
+
+
+/* =====================================================
+   CREAR SEGUNDA RONDA
+=====================================================
+
+   Los 6 primeros esperan rival.
+
+   1.º mejor primero
+   vs
+   ganador de la llave peor rankeada.
+
+   2.º mejor primero
+   vs
+   segundo ganador peor rankeado.
+
+   etc.
+
+   Los 4 ganadores restantes se enfrentan
+   entre ellos.
+
+===================================================== */
+
+function crearSegundaRonda() {
+
+    const primerosOrdenados =
+        obtenerPrimeros();
+
+
+    const llavesPrimera =
+        primeraRonda;
+
+
+    const llaves = [];
+
+
+    /*
+       Ordenamos las llaves de primera ronda
+       por el ranking del mejor equipo de cada llave.
+    */
+
+    const ordenLlaves =
+        [...llavesPrimera]
+            .sort(
+                (
+                    a,
+                    b
+                ) =>
+                    a.rankingLocal -
+                    b.rankingLocal
+            );
+
+
+    /*
+       Para que el mejor primero enfrente
+       al peor ganador de primera ronda,
+       recorremos las llaves desde el final.
+    */
+
+    for (
+        let i = 0;
+        i < 6;
+        i++
+    ) {
+
+        const primero =
+            primerosOrdenados[i];
+
+
+        const llavePrimera =
+            ordenLlaves[
+                ordenLlaves.length -
+                1 -
+                i
+            ];
+
+
+        if (
+            !primero ||
+            !llavePrimera
+        ) {
+
+            continue;
+
+        }
+
+
+        llaves.push({
+
+            numero:
+                i + 1,
+
+            primero:
+                primero.equipo,
+
+            rankingPrimero:
+                obtenerRankingGlobal(
+                    primero.equipo
+                ),
+
+            ganadorLlave:
+                llavePrimera.numero,
+
+            rival:
+                null
+
+        });
+
+    }
+
+
+    /*
+       Los 4 ganadores de primera ronda
+       que quedan libres se enfrentan entre sí.
+    */
+
+    const restantes =
+        ordenLlaves.slice(
+            0,
+            Math.max(
+                0,
+                ordenLlaves.length - 6
+            )
+        );
+
+
+    for (
+        let i = 0;
+        i < restantes.length / 2;
+        i++
+    ) {
+
+        const izquierda =
+            restantes[i];
+
+        const derecha =
+            restantes[
+                restantes.length -
+                1 -
+                i
+            ];
+
+
+        llaves.push({
+
+            numero:
+                llaves.length + 1,
+
+            primero:
+                null,
+
+            rankingPrimero:
+                null,
+
+            ganadorLlave:
+                izquierda.numero,
+
+            rival:
+                derecha.numero
+
+        });
+
+    }
+
+
+    return llaves;
+
+}
+
+
+/* =====================================================
+   FUNCIONES DE TEXTO
+===================================================== */
+
+function nombreEquipo(
+    nombre
+) {
+
+    return nombre ||
+        "Pendiente";
+
+}
+
+
+function escudoEquipo(
+    nombre
+) {
+
+    return (
+        escudos[nombre] ||
+        ""
+    );
+
+}
+
+
+/* =====================================================
+   TARJETA DE EQUIPO
+===================================================== */
+
+function tarjetaEquipo(
+    nombre,
+    ranking
+) {
+
+    const escudo =
+        escudoEquipo(
+            nombre
+        );
+
+
+    return `
+
+        <div class="equipo">
+
+            <div class="equipo-info">
+
+                ${
+                    escudo
+                    ?
+                    `
+                        <img
+                            src="${escudo}"
+                            alt="${nombre}"
+                            class="equipo-escudo"
+                            loading="lazy"
+                        >
+                    `
+                    :
+                    ""
+                }
+
+                <div class="equipo-texto">
+
+                    <span class="equipo-nombre">
+                        ${nombreEquipo(nombre)}
+                    </span>
+
+                    ${
+                        ranking
+                        ?
+                        `
+                            <span class="equipo-seed">
+                                Ranking ${ranking}
+                            </span>
+                        `
+                        :
+                        ""
+                    }
+
+                </div>
+
+            </div>
+
+            <div class="equipo-goles">
+
+                <span class="equipo-pendiente">
+                    -
+                </span>
+
+            </div>
+
+        </div>
+
+    `;
+
+}
+
+
+/* =====================================================
+   TARJETA PRIMERA RONDA
+===================================================== */
+
+function crearTarjetaPrimera(
+    llave
+) {
+
+    const tarjeta =
+        document.createElement(
+            "div"
+        );
+
+
+    tarjeta.className =
+        "llave";
+
+
+    tarjeta.innerHTML = `
+
+        <div class="llave-identificador">
+
+            <span class="llave-id">
+                LLAVE ${llave.numero}
+            </span>
+
+            <span class="llave-ronda">
+                Primera Ronda
+            </span>
+
+        </div>
+
+
+        ${
+
+            tarjetaEquipo(
+                llave.local,
+                llave.rankingLocal
+            )
+
+        }
+
+
+        ${
+
+            tarjetaEquipo(
+                llave.visitante,
+                llave.rankingVisitante
+            )
+
+        }
+
+
+        <div class="ventaja">
+
+            Ventaja deportiva:
+            <strong>
+                A definir
+            </strong>
+
+        </div>
+
+    `;
+
+
+    return tarjeta;
+
+}
+
+
+/* =====================================================
+   TARJETA SEGUNDA RONDA
+===================================================== */
+
+function crearTarjetaSegunda(
+    llave
+) {
+
+    const tarjeta =
+        document.createElement(
+            "div"
+        );
+
+
+    tarjeta.className =
+        "llave";
+
+
+    /*
+       Llaves donde participa
+       directamente un primero de zona.
+    */
+
+    if (
+        llave.primero
+    ) {
+
+        tarjeta.innerHTML = `
+
+            <div class="llave-identificador">
+
+                <span class="llave-id">
+                    LLAVE ${llave.numero}
+                </span>
+
+                <span class="llave-ronda">
+                    Segunda Ronda
+                </span>
+
+            </div>
+
+
+            <div class="primero-segunda">
+
+                ${
+
+                    tarjetaEquipo(
+                        llave.primero,
+                        llave.rankingPrimero
+                    )
+
+                }
+
+            </div>
+
+
+            <div class="esperando">
+
+                Esperando ganador de la Primera Ronda
+
+                <small>
+                    Ganador de la Llave
+                    ${llave.ganadorLlave}
+                </small>
+
+            </div>
+
+
+            <div class="ventaja">
+
+                Ventaja deportiva:
+                <strong>
+                    A definir
+                </strong>
+
+            </div>
+
+        `;
+
+    }
+
+
+    /*
+       Llaves donde se enfrentan
+       dos ganadores de Primera Ronda.
+    */
+
+    else {
+
+        tarjeta.innerHTML = `
+
+            <div class="llave-identificador">
+
+                <span class="llave-id">
+                    LLAVE ${llave.numero}
+                </span>
+
+                <span class="llave-ronda">
+                    Segunda Ronda
+                </span>
+
+            </div>
+
+
+            <div class="esperando">
+
+                Ganador de la Llave
+                ${llave.ganadorLlave}
+
+            </div>
+
+
+            <div class="esperando">
+
+                Ganador de la Llave
+                ${llave.rival}
+
+            </div>
+
+
+            <div class="ventaja">
+
+                Ventaja deportiva:
+                <strong>
+                    A definir
+                </strong>
+
+            </div>
+
+        `;
+
+    }
+
+
+    return tarjeta;
+
+}
+
+
+/* =====================================================
+   MOSTRAR PRIMEROS
 ===================================================== */
 
 function mostrarPrimeros() {
@@ -1460,44 +1963,36 @@ function mostrarPrimeros() {
         );
 
 
-    contenedor.innerHTML = "";
+    contenedor.innerHTML =
+        "";
 
 
-    if (
-        !playoffs ||
-        !playoffs.primeros ||
-        playoffs.primeros.length === 0
-    ) {
-
-        contenedor.innerHTML = `
-
-            <div class="pendiente-ronda">
-                Los primeros de zona se determinarán
-                automáticamente al completarse la clasificación.
-            </div>
-
-        `;
-
-        return;
-
-    }
+    primeros =
+        obtenerPrimeros();
 
 
-    playoffs.primeros.forEach(
-        (equipo, indice) => {
+    primeros.forEach(
+        (
+            equipo,
+            indice
+        ) => {
 
             const nombre =
-                obtenerNombreEquipo(
-                    equipo
-                );
+                equipo.equipo;
+
 
             const zona =
-                obtenerZonaEquipo(
-                    equipo
-                );
+                equipo.zona;
+
 
             const escudo =
-                obtenerEscudo(
+                escudoEquipo(
+                    nombre
+                );
+
+
+            const ranking =
+                obtenerRankingGlobal(
                     nombre
                 );
 
@@ -1515,27 +2010,38 @@ function mostrarPrimeros() {
             tarjeta.innerHTML = `
 
                 <div class="primero-ranking">
-                    ${indice + 1}.º DEL RANKING
+
+                    ${ranking}.º DEL RANKING
+
                 </div>
+
 
                 ${
                     escudo
-                        ? `
-                            <img
-                                src="${escudo}"
-                                alt="${nombre}"
-                                class="primero-escudo"
-                            >
-                        `
-                        : ""
+                    ?
+                    `
+                        <img
+                            src="${escudo}"
+                            alt="${nombre}"
+                            class="primero-escudo"
+                        >
+                    `
+                    :
+                    ""
                 }
 
+
                 <div class="primero-nombre">
+
                     ${nombre}
+
                 </div>
 
+
                 <div class="primero-zona">
+
                     Zona ${zona}
+
                 </div>
 
             `;
@@ -1552,350 +2058,31 @@ function mostrarPrimeros() {
 
 
 /* =====================================================
-   OBTENER DATOS DE LLAVE
+   MOSTRAR PRIMERA RONDA
 ===================================================== */
 
-function obtenerLocal(
-    llave
-) {
-
-    return (
-        llave.local ||
-        llave.equipoLocal ||
-        llave.mejor ||
-        "Pendiente"
-    );
-
-}
-
-
-function obtenerVisitante(
-    llave
-) {
-
-    return (
-        llave.visitante ||
-        llave.equipoVisitante ||
-        llave.peor ||
-        "Pendiente"
-    );
-
-}
-
-
-function obtenerSeedLocal(
-    llave
-) {
-
-    return (
-        llave.seedMejor ??
-        llave.seedLocal ??
-        ""
-    );
-
-}
-
-
-function obtenerSeedVisitante(
-    llave
-) {
-
-    return (
-        llave.seedPeor ??
-        llave.seedVisitante ??
-        ""
-    );
-
-}
-
-
-function obtenerGolesLocal(
-    llave
-) {
-
-    return (
-        llave.golesLocal ??
-        null
-    );
-
-}
-
-
-function obtenerGolesVisitante(
-    llave
-) {
-
-    return (
-        llave.golesVisitante ??
-        null
-    );
-
-}
-
-
-/* =====================================================
-   TARJETA DE LLAVE
-===================================================== */
-
-function crearLlave(
-    llave,
-    indice,
-    ronda
-) {
-
-    const tarjeta =
-        document.createElement(
-            "div"
-        );
-
-
-    tarjeta.className =
-        "llave";
-
-
-    const local =
-        obtenerLocal(
-            llave
-        );
-
-
-    const visitante =
-        obtenerVisitante(
-            llave
-        );
-
-
-    const seedLocal =
-        obtenerSeedLocal(
-            llave
-        );
-
-
-    const seedVisitante =
-        obtenerSeedVisitante(
-            llave
-        );
-
-
-    const golesLocal =
-        obtenerGolesLocal(
-            llave
-        );
-
-
-    const golesVisitante =
-        obtenerGolesVisitante(
-            llave
-        );
-
-
-    const escudoLocal =
-        obtenerEscudo(
-            local
-        );
-
-
-    const escudoVisitante =
-        obtenerEscudo(
-            visitante
-        );
-
-
-    const id =
-        llave.id ||
-        `Llave ${indice + 1}`;
-
-
-    const ventaja =
-        llave.ventajaDeportiva ||
-        "A definir";
-
-
-    const resultadoLocal =
-        golesLocal !== null
-            ? golesLocal
-            : `<span class="equipo-pendiente">-</span>`;
-
-
-    const resultadoVisitante =
-        golesVisitante !== null
-            ? golesVisitante
-            : `<span class="equipo-pendiente">-</span>`;
-
-
-    tarjeta.innerHTML = `
-
-        <div class="llave-identificador">
-
-            <span class="llave-id">
-                ${id}
-            </span>
-
-            <span class="llave-ronda">
-                ${ronda}
-            </span>
-
-        </div>
-
-
-        <div class="equipo">
-
-            <div class="equipo-info">
-
-                ${
-                    escudoLocal
-                        ? `
-                            <img
-                                src="${escudoLocal}"
-                                alt="${local}"
-                                class="equipo-escudo"
-                                loading="lazy"
-                            >
-                        `
-                        : ""
-                }
-
-                <div class="equipo-texto">
-
-                    <span class="equipo-nombre">
-                        ${local}
-                    </span>
-
-                    ${
-                        seedLocal !== ""
-                            ? `
-                                <span class="equipo-seed">
-                                    Ranking ${seedLocal}
-                                </span>
-                            `
-                            : ""
-                    }
-
-                </div>
-
-            </div>
-
-
-            <div class="equipo-goles">
-                ${resultadoLocal}
-            </div>
-
-        </div>
-
-
-        <div class="equipo">
-
-            <div class="equipo-info">
-
-                ${
-                    escudoVisitante
-                        ? `
-                            <img
-                                src="${escudoVisitante}"
-                                alt="${visitante}"
-                                class="equipo-escudo"
-                                loading="lazy"
-                            >
-                        `
-                        : ""
-                }
-
-                <div class="equipo-texto">
-
-                    <span class="equipo-nombre">
-                        ${visitante}
-                    </span>
-
-                    ${
-                        seedVisitante !== ""
-                            ? `
-                                <span class="equipo-seed">
-                                    Ranking ${seedVisitante}
-                                </span>
-                            `
-                            : ""
-                    }
-
-                </div>
-
-            </div>
-
-
-            <div class="equipo-goles">
-                ${resultadoVisitante}
-            </div>
-
-        </div>
-
-
-        <div class="ventaja">
-
-            Ventaja deportiva:
-            <strong>
-                ${ventaja}
-            </strong>
-
-        </div>
-
-    `;
-
-
-    return tarjeta;
-
-}
-
-
-/* =====================================================
-   MOSTRAR RONDA
-===================================================== */
-
-function mostrarRonda(
-    id,
-    llaves,
-    nombreRonda
-) {
+function mostrarPrimeraRonda() {
 
     const contenedor =
         document.getElementById(
-            id
+            "primera-ronda"
         );
 
 
-    contenedor.innerHTML = "";
+    contenedor.innerHTML =
+        "";
 
 
-    if (
-        !llaves ||
-        llaves.length === 0
-    ) {
-
-        contenedor.innerHTML = `
-
-            <div class="pendiente-ronda">
-
-                Esta ronda todavía está
-                pendiente de clasificación.
-
-            </div>
-
-        `;
-
-        return;
-
-    }
+    primeraRonda =
+        crearPrimeraRonda();
 
 
-    llaves.forEach(
-        (
-            llave,
-            indice
-        ) => {
+    primeraRonda.forEach(
+        llave => {
 
             contenedor.appendChild(
-                crearLlave(
-                    llave,
-                    indice,
-                    nombreRonda
+                crearTarjetaPrimera(
+                    llave
                 )
             );
 
@@ -1906,106 +2093,153 @@ function mostrarRonda(
 
 
 /* =====================================================
-   MOSTRAR FINAL
+   MOSTRAR SEGUNDA RONDA
 ===================================================== */
 
-function mostrarFinal() {
+function mostrarSegundaRonda() {
 
     const contenedor =
         document.getElementById(
-            "final"
+            "segunda-ronda"
         );
 
 
-    contenedor.innerHTML = "";
+    contenedor.innerHTML =
+        "";
 
 
-    if (
-        !playoffs ||
-        !playoffs.final ||
-        playoffs.final.length === 0
-    ) {
-
-        contenedor.innerHTML = `
-
-            <div class="pendiente-ronda">
-
-                Los finalistas se determinarán
-                automáticamente.
-
-            </div>
-
-        `;
-
-        return;
-
-    }
+    const segundaRonda =
+        crearSegundaRonda();
 
 
-    const llave =
-        playoffs.final[0];
+    segundaRonda.forEach(
+        llave => {
 
+            contenedor.appendChild(
+                crearTarjetaSegunda(
+                    llave
+                )
+            );
 
-    const tarjeta =
-        crearLlave(
-            llave,
-            0,
-            "Final"
-        );
-
-
-    tarjeta.classList.add(
-        "final-llave"
-    );
-
-
-    contenedor.appendChild(
-        tarjeta
+        }
     );
 
 }
 
 
 /* =====================================================
-   EJECUTAR
+   MOSTRAR RONDAS FUTURAS
+===================================================== */
+
+function mostrarRondaFutura(
+    id,
+    cantidad,
+    nombre
+) {
+
+    const contenedor =
+        document.getElementById(
+            id
+        );
+
+
+    contenedor.innerHTML =
+        "";
+
+
+    for (
+        let i = 0;
+        i < cantidad;
+        i++
+    ) {
+
+        const tarjeta =
+            document.createElement(
+                "div"
+            );
+
+
+        tarjeta.className =
+            "llave futura";
+
+
+        tarjeta.innerHTML = `
+
+            <div class="llave-identificador">
+
+                <span class="llave-id">
+                    LLAVE ${i + 1}
+                </span>
+
+                <span class="llave-ronda">
+                    ${nombre}
+                </span>
+
+            </div>
+
+
+            <div class="esperando">
+
+                Ganador de la ronda anterior
+
+            </div>
+
+
+            <div class="esperando">
+
+                Ganador de la ronda anterior
+
+            </div>
+
+
+            <div class="ventaja">
+
+                Ventaja deportiva:
+                <strong>
+                    A definir
+                </strong>
+
+            </div>
+
+        `;
+
+
+        contenedor.appendChild(
+            tarjeta
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   INICIALIZAR
 ===================================================== */
 
 mostrarPrimeros();
 
+mostrarPrimeraRonda();
 
-if (playoffs) {
+mostrarSegundaRonda();
 
-    mostrarRonda(
-        "primera-ronda",
-        playoffs.primeraRonda,
-        "Primera Ronda"
-    );
+mostrarRondaFutura(
+    "cuartos",
+    4,
+    "Cuartos de Final"
+);
 
+mostrarRondaFutura(
+    "semifinales",
+    2,
+    "Semifinal"
+);
 
-    mostrarRonda(
-        "segunda-ronda",
-        playoffs.segundaRonda,
-        "Segunda Ronda"
-    );
-
-
-    mostrarRonda(
-        "cuartos",
-        playoffs.cuartos,
-        "Cuartos"
-    );
-
-
-    mostrarRonda(
-        "semifinales",
-        playoffs.semifinales,
-        "Semifinal"
-    );
-
-
-    mostrarFinal();
-
-}
+mostrarRondaFutura(
+    "final",
+    1,
+    "Final"
+);
 
 
 /* =====================================================
