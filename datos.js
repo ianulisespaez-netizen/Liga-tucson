@@ -104,11 +104,11 @@ const tablaAnualBase = {
   },
 
   "Concepción FC": {
-    pts: 36,
+    pts: 39,
     pj: 18,
-    pg: 10,
+    pg: 11,
     pe: 6,
-    pp: 2,
+    pp: 1,
     gf: 32,
     gc: 17
   },
@@ -164,12 +164,12 @@ const tablaAnualBase = {
   },
 
   "Atlético Concepción": {
-    pts: 32,
+    pts: 34,
     pj: 18,
-    pg: 9,
-    pe: 5,
+    pg: 10,
+    pe: 4,
     pp: 4,
-    gf: 29,
+    gf: 30,
     gc: 17
   },
 
@@ -204,11 +204,11 @@ const tablaAnualBase = {
   },
 
   "Unión del Norte": {
-    pts: 31,
+    pts: 30,
     pj: 18,
     pg: 7,
-    pe: 10,
-    pp: 1,
+    pe: 9,
+    pp: 2,
     gf: 26,
     gc: 13
   },
@@ -324,13 +324,13 @@ const tablaAnualBase = {
   },
 
   "Famaillá": {
-    pts: 24,
-    pj: 17,
-    pg: 7,
+    pts: 21,
+    pj: 16,
+    pg: 6,
     pe: 3,
     pp: 7,
     gf: 18,
-    gc: 21
+    gc: 22
   },
 
   "Juventud Unida": {
@@ -354,11 +354,11 @@ const tablaAnualBase = {
   },
 
   "Azucarera Argentina": {
-    pts: 23,
+    pts: 26,
     pj: 18,
-    pg: 6,
+    pg: 7,
     pe: 5,
-    pp: 7,
+    pp: 6,
     gf: 21,
     gc: 28
   },
@@ -374,11 +374,11 @@ const tablaAnualBase = {
   },
 
   "San Lorenzo (DG)": {
-    pts: 23,
+    pts: 22,
     pj: 18,
     pg: 6,
-    pe: 5,
-    pp: 7,
+    pe: 4,
+    pp: 8,
     gf: 23,
     gc: 29
   },
@@ -404,10 +404,10 @@ const tablaAnualBase = {
   },
 
   "San Ramón": {
-    pts: 21,
-    pj: 18,
+    pts: 20,
+    pj: 17,
     pg: 5,
-    pe: 6,
+    pe: 5,
     pp: 7,
     gf: 17,
     gc: 25
@@ -424,10 +424,10 @@ const tablaAnualBase = {
   },
 
   "La Providencia": {
-    pts: 20,
-    pj: 18,
+    pts: 19,
+    pj: 17,
     pg: 4,
-    pe: 8,
+    pe: 7,
     pp: 6,
     gf: 20,
     gc: 24
@@ -479,7 +479,7 @@ const tablaAnualBase = {
     pg: 4,
     pe: 2,
     pp: 12,
-    gf: 13,
+    gf: 14,
     gc: 31
   },
 
@@ -1799,6 +1799,7 @@ function generarFixtureCompleto() {
       }
 
     }
+
 
     /* Segunda rueda */
 
