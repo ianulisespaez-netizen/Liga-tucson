@@ -3,17 +3,9 @@
    DATOS GENERALES - CLAUSURA 2026 + TABLA ANUAL 2026
    ========================================================= */
 
-/* =========================================================
-   CONFIGURACIÓN GENERAL
-   ========================================================= */
-
 const datosLiga = {
   torneo: "Primera División A - Clausura 2026",
   fechaActual: 5,
-
-  /* =======================================================
-     EQUIPOS POR ZONA
-     ======================================================= */
 
   zonas: {
     A: [
@@ -79,32 +71,14 @@ const datosLiga = {
     ]
   },
 
-  /* =======================================================
-     PARTIDOS
-     Se generan automáticamente más abajo.
-     ======================================================= */
-
   partidos: [],
-
-  /* =======================================================
-     TABLA ANUAL
-     Se calcula automáticamente más abajo.
-     ======================================================= */
-
   tablaAnual: []
 };
 
 
 /* =========================================================
    TABLA ANUAL OFICIAL
-   SITUACIÓN AL FINAL DE LA FECHA 4 DEL CLAUSURA
-
-   Estos datos incluyen:
-   - Apertura 2026
-   - Clausura 2026 hasta Fecha 4
-
-   NO se reconstruye el Apertura.
-   Esta tabla es nuestra base oficial.
+   SITUACIÓN AL FINAL DE LA FECHA 4
    ========================================================= */
 
 const tablaAnualBase = {
@@ -553,7 +527,6 @@ const tablaAnualBase = {
 
 /* =========================================================
    FIXTURE BASE
-   PRIMERA RUEDA
    ========================================================= */
 
 const fixtureBase = {
@@ -812,15 +785,15 @@ const interzonalesAD = [
   ["Bella Vista", "San José"],
   ["Almirante Brown", "Juventud Unida"],
   ["San Fernando", "All Boys"],
-  ["Ateneo Parroquial Alderetes", "Estación Experimental"],
-  ["Central Norte", "Famaillá"],
+  ["Estación Experimental", "Ateneo Parroquial Alderetes"],
+  ["Famaillá", "Central Norte"],
   ["Talleres", "Santa Lucía"],
   ["San Pablo", "Villa Mitre"],
   ["San José", "Bella Vista"],
   ["Juventud Unida", "Almirante Brown"],
   ["All Boys", "San Fernando"],
-  ["Estación Experimental", "Ateneo Parroquial Alderetes"],
-  ["Famaillá", "Central Norte"]
+  ["Ateneo Parroquial Alderetes", "Estación Experimental"],
+  ["Central Norte", "Famaillá"]
 ];
 
 const interzonalesBC = [
@@ -842,201 +815,182 @@ const interzonalesBC = [
 
 
 /* =========================================================
-   RESULTADOS DEL CLAUSURA
-   =========================================================
-
-   IMPORTANTE:
-
-   Para agregar un nuevo resultado solamente hay que agregar
-   un objeto a esta lista.
-
-   Ejemplo:
-
-   {
-     fecha: 6,
-     local: "Equipo A",
-     visitante: "Equipo B",
-     golesLocal: 2,
-     golesVisitante: 1
-   }
-
-   Los partidos que todavía no se jugaron NO se eliminan.
-   Permanecen en el fixture con resultado pendiente.
+   RESULTADOS CLAUSURA 2026
    ========================================================= */
 
 const resultadosClausura = [
 
   /* =========================
-   FECHA 1
-   ========================= */
+     FECHA 1
+     ========================= */
 
-{
-  fecha: 1,
-  local: "Villa Mitre",
-  visitante: "San José",
-  golesLocal: 2,
-  golesVisitante: 0
-},
+  {
+    fecha: 1,
+    local: "Villa Mitre",
+    visitante: "San José",
+    golesLocal: 2,
+    golesVisitante: 0
+  },
 
-{
-  fecha: 1,
-  local: "All Boys",
-  visitante: "Juventud Unida",
-  golesLocal: 1,
-  golesVisitante: 3
-},
+  {
+    fecha: 1,
+    local: "All Boys",
+    visitante: "Juventud Unida",
+    golesLocal: 1,
+    golesVisitante: 3
+  },
 
-{
-  fecha: 1,
-  local: "Experimental",
-  visitante: "Central Norte",
-  golesLocal: 2,
-  golesVisitante: 1
-},
+  {
+    fecha: 1,
+    local: "Estación Experimental",
+    visitante: "Central Norte",
+    golesLocal: 2,
+    golesVisitante: 1
+  },
 
-{
-  fecha: 1,
-  local: "Tucumán Central",
-  visitante: "Atlético Tucumán",
-  golesLocal: 1,
-  golesVisitante: 1
-},
+  {
+    fecha: 1,
+    local: "Tucumán Central",
+    visitante: "Atlético Tucumán",
+    golesLocal: 1,
+    golesVisitante: 1
+  },
 
-{
-  fecha: 1,
-  local: "San Martín",
-  visitante: "Amalia",
-  golesLocal: 0,
-  golesVisitante: 0
-},
+  {
+    fecha: 1,
+    local: "San Martín",
+    visitante: "Amalia",
+    golesLocal: 0,
+    golesVisitante: 0
+  },
 
-{
-  fecha: 1,
-  local: "Argentinos del Norte",
-  visitante: "San Antonio",
-  golesLocal: 3,
-  golesVisitante: 2
-},
+  {
+    fecha: 1,
+    local: "Argentinos del Norte",
+    visitante: "San Antonio",
+    golesLocal: 3,
+    golesVisitante: 2
+  },
 
-{
-  fecha: 1,
-  local: "Atlético Concepción",
-  visitante: "Lastenia",
-  golesLocal: 2,
-  golesVisitante: 1
-},
+  {
+    fecha: 1,
+    local: "Atlético Concepción",
+    visitante: "Lastenia",
+    golesLocal: 2,
+    golesVisitante: 1
+  },
 
-{
-  fecha: 1,
-  local: "San Lorenzo (DG)",
-  visitante: "Garmendia FC",
-  golesLocal: 0,
-  golesVisitante: 1
-},
+  {
+    fecha: 1,
+    local: "San Lorenzo (DG)",
+    visitante: "Garmendia",
+    golesLocal: 0,
+    golesVisitante: 1
+  },
 
-{
-  fecha: 1,
-  local: "Unión del Norte",
-  visitante: "Cruz Alta",
-  golesLocal: 3,
-  golesVisitante: 0
-},
+  {
+    fecha: 1,
+    local: "Unión del Norte",
+    visitante: "Cruz Alta",
+    golesLocal: 3,
+    golesVisitante: 0
+  },
 
-{
-  fecha: 1,
-  local: "San Pablo",
-  visitante: "Bella Vista",
-  golesLocal: 2,
-  golesVisitante: 1
-},
+  {
+    fecha: 1,
+    local: "San Pablo",
+    visitante: "Bella Vista",
+    golesLocal: 2,
+    golesVisitante: 1
+  },
 
-{
-  fecha: 1,
-  local: "San Fernando",
-  visitante: "Almirante Brown",
-  golesLocal: 2,
-  golesVisitante: 1
-},
+  {
+    fecha: 1,
+    local: "San Fernando",
+    visitante: "Almirante Brown",
+    golesLocal: 2,
+    golesVisitante: 1
+  },
 
-{
-  fecha: 1,
-  local: "Ateneo Parroquial",
-  visitante: "Famaillá",
-  golesLocal: 0,
-  golesVisitante: 2
-},
+  {
+    fecha: 1,
+    local: "Ateneo Parroquial Alderetes",
+    visitante: "Famaillá",
+    golesLocal: 0,
+    golesVisitante: 2
+  },
 
-{
-  fecha: 1,
-  local: "Santa Lucía FC",
-  visitante: "Talleres",
-  golesLocal: 0,
-  golesVisitante: 0
-},
+  {
+    fecha: 1,
+    local: "Santa Lucía",
+    visitante: "Talleres",
+    golesLocal: 0,
+    golesVisitante: 0
+  },
 
-{
-  fecha: 1,
-  local: "Concepción FC",
-  visitante: "Azucarera Argentina",
-  golesLocal: 1,
-  golesVisitante: 1
-},
+  {
+    fecha: 1,
+    local: "Concepción FC",
+    visitante: "Azucarera Argentina",
+    golesLocal: 1,
+    golesVisitante: 1
+  },
 
-{
-  fecha: 1,
-  local: "La Providencia",
-  visitante: "Alto Verde",
-  golesLocal: 1,
-  golesVisitante: 3
-},
+  {
+    fecha: 1,
+    local: "La Providencia",
+    visitante: "Alto Verde",
+    golesLocal: 1,
+    golesVisitante: 3
+  },
 
-{
-  fecha: 1,
-  local: "Unión Simoca",
-  visitante: "San Ramón",
-  golesLocal: 1,
-  golesVisitante: 1
-},
+  {
+    fecha: 1,
+    local: "Unión Simoca",
+    visitante: "San Ramón",
+    golesLocal: 1,
+    golesVisitante: 1
+  },
 
-{
-  fecha: 1,
-  local: "Ñuñorco",
-  visitante: "Santa Rosa",
-  golesLocal: 0,
-  golesVisitante: 2
-},
+  {
+    fecha: 1,
+    local: "Santa Rosa",
+    visitante: "Ñuñorco",
+    golesLocal: 0,
+    golesVisitante: 2
+  },
 
-{
-  fecha: 1,
-  local: "Deportivo Llorens",
-  visitante: "Sportivo Trinidad",
-  golesLocal: 1,
-  golesVisitante: 0
-},
+  {
+    fecha: 1,
+    local: "Llorens",
+    visitante: "Trinidad",
+    golesLocal: 1,
+    golesVisitante: 0
+  },
 
-{
-  fecha: 1,
-  local: "Deportivo Aguilares",
-  visitante: "Santa Ana",
-  golesLocal: 2,
-  golesVisitante: 1
-},
+  {
+    fecha: 1,
+    local: "Deportivo Aguilares",
+    visitante: "Santa Ana",
+    golesLocal: 2,
+    golesVisitante: 1
+  },
 
-{
-  fecha: 1,
-  local: "San Lorenzo Santa Ana",
-  visitante: "Deportivo Graneros",
-  golesLocal: 1,
-  golesVisitante: 2
-},
+  {
+    fecha: 1,
+    local: "San Lorenzo (SA)",
+    visitante: "Graneros",
+    golesLocal: 1,
+    golesVisitante: 2
+  },
 
-{
-  fecha: 1,
-  local: "Deportivo Marapa",
-  visitante: "Jorge Newbery",
-  golesLocal: 1,
-  golesVisitante: 3
-},
+  {
+    fecha: 1,
+    local: "Marapa",
+    visitante: "Jorge Newbery",
+    golesLocal: 1,
+    golesVisitante: 3
+  },
 
 
   /* =========================
@@ -1053,14 +1007,6 @@ const resultadosClausura = [
 
   {
     fecha: 2,
-    local: "Central Norte",
-    visitante: "Juventud Unida",
-    golesLocal: 0,
-    golesVisitante: 0
-  },
-
-  {
-    fecha: 2,
     local: "Talleres",
     visitante: "Estación Experimental",
     golesLocal: 2,
@@ -1069,18 +1015,10 @@ const resultadosClausura = [
 
   {
     fecha: 2,
-    local: "Villa Mitre",
-    visitante: "San Pablo",
-    golesLocal: 2,
-    golesVisitante: 3
-  },
-
-  {
-    fecha: 2,
-    local: "Sportivo Guzmán",
-    visitante: "Argentinos del Norte",
+    local: "Central Norte",
+    visitante: "Juventud Unida",
     golesLocal: 0,
-    golesVisitante: 1
+    golesVisitante: 0
   },
 
   {
@@ -1088,6 +1026,14 @@ const resultadosClausura = [
     local: "Atlético Tucumán",
     visitante: "San Martín",
     golesLocal: 1,
+    golesVisitante: 1
+  },
+
+  {
+    fecha: 2,
+    local: "Sportivo Guzmán",
+    visitante: "Argentinos del Norte",
+    golesLocal: 0,
     golesVisitante: 1
   },
 
@@ -1101,9 +1047,9 @@ const resultadosClausura = [
 
   {
     fecha: 2,
-    local: "Tucumán Central",
-    visitante: "Atlético Concepción",
-    golesLocal: 1,
+    local: "Lastenia",
+    visitante: "San Lorenzo (DG)",
+    golesLocal: 0,
     golesVisitante: 1
   },
 
@@ -1125,17 +1071,17 @@ const resultadosClausura = [
 
   {
     fecha: 2,
-    local: "Lastenia",
-    visitante: "San Lorenzo (DG)",
-    golesLocal: 0,
+    local: "Bella Vista",
+    visitante: "San Fernando",
+    golesLocal: 3,
     golesVisitante: 1
   },
 
   {
     fecha: 2,
-    local: "Bella Vista",
-    visitante: "San Fernando",
-    golesLocal: 3,
+    local: "Santa Lucía",
+    visitante: "Ateneo Parroquial Alderetes",
+    golesLocal: 1,
     golesVisitante: 1
   },
 
@@ -1149,18 +1095,26 @@ const resultadosClausura = [
 
   {
     fecha: 2,
-    local: "Santa Lucía",
-    visitante: "Ateneo Parroquial Alderetes",
+    local: "Villa Mitre",
+    visitante: "San Pablo",
+    golesLocal: 2,
+    golesVisitante: 3
+  },
+
+  {
+    fecha: 2,
+    local: "Tucumán Central",
+    visitante: "Atlético Concepción",
     golesLocal: 1,
     golesVisitante: 1
   },
 
   {
     fecha: 2,
-    local: "Alto Verde",
-    visitante: "Azucarera Argentina",
-    golesLocal: 6,
-    golesVisitante: 0
+    local: "Ñuñorco",
+    visitante: "Concepción FC",
+    golesLocal: 0,
+    golesVisitante: 1
   },
 
   {
@@ -1181,17 +1135,9 @@ const resultadosClausura = [
 
   {
     fecha: 2,
-    local: "Ñuñorco",
-    visitante: "Concepción FC",
-    golesLocal: 0,
-    golesVisitante: 1
-  },
-
-  {
-    fecha: 2,
-    local: "Graneros",
-    visitante: "Santa Ana",
-    golesLocal: 3,
+    local: "Alto Verde",
+    visitante: "Azucarera Argentina",
+    golesLocal: 6,
     golesVisitante: 0
   },
 
@@ -1207,8 +1153,8 @@ const resultadosClausura = [
     fecha: 2,
     local: "Trinidad",
     visitante: "Marapa",
-    golesLocal: 0,
-    golesVisitante: 0
+    golesLocal: 1,
+    golesVisitante: 1
   },
 
   {
@@ -1219,6 +1165,14 @@ const resultadosClausura = [
     golesVisitante: 0
   },
 
+  {
+    fecha: 2,
+    local: "Graneros",
+    visitante: "Santa Ana",
+    golesLocal: 3,
+    golesVisitante: 0
+  },
+
 
   /* =========================
      FECHA 3
@@ -1226,10 +1180,10 @@ const resultadosClausura = [
 
   {
     fecha: 3,
-    local: "Juventud Unida",
-    visitante: "Estación Experimental",
-    golesLocal: 0,
-    golesVisitante: 1
+    local: "All Boys",
+    visitante: "Central Norte",
+    golesLocal: 1,
+    golesVisitante: 0
   },
 
   {
@@ -1242,8 +1196,16 @@ const resultadosClausura = [
 
   {
     fecha: 3,
-    local: "Amalia",
-    visitante: "Argentinos del Norte",
+    local: "Juventud Unida",
+    visitante: "Estación Experimental",
+    golesLocal: 0,
+    golesVisitante: 1
+  },
+
+  {
+    fecha: 3,
+    local: "San Martín",
+    visitante: "San Antonio",
     golesLocal: 1,
     golesVisitante: 0
   },
@@ -1258,33 +1220,9 @@ const resultadosClausura = [
 
   {
     fecha: 3,
-    local: "San Martín",
-    visitante: "San Antonio",
+    local: "Amalia",
+    visitante: "Argentinos del Norte",
     golesLocal: 1,
-    golesVisitante: 0
-  },
-
-  {
-    fecha: 3,
-    local: "Lastenia",
-    visitante: "Atlético Tucumán",
-    golesLocal: 1,
-    golesVisitante: 0
-  },
-
-  {
-    fecha: 3,
-    local: "Garmendia",
-    visitante: "Unión del Norte",
-    golesLocal: 0,
-    golesVisitante: 0
-  },
-
-  {
-    fecha: 3,
-    local: "San Juan",
-    visitante: "Atlético Concepción",
-    golesLocal: 3,
     golesVisitante: 1
   },
 
@@ -1298,9 +1236,17 @@ const resultadosClausura = [
 
   {
     fecha: 3,
-    local: "Bella Vista",
-    visitante: "San José",
-    golesLocal: 1,
+    local: "San Juan",
+    visitante: "Atlético Concepción",
+    golesLocal: 3,
+    golesVisitante: 1
+  },
+
+  {
+    fecha: 3,
+    local: "Garmendia",
+    visitante: "Unión del Norte",
+    golesLocal: 0,
     golesVisitante: 0
   },
 
@@ -1330,24 +1276,16 @@ const resultadosClausura = [
 
   {
     fecha: 3,
-    local: "Azucarera Argentina",
-    visitante: "San Ramón",
-    golesLocal: 0,
-    golesVisitante: 2
-  },
-
-  {
-    fecha: 3,
-    local: "Unión Simoca",
-    visitante: "Ñuñorco",
+    local: "Bella Vista",
+    visitante: "San José",
     golesLocal: 1,
     golesVisitante: 0
   },
 
   {
     fecha: 3,
-    local: "La Providencia",
-    visitante: "Santa Rosa",
+    local: "Lastenia",
+    visitante: "Atlético Tucumán",
     golesLocal: 1,
     golesVisitante: 0
   },
@@ -1362,18 +1300,34 @@ const resultadosClausura = [
 
   {
     fecha: 3,
-    local: "Deportivo Aguilares",
-    visitante: "Graneros",
+    local: "Azucarera Argentina",
+    visitante: "San Ramón",
+    golesLocal: 0,
+    golesVisitante: 2
+  },
+
+  {
+    fecha: 3,
+    local: "La Providencia",
+    visitante: "Santa Rosa",
     golesLocal: 1,
     golesVisitante: 0
   },
 
   {
     fecha: 3,
-    local: "Marapa",
-    visitante: "Llorens",
-    golesLocal: 3,
+    local: "Unión Simoca",
+    visitante: "Ñuñorco",
+    golesLocal: 1,
     golesVisitante: 2
+  },
+
+  {
+    fecha: 3,
+    local: "Deportivo Aguilares",
+    visitante: "Graneros",
+    golesLocal: 1,
+    golesVisitante: 0
   },
 
   {
@@ -1390,6 +1344,14 @@ const resultadosClausura = [
     visitante: "Trinidad",
     golesLocal: 2,
     golesVisitante: 1
+  },
+
+  {
+    fecha: 3,
+    local: "Marapa",
+    visitante: "Llorens",
+    golesLocal: 3,
+    golesVisitante: 2
   },
 
 
@@ -1415,9 +1377,17 @@ const resultadosClausura = [
 
   {
     fecha: 4,
-    local: "Almirante Brown",
-    visitante: "Juventud Unida",
-    golesLocal: 5,
+    local: "Estación Experimental",
+    visitante: "All Boys",
+    golesLocal: 0,
+    golesVisitante: 1
+  },
+
+  {
+    fecha: 4,
+    local: "San Antonio",
+    visitante: "Tucumán Central",
+    golesLocal: 1,
     golesVisitante: 0
   },
 
@@ -1439,22 +1409,6 @@ const resultadosClausura = [
 
   {
     fecha: 4,
-    local: "San Antonio",
-    visitante: "Tucumán Central",
-    golesLocal: 1,
-    golesVisitante: 0
-  },
-
-  {
-    fecha: 4,
-    local: "Garmendia",
-    visitante: "Amalia",
-    golesLocal: 1,
-    golesVisitante: 0
-  },
-
-  {
-    fecha: 4,
     local: "Cruz Alta",
     visitante: "Atlético Concepción",
     golesLocal: 1,
@@ -1463,16 +1417,16 @@ const resultadosClausura = [
 
   {
     fecha: 4,
-    local: "Unión del Norte",
-    visitante: "San Lorenzo (DG)",
+    local: "Lastenia",
+    visitante: "San Juan",
     golesLocal: 1,
     golesVisitante: 1
   },
 
   {
     fecha: 4,
-    local: "Lastenia",
-    visitante: "San Juan",
+    local: "Unión del Norte",
+    visitante: "San Lorenzo (DG)",
     golesLocal: 1,
     golesVisitante: 1
   },
@@ -1495,10 +1449,18 @@ const resultadosClausura = [
 
   {
     fecha: 4,
-    local: "Santa Rosa",
-    visitante: "Azucarera Argentina",
-    golesLocal: 0,
-    golesVisitante: 1
+    local: "Almirante Brown",
+    visitante: "Juventud Unida",
+    golesLocal: 5,
+    golesVisitante: 0
+  },
+
+  {
+    fecha: 4,
+    local: "Garmendia",
+    visitante: "Amalia",
+    golesLocal: 1,
+    golesVisitante: 0
   },
 
   {
@@ -1519,6 +1481,14 @@ const resultadosClausura = [
 
   {
     fecha: 4,
+    local: "Santa Rosa",
+    visitante: "Azucarera Argentina",
+    golesLocal: 0,
+    golesVisitante: 1
+  },
+
+  {
+    fecha: 4,
     local: "San Ramón",
     visitante: "Alto Verde",
     golesLocal: 1,
@@ -1535,23 +1505,32 @@ const resultadosClausura = [
 
   {
     fecha: 4,
-    local: "Jorge Newbery",
-    visitante: "Graneros",
-    golesLocal: 2,
-    golesVisitante: 1
-  },
-
-  {
-    fecha: 4,
     local: "Llorens",
     visitante: "San Lorenzo (SA)",
     golesLocal: 1,
     golesVisitante: 2
   },
 
-  /* =======================================================
+  {
+    fecha: 4,
+    local: "Trinidad",
+    visitante: "Santa Ana",
+    golesLocal: 2,
+    golesVisitante: 1
+  },
+
+  {
+    fecha: 4,
+    local: "Jorge Newbery",
+    visitante: "Graneros",
+    golesLocal: 2,
+    golesVisitante: 1
+  },
+
+
+  /* =========================
      FECHA 5
-     ======================================================= */
+     ========================= */
 
   {
     fecha: 5,
@@ -1566,6 +1545,14 @@ const resultadosClausura = [
     local: "Juventud Unida",
     visitante: "San José",
     golesLocal: 3,
+    golesVisitante: 1
+  },
+
+  {
+    fecha: 5,
+    local: "Talleres",
+    visitante: "Central Norte",
+    golesLocal: 1,
     golesVisitante: 1
   },
 
@@ -1659,6 +1646,14 @@ const resultadosClausura = [
 
   {
     fecha: 5,
+    local: "Concepción FC",
+    visitante: "San Ramón",
+    golesLocal: 2,
+    golesVisitante: 1
+  },
+
+  {
+    fecha: 5,
     local: "Alto Verde",
     visitante: "Santa Rosa",
     golesLocal: 2,
@@ -1713,31 +1708,15 @@ const resultadosClausura = [
     golesVisitante: 0
   }
 
-  /*
-   * Concepción FC vs San Ramón:
-   * todavía queda pendiente.
-   * NO se carga hasta que tengamos resultado oficial.
-   */
+  // Pendientes:
+  // Fecha 1: San Juan vs Sportivo Guzmán
+  // Fecha 4: Famaillá vs San Pablo
 ];
 
 
 /* =========================================================
-   FUNCIONES AUXILIARES
+   CREAR PARTIDO
    ========================================================= */
-
-function obtenerZonaEquipo(nombreEquipo) {
-
-  for (const zona in datosLiga.zonas) {
-
-    if (datosLiga.zonas[zona].includes(nombreEquipo)) {
-      return zona;
-    }
-
-  }
-
-  return null;
-}
-
 
 function crearPartido(
   fecha,
@@ -1749,6 +1728,7 @@ function crearPartido(
 ) {
 
   return {
+
     id:
       fecha +
       "-" +
@@ -1758,9 +1738,10 @@ function crearPartido(
 
     fecha: fecha,
 
-    zona: interzonal
-      ? "INTERZONAL"
-      : zona,
+    zona:
+      interzonal
+        ? "INTERZONAL"
+        : zona,
 
     zonas:
       interzonal
@@ -1788,19 +1769,23 @@ function generarFixtureCompleto() {
 
   const partidos = [];
 
-  /* -----------------------------------------
-     ZONAS A-F
-     ----------------------------------------- */
-
   for (const zona of Object.keys(fixtureBase)) {
 
-    const fechasPrimeraRueda = fixtureBase[zona];
+    const fechasPrimeraRueda =
+      fixtureBase[zona];
 
-    for (let i = 0; i < fechasPrimeraRueda.length; i++) {
+    for (
+      let i = 0;
+      i < fechasPrimeraRueda.length;
+      i++
+    ) {
 
       const fecha = i + 1;
 
-      for (const partido of fechasPrimeraRueda[i]) {
+      for (
+        const partido
+        of fechasPrimeraRueda[i]
+      ) {
 
         partidos.push(
           crearPartido(
@@ -1815,16 +1800,20 @@ function generarFixtureCompleto() {
 
     }
 
-    /*
-     * Fechas 8 a 14:
-     * segunda rueda invirtiendo localía.
-     */
+    /* Segunda rueda */
 
-    for (let i = 0; i < fechasPrimeraRueda.length; i++) {
+    for (
+      let i = 0;
+      i < fechasPrimeraRueda.length;
+      i++
+    ) {
 
       const fecha = i + 8;
 
-      for (const partido of fechasPrimeraRueda[i]) {
+      for (
+        const partido
+        of fechasPrimeraRueda[i]
+      ) {
 
         partidos.push(
           crearPartido(
@@ -1842,19 +1831,20 @@ function generarFixtureCompleto() {
   }
 
 
-  /* -----------------------------------------
-     INTERZONALES A-D
-     ----------------------------------------- */
+  /* Interzonales A-D */
 
-  for (let i = 0; i < interzonalesAD.length; i++) {
+  for (
+    let i = 0;
+    i < interzonalesAD.length;
+    i++
+  ) {
 
-    const fecha = i + 1;
-
-    const partido = interzonalesAD[i];
+    const partido =
+      interzonalesAD[i];
 
     partidos.push(
       crearPartido(
-        fecha,
+        i + 1,
         "INTERZONAL",
         partido[0],
         partido[1],
@@ -1866,19 +1856,20 @@ function generarFixtureCompleto() {
   }
 
 
-  /* -----------------------------------------
-     INTERZONALES B-C
-     ----------------------------------------- */
+  /* Interzonales B-C */
 
-  for (let i = 0; i < interzonalesBC.length; i++) {
+  for (
+    let i = 0;
+    i < interzonalesBC.length;
+    i++
+  ) {
 
-    const fecha = i + 1;
-
-    const partido = interzonalesBC[i];
+    const partido =
+      interzonalesBC[i];
 
     partidos.push(
       crearPartido(
-        fecha,
+        i + 1,
         "INTERZONAL",
         partido[0],
         partido[1],
@@ -1895,47 +1886,69 @@ function generarFixtureCompleto() {
 
 
 /* =========================================================
-   APLICAR RESULTADOS AL FIXTURE
+   APLICAR RESULTADOS
    ========================================================= */
 
 function aplicarResultados(partidos) {
 
-  for (const resultado of resultadosClausura) {
+  for (
+    const resultado
+    of resultadosClausura
+  ) {
 
-    const partido = partidos.find(p =>
-      p.fecha === resultado.fecha &&
-      p.local === resultado.local &&
-      p.visitante === resultado.visitante
-    );
+    const partido =
+      partidos.find(p =>
+
+        p.fecha ===
+          resultado.fecha &&
+
+        p.local ===
+          resultado.local &&
+
+        p.visitante ===
+          resultado.visitante
+
+      );
+
 
     if (!partido) {
+
       console.warn(
-        "No se encontró el partido:",
+        "RESULTADO NO ENCONTRADO EN FIXTURE:",
         resultado
       );
 
       continue;
     }
 
-    partido.golesLocal = resultado.golesLocal;
-    partido.golesVisitante = resultado.golesVisitante;
+
+    partido.golesLocal =
+      resultado.golesLocal;
+
+    partido.golesVisitante =
+      resultado.golesVisitante;
 
     partido.jugado = true;
+
   }
+
 
   return partidos;
 }
 
 
 /* =========================================================
-   TABLAS DEL CLAUSURA
+   TABLA DEL CLAUSURA
    ========================================================= */
 
 function crearTablaInicialZona(zona) {
 
   const tabla = {};
 
-  for (const equipo of datosLiga.zonas[zona]) {
+  for (
+    const equipo
+    of datosLiga.zonas[zona]
+  ) {
 
     tabla[equipo] = {
 
@@ -1971,20 +1984,31 @@ function actualizarEquipoTabla(
     return;
   }
 
+
   tabla[equipo].pj++;
 
-  tabla[equipo].gf += golesFavor;
-  tabla[equipo].gc += golesContra;
+  tabla[equipo].gf +=
+    golesFavor;
 
-  if (golesFavor > golesContra) {
+  tabla[equipo].gc +=
+    golesContra;
+
+
+  if (
+    golesFavor >
+    golesContra
+  ) {
 
     tabla[equipo].pg++;
     tabla[equipo].pts += 3;
 
-  } else if (golesFavor === golesContra) {
+  } else if (
+    golesFavor ===
+    golesContra
+  ) {
 
     tabla[equipo].pe++;
-    tabla[equipo].pts += 1;
+    tabla[equipo].pts++;
 
   } else {
 
@@ -1992,74 +2016,15 @@ function actualizarEquipoTabla(
 
   }
 
+
   tabla[equipo].dg =
     tabla[equipo].gf -
     tabla[equipo].gc;
 }
 
 
-function obtenerTablasClausura() {
-
-  const tablas = {};
-
-  for (const zona of Object.keys(datosLiga.zonas)) {
-
-    const tabla = crearTablaInicialZona(zona);
-
-    for (const partido of datosLiga.partidos) {
-
-      if (!partido.jugado) {
-        continue;
-      }
-
-      let pertenece = false;
-
-      if (
-        partido.zona === zona
-      ) {
-        pertenece = true;
-      }
-
-      if (
-        partido.interzonal &&
-        partido.zonas.includes(zona)
-      ) {
-        pertenece = true;
-      }
-
-      if (!pertenece) {
-        continue;
-      }
-
-      actualizarEquipoTabla(
-        tabla,
-        partido.local,
-        partido.golesLocal,
-        partido.golesVisitante
-      );
-
-      actualizarEquipoTabla(
-        tabla,
-        partido.visitante,
-        partido.golesVisitante,
-        partido.golesLocal
-      );
-
-    }
-
-    tablas[zona] =
-      Object.values(tabla).sort(
-        compararEquipos
-      );
-
-  }
-
-  return tablas;
-}
-
-
 /* =========================================================
-   COMPARACIÓN DE TABLAS
+   ORDEN DE TABLA
    ========================================================= */
 
 function compararEquipos(a, b) {
@@ -2088,38 +2053,117 @@ function compararEquipos(a, b) {
 
 
 /* =========================================================
+   OBTENER TABLAS DEL CLAUSURA
+   ========================================================= */
+
+function obtenerTablasClausura() {
+
+  const tablas = {};
+
+  for (
+    const zona
+    of Object.keys(datosLiga.zonas)
+  ) {
+
+    const tabla =
+      crearTablaInicialZona(zona);
+
+
+    for (
+      const partido
+      of datosLiga.partidos
+    ) {
+
+      if (!partido.jugado) {
+        continue;
+      }
+
+
+      let pertenece =
+        partido.zona === zona;
+
+
+      if (
+        partido.interzonal &&
+        partido.zonas.includes(zona)
+      ) {
+
+        pertenece = true;
+
+      }
+
+
+      if (!pertenece) {
+        continue;
+      }
+
+
+      actualizarEquipoTabla(
+        tabla,
+        partido.local,
+        partido.golesLocal,
+        partido.golesVisitante
+      );
+
+
+      actualizarEquipoTabla(
+        tabla,
+        partido.visitante,
+        partido.golesVisitante,
+        partido.golesLocal
+      );
+
+    }
+
+
+    tablas[zona] =
+      Object.values(tabla)
+        .sort(compararEquipos);
+
+  }
+
+
+  return tablas;
+}
+
+
+/* =========================================================
    TABLA ANUAL
-   =========================================================
-
-   IMPORTANTE:
-
-   La tablaAnualBase ya contiene Apertura + Clausura
-   hasta Fecha 4.
-
-   Por eso solamente agregamos resultados de Fecha 5
-   en adelante.
-
-   Esto evita duplicar las primeras cuatro fechas.
    ========================================================= */
 
 function copiarTablaAnualBase() {
 
   const copia = {};
 
-  for (const equipo in tablaAnualBase) {
+  for (
+    const equipo
+    in tablaAnualBase
+  ) {
 
     copia[equipo] = {
+
       equipo: equipo,
 
-      pts: tablaAnualBase[equipo].pts,
-      pj: tablaAnualBase[equipo].pj,
+      pts:
+        tablaAnualBase[equipo].pts,
 
-      pg: tablaAnualBase[equipo].pg,
-      pe: tablaAnualBase[equipo].pe,
-      pp: tablaAnualBase[equipo].pp,
+      pj:
+        tablaAnualBase[equipo].pj,
 
-      gf: tablaAnualBase[equipo].gf,
-      gc: tablaAnualBase[equipo].gc,
+      pg:
+        tablaAnualBase[equipo].pg,
+
+      pe:
+        tablaAnualBase[equipo].pe,
+
+      pp:
+        tablaAnualBase[equipo].pp,
+
+      gf:
+        tablaAnualBase[equipo].gf,
+
+      gc:
+        tablaAnualBase[equipo].gc,
 
       dg:
         tablaAnualBase[equipo].gf -
@@ -2145,9 +2189,11 @@ function actualizarTablaAnualConResultado(
   const visitante =
     tabla[resultado.visitante];
 
+
   if (!local || !visitante) {
+
     console.warn(
-      "Equipo no encontrado en tabla anual:",
+      "EQUIPO NO ENCONTRADO EN TABLA ANUAL:",
       resultado
     );
 
@@ -2155,22 +2201,23 @@ function actualizarTablaAnualConResultado(
   }
 
 
-  /* PARTIDOS */
-
   local.pj++;
   visitante.pj++;
 
 
-  /* GOLES */
+  local.gf +=
+    resultado.golesLocal;
 
-  local.gf += resultado.golesLocal;
-  local.gc += resultado.golesVisitante;
-
-  visitante.gf += resultado.golesVisitante;
-  visitante.gc += resultado.golesLocal;
+  local.gc +=
+    resultado.golesVisitante;
 
 
-  /* RESULTADO */
+  visitante.gf +=
+    resultado.golesVisitante;
+
+  visitante.gc +=
+    resultado.golesLocal;
+
 
   if (
     resultado.golesLocal >
@@ -2199,10 +2246,9 @@ function actualizarTablaAnualConResultado(
 
     local.pts++;
     visitante.pts++;
+
   }
 
-
-  /* DIFERENCIA */
 
   local.dg =
     local.gf -
@@ -2214,10 +2260,6 @@ function actualizarTablaAnualConResultado(
 }
 
 
-/* =========================================================
-   GENERAR TABLA ANUAL ACTUAL
-   ========================================================= */
-
 function generarTablaAnual() {
 
   const tabla =
@@ -2225,8 +2267,10 @@ function generarTablaAnual() {
 
 
   /*
-   * Solamente se agregan resultados posteriores
-   * a la Fecha 4.
+   * La tabla base ya incluye Apertura
+   * + Clausura hasta Fecha 4.
+   *
+   * Por eso solamente agregamos Fecha 5.
    */
 
   const resultadosPosteriores =
@@ -2249,17 +2293,10 @@ function generarTablaAnual() {
   }
 
 
-  /* Orden oficial de la tabla */
-
   const lista =
-    Object.values(tabla).sort(
-      compararEquipos
-    );
+    Object.values(tabla)
+      .sort(compararEquipos);
 
-
-  /*
-   * Los cuatro últimos equipos.
-   */
 
   lista.forEach(
     (equipo, indice) => {
@@ -2268,7 +2305,8 @@ function generarTablaAnual() {
         indice + 1;
 
       equipo.zonaDescenso =
-        indice >= lista.length - 4;
+        indice >=
+        lista.length - 4;
 
     }
   );
@@ -2279,7 +2317,7 @@ function generarTablaAnual() {
 
 
 /* =========================================================
-   BUSCAR EQUIPO EN TABLA ANUAL
+   CONSULTAS TABLA ANUAL
    ========================================================= */
 
 function obtenerEquipoTablaAnual(
@@ -2293,17 +2331,12 @@ function obtenerEquipoTablaAnual(
 }
 
 
-/* =========================================================
-   OBTENER LOS CUATRO ÚLTIMOS
-   ========================================================= */
-
 function obtenerZonaDescensoAnual() {
 
-  return datosLiga.tablaAnual
-    .filter(
-      equipo =>
-        equipo.zonaDescenso
-    );
+  return datosLiga.tablaAnual.filter(
+    equipo =>
+      equipo.zonaDescenso
+  );
 
 }
 
@@ -2315,10 +2348,6 @@ function obtenerZonaDescensoAnual() {
 const resultadosPlayoff = [];
 
 
-/* =========================================================
-   RANKING DE CLASIFICACIÓN AL PLAY-OFF
-   ========================================================= */
-
 function generarClasificacionPlayoff() {
 
   const tablas =
@@ -2326,56 +2355,56 @@ function generarClasificacionPlayoff() {
 
   const clasificados = [];
 
-  for (const zona of Object.keys(tablas)) {
+
+  for (
+    const zona
+    of Object.keys(tablas)
+  ) {
 
     const tabla =
       tablas[zona];
+
 
     if (!tabla.length) {
       continue;
     }
 
 
-    /*
-     * Primero de cada zona:
-     * clasificación directa a segunda ronda.
-     */
-
     const ganador =
       tabla[0];
 
+
     clasificados.push({
 
-      equipo: ganador.equipo,
+      equipo:
+        ganador.equipo,
 
-      zona: zona,
+      zona:
+        zona,
 
       posicionZona: 1,
 
-      pts: ganador.pts,
+      pts:
+        ganador.pts,
 
-      dg: ganador.dg,
+      dg:
+        ganador.dg,
 
-      gf: ganador.gf,
+      gf:
+        ganador.gf,
 
-      gc: ganador.gc,
+      gc:
+        ganador.gc,
 
-      ronda: "segunda"
+      ronda:
+        "segunda"
 
     });
 
 
-    /*
-     * Puestos 2 al 5:
-     * primera ronda.
-     */
-
     for (
       let i = 1;
-      i < Math.min(
-        tabla.length,
-        5
-      );
+      i < Math.min(tabla.length, 5);
       i++
     ) {
 
@@ -2384,7 +2413,8 @@ function generarClasificacionPlayoff() {
         equipo:
           tabla[i].equipo,
 
-        zona: zona,
+        zona:
+          zona,
 
         posicionZona:
           i + 1,
@@ -2401,52 +2431,12 @@ function generarClasificacionPlayoff() {
         gc:
           tabla[i].gc,
 
-        ronda: "primera"
+        ronda:
+          "primera"
 
       });
 
     }
-
-  }
-
-
-  /*
-   * Dos mejores quintos.
-   */
-
-  const quintos =
-    clasificados
-      .filter(
-        equipo =>
-          equipo.posicionZona === 5
-      )
-      .sort(
-        compararEquipos
-      );
-
-
-  for (
-    const quinto
-    of quintos.slice(0, 2)
-  ) {
-
-    quinto.ronda =
-      "primera";
-
-  }
-
-
-  /*
-   * Los otros quintos quedan fuera.
-   */
-
-  for (
-    const quinto
-    of quintos.slice(2)
-  ) {
-
-    quinto.ronda =
-      "eliminado";
 
   }
 
@@ -2456,85 +2446,7 @@ function generarClasificacionPlayoff() {
 
 
 /* =========================================================
-   CREAR PRIMERA RONDA
-   ========================================================= */
-
-function crearLlavesPrimeraRonda() {
-
-  const clasificacion =
-    generarClasificacionPlayoff()
-      .filter(
-        equipo =>
-          equipo.ronda === "primera"
-      );
-
-
-  const ordenados =
-    clasificacion.sort(
-      compararEquipos
-    );
-
-
-  /*
-   * Se ordenan los 20 equipos:
-   *
-   * 7 vs 26
-   * 8 vs 25
-   * ...
-   * 16 vs 17
-   *
-   * El número de seed se conserva.
-   */
-
-  const llaves = [];
-
-  for (
-    let i = 0;
-    i < ordenados.length / 2;
-    i++
-  ) {
-
-    const local =
-      ordenados[i];
-
-    const visitante =
-      ordenados[
-        ordenados.length - 1 - i
-      ];
-
-
-    llaves.push({
-
-      ronda: "Primera ronda",
-
-      seedLocal:
-        i + 7,
-
-      seedVisitante:
-        ordenados.length - i + 6,
-
-      local:
-        local.equipo,
-
-      visitante:
-        visitante.equipo,
-
-      ganador:
-        obtenerGanadorPlayoff(
-          local.equipo,
-          visitante.equipo
-        )
-
-    });
-
-  }
-
-  return llaves;
-}
-
-
-/* =========================================================
-   OBTENER GANADOR DE UNA LLAVE
+   GANADOR PLAY-OFF
    ========================================================= */
 
 function obtenerGanadorPlayoff(
@@ -2575,12 +2487,6 @@ function obtenerGanadorPlayoff(
   }
 
 
-  /*
-   * Si termina empatado,
-   * se puede completar posteriormente
-   * con definición por penales.
-   */
-
   if (
     resultado.penalesLocal !== undefined &&
     resultado.penalesVisitante !== undefined
@@ -2590,20 +2496,90 @@ function obtenerGanadorPlayoff(
       resultado.penalesLocal >
       resultado.penalesVisitante
     ) {
+
       return local;
+
     }
+
 
     if (
       resultado.penalesVisitante >
       resultado.penalesLocal
     ) {
+
       return visitante;
+
     }
 
   }
 
 
   return null;
+}
+
+
+/* =========================================================
+   PRIMERA RONDA PLAY-OFF
+   ========================================================= */
+
+function crearLlavesPrimeraRonda() {
+
+  const ordenados =
+    generarClasificacionPlayoff()
+      .filter(
+        equipo =>
+          equipo.ronda === "primera"
+      )
+      .sort(compararEquipos);
+
+
+  const llaves = [];
+
+
+  for (
+    let i = 0;
+    i < ordenados.length / 2;
+    i++
+  ) {
+
+    const local =
+      ordenados[i];
+
+    const visitante =
+      ordenados[
+        ordenados.length - 1 - i
+      ];
+
+
+    llaves.push({
+
+      ronda:
+        "Primera ronda",
+
+      seedLocal:
+        i + 7,
+
+      seedVisitante:
+        ordenados.length - i + 6,
+
+      local:
+        local.equipo,
+
+      visitante:
+        visitante.equipo,
+
+      ganador:
+        obtenerGanadorPlayoff(
+          local.equipo,
+          visitante.equipo
+        )
+
+    });
+
+  }
+
+
+  return llaves;
 }
 
 
@@ -2636,31 +2612,24 @@ function crearLlavesSegundaRonda() {
         equipo =>
           equipo.posicionZona === 1
       )
-      .sort(
-        compararEquipos
-      );
+      .sort(compararEquipos);
 
 
   const equipos =
     [
       ...primeros,
+
       ...ganadoresPrimera.map(
-        nombre => {
-
-          const original =
-            clasificacion.find(
-              equipo =>
-                equipo.equipo === nombre
-            );
-
-          return original;
-        }
+        nombre =>
+          clasificacion.find(
+            equipo =>
+              equipo.equipo === nombre
+          )
       )
+
     ]
-    .filter(Boolean)
-    .sort(
-      compararEquipos
-    );
+      .filter(Boolean)
+      .sort(compararEquipos);
 
 
   const llaves = [];
@@ -2683,7 +2652,8 @@ function crearLlavesSegundaRonda() {
 
     llaves.push({
 
-      ronda: "Segunda ronda",
+      ronda:
+        "Segunda ronda",
 
       local:
         mejor.equipo,
@@ -2717,21 +2687,15 @@ function crearLlavesSiguienteRonda(
   const ordenados =
     equipos
       .filter(Boolean)
-      .map(nombre => {
-
-        const equipo =
+      .map(
+        nombre =>
           datosLiga.tablaAnual.find(
-            e =>
-              e.equipo === nombre
-          );
-
-        return equipo;
-
-      })
+            equipo =>
+              equipo.equipo === nombre
+          )
+      )
       .filter(Boolean)
-      .sort(
-        compararEquipos
-      );
+      .sort(compararEquipos);
 
 
   const llaves = [];
@@ -2776,31 +2740,21 @@ function crearLlavesSiguienteRonda(
 
 
 /* =========================================================
-   OBTENER INFORMACIÓN COMPLETA DE PLAY-OFF
+   INFORMACIÓN COMPLETA PLAY-OFF
    ========================================================= */
 
 function obtenerPlayoffs() {
 
-  const clasificacion =
-    generarClasificacionPlayoff();
-
-  const primeraRonda =
-    crearLlavesPrimeraRonda();
-
-  const segundaRonda =
-    crearLlavesSegundaRonda();
-
-
   return {
 
     clasificacion:
-      clasificacion,
+      generarClasificacionPlayoff(),
 
     primeraRonda:
-      primeraRonda,
+      crearLlavesPrimeraRonda(),
 
     segundaRonda:
-      segundaRonda,
+      crearLlavesSegundaRonda(),
 
     resultados:
       resultadosPlayoff
@@ -2810,32 +2764,7 @@ function obtenerPlayoffs() {
 
 
 /* =========================================================
-   INICIALIZACIÓN
-   ========================================================= */
-
-/*
- * 1. Generamos todos los partidos del Clausura.
- * 2. Aplicamos los resultados conocidos.
- * 3. Generamos la tabla anual actual.
- */
-
-datosLiga.partidos =
-  generarFixtureCompleto();
-
-datosLiga.partidos =
-  aplicarResultados(
-    datosLiga.partidos
-  );
-
-datosLiga.tablasClausura =
-  obtenerTablasClausura();
-
-datosLiga.tablaAnual =
-  generarTablaAnual();
-
-
-/* =========================================================
-   FUNCIONES PÚBLICAS ÚTILES
+   FUNCIONES PÚBLICAS
    ========================================================= */
 
 function obtenerTablaZona(zona) {
@@ -2855,9 +2784,7 @@ function obtenerPartidosFecha(fecha) {
 }
 
 
-function obtenerPartidosEquipo(
-  equipo
-) {
+function obtenerPartidosEquipo(equipo) {
 
   return datosLiga.partidos.filter(
     partido =>
@@ -2888,10 +2815,6 @@ function obtenerPartidosPendientes() {
 }
 
 
-/* =========================================================
-   COMPATIBILIDAD
-   ========================================================= */
-
 function calcularPuntos(equipo) {
 
   return (
@@ -2910,6 +2833,7 @@ function obtenerPosicionEquipo(
     datosLiga.tablasClausura[zona] ||
     [];
 
+
   return (
     tabla.findIndex(
       e =>
@@ -2921,5 +2845,120 @@ function obtenerPosicionEquipo(
 
 
 /* =========================================================
-   FIN DE DATOS
+   VALIDACIÓN DE DATOS
    ========================================================= */
+
+function validarDatos() {
+
+  const encontrados = [];
+  const noEncontrados = [];
+
+  const vistos =
+    new Set();
+
+
+  for (
+    const resultado
+    of resultadosClausura
+  ) {
+
+    const clave =
+      resultado.fecha +
+      "|" +
+      resultado.local +
+      "|" +
+      resultado.visitante;
+
+
+    if (
+      vistos.has(clave)
+    ) {
+
+      console.warn(
+        "RESULTADO DUPLICADO:",
+        resultado
+      );
+
+    }
+
+
+    vistos.add(clave);
+
+
+    const partido =
+      datosLiga.partidos.find(
+        p =>
+          p.fecha === resultado.fecha &&
+          p.local === resultado.local &&
+          p.visitante === resultado.visitante
+      );
+
+
+    if (partido) {
+
+      encontrados.push(
+        resultado
+      );
+
+    } else {
+
+      noEncontrados.push(
+        resultado
+      );
+
+    }
+
+  }
+
+
+  console.info(
+    "Resultados cargados correctamente:",
+    encontrados.length
+  );
+
+
+  if (
+    noEncontrados.length
+  ) {
+
+    console.warn(
+      "Resultados sin partido en fixture:",
+      noEncontrados
+    );
+
+  }
+
+
+  return {
+
+    encontrados:
+      encontrados,
+
+    noEncontrados:
+      noEncontrados
+
+  };
+
+}
+
+
+/* =========================================================
+   INICIALIZACIÓN
+   ========================================================= */
+
+datosLiga.partidos =
+  generarFixtureCompleto();
+
+
+datosLiga.partidos =
+  aplicarResultados(
+    datosLiga.partidos
+  );
+
+
+datosLiga.tablasClausura =
+  obtenerTablasClausura();
+
+
+datosLiga.tablaAnual =
+  generarTablaAnual();
