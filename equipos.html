@@ -1,652 +1,391 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
 
-  <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
-
-  <title>Equipos | Liga Tucson</title>
-
-
-  <style>
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-
-      background: #eef3f9;
-
-      color: #16324f;
-    }
-
-
-    /* =========================
-       ENCABEZADO
-    ========================= */
-
-    .site-header {
-
-      position: sticky;
-
-      top: 0;
-
-      z-index: 1000;
-
-      transition:
-        transform 0.35s ease,
-        opacity 0.35s ease;
-
-    }
-
-
-    .site-header.header-hidden {
-
-      transform: translateY(-100%);
-
-      opacity: 0;
-
-      pointer-events: none;
-
-    }
-
-
-    .header-top {
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-      gap: 18px;
-
-      padding: 28px 20px 20px;
-
-      background:
-        linear-gradient(
-          135deg,
-          #062b52,
-          #1269a8
-        );
-
-    }
-
-
-    .header-logo {
-
-      width: 82px;
-
-      height: 82px;
-
-      object-fit: contain;
-
-      flex-shrink: 0;
-
-    }
-
-
-    .header-title {
-
-      text-align: left;
-
-    }
-
-
-    .header-title h1 {
-
-      color: white;
-
-      font-size: 32px;
-
-      font-weight: 800;
-
-      letter-spacing: 1px;
-
-    }
-
-
-    .header-title p {
-
-      margin-top: 5px;
-
-      color: #d9e9f8;
-
-      font-size: 17px;
-
-    }
-
-
-    /* =========================
-       MENÚ
-    ========================= */
-
-    .main-nav {
-
-      display: flex;
-
-      justify-content: center;
-
-      align-items: center;
-
-      gap: 30px;
-
-      padding: 18px 15px;
-
-      background:
-        linear-gradient(
-          135deg,
-          #062b52,
-          #1269a8
-        );
-
-      flex-wrap: wrap;
-
-    }
-
-
-    .main-nav a {
-
-      color: white;
-
-      text-decoration: none;
-
-      font-size: 18px;
-
-      font-weight: 700;
-
-      transition: 0.2s;
-
-    }
-
-
-    .main-nav a:hover {
-
-      color: #55b8ff;
-
-    }
-
-
-    .main-nav a.active {
-
-      color: #55b8ff;
-
-    }
-
-
-    /* =========================
-       CONTENEDOR
-    ========================= */
-
-    .container {
-
-      max-width: 1200px;
-
-      margin: 0 auto;
-
-      padding: 45px 20px 70px;
-
-    }
-
-
-    .page-title {
-
-      text-align: center;
-
-      color: #0b4f82;
-
-      font-size: 42px;
-
-      margin-bottom: 10px;
-
-    }
-
-
-    .page-subtitle {
-
-      text-align: center;
-
-      color: #6c7b88;
-
-      font-size: 18px;
-
-      margin-bottom: 40px;
-
-    }
-
-
-    /* =========================
-       ZONA
-    ========================= */
-
-    .zone-section {
-
-      margin-bottom: 45px;
-
-    }
-
-
-    .zone-header {
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: space-between;
-
-      gap: 15px;
-
-      margin-bottom: 20px;
-
-      padding: 20px 24px;
-
-      border-radius: 20px;
-
-      background:
-        linear-gradient(
-          135deg,
-          #0a3159,
-          #1269a8
-        );
-
-      color: white;
-
-    }
-
-
-    .zone-header h2 {
-
-      font-size: 27px;
-
-    }
-
-
-    .zone-header span {
-
-      color: #dcecf9;
-
-      font-size: 14px;
-
-    }
-
-
-    /* =========================
-       EQUIPOS
-    ========================= */
-
-    .teams-grid {
-
-      display: grid;
-
-      grid-template-columns:
-        repeat(4, 1fr);
-
-      gap: 18px;
-
-    }
-
-
-    .team-card {
-
-      display: flex;
-
-      align-items: center;
-
-      gap: 15px;
-
-      min-height: 105px;
-
-      padding: 18px;
-
-      background: white;
-
-      border-radius: 20px;
-
-      border: 1px solid #e3ebf2;
-
-      box-shadow:
-        0 7px 22px rgba(0,0,0,0.07);
-
-      color: #16324f;
-
-      text-decoration: none;
-
-      transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease,
-        border-color 0.2s ease;
-
-    }
-
-
-    .team-card:hover {
-
-      transform: translateY(-4px);
-
-      border-color: #65afe0;
-
-      box-shadow:
-        0 12px 28px rgba(0,0,0,0.12);
-
-    }
-
-
-    .team-crest {
-
-      width: 65px;
-
-      height: 65px;
-
-      object-fit: contain;
-
-      flex-shrink: 0;
-
-    }
-
-
-    .team-info {
-
-      min-width: 0;
-
-    }
-
-
-    .team-name {
-
-      color: #0b4f82;
-
-      font-size: 17px;
-
-      font-weight: 800;
-
-      line-height: 1.25;
-
-    }
-
-
-    .team-zone {
-
-      margin-top: 6px;
-
-      color: #7a8995;
-
-      font-size: 13px;
-
-    }
-
-
-    /* =========================
-       PLAY-OFF
-    ========================= */
-
-    .playoff-card {
-
-      margin-top: 15px;
-
-      margin-bottom: 45px;
-
-      padding: 30px;
-
-      border-radius: 24px;
-
-      background:
-        linear-gradient(
-          135deg,
-          #082d50,
-          #1269a8
-        );
-
-      color: white;
-
-      box-shadow:
-        0 10px 30px rgba(0,0,0,0.12);
-
-      display: flex;
-
-      justify-content: space-between;
-
-      align-items: center;
-
-      gap: 25px;
-
-    }
-
-
-    .playoff-content h2 {
-
-      font-size: 30px;
-
-      margin-bottom: 10px;
-
-    }
-
-
-    .playoff-content p {
-
-      color: #dcecf9;
-
-      line-height: 1.5;
-
-      font-size: 16px;
-
-    }
-
-
-    .playoff-button {
-
-      display: inline-block;
-
-      flex-shrink: 0;
-
-      padding: 15px 24px;
-
-      border-radius: 15px;
-
-      background: white;
-
-      color: #0b4f82;
-
-      text-decoration: none;
-
-      font-weight: 800;
-
-      transition: 0.2s;
-
-    }
-
-
-    .playoff-button:hover {
-
-      transform: translateY(-2px);
-
-      background: #e9f5ff;
-
-    }
-
-
-    /* =========================
-       FOOTER
-    ========================= */
-
-    footer {
-
-      padding: 30px 20px;
-
-      text-align: center;
-
-      background: #082d50;
-
-      color: #d8e6f3;
-
-    }
-
-
-    footer strong {
-
-      color: white;
-
-    }
-
-
-    /* =========================
-       TABLET
-    ========================= */
-
-    @media (max-width: 1000px) {
-
-      .teams-grid {
-
-        grid-template-columns:
-          repeat(3, 1fr);
-
-      }
-
-    }
-
-
-    /* =========================
-       CELULAR
-    ========================= */
-
-    @media (max-width: 700px) {
-
-      .header-top {
-
-        padding: 20px 15px 16px;
-
-        gap: 12px;
-
-      }
-
-
-      .header-logo {
-
-        width: 68px;
-
-        height: 68px;
-
-      }
-
-
-      .header-title h1 {
-
-        font-size: 25px;
-
-      }
-
-
-      .header-title p {
-
-        font-size: 14px;
-
-      }
-
-
-      .main-nav {
-
-        gap: 20px;
-
-        padding: 15px 10px;
-
-      }
-
-
-      .main-nav a {
-
-        font-size: 16px;
-
-      }
-
-
-      .container {
-
-        padding: 35px 15px 60px;
-
-      }
-
-
-      .page-title {
-
-        font-size: 34px;
-
-      }
-
-
-      .page-subtitle {
-
-        font-size: 16px;
-
-      }
-
-
-      .zone-header {
-
-        align-items: flex-start;
-
-        flex-direction: column;
-
-      }
-
-
-      .zone-header h2 {
-
-        font-size: 24px;
-
-      }
-
-
-      .teams-grid {
-
-        grid-template-columns: 1fr;
-
-      }
-
-
-      .team-card {
-
-        min-height: 95px;
-
-      }
-
-
-      .team-crest {
-
-        width: 60px;
-
-        height: 60px;
-
-      }
-
-
-      .playoff-card {
-
-        flex-direction: column;
-
-        align-items: flex-start;
-
-      }
-
-
-      .playoff-button {
-
-        width: 100%;
-
-        text-align: center;
-
-      }
-
-    }
-
-  </style>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Equipos | Liga Tucson</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #eef3f9;
+            color: #16324f;
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition:
+                transform 0.35s ease,
+                opacity 0.35s ease;
+        }
+
+        .site-header.header-hidden {
+            transform: translateY(-100%);
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .header-top {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px 20px 15px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #062b52,
+                    #1269a8
+                );
+        }
+
+        .header-logo {
+            width: 68px;
+            height: 68px;
+            object-fit: contain;
+        }
+
+        .header-title {
+            display: none;
+        }
+
+        /* =========================
+           MENÚ
+        ========================= */
+
+        .main-nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 24px;
+            padding: 15px 12px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #062b52,
+                    #1269a8
+                );
+
+            flex-wrap: wrap;
+        }
+
+        .main-nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 700;
+            transition: 0.2s;
+        }
+
+        .main-nav a:hover,
+        .main-nav a.active {
+            color: #55b8ff;
+        }
+
+        /* =========================
+           CONTENEDOR
+        ========================= */
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 45px 20px 70px;
+        }
+
+        .page-title {
+            text-align: center;
+            color: #0b4f82;
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        .page-subtitle {
+            text-align: center;
+            color: #6c7b88;
+            font-size: 18px;
+            margin-bottom: 40px;
+        }
+
+        /* =========================
+           ZONAS
+        ========================= */
+
+        .zone-section {
+            margin-bottom: 45px;
+        }
+
+        .zone-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding: 20px 24px;
+            border-radius: 20px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #0a3159,
+                    #1269a8
+                );
+
+            color: white;
+        }
+
+        .zone-header h2 {
+            font-size: 27px;
+        }
+
+        .zone-header span {
+            color: #dcecf9;
+            font-size: 14px;
+        }
+
+        /* =========================
+           EQUIPOS
+        ========================= */
+
+        .teams-grid {
+            display: grid;
+            grid-template-columns:
+                repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .team-card {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            min-height: 105px;
+            padding: 18px;
+            background: white;
+            border-radius: 20px;
+            border: 1px solid #e3ebf2;
+
+            box-shadow:
+                0 7px 22px rgba(0,0,0,0.07);
+
+            color: #16324f;
+            text-decoration: none;
+
+            transition:
+                transform 0.2s ease,
+                box-shadow 0.2s ease,
+                border-color 0.2s ease;
+        }
+
+        .team-card:hover {
+            transform: translateY(-4px);
+            border-color: #65afe0;
+
+            box-shadow:
+                0 12px 28px rgba(0,0,0,0.12);
+        }
+
+        .team-crest {
+            width: 65px;
+            height: 65px;
+            object-fit: contain;
+            flex-shrink: 0;
+        }
+
+        .team-info {
+            min-width: 0;
+        }
+
+        .team-name {
+            color: #0b4f82;
+            font-size: 17px;
+            font-weight: 800;
+            line-height: 1.25;
+        }
+
+        .team-zone {
+            margin-top: 6px;
+            color: #7a8995;
+            font-size: 13px;
+        }
+
+        /* =========================
+           PLAY-OFF
+        ========================= */
+
+        .playoff-card {
+            margin-top: 15px;
+            margin-bottom: 45px;
+            padding: 30px;
+            border-radius: 24px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #082d50,
+                    #1269a8
+                );
+
+            color: white;
+
+            box-shadow:
+                0 10px 30px rgba(0,0,0,0.12);
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .playoff-content h2 {
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        .playoff-content p {
+            color: #dcecf9;
+            line-height: 1.5;
+            font-size: 16px;
+        }
+
+        .playoff-button {
+            display: inline-block;
+            flex-shrink: 0;
+            padding: 15px 24px;
+            border-radius: 15px;
+
+            background: white;
+            color: #0b4f82;
+
+            text-decoration: none;
+            font-weight: 800;
+
+            transition: 0.2s;
+        }
+
+        .playoff-button:hover {
+            transform: translateY(-2px);
+            background: #e9f5ff;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            padding: 30px 20px;
+            text-align: center;
+            background: #082d50;
+            color: #d8e6f3;
+        }
+
+        footer strong {
+            color: white;
+        }
+
+        /* =========================
+           TABLET
+        ========================= */
+
+        @media (max-width: 1000px) {
+
+            .teams-grid {
+                grid-template-columns:
+                    repeat(3, 1fr);
+            }
+
+        }
+
+        /* =========================
+           CELULAR
+        ========================= */
+
+        @media (max-width: 700px) {
+
+            .header-top {
+                padding: 18px 15px 12px;
+            }
+
+            .header-logo {
+                width: 60px;
+                height: 60px;
+            }
+
+            .main-nav {
+                gap: 18px;
+                padding: 14px 10px;
+            }
+
+            .main-nav a {
+                font-size: 15px;
+            }
+
+            .container {
+                padding: 35px 15px 60px;
+            }
+
+            .page-title {
+                font-size: 34px;
+            }
+
+            .page-subtitle {
+                font-size: 16px;
+            }
+
+            .zone-header {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .zone-header h2 {
+                font-size: 24px;
+            }
+
+            .teams-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .team-card {
+                min-height: 95px;
+            }
+
+            .team-crest {
+                width: 60px;
+                height: 60px;
+            }
+
+            .playoff-card {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .playoff-button {
+                width: 100%;
+                text-align: center;
+            }
+
+        }
+
+    </style>
 
 </head>
 
@@ -654,629 +393,498 @@
 <body>
 
 
-  <!-- =========================
-       ENCABEZADO
-  ========================= -->
-
-  <header
+<header
     class="site-header"
     id="siteHeader"
-  >
-
+>
 
     <div class="header-top">
 
-
-      <img
-        src="FDDF80B7-4151-4091-AB6F-C5DF10F36391.png"
-        alt="Liga Tucson"
-        class="header-logo"
-      >
-
-
-      <div class="header-title">
-
-        <h1>
-          LIGA TUCSON
-        </h1>
-
-        <p>
-          Liga Tucumana de Fútbol
-        </p>
-
-      </div>
-
+        <img
+            src="FDDF80B7-4151-4091-AB6F-C5DF10F36391.png"
+            alt="Liga Tucson"
+            class="header-logo"
+        >
 
     </div>
 
 
-    <!-- =========================
-         MENÚ
-    ========================= -->
-
     <nav class="main-nav">
 
+        <a href="index.html">
+            Inicio
+        </a>
 
-      <a href="index.html">
-        Inicio
-      </a>
+        <a href="posiciones.html">
+            Posiciones
+        </a>
 
+        <a href="tabla-anual.html">
+            Tabla Anual
+        </a>
 
-      <a href="posiciones.html">
-        Posiciones
-      </a>
+        <a href="partidos.html">
+            Partidos
+        </a>
 
+        <a
+            href="equipos.html"
+            class="active"
+        >
+            Equipos
+        </a>
 
-      <a href="partidos.html">
-        Partidos
-      </a>
-
-
-      <a
-        href="equipos.html"
-        class="active"
-      >
-        Equipos
-      </a>
-
-
-      <a href="playoff.html">
-        🏆 Play-Off
-      </a>
-
+        <a href="playoff.html">
+            Play-Off
+        </a>
 
     </nav>
 
+</header>
 
-  </header>
 
-
-  <!-- =========================
-       CONTENIDO
-  ========================= -->
-
-  <main class="container">
-
+<main class="container">
 
     <h1 class="page-title">
-      Equipos
+        Equipos
     </h1>
 
-
     <p class="page-subtitle">
-      Primera División A · Clausura 2026
+        Primera División A · Clausura 2026
     </p>
 
-
-    <!-- =========================
-         ZONAS
-    ========================= -->
 
     <div id="zonasContainer"></div>
 
 
-    <!-- =========================
-         PLAY-OFF
-    ========================= -->
-
     <section class="playoff-card">
 
+        <div class="playoff-content">
 
-      <div class="playoff-content">
+            <h2>
+                Play-Off
+            </h2>
 
-        <h2>
-          🏆 Play-Off
-        </h2>
+            <p>
+                Conocé los equipos clasificados
+                y todos los cruces del camino
+                hacia la final.
+            </p>
 
-
-        <p>
-          Conocé los equipos clasificados
-          y todos los cruces del camino
-          hacia la final.
-        </p>
-
-      </div>
+        </div>
 
 
-      <a
-        href="playoff.html"
-        class="playoff-button"
-      >
-        Ver Play-Off →
-      </a>
-
+        <a
+            href="playoff.html"
+            class="playoff-button"
+        >
+            Ver Play-Off →
+        </a>
 
     </section>
 
+</main>
 
-  </main>
 
-
-  <!-- =========================
-       FOOTER
-  ========================= -->
-
-  <footer>
+<footer>
 
     <strong>
-      Liga Tucson
+        Liga Tucson
     </strong>
 
     <br>
 
     Liga Tucumana de Fútbol · Clausura 2026
 
-  </footer>
+</footer>
 
 
-  <!-- =========================
-       DATOS
-  ========================= -->
-
-  <script src="datos.js"></script>
+<script src="datos.js?v=20260926"></script>
 
 
-  <script>
+<script>
 
+const escudos = {
 
-    /* =========================
-       ESCUDOS
-    ========================= */
-
-    const escudos = {
-
-
-      /* ZONA A */
-
-      "Talleres":
+    "Talleres":
         "IMG_1621.png",
 
-      "Juventud Unida":
+    "Juventud Unida":
         "IMG_1622.png",
 
-      "Estación Experimental":
+    "Estación Experimental":
         "IMG_1623.png",
 
-      "Central Norte":
+    "Central Norte":
         "21B48DFD-98C8-4EDD-B633-35738F9B089D.png",
 
-      "Villa Mitre":
+    "Villa Mitre":
         "IMG_1625.jpeg",
 
-      "All Boys":
+    "All Boys":
         "IMG_1627.png",
 
-      "San José":
+    "San José":
         "IMG_1628.png",
 
-
-      /* ZONA B */
-
-      "Argentinos del Norte":
+    "Argentinos del Norte":
         "IMG_1629.png",
 
-      "San Martín":
+    "San Martín":
         "IMG_1630.png",
 
-      "San Antonio":
+    "San Antonio":
         "IMG_1631.jpeg",
 
-      "Atlético Tucumán":
+    "Atlético Tucumán":
         "IMG_1632.jpeg",
 
-      "Sportivo Guzmán":
+    "Sportivo Guzmán":
         "IMG_1633.png",
 
-      "Amalia":
+    "Amalia":
         "IMG_1634.png",
 
-      "Tucumán Central":
+    "Tucumán Central":
         "IMG_1635.png",
 
-
-      /* ZONA C */
-
-      "Garmendia":
+    "Garmendia":
         "IMG_1637.jpeg",
 
-      "Atlético Concepción":
+    "Atlético Concepción":
         "IMG_1638.png",
 
-      "San Juan":
+    "San Juan":
         "9D389031-3751-4B06-A800-AE5B7A426605.png",
 
-      "San Lorenzo (DG)":
+    "San Lorenzo (DG)":
         "IMG_1646.png",
 
-      "Unión del Norte":
+    "Unión del Norte":
         "IMG_1641.jpeg",
 
-      "Lastenia":
+    "Lastenia":
         "IMG_1645.png",
 
-      "Cruz Alta":
+    "Cruz Alta":
         "IMG_1644.png",
 
-
-      /* ZONA D */
-
-      "Bella Vista":
+    "Bella Vista":
         "IMG_1651.png",
 
-      "San Fernando":
+    "San Fernando":
         "IMG_1652.png",
 
-      "Almirante Brown":
+    "Almirante Brown":
         "IMG_1653.jpeg",
 
-      "Famaillá":
+    "Famaillá":
         "IMG_1654.png",
 
-      "Ateneo Parroquial Alderetes":
+    "Ateneo Parroquial Alderetes":
         "IMG_1655.png",
 
-      "Santa Lucía":
+    "Santa Lucía":
         "IMG_1656.jpeg",
 
-      "San Pablo":
+    "San Pablo":
         "IMG_1671.png",
 
-
-      /* ZONA E */
-
-      "Alto Verde":
+    "Alto Verde":
         "IMG_1657.png",
 
-      "Concepción FC":
+    "Concepción FC":
         "IMG_1658.png",
 
-      "Azucarera Argentina":
+    "Azucarera Argentina":
         "IMG_1659.png",
 
-      "Ñuñorco":
+    "Ñuñorco":
         "IMG_1660.png",
 
-      "Unión Simoca":
+    "Unión Simoca":
         "IMG_1661.jpeg",
 
-      "San Ramón":
+    "San Ramón":
         "IMG_1662.jpeg",
 
-      "Santa Rosa":
+    "Santa Rosa":
         "IMG_1663.png",
 
-      "La Providencia":
+    "La Providencia":
         "IMG_1664.jpeg",
 
-
-      /* ZONA F */
-
-      "Deportivo Aguilares":
+    "Deportivo Aguilares":
         "IMG_1665.png",
 
-      "San Lorenzo (SA)":
+    "San Lorenzo (SA)":
         "IMG_1666.webp",
 
-      "Jorge Newbery":
+    "Jorge Newbery":
         "IMG_1673.png",
 
-      "Graneros":
+    "Graneros":
         "IMG_1667.jpeg",
 
-      "Santa Ana":
+    "Santa Ana":
         "IMG_1668.png",
 
-      "Trinidad":
+    "Trinidad":
         "IMG_1669.png",
 
-      "Marapa":
+    "Marapa":
         "IMG_1670.jpeg",
 
-      "Llorens":
+    "Llorens":
         "IMG_1672.jpeg"
 
-    };
+};
 
 
-    /* =========================
-       CONTENEDOR
-    ========================= */
-
-    const zonasContainer =
-      document.getElementById(
+const zonasContainer =
+    document.getElementById(
         "zonasContainer"
-      );
+    );
 
 
-    /* =========================
-       CREAR EQUIPO
-    ========================= */
+function crearEquipo(
+    equipo,
+    zona
+) {
 
-    function crearEquipo(
-      equipo,
-      zona
-    ) {
-
-
-      const nombre =
+    const nombre =
         typeof equipo === "string"
-          ? equipo
-          : equipo.equipo;
+            ? equipo
+            : equipo.equipo;
 
-
-      const escudo =
+    const escudo =
         escudos[nombre] || "";
 
-
-      const url =
+    const url =
         "equipo.html?v=12&equipo=" +
         encodeURIComponent(nombre) +
         "&zona=" +
         encodeURIComponent(zona);
 
-
-      return `
+    return `
 
         <a
-          href="${url}"
-          class="team-card"
+            href="${url}"
+            class="team-card"
         >
 
+            ${
+                escudo
+                    ? `
+                        <img
+                            src="${escudo}"
+                            alt="${nombre}"
+                            class="team-crest"
+                            loading="lazy"
+                        >
+                    `
+                    : `
+                        <div
+                            class="team-crest"
+                            aria-hidden="true"
+                        ></div>
+                    `
+            }
 
-          ${
-            escudo
-              ? `
-                <img
-                  src="${escudo}"
-                  alt="${nombre}"
-                  class="team-crest"
-                  loading="lazy"
-                >
-              `
-              : `
-                <div
-                  class="team-crest"
-                  aria-hidden="true"
-                ></div>
-              `
-          }
+            <div class="team-info">
 
+                <div class="team-name">
+                    ${nombre}
+                </div>
 
-          <div class="team-info">
-
-
-            <div class="team-name">
-
-              ${nombre}
-
-            </div>
-
-
-            <div class="team-zone">
-
-              Zona ${zona}
-
-              · Ver equipo →
+                <div class="team-zone">
+                    Zona ${zona}
+                    · Ver equipo →
+                </div>
 
             </div>
-
-
-          </div>
-
 
         </a>
 
-      `;
+    `;
+
+}
+
+
+function mostrarZonas() {
+
+    if (
+        typeof datosLiga ===
+        "undefined" ||
+        !datosLiga.zonas
+    ) {
+
+        zonasContainer.innerHTML = `
+
+            <div
+                style="
+                    background:white;
+                    padding:30px;
+                    border-radius:20px;
+                    text-align:center;
+                "
+            >
+
+                No se pudieron cargar
+                los equipos.
+
+            </div>
+
+        `;
+
+        return;
 
     }
 
 
-    /* =========================
-       MOSTRAR ZONAS
-    ========================= */
-
-    function mostrarZonas() {
-
-
-      if (
-        typeof datosLiga ===
-        "undefined" ||
-        !datosLiga.zonas
-      ) {
-
-
-        zonasContainer.innerHTML = `
-
-          <div
-            style="
-              background:white;
-              padding:30px;
-              border-radius:20px;
-              text-align:center;
-            "
-          >
-
-            No se pudieron cargar
-            los equipos.
-
-          </div>
-
-        `;
-
-
-        return;
-
-      }
-
-
-      const ordenZonas = [
+    const ordenZonas = [
         "A",
         "B",
         "C",
         "D",
         "E",
         "F"
-      ];
+    ];
 
 
-      zonasContainer.innerHTML =
+    zonasContainer.innerHTML =
         ordenZonas
-          .map(
-            zona => {
+            .map(
+                zona => {
+
+                    const equipos =
+                        datosLiga.zonas[zona] ||
+                        [];
+
+                    return `
+
+                        <section
+                            class="zone-section"
+                        >
+
+                            <div
+                                class="zone-header"
+                            >
+
+                                <h2>
+                                    Zona ${zona}
+                                </h2>
+
+                                <span>
+
+                                    ${equipos.length}
+
+                                    ${
+                                        equipos.length === 1
+                                            ? "equipo"
+                                            : "equipos"
+                                    }
+
+                                </span>
+
+                            </div>
 
 
-              const equipos =
-                datosLiga.zonas[zona] ||
-                [];
+                            <div
+                                class="teams-grid"
+                            >
+
+                                ${
+                                    equipos
+                                        .map(
+                                            equipo =>
+                                                crearEquipo(
+                                                    equipo,
+                                                    zona
+                                                )
+                                        )
+                                        .join("")
+                                }
+
+                            </div>
+
+                        </section>
+
+                    `;
+
+                }
+            )
+            .join("");
+
+}
 
 
-              return `
-
-                <section
-                  class="zone-section"
-                >
+let ultimaPosicion =
+    window.scrollY;
 
 
-                  <div
-                    class="zone-header"
-                  >
-
-
-                    <h2>
-                      Zona ${zona}
-                    </h2>
-
-
-                    <span>
-
-                      ${equipos.length}
-
-                      ${
-                        equipos.length === 1
-                          ? "equipo"
-                          : "equipos"
-                      }
-
-                    </span>
-
-
-                  </div>
-
-
-                  <div
-                    class="teams-grid"
-                  >
-
-                    ${
-                      equipos
-                        .map(
-                          equipo =>
-                            crearEquipo(
-                              equipo,
-                              zona
-                            )
-                        )
-                        .join("")
-                    }
-
-                  </div>
-
-
-                </section>
-
-              `;
-
-            }
-          )
-          .join("");
-
-    }
-
-
-    /* =========================
-       HEADER AL SCROLL
-    ========================= */
-
-    let ultimaPosicion =
-      window.scrollY;
-
-
-    const header =
-      document.getElementById(
+const header =
+    document.getElementById(
         "siteHeader"
-      );
+    );
 
 
-    window.addEventListener(
-      "scroll",
-      function() {
-
+window.addEventListener(
+    "scroll",
+    function() {
 
         const posicionActual =
-          window.scrollY;
+            window.scrollY;
 
 
         if (
-          posicionActual <= 10
+            posicionActual <= 10
         ) {
 
-
-          header.classList.remove(
-            "header-hidden"
-          );
-
+            header.classList.remove(
+                "header-hidden"
+            );
 
         }
 
-
         else if (
-          posicionActual >
-          ultimaPosicion
+            posicionActual >
+            ultimaPosicion
         ) {
 
-
-          header.classList.add(
-            "header-hidden"
-          );
-
+            header.classList.add(
+                "header-hidden"
+            );
 
         }
 
-
         else if (
-          posicionActual <
-          ultimaPosicion
+            posicionActual <
+            ultimaPosicion
         ) {
 
-
-          header.classList.remove(
-            "header-hidden"
-          );
-
+            header.classList.remove(
+                "header-hidden"
+            );
 
         }
 
 
         ultimaPosicion =
-          posicionActual;
+            posicionActual;
 
-
-      },
-      {
+    },
+    {
         passive: true
-      }
-    );
+    }
+);
 
 
-    /* =========================
-       INICIAR
-    ========================= */
+mostrarZonas();
 
-    mostrarZonas();
-
-
-  </script>
+</script>
 
 
 </body>
+
 </html>
