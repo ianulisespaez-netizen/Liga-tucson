@@ -78,449 +78,449 @@ const datosLiga = {
 
 /* =========================================================
    TABLA ANUAL OFICIAL
-   SITUACIÓN AL FINAL DE LA FECHA 4
+   SITUACIÓN AL FINAL DE LA FECHA 5
    ========================================================= */
 
 const tablaAnualBase = {
 
   "Graneros": {
-    pts: 39,
-    pj: 18,
-    pg: 12,
+    pts: 42,
+    pj: 19,
+    pg: 13,
     pe: 3,
     pp: 3,
-    gf: 39,
-    gc: 10
+    gf: 41,
+    gc: 11
   },
 
   "Deportivo Aguilares": {
-    pts: 36,
-    pj: 18,
-    pg: 11,
+    pts: 39,
+    pj: 19,
+    pg: 12,
     pe: 3,
     pp: 4,
-    gf: 35,
+    gf: 36,
     gc: 16
   },
 
   "Concepción FC": {
     pts: 39,
-    pj: 18,
+    pj: 19,
     pg: 11,
     pe: 6,
-    pp: 1,
-    gf: 32,
-    gc: 17
+    pp: 2,
+    gf: 34,
+    gc: 18
+  },
+
+  "Estación Experimental": {
+    pts: 35,
+    pj: 18,
+    pg: 10,
+    pe: 5,
+    pp: 3,
+    gf: 29,
+    gc: 16
+  },
+
+  "Atlético Concepción": {
+    pts: 35,
+    pj: 19,
+    pg: 10,
+    pe: 5,
+    pp: 4,
+    gf: 31,
+    gc: 18
   },
 
   "Talleres": {
+    pts: 35,
+    pj: 19,
+    pg: 10,
+    pe: 5,
+    pp: 4,
+    gf: 27,
+    gc: 18
+  },
+
+  "Almirante Brown": {
     pts: 34,
-    pj: 18,
+    pj: 19,
     pg: 10,
     pe: 4,
-    pp: 4,
-    gf: 26,
-    gc: 17
+    pp: 5,
+    gf: 30,
+    gc: 16
   },
 
   "Ñuñorco": {
     pts: 33,
-    pj: 18,
+    pj: 19,
     pg: 10,
     pe: 3,
-    pp: 5,
-    gf: 33,
-    gc: 17
-  },
-
-  "Almirante Brown": {
-    pts: 33,
-    pj: 18,
-    pg: 10,
-    pe: 3,
-    pp: 5,
-    gf: 29,
-    gc: 15
+    pp: 6,
+    gf: 34,
+    gc: 19
   },
 
   "Jorge Newbery": {
     pts: 33,
-    pj: 18,
+    pj: 19,
     pg: 9,
     pe: 6,
-    pp: 3,
-    gf: 28,
-    gc: 14
-  },
-
-  "Ateneo Parroquial Alderetes": {
-    pts: 32,
-    pj: 18,
-    pg: 9,
-    pe: 5,
     pp: 4,
-    gf: 30,
-    gc: 18
-  },
-
-  "Atlético Concepción": {
-    pts: 34,
-    pj: 18,
-    pg: 10,
-    pe: 4,
-    pp: 4,
-    gf: 30,
-    gc: 17
-  },
-
-  "Estación Experimental": {
-    pts: 32,
-    pj: 17,
-    pg: 9,
-    pe: 5,
-    pp: 3,
     gf: 28,
-    gc: 16
+    gc: 15
   },
 
   "Garmendia": {
-    pts: 32,
-    pj: 18,
+    pts: 33,
+    pj: 19,
     pg: 9,
-    pe: 5,
+    pe: 6,
     pp: 4,
     gf: 20,
     gc: 11
   },
 
-  "Bella Vista": {
-    pts: 31,
-    pj: 18,
-    pg: 10,
-    pe: 1,
-    pp: 7,
-    gf: 34,
-    gc: 18
+  "San Fernando": {
+    pts: 33,
+    pj: 19,
+    pg: 11,
+    pe: 0,
+    pp: 8,
+    gf: 28,
+    gc: 25
   },
 
-  "Unión del Norte": {
-    pts: 30,
-    pj: 18,
-    pg: 7,
-    pe: 9,
-    pp: 2,
-    gf: 26,
-    gc: 13
+  "Bella Vista": {
+    pts: 32,
+    pj: 19,
+    pg: 10,
+    pe: 2,
+    pp: 7,
+    gf: 35,
+    gc: 19
+  },
+
+  "Ateneo Parroquial Alderetes": {
+    pts: 32,
+    pj: 19,
+    pg: 9,
+    pe: 5,
+    pp: 5,
+    gf: 31,
+    gc: 20
   },
 
   "Sportivo Guzmán": {
-    pts: 30,
-    pj: 17,
+    pts: 31,
+    pj: 18,
     pg: 8,
-    pe: 6,
+    pe: 7,
     pp: 3,
     gf: 24,
     gc: 12
   },
 
-  "San Fernando": {
-    pts: 30,
-    pj: 18,
-    pg: 10,
-    pe: 0,
-    pp: 8,
-    gf: 25,
-    gc: 24
-  },
-
-  "Central Norte": {
-    pts: 29,
-    pj: 18,
-    pg: 8,
-    pe: 5,
-    pp: 5,
-    gf: 28,
-    gc: 17
+  "Unión del Norte": {
+    pts: 31,
+    pj: 19,
+    pg: 7,
+    pe: 10,
+    pp: 2,
+    gf: 27,
+    gc: 14
   },
 
   "San Martín": {
+    pts: 31,
+    pj: 19,
+    pg: 8,
+    pe: 7,
+    pp: 4,
+    gf: 20,
+    gc: 16
+  },
+
+  "Central Norte": {
+    pts: 30,
+    pj: 19,
+    pg: 8,
+    pe: 6,
+    pp: 5,
+    gf: 29,
+    gc: 18
+  },
+
+  "Atlético Tucumán": {
+    pts: 29,
+    pj: 19,
+    pg: 8,
+    pe: 5,
+    pp: 6,
+    gf: 21,
+    gc: 17
+  },
+
+  "San Pablo": {
+    pts: 28,
+    pj: 18,
+    pg: 9,
+    pe: 1,
+    pp: 8,
+    gf: 20,
+    gc: 13
+  },
+
+  "San Juan": {
     pts: 28,
     pj: 18,
     pg: 7,
     pe: 7,
     pp: 4,
-    gf: 18,
-    gc: 15
-  },
-
-  "Atlético Tucumán": {
-    pts: 26,
-    pj: 18,
-    pg: 7,
-    pe: 5,
-    pp: 6,
-    gf: 19,
-    gc: 17
-  },
-
-  "San Pablo": {
-    pts: 25,
-    pj: 17,
-    pg: 8,
-    pe: 1,
-    pp: 8,
-    gf: 18,
-    gc: 12
-  },
-
-  "San Juan": {
-    pts: 25,
-    pj: 17,
-    pg: 6,
-    pe: 7,
-    pp: 4,
-    gf: 18,
+    gf: 22,
     gc: 19
   },
 
   "Unión Simoca": {
-    pts: 25,
-    pj: 18,
-    pg: 6,
+    pts: 28,
+    pj: 19,
+    pg: 7,
     pe: 7,
     pp: 5,
-    gf: 17,
-    gc: 20
-  },
-
-  "Argentinos del Norte": {
-    pts: 24,
-    pj: 18,
-    pg: 6,
-    pe: 6,
-    pp: 6,
-    gf: 27,
-    gc: 23
-  },
-
-  "Villa Mitre": {
-    pts: 24,
-    pj: 18,
-    pg: 6,
-    pe: 6,
-    pp: 6,
-    gf: 19,
-    gc: 20
-  },
-
-  "Tucumán Central": {
-    pts: 24,
-    pj: 18,
-    pg: 6,
-    pe: 6,
-    pp: 6,
-    gf: 20,
-    gc: 22
-  },
-
-  "Famaillá": {
-    pts: 21,
-    pj: 16,
-    pg: 6,
-    pe: 3,
-    pp: 7,
     gf: 18,
-    gc: 22
+    gc: 20
   },
 
   "Juventud Unida": {
-    pts: 24,
-    pj: 18,
-    pg: 7,
+    pts: 27,
+    pj: 19,
+    pg: 8,
     pe: 3,
     pp: 8,
-    gf: 18,
-    gc: 23
+    gf: 21,
+    gc: 24
   },
 
   "Alto Verde": {
-    pts: 23,
-    pj: 18,
-    pg: 7,
+    pts: 26,
+    pj: 19,
+    pg: 8,
     pe: 2,
     pp: 9,
-    gf: 31,
-    gc: 29
+    gf: 33,
+    gc: 30
   },
 
   "Azucarera Argentina": {
     pts: 26,
-    pj: 18,
-    pg: 7,
+    pj: 19,
+    pg: 8,
     pe: 5,
     pp: 6,
+    gf: 23,
+    gc: 29
+  },
+
+  "Argentinos del Norte": {
+    pts: 25,
+    pj: 19,
+    pg: 6,
+    pe: 7,
+    pp: 6,
+    gf: 28,
+    gc: 24
+  },
+
+  "Tucumán Central": {
+    pts: 25,
+    pj: 19,
+    pg: 6,
+    pe: 7,
+    pp: 6,
     gf: 21,
-    gc: 28
+    gc: 23
+  },
+
+  "Famaillá": {
+    pts: 24,
+    pj: 17,
+    pg: 7,
+    pe: 3,
+    pp: 7,
+    gf: 19,
+    gc: 22
+  },
+
+  "Villa Mitre": {
+    pts: 24,
+    pj: 19,
+    pg: 6,
+    pe: 6,
+    pp: 7,
+    gf: 19,
+    gc: 21
+  },
+
+  "San Lorenzo (SA)": {
+    pts: 24,
+    pj: 19,
+    pg: 6,
+    pe: 6,
+    pp: 7,
+    gf: 14,
+    gc: 19
   },
 
   "Lastenia": {
-    pts: 22,
-    pj: 18,
+    pts: 23,
+    pj: 19,
     pg: 6,
-    pe: 4,
+    pe: 5,
     pp: 8,
     gf: 21,
     gc: 19
   },
 
-  "San Lorenzo (DG)": {
-    pts: 22,
-    pj: 18,
-    pg: 6,
-    pe: 4,
-    pp: 8,
-    gf: 23,
-    gc: 29
-  },
-
   "San Antonio": {
-    pts: 22,
-    pj: 18,
+    pts: 23,
+    pj: 19,
     pg: 7,
-    pe: 1,
+    pe: 2,
     pp: 10,
     gf: 19,
     gc: 25
   },
 
-  "San Lorenzo (SA)": {
-    pts: 21,
-    pj: 18,
-    pg: 5,
-    pe: 6,
-    pp: 7,
-    gf: 13,
-    gc: 19
+  "San Lorenzo (DG)": {
+    pts: 22,
+    pj: 19,
+    pg: 6,
+    pe: 4,
+    pp: 9,
+    gf: 24,
+    gc: 31
   },
 
-  "San Ramón": {
-    pts: 20,
-    pj: 17,
+  "Santa Ana": {
+    pts: 21,
+    pj: 19,
     pg: 5,
-    pe: 5,
-    pp: 7,
-    gf: 17,
-    gc: 25
+    pe: 6,
+    pp: 8,
+    gf: 16,
+    gc: 23
   },
 
   "Marapa": {
     pts: 21,
-    pj: 18,
+    pj: 19,
     pg: 5,
     pe: 6,
-    pp: 7,
+    pp: 8,
     gf: 14,
-    gc: 22
+    gc: 23
   },
 
-  "La Providencia": {
-    pts: 19,
-    pj: 17,
-    pg: 4,
-    pe: 7,
-    pp: 6,
-    gf: 20,
-    gc: 24
+  "San Ramón": {
+    pts: 20,
+    pj: 18,
+    pg: 5,
+    pe: 5,
+    pp: 8,
+    gf: 18,
+    gc: 27
   },
 
   "Llorens": {
     pts: 20,
-    pj: 18,
+    pj: 19,
     pg: 6,
     pe: 2,
-    pp: 10,
+    pp: 11,
     gf: 23,
-    gc: 35
+    gc: 39
   },
 
-  "Santa Ana": {
-    pts: 18,
+  "La Providencia": {
+    pts: 19,
     pj: 18,
     pg: 4,
-    pe: 6,
-    pp: 8,
-    gf: 12,
-    gc: 23
+    pe: 7,
+    pp: 7,
+    gf: 20,
+    gc: 25
   },
 
   "Amalia": {
     pts: 16,
-    pj: 18,
+    pj: 19,
     pg: 5,
     pe: 1,
-    pp: 12,
+    pp: 13,
     gf: 10,
-    gc: 24
+    gc: 26
   },
 
   "Santa Rosa": {
     pts: 15,
-    pj: 18,
+    pj: 19,
     pg: 4,
     pe: 3,
-    pp: 11,
-    gf: 16,
-    gc: 27
+    pp: 12,
+    gf: 17,
+    gc: 29
   },
 
   "San José": {
     pts: 14,
-    pj: 18,
+    pj: 19,
     pg: 4,
     pe: 2,
-    pp: 12,
-    gf: 14,
-    gc: 31
+    pp: 13,
+    gf: 15,
+    gc: 34
   },
 
   "Santa Lucía": {
     pts: 12,
-    pj: 18,
+    pj: 19,
     pg: 2,
     pe: 6,
-    pp: 10,
+    pp: 11,
     gf: 8,
-    gc: 30
+    gc: 31
   },
 
   "Trinidad": {
     pts: 10,
-    pj: 18,
+    pj: 19,
     pg: 2,
     pe: 4,
-    pp: 12,
-    gf: 10,
-    gc: 35
+    pp: 13,
+    gf: 11,
+    gc: 37
   },
 
   "Cruz Alta": {
     pts: 5,
-    pj: 18,
+    pj: 19,
     pg: 0,
     pe: 5,
-    pp: 13,
+    pp: 14,
     gf: 8,
-    gc: 36
+    gc: 40
   },
 
   "All Boys": {
     pts: 5,
-    pj: 17,
+    pj: 18,
     pg: 1,
     pe: 2,
-    pp: 14,
-    gf: 9,
-    gc: 41
+    pp: 15,
+    gf: 10,
+    gc: 44
   }
 };
 
@@ -2054,6 +2054,54 @@ function compararEquipos(a, b) {
 
 
 /* =========================================================
+   ORDEN TABLA ANUAL
+   ========================================================= */
+
+function compararTablaAnual(a, b) {
+
+  /* Primero puntos */
+
+  if (b.pts !== a.pts) {
+    return b.pts - a.pts;
+  }
+
+  /*
+   * En la tabla anual oficial,
+   * si hay igualdad de puntos,
+   * se prioriza el equipo con
+   * menos partidos jugados.
+   */
+
+  if (a.pj !== b.pj) {
+    return a.pj - b.pj;
+  }
+
+  /* Diferencia de goles */
+
+  if (b.dg !== a.dg) {
+    return b.dg - a.dg;
+  }
+
+  /* Goles a favor */
+
+  if (b.gf !== a.gf) {
+    return b.gf - a.gf;
+  }
+
+  /* Goles en contra */
+
+  if (a.gc !== b.gc) {
+    return a.gc - b.gc;
+  }
+
+  return a.equipo.localeCompare(
+    b.equipo,
+    "es"
+  );
+}
+
+
+/* =========================================================
    OBTENER TABLAS DEL CLAUSURA
    ========================================================= */
 
@@ -2268,16 +2316,24 @@ function generarTablaAnual() {
 
 
   /*
-   * La tabla base ya incluye Apertura
-   * + Clausura hasta Fecha 4.
+   * IMPORTANTE:
    *
-   * Por eso solamente agregamos Fecha 5.
+   * tablaAnualBase ya contiene
+   * la situación oficial al FINAL
+   * DE LA FECHA 5.
+   *
+   * Por eso NO se vuelven a aplicar
+   * las Fechas 1, 2, 3, 4 ni 5.
+   *
+   * A partir de ahora solamente se
+   * incorporan resultados de Fecha 6
+   * en adelante.
    */
 
   const resultadosPosteriores =
     resultadosClausura.filter(
       resultado =>
-        resultado.fecha >= 5
+        resultado.fecha >= 6
     );
 
 
@@ -2296,7 +2352,7 @@ function generarTablaAnual() {
 
   const lista =
     Object.values(tabla)
-      .sort(compararEquipos);
+      .sort(compararTablaAnual);
 
 
   lista.forEach(
@@ -2696,7 +2752,7 @@ function crearLlavesSiguienteRonda(
           )
       )
       .filter(Boolean)
-      .sort(compararEquipos);
+      .sort(compararTablaAnual);
 
 
   const llaves = [];
